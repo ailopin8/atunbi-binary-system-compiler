@@ -1,0 +1,1039 @@
+{
+  "format": "atunbi.architecture.v1",
+  "purpose": "Matrix engine → modular workspace → applications",
+  "ratings": "Design judgments by signal function; not empirical causal effects",
+  "subsystemDesign": [
+    {
+      "group": "Engine",
+      "role": "S1 · operations",
+      "purpose": "Execute declared algorithms while preserving the binary kernel boundary.",
+      "parts": "G8: 1,000-bit state, instruction compiler, VM, messages and clock. G7: sentence compiler and VM. G6: environments, internal layers, numeric fields and signed edges. G10: PID registers, drivers and binary plant. G11: algorithm catalogue, node state, parameters and synchronous coupling.",
+      "contract": "Declared configuration and inputs → next state, binary output and evidence. Numerical registers belong to the relevant algorithm adapter, not implicit meaning in the binary cells.",
+      "verification": "Binary bounds; deterministic replay; prior-state immutability; full-state export/import continuation."
+    },
+    {
+      "group": "Workspace",
+      "role": "S1 operations / S2 coordination",
+      "purpose": "Compose processes above the engine; keep definitions separate from running instances.",
+      "parts": "Rule workshop: identity, truth table, validation, saved definitions. Registry: versioned definitions and installation. Flow runtime: typed ports, edge validation, queues, delay ticks and trace. Wiring editor: connect, disconnect and save. General blank canvas and reusable composite modules: proposed.",
+      "contract": "Definitions + graph + commands → validated instances and routed messages. A process has inputs, state, algorithm and outputs.",
+      "verification": "Reject incompatible ports and immediate cycles; bound messages; preserve explicit delays; reject invalid imports atomically."
+    },
+    {
+      "group": "Observation",
+      "role": "S3* · audit / S4 · investigation",
+      "purpose": "Make behavior inspectable and compare explanations against controlled evidence.",
+      "parts": "G9: descriptors, exact recurrence, matched interventions and annotation status. Metrics: snapshots and displays. Notebook: observer hypotheses. Exports: configurations and evidence. Experiment tools: edge ablations, baselines and replay.",
+      "contract": "State and run configuration → observations, comparisons and provenance. A descriptor is not proof of emergence.",
+      "verification": "Known fixtures; matched initial states; non-mutating comparisons; explicit hypothesis status and reproducible exports."
+    },
+    {
+      "group": "Governance",
+      "role": "S3 control / S4 adaptation / S5 identity",
+      "purpose": "Manage technical decisions, verification, risk and changes while retaining the engine purpose.",
+      "parts": "Foundation: purpose and research. Feature inventory: responsibilities and connections. References: external knowledge. Tests and CI: verification. Git history: configuration baseline. Deployment service: release boundary. Automated resource policy, compatibility migration and runtime health supervisor: proposed.",
+      "contract": "Needs and evidence → requirements, architecture decisions, acceptance checks and reviewed releases. People retain policy authority.",
+      "verification": "Requirement-to-test traceability; versioned baselines; release checks; rollback source. VSM is a design analogy, not a claim of autonomous viability."
+    },
+    {
+      "group": "Interface",
+      "role": "S2 coordination / human interface",
+      "purpose": "Expose processes without changing what the engine means.",
+      "parts": "Navigation and home: page organization. Module views: controls and state display. Controllers: categorized actions and guards. Spatial viewer: camera, 3D volume, WebXR and desktop fallback. Logo and shell: identity.",
+      "contract": "User intent → validated command; model snapshot → accessible view. A webpage is an interface, not necessarily a separate processor.",
+      "verification": "Keyboard and screen-reader checks; routing/history; controller guards; simulated XR. Physical headset validation remains separate."
+    }
+  ],
+  "dynamicsDesign": [
+    {
+      "stock": "Matrix and algorithm state",
+      "inflow": "Declared transition / incoming signal",
+      "outflow": "Reset or replacement",
+      "feedback": "Output → measurement → controller → next input",
+      "status": "Implemented in specific engines; signs and gains are configuration dependent."
+    },
+    {
+      "stock": "Pending messages",
+      "inflow": "Emission onto delayed edges",
+      "outflow": "Explicit workflow advance; disabling an edge removes pending messages",
+      "feedback": "Queue growth → proposed resource supervisor → producer throttling",
+      "status": "Bounded queues and explicit advance implemented; adaptive throttling proposed."
+    },
+    {
+      "stock": "Saved algorithm definitions",
+      "inflow": "Validated rule creation or import",
+      "outflow": "Removal or replacement under registry rules",
+      "feedback": "Test result → revise definition → test again",
+      "status": "Human-guided iteration; no autonomous algorithm improvement claimed."
+    },
+    {
+      "stock": "Evidence and observer records",
+      "inflow": "Measurements, experiments, annotations",
+      "outflow": "User deletion or external archival",
+      "feedback": "Comparison → hypothesis revision → new experiment",
+      "status": "Human interpretation; no claim that accumulating records automatically increases knowledge."
+    }
+  ],
+  "components": [
+    {
+      "id": "controllers",
+      "label": "Controller menu",
+      "group": "Interface",
+      "inputs": {},
+      "outputs": {
+        "g6": "command",
+        "g7": "command",
+        "g8": "command",
+        "g9": "command",
+        "composition": "command",
+        "ecology": "command",
+        "workshop": "command",
+        "foundation": "command",
+        "workflow": "command"
+      }
+    },
+    {
+      "id": "g6",
+      "label": "G6",
+      "group": "Engine",
+      "inputs": {
+        "command": "command",
+        "library": "snapshot"
+      },
+      "outputs": {
+        "state": "snapshot",
+        "definitions": "snapshot",
+        "binary": "binary",
+        "evidence": "evidence",
+        "annotation": "annotation"
+      }
+    },
+    {
+      "id": "g7",
+      "label": "G7",
+      "group": "Engine",
+      "inputs": {
+        "command": "command"
+      },
+      "outputs": {
+        "state": "snapshot",
+        "definitions": "snapshot",
+        "binary": "binary",
+        "evidence": "evidence",
+        "annotation": "annotation"
+      }
+    },
+    {
+      "id": "g8",
+      "label": "G8",
+      "group": "Engine",
+      "inputs": {
+        "command": "command"
+      },
+      "outputs": {
+        "state": "snapshot",
+        "definitions": "snapshot",
+        "binary": "binary",
+        "evidence": "evidence",
+        "annotation": "annotation"
+      }
+    },
+    {
+      "id": "g9",
+      "label": "G9",
+      "group": "Observation",
+      "inputs": {
+        "command": "command",
+        "source": "source",
+        "binary": "binary"
+      },
+      "outputs": {
+        "state": "snapshot",
+        "definitions": "snapshot",
+        "binary": "binary",
+        "evidence": "evidence",
+        "annotation": "annotation"
+      }
+    },
+    {
+      "id": "composition",
+      "label": "G10 composition",
+      "group": "Engine",
+      "inputs": {
+        "command": "command",
+        "binary": "binary"
+      },
+      "outputs": {
+        "state": "snapshot",
+        "definitions": "snapshot",
+        "binary": "binary",
+        "evidence": "evidence",
+        "annotation": "annotation"
+      }
+    },
+    {
+      "id": "ecology",
+      "label": "ECOLOGY",
+      "group": "Engine",
+      "inputs": {
+        "command": "command",
+        "library": "snapshot"
+      },
+      "outputs": {
+        "state": "snapshot",
+        "definitions": "snapshot",
+        "binary": "binary",
+        "evidence": "evidence",
+        "annotation": "annotation"
+      }
+    },
+    {
+      "id": "workshop",
+      "label": "WORKSHOP",
+      "group": "Workspace",
+      "inputs": {
+        "command": "command"
+      },
+      "outputs": {
+        "state": "snapshot",
+        "definitions": "snapshot",
+        "binary": "binary",
+        "evidence": "evidence",
+        "annotation": "annotation"
+      }
+    },
+    {
+      "id": "foundation",
+      "label": "FOUNDATION",
+      "group": "Governance",
+      "inputs": {
+        "command": "command"
+      },
+      "outputs": {
+        "state": "snapshot",
+        "definitions": "snapshot",
+        "binary": "binary",
+        "evidence": "evidence",
+        "annotation": "annotation"
+      }
+    },
+    {
+      "id": "workflow",
+      "label": "WORKFLOW",
+      "group": "Workspace",
+      "inputs": {
+        "command": "command"
+      },
+      "outputs": {
+        "state": "snapshot",
+        "definitions": "snapshot",
+        "binary": "binary",
+        "evidence": "evidence",
+        "annotation": "annotation"
+      }
+    },
+    {
+      "id": "sources",
+      "label": "Source editors",
+      "group": "Workspace",
+      "inputs": {},
+      "outputs": {
+        "source": "source"
+      }
+    },
+    {
+      "id": "metrics",
+      "label": "Metrics",
+      "group": "Observation",
+      "inputs": {
+        "data": "snapshot"
+      },
+      "outputs": {}
+    },
+    {
+      "id": "notebook",
+      "label": "Notebook",
+      "group": "Observation",
+      "inputs": {
+        "data": "annotation"
+      },
+      "outputs": {}
+    },
+    {
+      "id": "exports",
+      "label": "Exports",
+      "group": "Observation",
+      "inputs": {
+        "data": "evidence"
+      },
+      "outputs": {}
+    },
+    {
+      "id": "references",
+      "label": "References",
+      "group": "Governance",
+      "inputs": {
+        "data": "snapshot"
+      },
+      "outputs": {}
+    },
+    {
+      "id": "feature-inventory",
+      "label": "Feature and connection map",
+      "group": "Governance",
+      "inputs": {
+        "snapshot": "snapshot"
+      },
+      "outputs": {
+        "evidence": "evidence"
+      }
+    },
+    {
+      "id": "navigation",
+      "label": "Home and module pages",
+      "group": "Interface",
+      "inputs": {},
+      "outputs": {
+        "page": "snapshot"
+      }
+    },
+    {
+      "id": "g6-view",
+      "label": "G6 view",
+      "group": "Interface",
+      "inputs": {
+        "state": "snapshot"
+      },
+      "outputs": {}
+    },
+    {
+      "id": "g7-view",
+      "label": "G7 view",
+      "group": "Interface",
+      "inputs": {
+        "state": "snapshot"
+      },
+      "outputs": {}
+    },
+    {
+      "id": "g8-view",
+      "label": "G8 view",
+      "group": "Interface",
+      "inputs": {
+        "state": "snapshot"
+      },
+      "outputs": {}
+    },
+    {
+      "id": "g9-view",
+      "label": "G9 view",
+      "group": "Interface",
+      "inputs": {
+        "state": "snapshot"
+      },
+      "outputs": {}
+    },
+    {
+      "id": "composition-view",
+      "label": "COMPOSITION view",
+      "group": "Interface",
+      "inputs": {
+        "state": "snapshot"
+      },
+      "outputs": {}
+    },
+    {
+      "id": "ecology-view",
+      "label": "ECOLOGY view",
+      "group": "Interface",
+      "inputs": {
+        "state": "snapshot"
+      },
+      "outputs": {}
+    },
+    {
+      "id": "algorithm-registry",
+      "label": "Algorithm registry",
+      "group": "Workspace",
+      "inputs": {
+        "definitions": "snapshot"
+      },
+      "outputs": {
+        "library": "snapshot"
+      }
+    },
+    {
+      "id": "reference-source",
+      "label": "Reference catalogue",
+      "group": "Governance",
+      "inputs": {},
+      "outputs": {
+        "items": "snapshot"
+      }
+    },
+    {
+      "id": "identity",
+      "label": "Brand configuration",
+      "group": "Interface",
+      "inputs": {},
+      "outputs": {
+        "identity": "snapshot"
+      }
+    },
+    {
+      "id": "shell",
+      "label": "Website shell",
+      "group": "Interface",
+      "inputs": {
+        "identity": "snapshot"
+      },
+      "outputs": {}
+    }
+  ],
+  "relationships": [
+    {
+      "id": "controls-g6",
+      "from": "controllers",
+      "output": "g6",
+      "to": "g6",
+      "input": "command",
+      "enabled": true,
+      "delayed": false,
+      "kind": "command",
+      "importance": {
+        "level": 3,
+        "label": "required for this routed operation"
+      }
+    },
+    {
+      "id": "controls-g7",
+      "from": "controllers",
+      "output": "g7",
+      "to": "g7",
+      "input": "command",
+      "enabled": true,
+      "delayed": false,
+      "kind": "command",
+      "importance": {
+        "level": 3,
+        "label": "required for this routed operation"
+      }
+    },
+    {
+      "id": "controls-g8",
+      "from": "controllers",
+      "output": "g8",
+      "to": "g8",
+      "input": "command",
+      "enabled": true,
+      "delayed": false,
+      "kind": "command",
+      "importance": {
+        "level": 3,
+        "label": "required for this routed operation"
+      }
+    },
+    {
+      "id": "controls-g9",
+      "from": "controllers",
+      "output": "g9",
+      "to": "g9",
+      "input": "command",
+      "enabled": true,
+      "delayed": false,
+      "kind": "command",
+      "importance": {
+        "level": 3,
+        "label": "required for this routed operation"
+      }
+    },
+    {
+      "id": "controls-composition",
+      "from": "controllers",
+      "output": "composition",
+      "to": "composition",
+      "input": "command",
+      "enabled": true,
+      "delayed": false,
+      "kind": "command",
+      "importance": {
+        "level": 3,
+        "label": "required for this routed operation"
+      }
+    },
+    {
+      "id": "controls-ecology",
+      "from": "controllers",
+      "output": "ecology",
+      "to": "ecology",
+      "input": "command",
+      "enabled": true,
+      "delayed": false,
+      "kind": "command",
+      "importance": {
+        "level": 3,
+        "label": "required for this routed operation"
+      }
+    },
+    {
+      "id": "controls-workshop",
+      "from": "controllers",
+      "output": "workshop",
+      "to": "workshop",
+      "input": "command",
+      "enabled": true,
+      "delayed": false,
+      "kind": "command",
+      "importance": {
+        "level": 3,
+        "label": "required for this routed operation"
+      }
+    },
+    {
+      "id": "controls-foundation",
+      "from": "controllers",
+      "output": "foundation",
+      "to": "foundation",
+      "input": "command",
+      "enabled": true,
+      "delayed": false,
+      "kind": "command",
+      "importance": {
+        "level": 3,
+        "label": "required for this routed operation"
+      }
+    },
+    {
+      "id": "controls-workflow",
+      "from": "controllers",
+      "output": "workflow",
+      "to": "workflow",
+      "input": "command",
+      "enabled": true,
+      "delayed": false,
+      "kind": "command",
+      "importance": {
+        "level": 3,
+        "label": "required for this routed operation"
+      }
+    },
+    {
+      "id": "source-g9",
+      "from": "sources",
+      "output": "source",
+      "to": "g9",
+      "input": "source",
+      "enabled": true,
+      "delayed": false,
+      "kind": "source",
+      "importance": {
+        "level": 3,
+        "label": "required for this routed operation"
+      }
+    },
+    {
+      "id": "g6-metrics",
+      "from": "g6",
+      "output": "state",
+      "to": "metrics",
+      "input": "data",
+      "enabled": true,
+      "delayed": false,
+      "kind": "snapshot",
+      "importance": {
+        "level": 2,
+        "label": "supports state visibility or definition delivery"
+      }
+    },
+    {
+      "id": "g6-exports",
+      "from": "g6",
+      "output": "evidence",
+      "to": "exports",
+      "input": "data",
+      "enabled": true,
+      "delayed": false,
+      "kind": "evidence",
+      "importance": {
+        "level": 1,
+        "label": "supports evidence or observer records"
+      }
+    },
+    {
+      "id": "g7-metrics",
+      "from": "g7",
+      "output": "state",
+      "to": "metrics",
+      "input": "data",
+      "enabled": true,
+      "delayed": false,
+      "kind": "snapshot",
+      "importance": {
+        "level": 2,
+        "label": "supports state visibility or definition delivery"
+      }
+    },
+    {
+      "id": "g7-exports",
+      "from": "g7",
+      "output": "evidence",
+      "to": "exports",
+      "input": "data",
+      "enabled": true,
+      "delayed": false,
+      "kind": "evidence",
+      "importance": {
+        "level": 1,
+        "label": "supports evidence or observer records"
+      }
+    },
+    {
+      "id": "g8-metrics",
+      "from": "g8",
+      "output": "state",
+      "to": "metrics",
+      "input": "data",
+      "enabled": true,
+      "delayed": false,
+      "kind": "snapshot",
+      "importance": {
+        "level": 2,
+        "label": "supports state visibility or definition delivery"
+      }
+    },
+    {
+      "id": "g8-exports",
+      "from": "g8",
+      "output": "evidence",
+      "to": "exports",
+      "input": "data",
+      "enabled": true,
+      "delayed": false,
+      "kind": "evidence",
+      "importance": {
+        "level": 1,
+        "label": "supports evidence or observer records"
+      }
+    },
+    {
+      "id": "g9-metrics",
+      "from": "g9",
+      "output": "state",
+      "to": "metrics",
+      "input": "data",
+      "enabled": true,
+      "delayed": false,
+      "kind": "snapshot",
+      "importance": {
+        "level": 2,
+        "label": "supports state visibility or definition delivery"
+      }
+    },
+    {
+      "id": "g9-exports",
+      "from": "g9",
+      "output": "evidence",
+      "to": "exports",
+      "input": "data",
+      "enabled": true,
+      "delayed": false,
+      "kind": "evidence",
+      "importance": {
+        "level": 1,
+        "label": "supports evidence or observer records"
+      }
+    },
+    {
+      "id": "composition-metrics",
+      "from": "composition",
+      "output": "state",
+      "to": "metrics",
+      "input": "data",
+      "enabled": true,
+      "delayed": false,
+      "kind": "snapshot",
+      "importance": {
+        "level": 2,
+        "label": "supports state visibility or definition delivery"
+      }
+    },
+    {
+      "id": "composition-exports",
+      "from": "composition",
+      "output": "evidence",
+      "to": "exports",
+      "input": "data",
+      "enabled": true,
+      "delayed": false,
+      "kind": "evidence",
+      "importance": {
+        "level": 1,
+        "label": "supports evidence or observer records"
+      }
+    },
+    {
+      "id": "ecology-metrics",
+      "from": "ecology",
+      "output": "state",
+      "to": "metrics",
+      "input": "data",
+      "enabled": true,
+      "delayed": false,
+      "kind": "snapshot",
+      "importance": {
+        "level": 2,
+        "label": "supports state visibility or definition delivery"
+      }
+    },
+    {
+      "id": "ecology-exports",
+      "from": "ecology",
+      "output": "evidence",
+      "to": "exports",
+      "input": "data",
+      "enabled": true,
+      "delayed": false,
+      "kind": "evidence",
+      "importance": {
+        "level": 1,
+        "label": "supports evidence or observer records"
+      }
+    },
+    {
+      "id": "workshop-metrics",
+      "from": "workshop",
+      "output": "state",
+      "to": "metrics",
+      "input": "data",
+      "enabled": true,
+      "delayed": false,
+      "kind": "snapshot",
+      "importance": {
+        "level": 2,
+        "label": "supports state visibility or definition delivery"
+      }
+    },
+    {
+      "id": "workshop-exports",
+      "from": "workshop",
+      "output": "evidence",
+      "to": "exports",
+      "input": "data",
+      "enabled": true,
+      "delayed": false,
+      "kind": "evidence",
+      "importance": {
+        "level": 1,
+        "label": "supports evidence or observer records"
+      }
+    },
+    {
+      "id": "foundation-metrics",
+      "from": "foundation",
+      "output": "state",
+      "to": "metrics",
+      "input": "data",
+      "enabled": true,
+      "delayed": false,
+      "kind": "snapshot",
+      "importance": {
+        "level": 2,
+        "label": "supports state visibility or definition delivery"
+      }
+    },
+    {
+      "id": "foundation-exports",
+      "from": "foundation",
+      "output": "evidence",
+      "to": "exports",
+      "input": "data",
+      "enabled": true,
+      "delayed": false,
+      "kind": "evidence",
+      "importance": {
+        "level": 1,
+        "label": "supports evidence or observer records"
+      }
+    },
+    {
+      "id": "workflow-metrics",
+      "from": "workflow",
+      "output": "state",
+      "to": "metrics",
+      "input": "data",
+      "enabled": true,
+      "delayed": false,
+      "kind": "snapshot",
+      "importance": {
+        "level": 2,
+        "label": "supports state visibility or definition delivery"
+      }
+    },
+    {
+      "id": "workflow-exports",
+      "from": "workflow",
+      "output": "evidence",
+      "to": "exports",
+      "input": "data",
+      "enabled": true,
+      "delayed": false,
+      "kind": "evidence",
+      "importance": {
+        "level": 1,
+        "label": "supports evidence or observer records"
+      }
+    },
+    {
+      "id": "g8-notebook",
+      "from": "g8",
+      "output": "annotation",
+      "to": "notebook",
+      "input": "data",
+      "enabled": true,
+      "delayed": false,
+      "kind": "annotation",
+      "importance": {
+        "level": 1,
+        "label": "supports evidence or observer records"
+      }
+    },
+    {
+      "id": "g9-notebook",
+      "from": "g9",
+      "output": "annotation",
+      "to": "notebook",
+      "input": "data",
+      "enabled": true,
+      "delayed": false,
+      "kind": "annotation",
+      "importance": {
+        "level": 1,
+        "label": "supports evidence or observer records"
+      }
+    },
+    {
+      "id": "g8-composition",
+      "from": "g8",
+      "output": "binary",
+      "to": "composition",
+      "input": "binary",
+      "enabled": true,
+      "delayed": false,
+      "kind": "binary",
+      "importance": {
+        "level": 3,
+        "label": "required for this routed operation"
+      }
+    },
+    {
+      "id": "composition-g9",
+      "from": "composition",
+      "output": "binary",
+      "to": "g9",
+      "input": "binary",
+      "enabled": true,
+      "delayed": false,
+      "kind": "binary",
+      "importance": {
+        "level": 3,
+        "label": "required for this routed operation"
+      }
+    },
+    {
+      "id": "workflow-feature-inventory",
+      "from": "workflow",
+      "output": "state",
+      "to": "feature-inventory",
+      "input": "snapshot",
+      "enabled": true,
+      "delayed": false,
+      "kind": "snapshot",
+      "importance": {
+        "level": 2,
+        "label": "supports state visibility or definition delivery"
+      }
+    },
+    {
+      "id": "feature-inventory-exports",
+      "from": "feature-inventory",
+      "output": "evidence",
+      "to": "exports",
+      "input": "data",
+      "enabled": true,
+      "delayed": false,
+      "kind": "evidence",
+      "importance": {
+        "level": 1,
+        "label": "supports evidence or observer records"
+      }
+    },
+    {
+      "id": "navigation-metrics",
+      "from": "navigation",
+      "output": "page",
+      "to": "metrics",
+      "input": "data",
+      "enabled": true,
+      "delayed": false,
+      "kind": "snapshot",
+      "importance": {
+        "level": 2,
+        "label": "supports state visibility or definition delivery"
+      }
+    },
+    {
+      "id": "g6-view",
+      "from": "g6",
+      "output": "state",
+      "to": "g6-view",
+      "input": "state",
+      "enabled": true,
+      "delayed": false,
+      "kind": "snapshot",
+      "importance": {
+        "level": 2,
+        "label": "supports state visibility or definition delivery"
+      }
+    },
+    {
+      "id": "g7-view",
+      "from": "g7",
+      "output": "state",
+      "to": "g7-view",
+      "input": "state",
+      "enabled": true,
+      "delayed": false,
+      "kind": "snapshot",
+      "importance": {
+        "level": 2,
+        "label": "supports state visibility or definition delivery"
+      }
+    },
+    {
+      "id": "g8-view",
+      "from": "g8",
+      "output": "state",
+      "to": "g8-view",
+      "input": "state",
+      "enabled": true,
+      "delayed": false,
+      "kind": "snapshot",
+      "importance": {
+        "level": 2,
+        "label": "supports state visibility or definition delivery"
+      }
+    },
+    {
+      "id": "g9-view",
+      "from": "g9",
+      "output": "state",
+      "to": "g9-view",
+      "input": "state",
+      "enabled": true,
+      "delayed": false,
+      "kind": "snapshot",
+      "importance": {
+        "level": 2,
+        "label": "supports state visibility or definition delivery"
+      }
+    },
+    {
+      "id": "composition-view",
+      "from": "composition",
+      "output": "state",
+      "to": "composition-view",
+      "input": "state",
+      "enabled": true,
+      "delayed": false,
+      "kind": "snapshot",
+      "importance": {
+        "level": 2,
+        "label": "supports state visibility or definition delivery"
+      }
+    },
+    {
+      "id": "ecology-view",
+      "from": "ecology",
+      "output": "state",
+      "to": "ecology-view",
+      "input": "state",
+      "enabled": true,
+      "delayed": false,
+      "kind": "snapshot",
+      "importance": {
+        "level": 2,
+        "label": "supports state visibility or definition delivery"
+      }
+    },
+    {
+      "id": "workshop-registry",
+      "from": "workshop",
+      "output": "definitions",
+      "to": "algorithm-registry",
+      "input": "definitions",
+      "enabled": true,
+      "delayed": false,
+      "kind": "snapshot",
+      "importance": {
+        "level": 2,
+        "label": "supports state visibility or definition delivery"
+      }
+    },
+    {
+      "id": "registry-ecology",
+      "from": "algorithm-registry",
+      "output": "library",
+      "to": "ecology",
+      "input": "library",
+      "enabled": true,
+      "delayed": false,
+      "kind": "snapshot",
+      "importance": {
+        "level": 2,
+        "label": "supports state visibility or definition delivery"
+      }
+    },
+    {
+      "id": "registry-g6",
+      "from": "algorithm-registry",
+      "output": "library",
+      "to": "g6",
+      "input": "library",
+      "enabled": true,
+      "delayed": false,
+      "kind": "snapshot",
+      "importance": {
+        "level": 2,
+        "label": "supports state visibility or definition delivery"
+      }
+    },
+    {
+      "id": "reference-library",
+      "from": "reference-source",
+      "output": "items",
+      "to": "references",
+      "input": "data",
+      "enabled": true,
+      "delayed": false,
+      "kind": "snapshot",
+      "importance": {
+        "level": 2,
+        "label": "supports state visibility or definition delivery"
+      }
+    },
+    {
+      "id": "identity-shell",
+      "from": "identity",
+      "output": "identity",
+      "to": "shell",
+      "input": "identity",
+      "enabled": true,
+      "delayed": false,
+      "kind": "snapshot",
+      "importance": {
+        "level": 2,
+        "label": "supports state visibility or definition delivery"
+      }
+    }
+  ]
+}

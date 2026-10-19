@@ -77,3 +77,7 @@ The Theory page now provides BARE v2: a proposed purpose hierarchy with six deco
 G6 now executes its original four fields plus all 12 lattice algorithms and saved workshop rules. Both primary and internal selectors group the choices by type. Numeric registers and embedded custom definitions survive steps, counterfactual experiments and network export/import. See [the G6 adapter contract](docs/RESEARCH-FOUNDATION.md#5-g6-execution-repair-and-numerical-contract). The original field solvers and periodic library solvers have explicitly different boundaries; G8 remains the strict binary kernel.
 
 The framework does not claim that visual complexity proves emergence, that voxels reproduce biological cells, or that 10³ output establishes a fractal dimension. G-emergence, effective information, Lenia, mechanical morphogenesis and VR cognitive benefits are clearly labelled research proposals. Deployment remains pending the existing hosting credit limit.
+
+## Systems architecture
+
+The theory page includes a grouped, directed 2D dependency matrix, component ports, subsystem contracts, framework definitions and a stock/flow/feedback view. See [systems architecture](docs/SYSTEMS-ARCHITECTURE.md) and [exported graph](docs/systems-architecture.json). `npm run test:architecture` checks the UI against a running local development server (default port 4173). Importance colors are design ratings, not empirical influence.

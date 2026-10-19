@@ -9,4 +9,5 @@ import './references';
 import './theory-lab';
 import './workflow-view';
 import './feature-map';
+import './architecture-view';
 import './site-pages';
