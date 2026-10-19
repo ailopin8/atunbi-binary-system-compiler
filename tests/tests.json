@@ -1,0 +1,117 @@
+[
+  {
+    "name": "Controller binary compile and exact replay",
+    "sanity": true,
+    "viewport": "desktop",
+    "covers": [
+      "categorized controller menu",
+      "G8 compiler and 1000-bit state",
+      "single step",
+      "reset confirmation and cancellation",
+      "G9 descriptors and recurrence",
+      "G9 exact replay"
+    ],
+    "description": "Exercise the shared menu through a compiled binary state and a reproducible experiment.",
+    "steps": [
+      "Open Controller menu using laboratory navigation",
+      "Choose G8 binary kernel and compile source",
+      "Step G8 +1 and inspect tick 0001",
+      "Choose Reset G8 then Cancel and verify tick stays 0001",
+      "Return to categories and open G9 discovery",
+      "Run discovery and Verify exact replay"
+    ],
+    "expected": "Menu categories operate actual lab controls, cancellation preserves bits and tick, and discovery renders numeric evidence with Replay PASS."
+  },
+  {
+    "name": "Workspace editing and matched G6 experiments",
+    "viewport": "desktop",
+    "covers": [
+      "workspace creation and confirmation",
+      "G6 internal and external algorithms",
+      "keyboard graph positioning",
+      "G6 ablation modes and horizon",
+      "non-mutating experimental evidence",
+      "network import export"
+    ],
+    "description": "Build and compare a network while keeping experiment evidence separate from live state.",
+    "steps": [
+      "In controller Workspace choose Load example and confirm",
+      "Inspect two environments with internal algorithms and an external relationship",
+      "Focus an environment header and move it using arrow keys",
+      "In G6 simulation step once, run a controlled experiment and inspect the result",
+      "Select the next ablation mode and horizon, then run again",
+      "Open Evidence and notebook and export the G6 network and G6 experiment",
+      "Choose Clear workspace and cancel, confirming the network remains"
+    ],
+    "expected": "The graph moves with the keyboard, G6 reports measured divergence under selected controls, experiment execution preserves the live tick, exports download and cancellation retains the network."
+  },
+  {
+    "name": "Compiler controls, packets and exports",
+    "viewport": "desktop",
+    "covers": [
+      "G7 source validation",
+      "G7 24-bit instructions and 32-bit packets",
+      "G7 presets and coupling comparison",
+      "G8 presets and delayed packets",
+      "G8 causal comparison",
+      "G8 source validation",
+      "observer annotations",
+      "G7 G8 G9 evidence export"
+    ],
+    "description": "Verify compiler and evidence controls across independent runtimes.",
+    "steps": [
+      "In controller G7 compiler compile, step and compare coupling",
+      "Choose Next G7 preset and compile it",
+      "In G8 binary kernel choose Reciprocal XOR preset and step twice",
+      "Run Test G8 causality and change the depth slice",
+      "On the page replace G8 source with MATRIX A RULE 01011010 followed by A BIT (10,0,0) = 1 and compile",
+      "Restore a valid G8 preset, add an observer interpretation on the page and run discovery",
+      "From Evidence and notebook export G7, G8 and G9 evidence"
+    ],
+    "expected": "G7 and G8 execute independently with visible binary instructions and packets. Invalid G8 coordinates reject execution, valid presets recover, observer labels remain external and JSON evidence downloads."
+  },
+  {
+    "name": "Mobile discovery guards and hypothesis persistence",
+    "viewport": "mobile",
+    "covers": [
+      "mobile controller menu and pagination",
+      "G9 required-field errors and focus",
+      "G9 interventions",
+      "G9 hypothesis status and persistence",
+      "keyboard hypothesis submission",
+      "responsive layout"
+    ],
+    "description": "Reject invalid experiments and retain an explicit observer hypothesis on mobile.",
+    "steps": [
+      "Navigate to G9 and clear Ticks, then run discovery",
+      "Verify an inline error and focus on Ticks",
+      "Set 8 ticks and run each available intervention, verifying replay",
+      "Enter Observed recurrence hypothesis, set Inconclusive and save using Enter",
+      "Refresh, run a discovery experiment and inspect the notebook",
+      "Use Controller menu to navigate G8 pages with Previous and Next"
+    ],
+    "expected": "Blank required values reject the experiment and focus the invalid field. Valid paired experiments replay exactly, the hypothesis persists with Inconclusive status and the menu remains usable without page overflow."
+  },
+  {
+    "name": "Navigation, camera controls, references and VR fallback",
+    "viewport": "desktop",
+    "covers": [
+      "skip link and section navigation",
+      "keyboard camera orbit zoom recenter",
+      "text simulation description",
+      "pause-all",
+      "eight original references",
+      "WebXR availability and controller instructions"
+    ],
+    "description": "Check accessible navigation and the desktop mirror of headset actions.",
+    "steps": [
+      "Use Skip to laboratory and Controller menu navigation",
+      "Load the workspace example with confirmation",
+      "Focus the 3D view and use arrow keys, plus/minus and Home",
+      "Choose View and safety, Describe G6 state and Pause all runtimes",
+      "Open VR controls and availability and inspect the support message and ray, grip and thumbstick instructions",
+      "Open Reference library and inspect all eight original links and application notes"
+    ],
+    "expected": "Camera changes preserve simulation state, the G6 summary is available as text, pause-all stops active runtimes, references contain all eight supplied resources and unsupported VR has a usable desktop fallback."
+  }
+]
