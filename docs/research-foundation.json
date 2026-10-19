@@ -815,6 +815,15 @@
     },
     {
       "category": "g9",
+      "action": "g9-import-kernel",
+      "label": "Use binary engine matrix",
+      "purposes": [
+        "P4",
+        "P5"
+      ]
+    },
+    {
+      "category": "g9",
       "action": "g9-run",
       "label": "Run discovery",
       "purposes": [

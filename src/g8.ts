@@ -252,3 +252,5 @@ refresh();
 document.addEventListener('atunbi:pause-all',stop);
 
 bindControl('g8-publish',()=>{if(!vm)throw Error('Compile G8 before transferring a matrix.');if(!siteFlow.emit('g8','binary',{bits:Array.from(vm.states[0].bits).join(''),tick:vm.tick}))throw Error('G8 → composition is disconnected.');});
+
+bindControl('g8-publish-direct',()=>{if(![...siteFlow.edges.values()].some(e=>e.from==='g8'&&e.output==='directBinary'&&e.to==='g9'&&e.input==='binary'&&e.enabled&&!e.delayed))throw Error('Direct matrix input needs an enabled immediate connection. Reconnect g8-discovery in Connect tools.');if(!vm)throw Error('Compile the binary engine before importing a matrix.');if(!siteFlow.emit('g8','directBinary',{bits:Array.from(vm.states[0].bits).join(''),tick:vm.tick,origin:'g8-direct'}))throw Error('Direct matrix input is disconnected. Reconnect g8-discovery in Connect tools.');});

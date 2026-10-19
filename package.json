@@ -10,7 +10,9 @@
     "test": "node --test tests/*.test.mjs",
     "typecheck": "tsc --noEmit",
     "test:browser": "node tests/browser.mjs",
-    "test:architecture": "node tests/architecture-browser.mjs"
+    "test:architecture": "node tests/architecture-browser.mjs",
+    "test:relationships": "node tests/relationship-browser.mjs",
+    "verify": "npm run typecheck && npm test && npm run build && npm run test:browser && npm run test:architecture && npm run test:relationships"
   },
   "dependencies": {
     "lucide": "^0.469.0",

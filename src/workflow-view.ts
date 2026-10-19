@@ -1,3 +1,4 @@
+import {relationshipContract} from './relationship-design';
 import {siteFlow,sendEvidence} from './flow/site';
 const section=document.createElement('section');section.id='modular-workflow';section.className='panel4 flow-lab';section.tabIndex=-1;
 section.innerHTML=`<span class="micro">13 / MODULAR WEBSITE WORKFLOW</span><h2>Every module has ports. Every edge carries data.</h2><p>The controller menu sends commands to lab modules. Models publish snapshots to views and metrics. Source editors feed discovery; composition can receive G8 bits and send its bits to G9. Evidence and annotations have separate sinks. Disabling an edge stops subsequent delivery while retaining the consumer’s last state.</p>
@@ -43,6 +44,7 @@ function render() {
       const enabled=document.createElement('td'),input=document.createElement('input');input.type='checkbox';input.checked=edge.enabled;input.dataset.edge=edge.id;input.setAttribute('aria-label','Enable '+edge.id);enabled.append(input);
       const route=document.createElement('td');route.textContent=edge.from+'.'+edge.output+' → '+edge.to+'.'+edge.input;
       const schedule=document.createElement('td');schedule.textContent=edge.delayed?'Next workflow tick':'Immediate';
+      const purpose=document.createElement('p');purpose.textContent=relationshipContract(edge,siteFlow.nodes.get(edge.from)!.outputs[edge.output]).purpose;route.append(purpose);
       const count=document.createElement('td');count.dataset.count=edge.id;
       const removeCell=document.createElement('td'),button=document.createElement('button');button.type='button';button.dataset.remove=edge.id;button.textContent='Remove';button.setAttribute('aria-label','Remove '+edge.id);removeCell.append(button);
       row.append(enabled,route,schedule,count,removeCell);get('flow-edges').append(row);

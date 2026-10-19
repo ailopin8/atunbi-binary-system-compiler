@@ -2,84 +2,84 @@
 
 Generated from the module contracts and controller registry. See [purpose and research foundation](RESEARCH-FOUNDATION.md) for the purpose allocations of every page and controller function.
 
-## G6 pattern network and 3D / WebXR
+## Build connected systems
 
 - Input: Algorithms, layers, parameters, enabled internal and external edges
 - Process: Synchronous spatial simulation; matched edge ablation
 - Output: Fields, 3D scene, descriptors and experiment evidence
 - Affects: G6 view, metrics and exports; headset controls operate the same menu
 
-## G7 sentence compiler
+## Compile instructions
 
 - Input: Structured system sentences and coupling settings
 - Process: Compile instructions, execute its own VM, compare coupled behavior
 - Output: Instruction words, messages, simulation state and evidence
 - Affects: G7 view, metrics and exports
 
-## G8 binary kernel
+## Run the binary engine
 
 - Input: Binary source, rule numbers and packet settings
 - Process: Compile and transform two 1,000-bit matrices
 - Output: Binary states, messages and causal comparisons
-- Affects: G8 view; G10 seed through g8-composition; metrics, notebook and exports
+- Affects: Binary view; controller seed through g8-composition; direct pattern-test seed through g8-discovery; metrics, notebook and exports
 
-## G9 semantic discovery
+## Find and test patterns
 
 - Input: G8 source; optional received binary seed; intervention settings; observer notes
 - Process: Matched experiments, exact recurrence and structural descriptors
 - Output: Pattern evidence and explicitly labelled hypotheses
 - Affects: G9 view, metrics, notebook and exports; labels do not alter bits
 
-## G10 PID composition
+## Control a system
 
 - Input: Target, gains, seed, optional drivers and G8 seed
 - Process: Feedback controller and bounded bit actuator
 - Output: Binary plant, numeric registers, error comparison and replay
 - Affects: G10 view; optional G9 experiment seed through composition-g9; metrics and exports
 
-## G11 algorithm ecology
+## Combine algorithms
 
 - Input: Built-in or custom rules, node parameters, seed and directed binary edges
 - Process: Run separate cubes synchronously; measure per-edge counterfactuals
 - Output: Binary matrices, influence colors, descriptors, matched comparisons and sweeps
 - Affects: Ecology view, metrics and exports; algorithm edges affect only their receiving nodes
 
-## Algorithm workshop and registry
+## Create algorithms
 
 - Input: Name, purpose, category, color, three bit inputs and eight output bits
 - Process: Validate, test 16 ticks, verify replay, save and register definitions
 - Output: Versioned binary-rule definitions; portable JSON backup
 - Affects: Algorithm registry → G11 selectable rules. Existing runs retain embedded definitions
 
-## Website wiring
+## Connect tools
 
 - Input: Compatible module ports; enabled / delayed edges; saved or imported wiring
 - Process: Validate contracts; route copied messages; explicitly advance delays
 - Output: Executable edges, delivery counts, trace and wiring JSON
 - Affects: All downstream deliveries; disconnecting a view freezes presentation, not its model
 
-## Controller menu and view controls
+## Choose an action
 
 - Input: Mouse, keyboard or simulated / physical XR selection
 - Process: Check prerequisites, confirmations and available actions
 - Output: Commands, focus changes and action feedback
 - Affects: Selected lab only; camera commands affect G6; pause-all pauses active runtimes
 
-## Research and purpose hierarchy
+## Purpose and design
 
 - Input: Primary research, design intent and module/action registry
 - Process: Decompose purpose and trace functions to research questions
 - Output: Purpose hierarchy, paper library, hypotheses and allocations
 - Affects: Design and interpretation; research labels never alter kernel bits
 
-## Feature and connection map
+## Explore tool connections
 
 - Input: Module contracts, controller action registry and current executable edges
 - Process: Group features, inspect controls, focus a module and export the inventory
 - Output: Readable feature list and versioned connection JSON
 - Affects: Navigation and presentation only; no matrix state changes
 
-## Reference library and identity
+## Read references
 
 - Input: Curated guidance and logo configuration
 - Process: Present guidance, navigation and identity
@@ -94,7 +94,7 @@ Generated from the module contracts and controller registry. See [purpose and re
 - Import network JSON — page only
 - Clear workspace
 
-## Controls: G6 simulation
+## Controls: Run connected systems
 
 - Run / pause G6
 - Step G6 +1
@@ -103,7 +103,7 @@ Generated from the module contracts and controller registry. See [purpose and re
 - Next ablation mode
 - Next experiment horizon
 
-## Controls: G7 compiler
+## Controls: Compile instructions
 
 - Compile G7 source
 - Run / pause G7
@@ -113,7 +113,7 @@ Generated from the module contracts and controller registry. See [purpose and re
 - Next G7 preset
 - Edit system sentences — page only
 
-## Controls: G8 binary kernel
+## Controls: Run the binary engine
 
 - Compile G8 source
 - Run / pause G8
@@ -127,8 +127,9 @@ Generated from the module contracts and controller registry. See [purpose and re
 - Edit binary source — page only
 - Annotate G8 meaning — page only
 
-## Controls: G9 discovery
+## Controls: Find and test patterns
 
+- Use binary engine matrix
 - Run discovery
 - Verify exact replay
 - Next intervention mode
@@ -170,7 +171,7 @@ Generated from the module contracts and controller registry. See [purpose and re
 - Export research and purpose map — page only
 - Open all original links — page only
 
-## Controls: G10 composition
+## Controls: Control a system
 
 - Step system +1
 - Run / pause system
@@ -183,7 +184,7 @@ Generated from the module contracts and controller registry. See [purpose and re
 - Toggle oscillator edge
 - Edit PID gains — page only
 
-## Controls: G11 algorithm ecology
+## Controls: Combine algorithms
 
 - Step algorithm network
 - Run / pause algorithm network
@@ -196,14 +197,14 @@ Generated from the module contracts and controller registry. See [purpose and re
 - Next sandbox view
 - Edit algorithms and edges — page only
 
-## Controls: Algorithm workshop
+## Controls: Create algorithms
 
 - Create new algorithm — page only
 - Export custom rules — page only
 - Browse complete registry — page only
 - Read features and connections — page only
 
-## Controls: Modular workflow
+## Controls: Connect tools
 
 - Advance workflow tick
 - Save wiring — page only
@@ -214,6 +215,6 @@ Generated from the module contracts and controller registry. See [purpose and re
 
 ## Executable wiring
 
-Controllers → each lab command input. Each lab state → its view and metrics. Each lab evidence → export sink. G8 → G10 binary seed. G10 → optional G9 binary seed. Source editor → G9 source. G8/G9 annotations → notebook. Workshop definitions → registry → G6 and G11 libraries. Identity → shell. Reference source → reference view. Workflow state → feature map; feature map evidence → exports. Navigation snapshots → metrics. Research foundation → metrics and exports. Delayed edges deliver only on an explicit workflow tick; disabled edges stop future delivery.
+Controllers → each lab command input. Each lab state → its view and metrics. Each lab evidence → export sink. G8 → G10 binary seed. G10 → optional G9 binary seed. G8 directBinary → G9 binary input on explicit user import, without passing through G10. Source editor → G9 source. G8/G9 annotations → notebook. Workshop definitions → registry → G6 and G11 libraries. Identity → shell. Reference source → reference view. Workflow state → feature map; feature map evidence → exports. Navigation snapshots → metrics. Research foundation → metrics and exports. Delayed edges deliver only on an explicit workflow tick; disabled edges stop future delivery.
 
 G6/G11 simulated node edges are independent of website edges. Local draft controls update local settings until Apply/Compile/Save; view controls affect presentation. Each module has a dedicated page; see [the page directory](WEBSITE-PAGES.md).

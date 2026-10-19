@@ -37,7 +37,7 @@
   },
   {
     "id": "simulation",
-    "label": "G6 simulation",
+    "label": "Run connected systems",
     "actions": [
       {
         "id": "g6-toggle",
@@ -79,7 +79,7 @@
   },
   {
     "id": "g7",
-    "label": "G7 compiler",
+    "label": "Compile instructions",
     "actions": [
       {
         "id": "g7-compile",
@@ -127,7 +127,7 @@
   },
   {
     "id": "g8",
-    "label": "G8 binary kernel",
+    "label": "Run the binary engine",
     "actions": [
       {
         "id": "g8-compile",
@@ -199,8 +199,14 @@
   },
   {
     "id": "g9",
-    "label": "G9 discovery",
+    "label": "Find and test patterns",
     "actions": [
+      {
+        "id": "g9-import-kernel",
+        "label": "Use binary engine matrix",
+        "pageOnly": false,
+        "confirmationRequired": false
+      },
       {
         "id": "g9-run",
         "label": "Run discovery",
@@ -409,7 +415,7 @@
   },
   {
     "id": "composition",
-    "label": "G10 composition",
+    "label": "Control a system",
     "actions": [
       {
         "id": "g10-step",
@@ -475,7 +481,7 @@
   },
   {
     "id": "ecology",
-    "label": "G11 algorithm ecology",
+    "label": "Combine algorithms",
     "actions": [
       {
         "id": "g11-step",
@@ -541,7 +547,7 @@
   },
   {
     "id": "workshop",
-    "label": "Algorithm workshop",
+    "label": "Create algorithms",
     "actions": [
       {
         "id": "g12-new",
@@ -571,7 +577,7 @@
   },
   {
     "id": "workflow",
-    "label": "Modular workflow",
+    "label": "Connect tools",
     "actions": [
       {
         "id": "flow-tick",

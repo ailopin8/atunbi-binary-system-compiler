@@ -21,7 +21,7 @@
     },
     {
       "id": "compiler",
-      "title": "System compiler · G7",
+      "title": "Compile instructions",
       "group": "Create",
       "description": "Turn system sentences into executable instructions.",
       "selectors": [
@@ -38,7 +38,7 @@
     },
     {
       "id": "network",
-      "title": "Pattern network · G6",
+      "title": "Build connected systems",
       "group": "Simulate",
       "description": "Create environments and connect their algorithmic outputs.",
       "selectors": [
@@ -60,7 +60,7 @@
     },
     {
       "id": "layers",
-      "title": "Inside an environment",
+      "title": "Build internal layers",
       "group": "Simulate",
       "description": "Install algorithms and wire their internal layers.",
       "selectors": [
@@ -78,7 +78,7 @@
     },
     {
       "id": "relationships",
-      "title": "Environment connections",
+      "title": "Connect systems",
       "group": "Connect",
       "description": "Control how one environment affects another.",
       "selectors": [
@@ -96,7 +96,7 @@
     },
     {
       "id": "spatial",
-      "title": "3D viewer and WebXR",
+      "title": "View systems in 3D",
       "group": "Inspect",
       "description": "Observe the G6 volume, orbit the camera or enter VR.",
       "selectors": [
@@ -114,7 +114,7 @@
     },
     {
       "id": "binary",
-      "title": "Binary kernel · G8",
+      "title": "Run the binary engine",
       "group": "Simulate",
       "description": "Compile and run two 1,000-bit matrices with binary messages.",
       "selectors": [
@@ -132,7 +132,7 @@
     },
     {
       "id": "pid",
-      "title": "PID composition · G10",
+      "title": "Control a system",
       "group": "Simulate",
       "description": "Connect feedback, drivers and a bounded binary actuator.",
       "selectors": [
@@ -150,7 +150,7 @@
     },
     {
       "id": "ecology",
-      "title": "Algorithm ecology · G11",
+      "title": "Combine algorithms",
       "group": "Simulate",
       "description": "Combine built-in and custom algorithms in connected cubes.",
       "selectors": [
@@ -168,7 +168,7 @@
     },
     {
       "id": "discovery",
-      "title": "Semantic discovery · G9",
+      "title": "Find and test patterns",
       "group": "Inspect",
       "description": "Measure patterns and test explicit observer hypotheses.",
       "selectors": [
@@ -187,7 +187,7 @@
     },
     {
       "id": "experiments",
-      "title": "Controlled experiments · G6",
+      "title": "Compare system changes",
       "group": "Inspect",
       "description": "Compare the same network with selected connections removed.",
       "selectors": [
@@ -206,7 +206,7 @@
     },
     {
       "id": "metrics",
-      "title": "Live inspection · G6",
+      "title": "Inspect system state",
       "group": "Inspect",
       "description": "Read the current state of the G6 environments.",
       "selectors": [
@@ -224,7 +224,7 @@
     },
     {
       "id": "wiring",
-      "title": "Website wiring",
+      "title": "Connect tools",
       "group": "Connect",
       "description": "Connect typed module ports and inspect deliveries.",
       "selectors": [
@@ -242,7 +242,7 @@
     },
     {
       "id": "features",
-      "title": "Features and connections",
+      "title": "Explore tool connections",
       "group": "Connect",
       "description": "See what each module receives, produces and affects.",
       "selectors": [
@@ -260,7 +260,7 @@
     },
     {
       "id": "controllers",
-      "title": "Controller menu",
+      "title": "Choose an action",
       "group": "Connect",
       "description": "Operate the labs through a shared categorized action menu.",
       "selectors": [
@@ -278,7 +278,7 @@
     },
     {
       "id": "references",
-      "title": "Reference library",
+      "title": "Read references",
       "group": "Learn",
       "description": "Read the UI, accessibility, simulation and Quest references.",
       "selectors": [
@@ -297,7 +297,7 @@
     },
     {
       "id": "theory",
-      "title": "Purpose and research foundation",
+      "title": "Purpose and design",
       "group": "Learn",
       "description": "Trace the purpose hierarchy, research evidence and testable hypotheses.",
       "selectors": [

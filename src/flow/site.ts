@@ -1,3 +1,4 @@
+import {moduleName} from '../relationship-design';
 import {FlowRuntime} from './runtime';
 import type {Payload} from './runtime';
 export const siteFlow=new FlowRuntime();
@@ -7,7 +8,7 @@ const inputs=new Map<string,(payload:Payload)=>void>();
 const moduleFor=(target:string)=>target.startsWith('g7-')?'g7':target.startsWith('g8-')?'g8':target.startsWith('g9-')?'g9':target.startsWith('g10-')?'composition':target.startsWith('g11-')?'ecology':target.startsWith('g12-')?'workshop':target.startsWith('research-')?'foundation':target.startsWith('flow-')?'workflow':'g6';
 siteFlow.register({id:'controllers',label:'Controller menu',inputs:{},outputs:{g6:'command',g7:'command',g8:'command',g9:'command',composition:'command',ecology:'command',workshop:'command',foundation:'command',workflow:'command'}});
 for(const id of ['g6','g7','g8','g9','composition','ecology','workshop','foundation','workflow']) {
-  siteFlow.register({id,label:id==='composition'?'G10 composition':id.toUpperCase(),inputs:{command:'command',...(id==='g9'?{source:'source' as const,binary:'binary' as const}:{}),...(['ecology','g6'].includes(id)?{library:'snapshot' as const}:{}),...(id==='composition'?{binary:'binary' as const}:{})},outputs:{state:'snapshot',definitions:'snapshot',binary:'binary',evidence:'evidence',annotation:'annotation'},receive:(port,payload)=>{
+  siteFlow.register({id,label:moduleName(id),inputs:{command:'command',...(id==='g9'?{source:'source' as const,binary:'binary' as const}:{}),...(['ecology','g6'].includes(id)?{library:'snapshot' as const}:{}),...(id==='composition'?{binary:'binary' as const}:{})},outputs:{...(id==='g8'?{directBinary:'binary' as const}:{}),state:'snapshot',definitions:'snapshot',binary:'binary',evidence:'evidence',annotation:'annotation'},receive:(port,payload)=>{
     if(port!=='command'){latestSignals.set(id+':'+port,payload);inputs.get(id+':'+port)?.(payload);return;}
     const target=String(payload.target),handler=handlers.get(target);
     if(moduleFor(target)!==id)throw Error('This module cannot process '+target+'.');
@@ -31,7 +32,7 @@ for(const id of ['g6','g7','g8','g9','composition','ecology','workshop','foundat
 for(const id of ['g8','g9'])siteFlow.connect({id:id+'-notebook',from:id,output:'annotation',to:'notebook',input:'data',enabled:true,delayed:false});
 export function registerView(id:string,render:()=>void) {
   const view=id+'-view';
-  siteFlow.register({id:view,label:id.toUpperCase()+' view',inputs:{state:'snapshot'},outputs:{},receive:(_port,payload)=>{if(payload.module!==id)throw Error('View requires a snapshot from '+id+'.');render();}});
+  siteFlow.register({id:view,label:moduleName(view),inputs:{state:'snapshot'},outputs:{},receive:(_port,payload)=>{if(payload.module!==id)throw Error('View requires a snapshot from '+id+'.');render();}});
   siteFlow.connect({id:id+'-view',from:id,output:'state',to:view,input:'state',enabled:true,delayed:false});
 }
 export function requestControl(target:string) {
@@ -66,3 +67,5 @@ siteFlow.connect({id:'feature-inventory-exports',from:'feature-inventory',output
 
 siteFlow.register({id:'navigation',label:'Home and module pages',inputs:{},outputs:{page:'snapshot'}});
 siteFlow.connect({id:'navigation-metrics',from:'navigation',output:'page',to:'metrics',input:'data',enabled:true,delayed:false});
+
+siteFlow.connect({id:'g8-discovery',from:'g8',output:'directBinary',to:'g9',input:'binary',enabled:true,delayed:false});

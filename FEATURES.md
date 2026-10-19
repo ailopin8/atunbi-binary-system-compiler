@@ -167,7 +167,7 @@ The home page organizes 17 dedicated module pages into five purpose groups. Navi
 ## Research philosophy and purpose hierarchy
 
 - BARE v2 top purpose decomposed into P1 define, P2 generate, P3 relate, P4 observe, P5 test and P6 preserve/communicate.
-- Every page and all 90 controller actions allocated to purposes; home and page headings display their contribution.
+- Every page and all 91 controller actions allocated to purposes; home and page headings display their contribution.
 - 22 annotated research papers covering cellular automata, complexity, emergence, systems and cellular biology, morphogenesis, topology, fractality and VR.
 - Filter papers by topic; export bibliography, hypotheses and complete purpose allocations.
 - Separate established source findings, proposed design choices, implemented measurements and future research.
@@ -182,3 +182,11 @@ The home page organizes 17 dedicated module pages into five purpose groups. Navi
 - Explicit bounded/periodic boundary and binary/numeric input-adapter contracts.
 
 See [the complete research report](docs/RESEARCH-FOUNDATION.md) and [current feature inventory](docs/FEATURE-CONNECTIONS.md).
+
+### Purpose-led names and relationships
+
+- Plain action names across page navigation, module cards, architecture cells and controller categories; stable technical IDs and legacy bookmarks.
+- Forty-seven relationship contracts define inputs, outputs, purpose, expected result and required functionality check.
+- Nine-step update algorithm; read-only live contract review distinguishes observed delivery from verified behavior.
+- Direct binary engine → pattern tests import, with exact-bit/replay checks and disabled-route guards.
+- Proposed integrations document missing adapters rather than creating misleading type-only connections.

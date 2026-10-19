@@ -81,33 +81,33 @@ Acceptance: Keyboard and screen-reader checks; routing/history; controller guard
 
 | Group | Component | Inputs | Outputs |
 |---|---|---|---|
-| Interface | controllers — Controller menu | none | g6: command, g7: command, g8: command, g9: command, composition: command, ecology: command, workshop: command, foundation: command, workflow: command |
-| Engine | g6 — G6 | command: command, library: snapshot | state: snapshot, definitions: snapshot, binary: binary, evidence: evidence, annotation: annotation |
-| Engine | g7 — G7 | command: command | state: snapshot, definitions: snapshot, binary: binary, evidence: evidence, annotation: annotation |
-| Engine | g8 — G8 | command: command | state: snapshot, definitions: snapshot, binary: binary, evidence: evidence, annotation: annotation |
-| Observation | g9 — G9 | command: command, source: source, binary: binary | state: snapshot, definitions: snapshot, binary: binary, evidence: evidence, annotation: annotation |
-| Engine | composition — G10 composition | command: command, binary: binary | state: snapshot, definitions: snapshot, binary: binary, evidence: evidence, annotation: annotation |
-| Engine | ecology — ECOLOGY | command: command, library: snapshot | state: snapshot, definitions: snapshot, binary: binary, evidence: evidence, annotation: annotation |
-| Workspace | workshop — WORKSHOP | command: command | state: snapshot, definitions: snapshot, binary: binary, evidence: evidence, annotation: annotation |
-| Governance | foundation — FOUNDATION | command: command | state: snapshot, definitions: snapshot, binary: binary, evidence: evidence, annotation: annotation |
-| Workspace | workflow — WORKFLOW | command: command | state: snapshot, definitions: snapshot, binary: binary, evidence: evidence, annotation: annotation |
-| Workspace | sources — Source editors | none | source: source |
-| Observation | metrics — Metrics | data: snapshot | none |
-| Observation | notebook — Notebook | data: annotation | none |
-| Observation | exports — Exports | data: evidence | none |
-| Governance | references — References | data: snapshot | none |
-| Governance | feature-inventory — Feature and connection map | snapshot: snapshot | evidence: evidence |
-| Interface | navigation — Home and module pages | none | page: snapshot |
-| Interface | g6-view — G6 view | state: snapshot | none |
-| Interface | g7-view — G7 view | state: snapshot | none |
-| Interface | g8-view — G8 view | state: snapshot | none |
-| Interface | g9-view — G9 view | state: snapshot | none |
-| Interface | composition-view — COMPOSITION view | state: snapshot | none |
-| Interface | ecology-view — ECOLOGY view | state: snapshot | none |
-| Workspace | algorithm-registry — Algorithm registry | definitions: snapshot | library: snapshot |
-| Governance | reference-source — Reference catalogue | none | items: snapshot |
-| Interface | identity — Brand configuration | none | identity: snapshot |
-| Interface | shell — Website shell | identity: snapshot | none |
+| Interface | controllers — Choose an action | none | g6: command, g7: command, g8: command, g9: command, composition: command, ecology: command, workshop: command, foundation: command, workflow: command |
+| Engine | g6 — Build connected systems | command: command, library: snapshot | state: snapshot, definitions: snapshot, binary: binary, evidence: evidence, annotation: annotation |
+| Engine | g7 — Compile instructions | command: command | state: snapshot, definitions: snapshot, binary: binary, evidence: evidence, annotation: annotation |
+| Engine | g8 — Run the binary engine | command: command | directBinary: binary, state: snapshot, definitions: snapshot, binary: binary, evidence: evidence, annotation: annotation |
+| Observation | g9 — Find and test patterns | command: command, source: source, binary: binary | state: snapshot, definitions: snapshot, binary: binary, evidence: evidence, annotation: annotation |
+| Engine | composition — Control a system | command: command, binary: binary | state: snapshot, definitions: snapshot, binary: binary, evidence: evidence, annotation: annotation |
+| Engine | ecology — Combine algorithms | command: command, library: snapshot | state: snapshot, definitions: snapshot, binary: binary, evidence: evidence, annotation: annotation |
+| Workspace | workshop — Create algorithms | command: command | state: snapshot, definitions: snapshot, binary: binary, evidence: evidence, annotation: annotation |
+| Governance | foundation — Purpose and design | command: command | state: snapshot, definitions: snapshot, binary: binary, evidence: evidence, annotation: annotation |
+| Workspace | workflow — Connect tools | command: command | state: snapshot, definitions: snapshot, binary: binary, evidence: evidence, annotation: annotation |
+| Workspace | sources — Edit instructions | none | source: source |
+| Observation | metrics — Collect state updates | data: snapshot | none |
+| Observation | notebook — Collect observer notes | data: annotation | none |
+| Observation | exports — Download results | data: evidence | none |
+| Governance | references — Read references | data: snapshot | none |
+| Governance | feature-inventory — Explore tool connections | snapshot: snapshot | evidence: evidence |
+| Interface | navigation — Choose a page | none | page: snapshot |
+| Interface | g6-view — View: Build connected systems | state: snapshot | none |
+| Interface | g7-view — View: Compile instructions | state: snapshot | none |
+| Interface | g8-view — View: Run the binary engine | state: snapshot | none |
+| Interface | g9-view — View: Find and test patterns | state: snapshot | none |
+| Interface | composition-view — View: Control a system | state: snapshot | none |
+| Interface | ecology-view — View: Combine algorithms | state: snapshot | none |
+| Workspace | algorithm-registry — Share saved algorithms | definitions: snapshot | library: snapshot |
+| Governance | reference-source — Provide references | none | items: snapshot |
+| Interface | identity — Set the logo | none | identity: snapshot |
+| Interface | shell — Show the website | identity: snapshot | none |
 
 ## Directed interfaces
 
@@ -148,6 +148,7 @@ Acceptance: Keyboard and screen-reader checks; routing/history; controller guard
 | workflow.state → feature-inventory.snapshot | snapshot | 2 | enabled | immediate |
 | feature-inventory.evidence → exports.data | evidence | 1 | enabled | immediate |
 | navigation.page → metrics.data | snapshot | 2 | enabled | immediate |
+| g8.directBinary → g9.binary | binary | 3 | enabled | immediate |
 | g6.state → g6-view.state | snapshot | 2 | enabled | immediate |
 | g7.state → g7-view.state | snapshot | 2 | enabled | immediate |
 | g8.state → g8-view.state | snapshot | 2 | enabled | immediate |

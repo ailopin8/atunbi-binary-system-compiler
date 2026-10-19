@@ -40,7 +40,7 @@ export function createLabActions(view:ViewActions):MenuCategory[] {
       button('workspace-import','Import network JSON','import-btn',undefined,{desktopOnly:true}),
       {id:'workspace-clear',label:'Clear workspace',confirm:'Clear every G6 environment and relationship? This removes the current network.',run:()=>{view.clearWorkspace();return text('toast');}}
     ]},
-    {id:'simulation',label:'G6 simulation',description:'Run, pause and step the spatial G6 network. Controlled experiments keep the working state unchanged.',actions:[
+    {id:'simulation',label:'Run connected systems',description:'Run, pause and step the spatial G6 network. Controlled experiments keep the working state unchanged.',actions:[
       button('g6-toggle','Run / pause G6','run-btn','view-label',{available:g6Ready}),
       button('g6-step','Step G6 +1','step-btn','tick-label',{available:g6Ready}),
       button('g6-reset','Reset G6','reset-btn','toast',{confirm:'Reset all G6 algorithms to their seeded states?'}),
@@ -48,7 +48,7 @@ export function createLabActions(view:ViewActions):MenuCategory[] {
       {id:'g6-ablation',label:'Next ablation mode',run:()=>cycle('g6-ablation')},
       {id:'g6-horizon',label:'Next experiment horizon',run:()=>cycle('g6-horizon')}
     ]},
-    {id:'g7',label:'G7 compiler',description:'System-sentence compiler: independent runtime. Results are shown as text here; the spatial scene still shows G6.',actions:[
+    {id:'g7',label:'Compile instructions',description:'System-sentence compiler: independent runtime. Results are shown as text here; the spatial scene still shows G6.',actions:[
       button('g7-compile','Compile G7 source','g7-compile','g7-diagnostics'),
       button('g7-toggle','Run / pause G7','g7-run','g7-tick'),
       button('g7-step','Step G7 +1','g7-step','g7-tick'),
@@ -57,7 +57,7 @@ export function createLabActions(view:ViewActions):MenuCategory[] {
       {id:'g7-preset',label:'Next G7 preset',run:()=>{cycle('g7-preset');click('g7-compile');return text('g7-diagnostics');}},
       {id:'g7-source',label:'Edit system sentences',desktopOnly:true,run:()=>focus('g7-source')}
     ]},
-    {id:'g8',label:'G8 binary kernel',description:'Each matrix contains 1000 bits. Presets compile automatically. The spatial scene remains the G6 network.',actions:[
+    {id:'g8',label:'Run the binary engine',description:'Each matrix contains 1000 bits. Presets compile automatically. The spatial scene remains the G6 network.',actions:[
       button('g8-compile','Compile G8 source','g8-compile','g8-diagnostic'),
       button('g8-toggle','Run / pause G8','g8-run','g8-tick'),
       button('g8-step','Step G8 +1','g8-step','g8-tick'),
@@ -70,7 +70,8 @@ export function createLabActions(view:ViewActions):MenuCategory[] {
       {id:'g8-source',label:'Edit binary source',desktopOnly:true,run:()=>focus('g8-source')},
       {id:'g8-interpret',label:'Annotate G8 meaning',desktopOnly:true,run:()=>focus('g8-name')}
     ]},
-    {id:'g9',label:'G9 discovery',description:'Matched baseline and intervention, exact recurrence and numeric descriptors. Human labels stay outside the kernel.',actions:[
+    {id:'g9',label:'Find and test patterns',description:'Matched baseline and intervention, exact recurrence and numeric descriptors. Human labels stay outside the kernel.',actions:[
+      button('g9-import-kernel','Use binary engine matrix','g9-import-kernel','g9-status'),
       button('g9-run','Run discovery','g9-run','g9-status'),
       button('g9-replay','Verify exact replay','g9-replay','g9-status'),
       {id:'g9-mode',label:'Next intervention mode',run:()=>cycle('g9-mode')},
@@ -104,7 +105,7 @@ export function createLabActions(view:ViewActions):MenuCategory[] {
       button('research-export','Export research and purpose map','research-export','research-status',{desktopOnly:true}),
       {id:'references-links',label:'Open all original links',desktopOnly:true,run:()=>focus('reference-library')}
     ]},
-    {id:'composition',label:'G10 composition',description:'PID and simple equations operate a binary 1000-cell plant. The G6 spatial scene remains independent.',actions:[
+    {id:'composition',label:'Control a system',description:'PID and simple equations operate a binary 1000-cell plant. The G6 spatial scene remains independent.',actions:[
       button('g10-step','Step system +1','g10-step','g10-readout'),
       button('g10-toggle','Run / pause system','g10-run','g10-readout'),
       button('g10-reset','Reset system','g10-reset','g10-status',{confirm:'Reset G10 to the same initial matrix and clear its experiment?'}),
@@ -116,7 +117,7 @@ export function createLabActions(view:ViewActions):MenuCategory[] {
       {id:'g10-oscillator',label:'Toggle oscillator edge',run:()=>{const input=byId<HTMLInputElement>('g10-link-oscillator')!;input.checked=!input.checked;input.dispatchEvent(new Event('change',{bubbles:true}));return text('g10-status');}},
       {id:'g10-edit',label:'Edit PID gains',desktopOnly:true,run:()=>focus('g10-kp')}
     ]},
-    {id:'ecology',label:'G11 algorithm ecology',description:'Twelve algorithms, directed binary coupling, measured influence and matched trials.',actions:[
+    {id:'ecology',label:'Combine algorithms',description:'Twelve algorithms, directed binary coupling, measured influence and matched trials.',actions:[
       button('g11-step','Step algorithm network','g11-step','g11-status'),
       button('g11-run','Run / pause algorithm network','g11-run','g11-status'),
       button('g11-reset','Reset same seed','g11-reset','g11-status'),
@@ -128,13 +129,13 @@ export function createLabActions(view:ViewActions):MenuCategory[] {
       {id:'g11-view',label:'Next sandbox view',run:()=>cycle('g11-view')},
       {id:'g11-edit',label:'Edit algorithms and edges',desktopOnly:true,run:()=>focus('g11-form')}
     ]},
-    {id:'workshop',label:'Algorithm workshop',description:'Create, test and register versioned binary rules.',actions:[
+    {id:'workshop',label:'Create algorithms',description:'Create, test and register versioned binary rules.',actions:[
       button('g12-new','Create new algorithm','g12-new','g12-status',{desktopOnly:true}),
       button('g12-export','Export custom rules','g12-export','g12-status',{desktopOnly:true}),
       {id:'g12-registry',label:'Browse complete registry',desktopOnly:true,run:()=>focus('g12-registry')},
       {id:'feature-map',label:'Read features and connections',desktopOnly:true,run:()=>focus('feature-map')}
     ]},
-    {id:'workflow',label:'Modular workflow',description:'Actual website modules exchange typed signals. Disabled edges stop subsequent delivery; delayed feedback advances on explicit ticks.',actions:[
+    {id:'workflow',label:'Connect tools',description:'Actual website modules exchange typed signals. Disabled edges stop subsequent delivery; delayed feedback advances on explicit ticks.',actions:[
       button('flow-tick','Advance workflow tick','flow-tick','flow-status'),
       button('flow-save','Save wiring','flow-save','flow-status',{desktopOnly:true}),
       button('flow-load','Load saved wiring','flow-load','flow-status',{desktopOnly:true}),

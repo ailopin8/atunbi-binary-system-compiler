@@ -77,7 +77,7 @@
   "components": [
     {
       "id": "controllers",
-      "label": "Controller menu",
+      "label": "Choose an action",
       "group": "Interface",
       "inputs": {},
       "outputs": {
@@ -94,7 +94,7 @@
     },
     {
       "id": "g6",
-      "label": "G6",
+      "label": "Build connected systems",
       "group": "Engine",
       "inputs": {
         "command": "command",
@@ -110,7 +110,7 @@
     },
     {
       "id": "g7",
-      "label": "G7",
+      "label": "Compile instructions",
       "group": "Engine",
       "inputs": {
         "command": "command"
@@ -125,12 +125,13 @@
     },
     {
       "id": "g8",
-      "label": "G8",
+      "label": "Run the binary engine",
       "group": "Engine",
       "inputs": {
         "command": "command"
       },
       "outputs": {
+        "directBinary": "binary",
         "state": "snapshot",
         "definitions": "snapshot",
         "binary": "binary",
@@ -140,7 +141,7 @@
     },
     {
       "id": "g9",
-      "label": "G9",
+      "label": "Find and test patterns",
       "group": "Observation",
       "inputs": {
         "command": "command",
@@ -157,7 +158,7 @@
     },
     {
       "id": "composition",
-      "label": "G10 composition",
+      "label": "Control a system",
       "group": "Engine",
       "inputs": {
         "command": "command",
@@ -173,7 +174,7 @@
     },
     {
       "id": "ecology",
-      "label": "ECOLOGY",
+      "label": "Combine algorithms",
       "group": "Engine",
       "inputs": {
         "command": "command",
@@ -189,7 +190,7 @@
     },
     {
       "id": "workshop",
-      "label": "WORKSHOP",
+      "label": "Create algorithms",
       "group": "Workspace",
       "inputs": {
         "command": "command"
@@ -204,7 +205,7 @@
     },
     {
       "id": "foundation",
-      "label": "FOUNDATION",
+      "label": "Purpose and design",
       "group": "Governance",
       "inputs": {
         "command": "command"
@@ -219,7 +220,7 @@
     },
     {
       "id": "workflow",
-      "label": "WORKFLOW",
+      "label": "Connect tools",
       "group": "Workspace",
       "inputs": {
         "command": "command"
@@ -234,7 +235,7 @@
     },
     {
       "id": "sources",
-      "label": "Source editors",
+      "label": "Edit instructions",
       "group": "Workspace",
       "inputs": {},
       "outputs": {
@@ -243,7 +244,7 @@
     },
     {
       "id": "metrics",
-      "label": "Metrics",
+      "label": "Collect state updates",
       "group": "Observation",
       "inputs": {
         "data": "snapshot"
@@ -252,7 +253,7 @@
     },
     {
       "id": "notebook",
-      "label": "Notebook",
+      "label": "Collect observer notes",
       "group": "Observation",
       "inputs": {
         "data": "annotation"
@@ -261,7 +262,7 @@
     },
     {
       "id": "exports",
-      "label": "Exports",
+      "label": "Download results",
       "group": "Observation",
       "inputs": {
         "data": "evidence"
@@ -270,7 +271,7 @@
     },
     {
       "id": "references",
-      "label": "References",
+      "label": "Read references",
       "group": "Governance",
       "inputs": {
         "data": "snapshot"
@@ -279,7 +280,7 @@
     },
     {
       "id": "feature-inventory",
-      "label": "Feature and connection map",
+      "label": "Explore tool connections",
       "group": "Governance",
       "inputs": {
         "snapshot": "snapshot"
@@ -290,7 +291,7 @@
     },
     {
       "id": "navigation",
-      "label": "Home and module pages",
+      "label": "Choose a page",
       "group": "Interface",
       "inputs": {},
       "outputs": {
@@ -299,7 +300,7 @@
     },
     {
       "id": "g6-view",
-      "label": "G6 view",
+      "label": "View: Build connected systems",
       "group": "Interface",
       "inputs": {
         "state": "snapshot"
@@ -308,7 +309,7 @@
     },
     {
       "id": "g7-view",
-      "label": "G7 view",
+      "label": "View: Compile instructions",
       "group": "Interface",
       "inputs": {
         "state": "snapshot"
@@ -317,7 +318,7 @@
     },
     {
       "id": "g8-view",
-      "label": "G8 view",
+      "label": "View: Run the binary engine",
       "group": "Interface",
       "inputs": {
         "state": "snapshot"
@@ -326,7 +327,7 @@
     },
     {
       "id": "g9-view",
-      "label": "G9 view",
+      "label": "View: Find and test patterns",
       "group": "Interface",
       "inputs": {
         "state": "snapshot"
@@ -335,7 +336,7 @@
     },
     {
       "id": "composition-view",
-      "label": "COMPOSITION view",
+      "label": "View: Control a system",
       "group": "Interface",
       "inputs": {
         "state": "snapshot"
@@ -344,7 +345,7 @@
     },
     {
       "id": "ecology-view",
-      "label": "ECOLOGY view",
+      "label": "View: Combine algorithms",
       "group": "Interface",
       "inputs": {
         "state": "snapshot"
@@ -353,7 +354,7 @@
     },
     {
       "id": "algorithm-registry",
-      "label": "Algorithm registry",
+      "label": "Share saved algorithms",
       "group": "Workspace",
       "inputs": {
         "definitions": "snapshot"
@@ -364,7 +365,7 @@
     },
     {
       "id": "reference-source",
-      "label": "Reference catalogue",
+      "label": "Provide references",
       "group": "Governance",
       "inputs": {},
       "outputs": {
@@ -373,7 +374,7 @@
     },
     {
       "id": "identity",
-      "label": "Brand configuration",
+      "label": "Set the logo",
       "group": "Interface",
       "inputs": {},
       "outputs": {
@@ -382,7 +383,7 @@
     },
     {
       "id": "shell",
-      "label": "Website shell",
+      "label": "Show the website",
       "group": "Interface",
       "inputs": {
         "identity": "snapshot"
@@ -400,6 +401,9 @@
       "enabled": true,
       "delayed": false,
       "kind": "command",
+      "purpose": "Send a chosen action to Build connected systems.",
+      "expected": "The requested control executes only when its prerequisites and guards allow it.",
+      "verification": "Exercise the action and inspect its result; disconnect this route and confirm the action is blocked.",
       "importance": {
         "level": 3,
         "label": "required for this routed operation"
@@ -414,6 +418,9 @@
       "enabled": true,
       "delayed": false,
       "kind": "command",
+      "purpose": "Send a chosen action to Compile instructions.",
+      "expected": "The requested control executes only when its prerequisites and guards allow it.",
+      "verification": "Exercise the action and inspect its result; disconnect this route and confirm the action is blocked.",
       "importance": {
         "level": 3,
         "label": "required for this routed operation"
@@ -428,6 +435,9 @@
       "enabled": true,
       "delayed": false,
       "kind": "command",
+      "purpose": "Send a chosen action to Run the binary engine.",
+      "expected": "The requested control executes only when its prerequisites and guards allow it.",
+      "verification": "Exercise the action and inspect its result; disconnect this route and confirm the action is blocked.",
       "importance": {
         "level": 3,
         "label": "required for this routed operation"
@@ -442,6 +452,9 @@
       "enabled": true,
       "delayed": false,
       "kind": "command",
+      "purpose": "Send a chosen action to Find and test patterns.",
+      "expected": "The requested control executes only when its prerequisites and guards allow it.",
+      "verification": "Exercise the action and inspect its result; disconnect this route and confirm the action is blocked.",
       "importance": {
         "level": 3,
         "label": "required for this routed operation"
@@ -456,6 +469,9 @@
       "enabled": true,
       "delayed": false,
       "kind": "command",
+      "purpose": "Send a chosen action to Control a system.",
+      "expected": "The requested control executes only when its prerequisites and guards allow it.",
+      "verification": "Exercise the action and inspect its result; disconnect this route and confirm the action is blocked.",
       "importance": {
         "level": 3,
         "label": "required for this routed operation"
@@ -470,6 +486,9 @@
       "enabled": true,
       "delayed": false,
       "kind": "command",
+      "purpose": "Send a chosen action to Combine algorithms.",
+      "expected": "The requested control executes only when its prerequisites and guards allow it.",
+      "verification": "Exercise the action and inspect its result; disconnect this route and confirm the action is blocked.",
       "importance": {
         "level": 3,
         "label": "required for this routed operation"
@@ -484,6 +503,9 @@
       "enabled": true,
       "delayed": false,
       "kind": "command",
+      "purpose": "Send a chosen action to Create algorithms.",
+      "expected": "The requested control executes only when its prerequisites and guards allow it.",
+      "verification": "Exercise the action and inspect its result; disconnect this route and confirm the action is blocked.",
       "importance": {
         "level": 3,
         "label": "required for this routed operation"
@@ -498,6 +520,9 @@
       "enabled": true,
       "delayed": false,
       "kind": "command",
+      "purpose": "Send a chosen action to Purpose and design.",
+      "expected": "The requested control executes only when its prerequisites and guards allow it.",
+      "verification": "Exercise the action and inspect its result; disconnect this route and confirm the action is blocked.",
       "importance": {
         "level": 3,
         "label": "required for this routed operation"
@@ -512,6 +537,9 @@
       "enabled": true,
       "delayed": false,
       "kind": "command",
+      "purpose": "Send a chosen action to Connect tools.",
+      "expected": "The requested control executes only when its prerequisites and guards allow it.",
+      "verification": "Exercise the action and inspect its result; disconnect this route and confirm the action is blocked.",
       "importance": {
         "level": 3,
         "label": "required for this routed operation"
@@ -526,6 +554,9 @@
       "enabled": true,
       "delayed": false,
       "kind": "source",
+      "purpose": "Give pattern tests the same declared binary instructions as the engine.",
+      "expected": "Discovery validates and compiles the provided source before an experiment.",
+      "verification": "Valid source runs; invalid source and disconnected delivery block the experiment.",
       "importance": {
         "level": 3,
         "label": "required for this routed operation"
@@ -540,6 +571,9 @@
       "enabled": true,
       "delayed": false,
       "kind": "snapshot",
+      "purpose": "Keep the latest state update for inspection.",
+      "expected": "The shared collector stores the latest payload; this alone does not imply a cross-tool dashboard or aggregation.",
+      "verification": "Publish a state change and check the stored payload and delivery trace.",
       "importance": {
         "level": 2,
         "label": "supports state visibility or definition delivery"
@@ -554,6 +588,9 @@
       "enabled": true,
       "delayed": false,
       "kind": "evidence",
+      "purpose": "Let the user download results from Build connected systems.",
+      "expected": "An evidence payload with download=true produces a JSON file; download=false only stores a payload.",
+      "verification": "Download and parse the file; verify provenance and content, and check disconnected-export feedback.",
       "importance": {
         "level": 1,
         "label": "supports evidence or observer records"
@@ -568,6 +605,9 @@
       "enabled": true,
       "delayed": false,
       "kind": "snapshot",
+      "purpose": "Keep the latest state update for inspection.",
+      "expected": "The shared collector stores the latest payload; this alone does not imply a cross-tool dashboard or aggregation.",
+      "verification": "Publish a state change and check the stored payload and delivery trace.",
       "importance": {
         "level": 2,
         "label": "supports state visibility or definition delivery"
@@ -582,6 +622,9 @@
       "enabled": true,
       "delayed": false,
       "kind": "evidence",
+      "purpose": "Let the user download results from Compile instructions.",
+      "expected": "An evidence payload with download=true produces a JSON file; download=false only stores a payload.",
+      "verification": "Download and parse the file; verify provenance and content, and check disconnected-export feedback.",
       "importance": {
         "level": 1,
         "label": "supports evidence or observer records"
@@ -596,6 +639,9 @@
       "enabled": true,
       "delayed": false,
       "kind": "snapshot",
+      "purpose": "Keep the latest state update for inspection.",
+      "expected": "The shared collector stores the latest payload; this alone does not imply a cross-tool dashboard or aggregation.",
+      "verification": "Publish a state change and check the stored payload and delivery trace.",
       "importance": {
         "level": 2,
         "label": "supports state visibility or definition delivery"
@@ -610,6 +656,9 @@
       "enabled": true,
       "delayed": false,
       "kind": "evidence",
+      "purpose": "Let the user download results from Run the binary engine.",
+      "expected": "An evidence payload with download=true produces a JSON file; download=false only stores a payload.",
+      "verification": "Download and parse the file; verify provenance and content, and check disconnected-export feedback.",
       "importance": {
         "level": 1,
         "label": "supports evidence or observer records"
@@ -624,6 +673,9 @@
       "enabled": true,
       "delayed": false,
       "kind": "snapshot",
+      "purpose": "Keep the latest state update for inspection.",
+      "expected": "The shared collector stores the latest payload; this alone does not imply a cross-tool dashboard or aggregation.",
+      "verification": "Publish a state change and check the stored payload and delivery trace.",
       "importance": {
         "level": 2,
         "label": "supports state visibility or definition delivery"
@@ -638,6 +690,9 @@
       "enabled": true,
       "delayed": false,
       "kind": "evidence",
+      "purpose": "Let the user download results from Find and test patterns.",
+      "expected": "An evidence payload with download=true produces a JSON file; download=false only stores a payload.",
+      "verification": "Download and parse the file; verify provenance and content, and check disconnected-export feedback.",
       "importance": {
         "level": 1,
         "label": "supports evidence or observer records"
@@ -652,6 +707,9 @@
       "enabled": true,
       "delayed": false,
       "kind": "snapshot",
+      "purpose": "Keep the latest state update for inspection.",
+      "expected": "The shared collector stores the latest payload; this alone does not imply a cross-tool dashboard or aggregation.",
+      "verification": "Publish a state change and check the stored payload and delivery trace.",
       "importance": {
         "level": 2,
         "label": "supports state visibility or definition delivery"
@@ -666,6 +724,9 @@
       "enabled": true,
       "delayed": false,
       "kind": "evidence",
+      "purpose": "Let the user download results from Control a system.",
+      "expected": "An evidence payload with download=true produces a JSON file; download=false only stores a payload.",
+      "verification": "Download and parse the file; verify provenance and content, and check disconnected-export feedback.",
       "importance": {
         "level": 1,
         "label": "supports evidence or observer records"
@@ -680,6 +741,9 @@
       "enabled": true,
       "delayed": false,
       "kind": "snapshot",
+      "purpose": "Keep the latest state update for inspection.",
+      "expected": "The shared collector stores the latest payload; this alone does not imply a cross-tool dashboard or aggregation.",
+      "verification": "Publish a state change and check the stored payload and delivery trace.",
       "importance": {
         "level": 2,
         "label": "supports state visibility or definition delivery"
@@ -694,6 +758,9 @@
       "enabled": true,
       "delayed": false,
       "kind": "evidence",
+      "purpose": "Let the user download results from Combine algorithms.",
+      "expected": "An evidence payload with download=true produces a JSON file; download=false only stores a payload.",
+      "verification": "Download and parse the file; verify provenance and content, and check disconnected-export feedback.",
       "importance": {
         "level": 1,
         "label": "supports evidence or observer records"
@@ -708,6 +775,9 @@
       "enabled": true,
       "delayed": false,
       "kind": "snapshot",
+      "purpose": "Keep the latest state update for inspection.",
+      "expected": "The shared collector stores the latest payload; this alone does not imply a cross-tool dashboard or aggregation.",
+      "verification": "Publish a state change and check the stored payload and delivery trace.",
       "importance": {
         "level": 2,
         "label": "supports state visibility or definition delivery"
@@ -722,6 +792,9 @@
       "enabled": true,
       "delayed": false,
       "kind": "evidence",
+      "purpose": "Let the user download results from Create algorithms.",
+      "expected": "An evidence payload with download=true produces a JSON file; download=false only stores a payload.",
+      "verification": "Download and parse the file; verify provenance and content, and check disconnected-export feedback.",
       "importance": {
         "level": 1,
         "label": "supports evidence or observer records"
@@ -736,6 +809,9 @@
       "enabled": true,
       "delayed": false,
       "kind": "snapshot",
+      "purpose": "Keep the latest state update for inspection.",
+      "expected": "The shared collector stores the latest payload; this alone does not imply a cross-tool dashboard or aggregation.",
+      "verification": "Publish a state change and check the stored payload and delivery trace.",
       "importance": {
         "level": 2,
         "label": "supports state visibility or definition delivery"
@@ -750,6 +826,9 @@
       "enabled": true,
       "delayed": false,
       "kind": "evidence",
+      "purpose": "Let the user download results from Purpose and design.",
+      "expected": "An evidence payload with download=true produces a JSON file; download=false only stores a payload.",
+      "verification": "Download and parse the file; verify provenance and content, and check disconnected-export feedback.",
       "importance": {
         "level": 1,
         "label": "supports evidence or observer records"
@@ -764,6 +843,9 @@
       "enabled": true,
       "delayed": false,
       "kind": "snapshot",
+      "purpose": "Keep the latest state update for inspection.",
+      "expected": "The shared collector stores the latest payload; this alone does not imply a cross-tool dashboard or aggregation.",
+      "verification": "Publish a state change and check the stored payload and delivery trace.",
       "importance": {
         "level": 2,
         "label": "supports state visibility or definition delivery"
@@ -778,6 +860,9 @@
       "enabled": true,
       "delayed": false,
       "kind": "evidence",
+      "purpose": "Let the user download results from Connect tools.",
+      "expected": "An evidence payload with download=true produces a JSON file; download=false only stores a payload.",
+      "verification": "Download and parse the file; verify provenance and content, and check disconnected-export feedback.",
       "importance": {
         "level": 1,
         "label": "supports evidence or observer records"
@@ -792,6 +877,9 @@
       "enabled": true,
       "delayed": false,
       "kind": "annotation",
+      "purpose": "Collect an observer note separately from binary state.",
+      "expected": "The collector stores the latest annotation; persistence of the full note history belongs to the originating lab.",
+      "verification": "Add a note; check its delivery and the originating lab’s saved notes.",
       "importance": {
         "level": 1,
         "label": "supports evidence or observer records"
@@ -806,6 +894,9 @@
       "enabled": true,
       "delayed": false,
       "kind": "annotation",
+      "purpose": "Collect an observer note separately from binary state.",
+      "expected": "The collector stores the latest annotation; persistence of the full note history belongs to the originating lab.",
+      "verification": "Add a note; check its delivery and the originating lab’s saved notes.",
       "importance": {
         "level": 1,
         "label": "supports evidence or observer records"
@@ -820,6 +911,9 @@
       "enabled": true,
       "delayed": false,
       "kind": "binary",
+      "purpose": "Use a binary engine matrix as the starting state of the controlled system.",
+      "expected": "The controller stops, resets its engine from exactly 1000 received bits and refreshes its state.",
+      "verification": "Import a known matrix; inspect plant state and deterministic replay.",
       "importance": {
         "level": 3,
         "label": "required for this routed operation"
@@ -834,6 +928,9 @@
       "enabled": true,
       "delayed": false,
       "kind": "binary",
+      "purpose": "Use the controlled system output as a pattern-test starting state.",
+      "expected": "Received bits are cached; the user must choose workflow input before running a test.",
+      "verification": "Enable workflow input, run matched discovery and verify exact replay.",
       "importance": {
         "level": 3,
         "label": "required for this routed operation"
@@ -848,6 +945,9 @@
       "enabled": true,
       "delayed": false,
       "kind": "snapshot",
+      "purpose": "Make changed tool wiring available to the connection inventory.",
+      "expected": "A workflow snapshot refreshes the registered inventory consumer.",
+      "verification": "Change wiring and confirm the inventory reflects the change.",
       "importance": {
         "level": 2,
         "label": "supports state visibility or definition delivery"
@@ -862,6 +962,9 @@
       "enabled": true,
       "delayed": false,
       "kind": "evidence",
+      "purpose": "Let the user download results from Explore tool connections.",
+      "expected": "An evidence payload with download=true produces a JSON file; download=false only stores a payload.",
+      "verification": "Download and parse the file; verify provenance and content, and check disconnected-export feedback.",
       "importance": {
         "level": 1,
         "label": "supports evidence or observer records"
@@ -876,9 +979,29 @@
       "enabled": true,
       "delayed": false,
       "kind": "snapshot",
+      "purpose": "Keep the latest state update for inspection.",
+      "expected": "The shared collector stores the latest payload; this alone does not imply a cross-tool dashboard or aggregation.",
+      "verification": "Publish a state change and check the stored payload and delivery trace.",
       "importance": {
         "level": 2,
         "label": "supports state visibility or definition delivery"
+      }
+    },
+    {
+      "id": "g8-discovery",
+      "from": "g8",
+      "output": "directBinary",
+      "to": "g9",
+      "input": "binary",
+      "enabled": true,
+      "delayed": false,
+      "kind": "binary",
+      "purpose": "Test the current binary matrix directly, without changing it through a controller.",
+      "expected": "Pattern tests receive the exact 1000-bit matrix, with origin and tick.",
+      "verification": "Import a compiled matrix, run discovery and replay; disabling this edge must block import.",
+      "importance": {
+        "level": 3,
+        "label": "required for this routed operation"
       }
     },
     {
@@ -890,6 +1013,9 @@
       "enabled": true,
       "delayed": false,
       "kind": "snapshot",
+      "purpose": "Display the current state from Build connected systems.",
+      "expected": "The matching view redraws when a state snapshot arrives.",
+      "verification": "Change model state and check the display; disconnect and confirm display updates stop.",
       "importance": {
         "level": 2,
         "label": "supports state visibility or definition delivery"
@@ -904,6 +1030,9 @@
       "enabled": true,
       "delayed": false,
       "kind": "snapshot",
+      "purpose": "Display the current state from Compile instructions.",
+      "expected": "The matching view redraws when a state snapshot arrives.",
+      "verification": "Change model state and check the display; disconnect and confirm display updates stop.",
       "importance": {
         "level": 2,
         "label": "supports state visibility or definition delivery"
@@ -918,6 +1047,9 @@
       "enabled": true,
       "delayed": false,
       "kind": "snapshot",
+      "purpose": "Display the current state from Run the binary engine.",
+      "expected": "The matching view redraws when a state snapshot arrives.",
+      "verification": "Change model state and check the display; disconnect and confirm display updates stop.",
       "importance": {
         "level": 2,
         "label": "supports state visibility or definition delivery"
@@ -932,6 +1064,9 @@
       "enabled": true,
       "delayed": false,
       "kind": "snapshot",
+      "purpose": "Display the current state from Find and test patterns.",
+      "expected": "The matching view redraws when a state snapshot arrives.",
+      "verification": "Change model state and check the display; disconnect and confirm display updates stop.",
       "importance": {
         "level": 2,
         "label": "supports state visibility or definition delivery"
@@ -946,6 +1081,9 @@
       "enabled": true,
       "delayed": false,
       "kind": "snapshot",
+      "purpose": "Display the current state from Control a system.",
+      "expected": "The matching view redraws when a state snapshot arrives.",
+      "verification": "Change model state and check the display; disconnect and confirm display updates stop.",
       "importance": {
         "level": 2,
         "label": "supports state visibility or definition delivery"
@@ -960,6 +1098,9 @@
       "enabled": true,
       "delayed": false,
       "kind": "snapshot",
+      "purpose": "Display the current state from Combine algorithms.",
+      "expected": "The matching view redraws when a state snapshot arrives.",
+      "verification": "Change model state and check the display; disconnect and confirm display updates stop.",
       "importance": {
         "level": 2,
         "label": "supports state visibility or definition delivery"
@@ -974,6 +1115,9 @@
       "enabled": true,
       "delayed": false,
       "kind": "snapshot",
+      "purpose": "Share a validated saved algorithm with tools that can execute it.",
+      "expected": "The registry validates the definitions before publishing the library.",
+      "verification": "Create, test and save a rule; confirm both consuming tools can execute it.",
       "importance": {
         "level": 2,
         "label": "supports state visibility or definition delivery"
@@ -988,6 +1132,9 @@
       "enabled": true,
       "delayed": false,
       "kind": "snapshot",
+      "purpose": "Make saved rules available in Combine algorithms.",
+      "expected": "Validated definitions appear as selectable executable algorithms; existing runs retain embedded rules.",
+      "verification": "Install a rule, execute it, then verify saved-run replay.",
       "importance": {
         "level": 2,
         "label": "supports state visibility or definition delivery"
@@ -1002,6 +1149,9 @@
       "enabled": true,
       "delayed": false,
       "kind": "snapshot",
+      "purpose": "Make saved rules available in Build connected systems.",
+      "expected": "Validated definitions appear as selectable executable algorithms; existing runs retain embedded rules.",
+      "verification": "Install a rule, execute it, then verify saved-run replay.",
       "importance": {
         "level": 2,
         "label": "supports state visibility or definition delivery"
@@ -1016,6 +1166,9 @@
       "enabled": true,
       "delayed": false,
       "kind": "snapshot",
+      "purpose": "Provide the reference catalogue to the references collector.",
+      "expected": "The references receiver stores the catalogue snapshot and renders its reference cards.",
+      "verification": "Check catalogue delivery and that the rendered reference links open the expected resources.",
       "importance": {
         "level": 2,
         "label": "supports state visibility or definition delivery"
@@ -1030,6 +1183,9 @@
       "enabled": true,
       "delayed": false,
       "kind": "snapshot",
+      "purpose": "Show the selected project identity in the website header.",
+      "expected": "The shell receives the logo configuration and updates its identity view.",
+      "verification": "Check the rendered logo and identity delivery.",
       "importance": {
         "level": 2,
         "label": "supports state visibility or definition delivery"

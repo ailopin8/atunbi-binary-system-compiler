@@ -4,7 +4,7 @@
     {
       "id": "network",
       "module": "g6",
-      "name": "G6 pattern network and 3D / WebXR",
+      "name": "Build connected systems",
       "input": "Algorithms, layers, parameters, enabled internal and external edges",
       "process": "Synchronous spatial simulation; matched edge ablation",
       "output": "Fields, 3D scene, descriptors and experiment evidence",
@@ -13,7 +13,7 @@
     {
       "id": "g7-lab",
       "module": "g7",
-      "name": "G7 sentence compiler",
+      "name": "Compile instructions",
       "input": "Structured system sentences and coupling settings",
       "process": "Compile instructions, execute its own VM, compare coupled behavior",
       "output": "Instruction words, messages, simulation state and evidence",
@@ -22,16 +22,16 @@
     {
       "id": "g8-lab",
       "module": "g8",
-      "name": "G8 binary kernel",
+      "name": "Run the binary engine",
       "input": "Binary source, rule numbers and packet settings",
       "process": "Compile and transform two 1,000-bit matrices",
       "output": "Binary states, messages and causal comparisons",
-      "affects": "G8 view; G10 seed through g8-composition; metrics, notebook and exports"
+      "affects": "Binary view; controller seed through g8-composition; direct pattern-test seed through g8-discovery; metrics, notebook and exports"
     },
     {
       "id": "g9",
       "module": "g9",
-      "name": "G9 semantic discovery",
+      "name": "Find and test patterns",
       "input": "G8 source; optional received binary seed; intervention settings; observer notes",
       "process": "Matched experiments, exact recurrence and structural descriptors",
       "output": "Pattern evidence and explicitly labelled hypotheses",
@@ -40,7 +40,7 @@
     {
       "id": "g10-lab",
       "module": "composition",
-      "name": "G10 PID composition",
+      "name": "Control a system",
       "input": "Target, gains, seed, optional drivers and G8 seed",
       "process": "Feedback controller and bounded bit actuator",
       "output": "Binary plant, numeric registers, error comparison and replay",
@@ -49,7 +49,7 @@
     {
       "id": "g11-lab",
       "module": "ecology",
-      "name": "G11 algorithm ecology",
+      "name": "Combine algorithms",
       "input": "Built-in or custom rules, node parameters, seed and directed binary edges",
       "process": "Run separate cubes synchronously; measure per-edge counterfactuals",
       "output": "Binary matrices, influence colors, descriptors, matched comparisons and sweeps",
@@ -58,7 +58,7 @@
     {
       "id": "algorithm-workshop",
       "module": "workshop",
-      "name": "Algorithm workshop and registry",
+      "name": "Create algorithms",
       "input": "Name, purpose, category, color, three bit inputs and eight output bits",
       "process": "Validate, test 16 ticks, verify replay, save and register definitions",
       "output": "Versioned binary-rule definitions; portable JSON backup",
@@ -67,7 +67,7 @@
     {
       "id": "modular-workflow",
       "module": "workflow",
-      "name": "Website wiring",
+      "name": "Connect tools",
       "input": "Compatible module ports; enabled / delayed edges; saved or imported wiring",
       "process": "Validate contracts; route copied messages; explicitly advance delays",
       "output": "Executable edges, delivery counts, trace and wiring JSON",
@@ -76,7 +76,7 @@
     {
       "id": "controller-menu",
       "module": "controllers",
-      "name": "Controller menu and view controls",
+      "name": "Choose an action",
       "input": "Mouse, keyboard or simulated / physical XR selection",
       "process": "Check prerequisites, confirmations and available actions",
       "output": "Commands, focus changes and action feedback",
@@ -85,7 +85,7 @@
     {
       "id": "research-foundation",
       "module": "foundation",
-      "name": "Research and purpose hierarchy",
+      "name": "Purpose and design",
       "input": "Primary research, design intent and module/action registry",
       "process": "Decompose purpose and trace functions to research questions",
       "output": "Purpose hierarchy, paper library, hypotheses and allocations",
@@ -94,7 +94,7 @@
     {
       "id": "feature-map",
       "module": "feature-inventory",
-      "name": "Feature and connection map",
+      "name": "Explore tool connections",
       "input": "Module contracts, controller action registry and current executable edges",
       "process": "Group features, inspect controls, focus a module and export the inventory",
       "output": "Readable feature list and versioned connection JSON",
@@ -103,7 +103,7 @@
     {
       "id": "reference-library",
       "module": "references",
-      "name": "Reference library and identity",
+      "name": "Read references",
       "input": "Curated guidance and logo configuration",
       "process": "Present guidance, navigation and identity",
       "output": "Reference cards, source links and shell logo",
@@ -149,7 +149,7 @@
     },
     {
       "id": "simulation",
-      "label": "G6 simulation",
+      "label": "Run connected systems",
       "actions": [
         {
           "id": "g6-toggle",
@@ -191,7 +191,7 @@
     },
     {
       "id": "g7",
-      "label": "G7 compiler",
+      "label": "Compile instructions",
       "actions": [
         {
           "id": "g7-compile",
@@ -239,7 +239,7 @@
     },
     {
       "id": "g8",
-      "label": "G8 binary kernel",
+      "label": "Run the binary engine",
       "actions": [
         {
           "id": "g8-compile",
@@ -311,8 +311,14 @@
     },
     {
       "id": "g9",
-      "label": "G9 discovery",
+      "label": "Find and test patterns",
       "actions": [
+        {
+          "id": "g9-import-kernel",
+          "label": "Use binary engine matrix",
+          "pageOnly": false,
+          "confirmationRequired": false
+        },
         {
           "id": "g9-run",
           "label": "Run discovery",
@@ -521,7 +527,7 @@
     },
     {
       "id": "composition",
-      "label": "G10 composition",
+      "label": "Control a system",
       "actions": [
         {
           "id": "g10-step",
@@ -587,7 +593,7 @@
     },
     {
       "id": "ecology",
-      "label": "G11 algorithm ecology",
+      "label": "Combine algorithms",
       "actions": [
         {
           "id": "g11-step",
@@ -653,7 +659,7 @@
     },
     {
       "id": "workshop",
-      "label": "Algorithm workshop",
+      "label": "Create algorithms",
       "actions": [
         {
           "id": "g12-new",
@@ -683,7 +689,7 @@
     },
     {
       "id": "workflow",
-      "label": "Modular workflow",
+      "label": "Connect tools",
       "actions": [
         {
           "id": "flow-tick",

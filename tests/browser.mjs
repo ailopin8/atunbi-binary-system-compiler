@@ -90,7 +90,7 @@ try {
     await action('g8-source');const source=await page.locator('#g8-source').inputValue();await page.locator('#g8-source').fill('MATRIX A RULE 01011010\nA BIT (10,0,0) = 1');await action('g8-compile');assert.match(await page.locator('#g8-diagnostic').innerText(),/coordinate/);await page.locator('#g8-source').fill(source);await page.locator('#g8-source').press('Control+Enter');assert.match(await page.locator('#g8-diagnostic').innerText(),/Compiled/);
   });
   await check('G9 controller settings, all interventions, descriptors, recurrence and replay',async()=>{
-    await category('g9');await action('g9-duration');assert.equal(await page.locator('#g9-ticks').inputValue(),'48');
+    await category('g9');await action('g9-import-kernel');assert.match(await page.locator('#g9-status').innerText(),/Received/);await page.locator('#g9-workflow-seed').uncheck();await action('g9-duration');assert.equal(await page.locator('#g9-ticks').inputValue(),'48');
     await action('g9-address');await action('g9-time');assert.equal(await page.locator('#g9-address').inputValue(),'445');assert.equal(await page.locator('#g9-at').inputValue(),'1');
     await page.locator('#g9-ticks').fill('8');
     for(const mode of ['flip','uncouple','none']) {

@@ -302,22 +302,22 @@ Surveys visualization, interaction and evaluation in immersive analytics. Choose
 |---|---|---|
 | Home | P1, P6 | Orient users and make the purpose navigable. |
 | Create algorithms | P1, P2, P6 | Define, test and save new binary rules. |
-| System compiler · G7 | P1, P2 | Turn system sentences into executable instructions. |
-| Pattern network · G6 | P1, P2, P3 | Create environments and connect their algorithmic outputs. |
-| Inside an environment | P2, P3 | Install algorithms and wire their internal layers. |
-| Environment connections | P3, P5 | Control how one environment affects another. |
-| 3D viewer and WebXR | P4, P6 | Observe the G6 volume, orbit the camera or enter VR. |
-| Binary kernel · G8 | P1, P2, P3 | Compile and run two 1,000-bit matrices with binary messages. |
-| PID composition · G10 | P2, P3, P5 | Connect feedback, drivers and a bounded binary actuator. |
-| Algorithm ecology · G11 | P2, P3, P4, P5 | Combine built-in and custom algorithms in connected cubes. |
-| Semantic discovery · G9 | P4, P5, P6 | Measure patterns and test explicit observer hypotheses. |
-| Controlled experiments · G6 | P5, P6 | Compare the same network with selected connections removed. |
-| Live inspection · G6 | P4 | Read the current state of the G6 environments. |
-| Website wiring | P1, P3, P6 | Connect typed module ports and inspect deliveries. |
-| Features and connections | P1, P6 | See what each module receives, produces and affects. |
-| Controller menu | P3, P6 | Operate the labs through a shared categorized action menu. |
-| Reference library | P1, P6 | Read the UI, accessibility, simulation and Quest references. |
-| Purpose and research foundation | P1, P5, P6 | Trace the purpose hierarchy, research evidence and testable hypotheses. |
+| Compile instructions | P1, P2 | Turn system sentences into executable instructions. |
+| Build connected systems | P1, P2, P3 | Create environments and connect their algorithmic outputs. |
+| Build internal layers | P2, P3 | Install algorithms and wire their internal layers. |
+| Connect systems | P3, P5 | Control how one environment affects another. |
+| View systems in 3D | P4, P6 | Observe the G6 volume, orbit the camera or enter VR. |
+| Run the binary engine | P1, P2, P3 | Compile and run two 1,000-bit matrices with binary messages. |
+| Control a system | P2, P3, P5 | Connect feedback, drivers and a bounded binary actuator. |
+| Combine algorithms | P2, P3, P4, P5 | Combine built-in and custom algorithms in connected cubes. |
+| Find and test patterns | P4, P5, P6 | Measure patterns and test explicit observer hypotheses. |
+| Compare system changes | P5, P6 | Compare the same network with selected connections removed. |
+| Inspect system state | P4 | Read the current state of the G6 environments. |
+| Connect tools | P1, P3, P6 | Connect typed module ports and inspect deliveries. |
+| Explore tool connections | P1, P6 | See what each module receives, produces and affects. |
+| Choose an action | P3, P6 | Operate the labs through a shared categorized action menu. |
+| Read references | P1, P6 | Read the UI, accessibility, simulation and Quest references. |
+| Purpose and design | P1, P5, P6 | Trace the purpose hierarchy, research evidence and testable hypotheses. |
 
 ## Complete controller-function allocation
 
@@ -352,6 +352,7 @@ Surveys visualization, interaction and evaluation in immersive analytics. Choose
 | g8 | Next binary depth slice | P1, P2, P3 |
 | g8 | Edit binary source | P1, P2, P3 |
 | g8 | Annotate G8 meaning | P1, P2, P3 |
+| g9 | Use binary engine matrix | P4, P5 |
 | g9 | Run discovery | P4, P5 |
 | g9 | Verify exact replay | P5, P6 |
 | g9 | Next intervention mode | P4, P5 |

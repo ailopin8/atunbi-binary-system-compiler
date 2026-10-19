@@ -80,4 +80,8 @@ The framework does not claim that visual complexity proves emergence, that voxel
 
 ## Systems architecture
 
-The theory page includes a grouped, directed 2D dependency matrix, component ports, subsystem contracts, framework definitions and a stock/flow/feedback view. See [systems architecture](docs/SYSTEMS-ARCHITECTURE.md) and [exported graph](docs/systems-architecture.json). `npm run test:architecture` checks the UI against a running local development server (default port 4173). Importance colors are design ratings, not empirical influence.
+The theory page includes a grouped, directed 2D dependency matrix, component ports, subsystem contracts, framework definitions and a stock/flow/feedback view. See [systems architecture](docs/SYSTEMS-ARCHITECTURE.md) and [exported graph](docs/systems-architecture.json). `npm run test:architecture` starts a test server and checks the UI. Importance colors are design ratings, not empirical influence.
+
+## Relationship purposes and verification
+
+Pages and runtime modules use plain action names while IDs and saved links stay stable. The theory page lists every relationship’s purpose, expected receiving result, check method and live delivery evidence. Use binary engine matrix on the pattern-test page imports bits directly without passing through the controller. See [relationship contracts and the update algorithm](docs/RELATIONSHIP-PURPOSES.md). Run `npm run verify` before accepting changes; CI includes the architecture and relationship browser checks. Proposed integrations remain explicitly marked.

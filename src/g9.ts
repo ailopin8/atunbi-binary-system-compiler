@@ -1,4 +1,4 @@
-import {siteFlow,latestSignals,sourceForDiscovery,registerView,publishState,sendEvidence} from './flow/site';
+import {requestControl,siteFlow,latestSignals,sourceForDiscovery,registerView,publishState,sendEvidence} from './flow/site';
 import {compile, VM} from './g8';
 import {analyze} from './discovery.js';
 import type {ExperimentConfig} from './discovery.js';
@@ -17,7 +17,7 @@ section.innerHTML=`
 <label>Intervention <select id="g9-mode"><option value="flip">Flip one bit in first matrix</option><option value="uncouple">Disable all receiving from tick 0</option><option value="none">No intervention / reproducibility control</option></select></label>
 <label>Address <input id="g9-address" name="address" required step="1" aria-describedby="g9-address-error" type="number" min="0" max="999" value="444"></label><span id="g9-address-error" class="field-error"></span>
 <label>At tick <input id="g9-at" name="intervention-tick" required step="1" aria-describedby="g9-at-error" type="number" min="0" value="0"></label><span id="g9-at-error" class="field-error"></span>
-<label><input id="g9-workflow-seed" type="checkbox"> Use matrix from workflow</label><button id="g9-run" type="submit">Run discovery experiment</button><button id="g9-replay" type="button" disabled>Verify replay</button><button id="g9-export" type="button" disabled>Export G9 evidence</button>
+<label><input id="g9-workflow-seed" type="checkbox"> Use matrix from workflow</label><button id="g9-import-kernel" type="button">Use binary engine matrix</button><button id="g9-run" type="submit">Run discovery experiment</button><button id="g9-replay" type="button" disabled>Verify replay</button><button id="g9-export" type="button" disabled>Export G9 evidence</button>
 </form>
 <p id="g9-setup-help">Matched initial bits, rules, scheduling and duration. Flip changes one bit before the selected tick is observed; uncoupling removes receiving from the start (tick field ignored). Address = x + 10y + 100z.</p>
 <p id="g9-status" role="status">Ready to analyze the G8 compiler source.</p></div>
@@ -84,7 +84,7 @@ el('g9-experiment-form').addEventListener('submit', event => {
   const config:ExperimentConfig={ticks:Number(input('g9-ticks')),address:mode==='flip'?Number(input('g9-address')):0,tick:mode==='flip'?Number(input('g9-at')):0,mode};
   const source=sourceForDiscovery();
   const initialBits=(el('g9-workflow-seed') as HTMLInputElement).checked?String(latestSignals.get('g9:binary')?.bits||''):undefined;
-  if(initialBits!==undefined&&!/^[01]{1000}$/.test(initialBits))throw Error('Step G10 or import a matrix through composition-g9 first.');
+  if(initialBits!==undefined&&!/^[01]{1000}$/.test(initialBits))throw Error('Import a matrix from the binary engine or the controlled system first.');
   const next=analyze(VM,compile(source),config,initialBits);el('g8-source').removeAttribute('aria-invalid');result=next;publishState('g9',{ticks:result.config.ticks,patterns:result.patterns.length});
   for(const id of ['g9-replay','g9-export'])(el(id) as HTMLButtonElement).disabled=false;
   el('g9-status').textContent=`Experiment complete · ${result.patterns.length} exact patterns · ${config.ticks} matched ticks. Evidence is descriptive, not proof of meaning.`;
@@ -98,3 +98,5 @@ el('g9-save').addEventListener('click',()=>{if(!result)return;const text=input('
 el('g9-export').addEventListener('click',()=>{if(result)sendEvidence('g9','atunbi-g9-evidence.json',{...result,observerHypotheses:notes});});
 registerView('g9',render);
 renderNotes();
+
+el('g9-import-kernel').addEventListener('click',()=>{try{requestControl('g8-publish-direct');(el('g9-workflow-seed') as HTMLInputElement).checked=true;el('g9-status').textContent='Received the binary engine matrix. Run the pattern test to use it.';}catch(error){el('g9-status').textContent=(error as Error).message;}});
