@@ -131,3 +131,23 @@ Verified on 19 October 2026 using model/menu tests, desktop/mobile browser flows
 Run `npm run typecheck`, `npm test`, `npm run build` and `npm run test:browser`. The browser report is written to `test-results/feature-checks.json`; the workflow publishes that report as a GitHub Actions artifact.
 
 The spatial scene remains G6. Menu operations for G7/G8/G9 report their independent state; they do not pretend to display those kernels in the G6 volume. Text entry, file selection and downloads use the page. Native headset hand tracking, device permissions, physical controller mappings and comfort require a real headset. No claim of complete WCAG certification or scientific proof of emergence is made by automated checks.
+
+
+## G11 algorithm ecology
+
+Twelve categorized algorithms: XOR/rule 90, rule 30, majority, 3D B6/S567, diffusion, periodic shift, logistic, tent, coupled logistic, sine oscillator, local phase coupling, and Gray–Scott. Each runs in a periodic 10³ matrix with an explicit binary projection. See [research and equation contracts](docs/ALGORITHM-ECOLOGY.md).
+
+Controller menu category: **G11 algorithm ecology**.
+
+- Step algorithm network
+- Run / pause algorithm network
+- Reset same seed
+- Compare coupled / isolated
+- Verify ecology replay
+- Sweep seeds and parameters
+- Export ecology evidence — page only
+- Toggle influence colors
+- Next sandbox view
+- Edit algorithms and edges — page only
+
+The page supports one to six nodes, directed signed edges, draft editing, per-node thresholds and parameters, three-seed and nearby-parameter trials, binary descriptors, exact replay, 3D previews and exact depth slices. Color bands measure one-step edge removal effects; the outcome-only view does not change simulation state. G11 commands, state views and exports use the website's actual modular flow. G6–G10 remain available. Total menu inventory: 11 categories and 84 actions.

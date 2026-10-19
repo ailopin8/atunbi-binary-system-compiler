@@ -32,7 +32,8 @@ const targets: [string, string, string][] = [
   ['.g7', 'g7-lab', 'G7 compiler'],
   ['.g8:not(.g9)', 'g8-lab', 'G8 binary kernel'],
   ['.g9', 'g9', 'G9 discovery'],
-  ['#g10-lab', 'g10-lab', 'G10 composition']
+  ['#g10-lab', 'g10-lab', 'G10 composition'],
+  ['#g11-lab', 'g11-lab', 'G11 algorithm ecology']
 ];
 const navigation = document.createElement('nav');
 navigation.className = 'lab-navigation';

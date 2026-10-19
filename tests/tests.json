@@ -127,5 +127,31 @@
       "Export the wiring JSON and inspect the delivery trace"
     ],
     "expected": "The logo loads, binary cells remain 0/1, PID/open-loop measurements and exact replay appear, matrix transfers work through declared ports, disconnected edges stop delivery, compatible saved wiring reloads and incompatible wiring is rejected visibly."
+  },
+  {
+    "name": "G11 researched algorithm ecology",
+    "sanity": false,
+    "viewport": "desktop",
+    "covers": [
+      "12 categorized algorithms",
+      "directed binary coupling",
+      "one-step influence masks",
+      "outcome-only view",
+      "single sandbox",
+      "paired comparison",
+      "parameter and seed sweeps",
+      "exact replay",
+      "controller actions"
+    ],
+    "description": "Explore reproducible algorithm interactions without treating visual novelty as proof of emergence.",
+    "steps": [
+      "Open G11 algorithm ecology",
+      "Inspect the twelve research cards and formulas",
+      "Step the network, toggle influence colors and choose a single sandbox",
+      "Compare coupled / isolated and verify exact replay",
+      "Run seeds and parameters sweep",
+      "Edit node parameters and add a valid directed edge, then Apply and reset",
+      "Export evidence JSON"
+    ]
   }
 ]

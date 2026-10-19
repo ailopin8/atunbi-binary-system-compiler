@@ -52,3 +52,10 @@ Open **G10 composition** for PID, oscillator, logistic map, binary neighborhood 
 The logo is an image resource at `public/resources/atunbi-logo.png`. It is distributed with the source and staged through the deployment resource uploader.
 
 `node scripts/generate-menu.mjs` regenerates the menu inventory. Signal-engine and composition tests run with `npm test`; browser checks exercise all current categorized actions.
+
+
+### G11: algorithm ecology
+
+The researched 12-algorithm library adds configurable directed networks in periodic 10×10×10 matrices, measured influence colors, outcome-only and individual views, coupled/isolated comparisons, seed/parameter sweeps and exact replay. Read [ALGORITHM-ECOLOGY.md](docs/ALGORITHM-ECOLOGY.md) for formulas, primary research, GitHub references, numerical adaptations and limits. `npm test` includes 128-tick boundedness checks for every equation and exact counterfactual mask checks. The full browser suite covers all 84 controller actions.
+
+Deployment of this revision is pending: AppDeploy reported its daily deployment credit limit on 19 October 2026, resetting 20 October at 00:00 UTC. The existing live app remains available; the G11 source can be run locally with `npm ci && npm run dev`.

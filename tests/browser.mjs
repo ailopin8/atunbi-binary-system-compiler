@@ -120,6 +120,24 @@ try {
     await page.locator('#g9-workflow-seed').check();await page.locator('#g9-run').click();await page.locator('#g9-replay').click();assert.match(await page.locator('#g9-status').innerText(),/Replay PASS/);await page.locator('#g9-workflow-seed').uncheck();
     await page.locator('#g10-preset').selectOption('coupled');await page.locator('#g10-step').click();await page.locator('#g10-compare').click();await page.locator('#g10-replay').click();assert.match(await page.locator('#g10-status').innerText(),/replay PASS/);
   });
+  await check('G11 library, influence overlay, directed edges, single sandbox and replay',async()=>{
+    assert.equal(await page.locator('#g11-catalogue article').count(),12);
+    await category('ecology');await action('g11-step');assert.match(await page.locator('#g11-status').innerText(),/tick 1/);
+    const before=await page.evaluate(()=>JSON.stringify(window.__ATUNBI_G11.engine.snapshot()));
+    await action('g11-overlay');assert.equal(await page.evaluate(()=>JSON.stringify(window.__ATUNBI_G11.engine.snapshot())),before);
+    await action('g11-overlay');await action('g11-view');assert.equal(await page.locator('#g11-matrices article').count(),1);
+    await action('g11-run');await page.waitForFunction(()=>window.__ATUNBI_G11.engine.tick>1);await action('g11-run');await action('g11-reset');
+    await action('g11-compare');await action('g11-replay');assert.match(await page.locator('#g11-status').innerText(),/Exact replay verified/);
+    await action('g11-sweep');assert.match(await page.locator('#g11-status').innerText(),/Three-seed sweep/);
+    const download=page.waitForEvent('download');await action('g11-export');assert.equal((await download).suggestedFilename(),'atunbi-algorithm-ecology.json');await action('g11-edit');
+    await page.locator('#g11-seed').fill('');await page.locator('#g11-apply').click();assert.match(await page.locator('#g11-status').innerText(),/Seed must/);await page.locator('#g11-seed').fill('43');
+    await page.locator('#g11-connect').click();assert.match(await page.locator('#g11-status').innerText(),/unique pairs/);
+    await page.locator('#g11-add').click();assert.equal(await page.locator('.g11-node').count(),4);
+    await page.locator('#g11-from').selectOption('D');await page.locator('#g11-to').selectOption('A');await page.locator('#g11-connect').click();await page.locator('#g11-apply').click();
+    assert.equal(await page.evaluate(()=>window.__ATUNBI_G11.engine.states.length),4);assert.equal(await page.evaluate(()=>window.__ATUNBI_G11.engine.config.seed),43);
+    await page.getByRole('checkbox',{name:'Enable controls-ecology',exact:true}).uncheck();await action('g11-step').catch(()=>{});assert.match(await feedback(),/disconnected/);await page.getByRole('checkbox',{name:'Enable controls-ecology',exact:true}).check();
+    await page.getByRole('button',{name:'Remove D',exact:true}).click();await page.locator('#g11-apply').click();assert.equal(await page.evaluate(()=>window.__ATUNBI_G11.engine.states.length),3);
+  });
   await check('Actual workflow disconnection, delayed delivery, validation and saved wiring',async()=>{
     await page.getByRole('checkbox',{name:'Enable controls-g8',exact:true}).uncheck();await category('g8');await action('g8-step').catch(()=>{});assert.match(await feedback(),/disconnected/);
     await page.getByRole('checkbox',{name:'Enable controls-g8',exact:true}).check();await action('g8-step');

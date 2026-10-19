@@ -113,6 +113,18 @@ export function createLabActions(view:ViewActions):MenuCategory[] {
       {id:'g10-oscillator',label:'Toggle oscillator edge',run:()=>{const input=byId<HTMLInputElement>('g10-link-oscillator')!;input.checked=!input.checked;input.dispatchEvent(new Event('change',{bubbles:true}));return text('g10-status');}},
       {id:'g10-edit',label:'Edit PID gains',desktopOnly:true,run:()=>focus('g10-kp')}
     ]},
+    {id:'ecology',label:'G11 algorithm ecology',description:'Twelve algorithms, directed binary coupling, measured influence and matched trials.',actions:[
+      button('g11-step','Step algorithm network','g11-step','g11-status'),
+      button('g11-run','Run / pause algorithm network','g11-run','g11-status'),
+      button('g11-reset','Reset same seed','g11-reset','g11-status'),
+      button('g11-compare','Compare coupled / isolated','g11-compare','g11-status'),
+      button('g11-replay','Verify ecology replay','g11-replay','g11-status'),
+      button('g11-sweep','Sweep seeds and parameters','g11-sweep','g11-status'),
+      button('g11-export','Export ecology evidence','g11-export',undefined,{desktopOnly:true}),
+      {id:'g11-overlay',label:'Toggle influence colors',run:()=>{const input=byId<HTMLInputElement>('g11-influence')!;input.checked=!input.checked;input.dispatchEvent(new Event('change'));return input.checked?'Input influence shown.':'Outcome only.';}},
+      {id:'g11-view',label:'Next sandbox view',run:()=>cycle('g11-view')},
+      {id:'g11-edit',label:'Edit algorithms and edges',desktopOnly:true,run:()=>focus('g11-form')}
+    ]},
     {id:'workflow',label:'Modular workflow',description:'Actual website modules exchange typed signals. Disabled edges stop subsequent delivery; delayed feedback advances on explicit ticks.',actions:[
       button('flow-tick','Advance workflow tick','flow-tick','flow-status'),
       button('flow-save','Save wiring','flow-save','flow-status',{desktopOnly:true}),

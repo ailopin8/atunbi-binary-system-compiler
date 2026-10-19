@@ -462,6 +462,72 @@
     ]
   },
   {
+    "id": "ecology",
+    "label": "G11 algorithm ecology",
+    "actions": [
+      {
+        "id": "g11-step",
+        "label": "Step algorithm network",
+        "pageOnly": false,
+        "confirmationRequired": false
+      },
+      {
+        "id": "g11-run",
+        "label": "Run / pause algorithm network",
+        "pageOnly": false,
+        "confirmationRequired": false
+      },
+      {
+        "id": "g11-reset",
+        "label": "Reset same seed",
+        "pageOnly": false,
+        "confirmationRequired": false
+      },
+      {
+        "id": "g11-compare",
+        "label": "Compare coupled / isolated",
+        "pageOnly": false,
+        "confirmationRequired": false
+      },
+      {
+        "id": "g11-replay",
+        "label": "Verify ecology replay",
+        "pageOnly": false,
+        "confirmationRequired": false
+      },
+      {
+        "id": "g11-sweep",
+        "label": "Sweep seeds and parameters",
+        "pageOnly": false,
+        "confirmationRequired": false
+      },
+      {
+        "id": "g11-export",
+        "label": "Export ecology evidence",
+        "pageOnly": true,
+        "confirmationRequired": false
+      },
+      {
+        "id": "g11-overlay",
+        "label": "Toggle influence colors",
+        "pageOnly": false,
+        "confirmationRequired": false
+      },
+      {
+        "id": "g11-view",
+        "label": "Next sandbox view",
+        "pageOnly": false,
+        "confirmationRequired": false
+      },
+      {
+        "id": "g11-edit",
+        "label": "Edit algorithms and edges",
+        "pageOnly": true,
+        "confirmationRequired": false
+      }
+    ]
+  },
+  {
     "id": "workflow",
     "label": "Modular workflow",
     "actions": [
