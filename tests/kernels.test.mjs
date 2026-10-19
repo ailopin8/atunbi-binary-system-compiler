@@ -6,12 +6,8 @@ async function moduleFrom(source) {
   const code=ts.transpileModule(source,{compilerOptions:{target:ts.ScriptTarget.ES2022,module:ts.ModuleKind.ES2022}}).outputText;
   return import('data:text/javascript;base64,'+Buffer.from(code).toString('base64'));
 }
-let g7Source=fs.readFileSync(new URL('../src/g7.ts',import.meta.url),'utf8');
-g7Source=g7Source.slice(g7Source.indexOf('type '),g7Source.indexOf('function el<'))+'\nexport {parseSource,BinaryMachine,PRESETS,paired,encode,decode,pack,unpack};';
-const g7=await moduleFrom(g7Source);
-let g8Source=fs.readFileSync(new URL('../src/g8.ts',import.meta.url),'utf8');
-g8Source=g8Source.slice(g8Source.indexOf('type MatrixID'),g8Source.indexOf('const section=document.createElement'))+'\nexport {compile,VM,examples,experiment,enc,dec,pack,unpack};';
-const g8=await moduleFrom(g8Source);
+const g7=await moduleFrom(fs.readFileSync(new URL('../src/engines/g7.ts',import.meta.url),'utf8'));
+const g8=await moduleFrom(fs.readFileSync(new URL('../src/engines/g8.ts',import.meta.url),'utf8'));
 const {analyze}=await import('../src/discovery.js');
 const {runAblationExperiment}=await moduleFrom(fs.readFileSync(new URL('../src/emergence.ts',import.meta.url),'utf8'));
 test('G7 grammar, 24-bit instructions, packet round trips and paired controls',()=>{

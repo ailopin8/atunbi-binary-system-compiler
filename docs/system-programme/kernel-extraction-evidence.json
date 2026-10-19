@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-20",
+  "baseline": "ed6f9540ee43cf332eb1670e7826eedc8aaacec1",
+  "scope": "G7/G8 kernel extraction only; SG04 remains in progress",
+  "commands": [
+    {
+      "command": "npm run verify",
+      "exitCode": 0,
+      "modelTests": 47,
+      "mainBrowserChecks": 19,
+      "additionalSuites": [
+        "architecture",
+        "relationships",
+        "system",
+        "workbench"
+      ]
+    },
+    {
+      "command": "node scripts/check-programme.mjs",
+      "exitCode": 0
+    }
+  ],
+  "fixtures": "tests/fixtures/kernel-baseline.json",
+  "fullStateCases": 40,
+  "checks": [
+    "Headless import and execution",
+    "Coupled and uncoupled baseline states at 0,1,8,24 ticks",
+    "Independent running instances and invalid-source non-mutation",
+    "Existing browser consumer regression"
+  ]
+}

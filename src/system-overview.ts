@@ -1,4 +1,4 @@
-import {compile} from './g8';
+import {compile} from './engines/g8';
 import {siteFlow,latestSignals,requestControl} from './flow/site';
 import {moduleName} from './relationship-design';
 import {groupFor,groupOrder} from './architecture-model';

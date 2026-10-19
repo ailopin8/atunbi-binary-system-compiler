@@ -19,3 +19,8 @@ for(const match of objective.matchAll(/### (SG\d+) — .*?\n(.*?)(?=\n### SG|\n#
 }
 assert.equal(requirements.filter(r=>r.id.startsWith('DEMO')).length,7);
 console.log('PASS: all 25 subgoals, original clauses, seven mandatory demonstrations, stable requirement IDs and verified-stage artifacts accounted for. This checks record integrity, not product completion.');
+for(const r of requirements){
+ for(const field of ['function','modules','contract','verificationRoute','acceptanceChecks','applicability'])assert.ok(r[field]&&r[field].length,r.id+' missing allocation '+field);
+ if(r.status==='verified')assert.ok(r.evidence.length,r.id+' cannot be verified without evidence');
+}
+console.log('PASS: every original requirement has a function, module allocation, contract, acceptance checks and verification route; unimplemented paths remain labelled planned.');

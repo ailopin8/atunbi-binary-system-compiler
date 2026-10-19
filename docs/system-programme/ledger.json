@@ -59,7 +59,7 @@
     {
       "id": "SG03",
       "title": "Turn needs into measurable requirements",
-      "status": "in progress",
+      "status": "verified",
       "prerequisites": "SG01\u2013SG02.",
       "requirements": [
         "R03-01",
@@ -69,21 +69,23 @@
         "R03-05"
       ],
       "artifacts": [
-        "requirements.json"
+        "requirements.json",
+        "TRACEABILITY.md"
       ],
       "changedModules": [],
       "evidence": [
-        "All original SG paragraphs, deliverables, gates and seven demonstrations retained with stable IDs"
+        "All 131 original clauses and demonstrations allocated to needs, function, module owner, contract and verification route",
+        "Acceptance policy specifies exact invariants, negative paths and workload-before-latency budgeting"
       ],
       "risks": [
         "Broad clauses need finer acceptance checks and explicit module/contract/test allocation before SG03 gate"
       ],
-      "nextAction": "Complete measurable traceability and budgets without narrowing original clauses."
+      "nextAction": "Implement SG04 ownership and domain isolation; keep new product requirements unverified until their own checks pass."
     },
     {
       "id": "SG04",
       "title": "Decompose functions and choose module boundaries",
-      "status": "not started",
+      "status": "in progress",
       "prerequisites": "SG02\u2013SG03.",
       "requirements": [
         "R04-01",
@@ -92,11 +94,21 @@
         "R04-04",
         "R04-05"
       ],
-      "artifacts": [],
-      "changedModules": [],
-      "evidence": [],
-      "risks": [],
-      "nextAction": "Inspect implementation, establish baseline and specify acceptance before changes."
+      "artifacts": [
+        "ARCHITECTURE.md"
+      ],
+      "changedModules": [
+        "src/engines/g7.ts",
+        "src/engines/g8.ts"
+      ],
+      "evidence": [
+        "G7/G8 imported and executed without document/window; 40 full VM state comparisons against ed6f954 fixtures pass",
+        "Fresh npm run verify passed on 20 October 2026: 47 model tests, 19 main browser checks, architecture, relationships, system and builder suites"
+      ],
+      "risks": [
+        "G6 and remaining UI-owned state/services not yet isolated; SG04 gate not passed"
+      ],
+      "nextAction": "Extract G6 workspace state and transformations from editor.ts into an independently testable owner; preserve browser and experiment behavior."
     },
     {
       "id": "SG05",

@@ -16,7 +16,19 @@
       "verificationMethod": "Inspect every registered route and source boundary; rerun baseline tests; capture empty/populated widths; verify restoration SHA.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "inventory",
+      "modules": [
+        "scripts/audit-baseline.mjs"
+      ],
+      "contract": "route registry",
+      "verificationRoute": "node scripts/audit-baseline.mjs",
+      "acceptanceChecks": [
+        "Inspect every registered route and source boundary; rerun baseline tests; capture empty/populated widths; verify restoration SHA.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R01-02",
@@ -33,7 +45,19 @@
       "verificationMethod": "Inspect every registered route and source boundary; rerun baseline tests; capture empty/populated widths; verify restoration SHA.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "inventory",
+      "modules": [
+        "scripts/audit-baseline.mjs"
+      ],
+      "contract": "route registry",
+      "verificationRoute": "node scripts/audit-baseline.mjs",
+      "acceptanceChecks": [
+        "Inspect every registered route and source boundary; rerun baseline tests; capture empty/populated widths; verify restoration SHA.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R01-03",
@@ -50,7 +74,19 @@
       "verificationMethod": "Inspect every registered route and source boundary; rerun baseline tests; capture empty/populated widths; verify restoration SHA.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "inventory",
+      "modules": [
+        "scripts/audit-baseline.mjs"
+      ],
+      "contract": "route registry",
+      "verificationRoute": "node scripts/audit-baseline.mjs",
+      "acceptanceChecks": [
+        "Inspect every registered route and source boundary; rerun baseline tests; capture empty/populated widths; verify restoration SHA.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R01-04",
@@ -67,7 +103,19 @@
       "verificationMethod": "Inspect every registered route and source boundary; rerun baseline tests; capture empty/populated widths; verify restoration SHA.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "inventory",
+      "modules": [
+        "scripts/audit-baseline.mjs"
+      ],
+      "contract": "route registry",
+      "verificationRoute": "node scripts/audit-baseline.mjs",
+      "acceptanceChecks": [
+        "Inspect every registered route and source boundary; rerun baseline tests; capture empty/populated widths; verify restoration SHA.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R02-01",
@@ -88,7 +136,19 @@
       "verificationMethod": "Review each capability allocation against purpose and three scenario success/failure conditions; distinguish assumptions from participant evidence.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "purpose allocation",
+      "modules": [
+        "docs/system-programme/CONOPS.md"
+      ],
+      "contract": "scenario success and failure",
+      "verificationRoute": "review every route against CONOPS",
+      "acceptanceChecks": [
+        "Review each capability allocation against purpose and three scenario success/failure conditions; distinguish assumptions from participant evidence.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R02-02",
@@ -109,7 +169,19 @@
       "verificationMethod": "Review each capability allocation against purpose and three scenario success/failure conditions; distinguish assumptions from participant evidence.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "purpose allocation",
+      "modules": [
+        "docs/system-programme/CONOPS.md"
+      ],
+      "contract": "scenario success and failure",
+      "verificationRoute": "review every route against CONOPS",
+      "acceptanceChecks": [
+        "Review each capability allocation against purpose and three scenario success/failure conditions; distinguish assumptions from participant evidence.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R02-03",
@@ -130,7 +202,19 @@
       "verificationMethod": "Review each capability allocation against purpose and three scenario success/failure conditions; distinguish assumptions from participant evidence.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "purpose allocation",
+      "modules": [
+        "docs/system-programme/CONOPS.md"
+      ],
+      "contract": "scenario success and failure",
+      "verificationRoute": "review every route against CONOPS",
+      "acceptanceChecks": [
+        "Review each capability allocation against purpose and three scenario success/failure conditions; distinguish assumptions from participant evidence.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R02-04",
@@ -151,7 +235,19 @@
       "verificationMethod": "Review each capability allocation against purpose and three scenario success/failure conditions; distinguish assumptions from participant evidence.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "purpose allocation",
+      "modules": [
+        "docs/system-programme/CONOPS.md"
+      ],
+      "contract": "scenario success and failure",
+      "verificationRoute": "review every route against CONOPS",
+      "acceptanceChecks": [
+        "Review each capability allocation against purpose and three scenario success/failure conditions; distinguish assumptions from participant evidence.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R02-05",
@@ -172,7 +268,19 @@
       "verificationMethod": "Review each capability allocation against purpose and three scenario success/failure conditions; distinguish assumptions from participant evidence.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "purpose allocation",
+      "modules": [
+        "docs/system-programme/CONOPS.md"
+      ],
+      "contract": "scenario success and failure",
+      "verificationRoute": "review every route against CONOPS",
+      "acceptanceChecks": [
+        "Review each capability allocation against purpose and three scenario success/failure conditions; distinguish assumptions from participant evidence.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R03-01",
@@ -189,7 +297,19 @@
       "verificationMethod": "Audit each mandatory requirement for owner, measurable acceptance and linked verification; reject missing coverage.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "requirements management",
+      "modules": [
+        "scripts/check-programme.mjs"
+      ],
+      "contract": "original clause traceability",
+      "verificationRoute": "node scripts/check-programme.mjs",
+      "acceptanceChecks": [
+        "Audit each mandatory requirement for owner, measurable acceptance and linked verification; reject missing coverage.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R03-02",
@@ -206,7 +326,19 @@
       "verificationMethod": "Audit each mandatory requirement for owner, measurable acceptance and linked verification; reject missing coverage.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "requirements management",
+      "modules": [
+        "scripts/check-programme.mjs"
+      ],
+      "contract": "original clause traceability",
+      "verificationRoute": "node scripts/check-programme.mjs",
+      "acceptanceChecks": [
+        "Audit each mandatory requirement for owner, measurable acceptance and linked verification; reject missing coverage.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R03-03",
@@ -223,7 +355,19 @@
       "verificationMethod": "Audit each mandatory requirement for owner, measurable acceptance and linked verification; reject missing coverage.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "requirements management",
+      "modules": [
+        "scripts/check-programme.mjs"
+      ],
+      "contract": "original clause traceability",
+      "verificationRoute": "node scripts/check-programme.mjs",
+      "acceptanceChecks": [
+        "Audit each mandatory requirement for owner, measurable acceptance and linked verification; reject missing coverage.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R03-04",
@@ -240,7 +384,19 @@
       "verificationMethod": "Audit each mandatory requirement for owner, measurable acceptance and linked verification; reject missing coverage.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "requirements management",
+      "modules": [
+        "scripts/check-programme.mjs"
+      ],
+      "contract": "original clause traceability",
+      "verificationRoute": "node scripts/check-programme.mjs",
+      "acceptanceChecks": [
+        "Audit each mandatory requirement for owner, measurable acceptance and linked verification; reject missing coverage.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R03-05",
@@ -257,7 +413,19 @@
       "verificationMethod": "Audit each mandatory requirement for owner, measurable acceptance and linked verification; reject missing coverage.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "requirements management",
+      "modules": [
+        "scripts/check-programme.mjs"
+      ],
+      "contract": "original clause traceability",
+      "verificationRoute": "node scripts/check-programme.mjs",
+      "acceptanceChecks": [
+        "Audit each mandatory requirement for owner, measurable acceptance and linked verification; reject missing coverage.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R04-01",
@@ -274,7 +442,21 @@
       "verificationMethod": "Inspect ownership map and dependency direction; execute each domain module without DOM; verify replacement through interface tests.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "domain isolation",
+      "modules": [
+        "src/engines/",
+        "src/algorithms/",
+        "src/workbench/"
+      ],
+      "contract": "state ownership and replaceable domain interfaces",
+      "verificationRoute": "tests/module-boundaries.test.mjs",
+      "acceptanceChecks": [
+        "Inspect ownership map and dependency direction; execute each domain module without DOM; verify replacement through interface tests.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R04-02",
@@ -291,7 +473,21 @@
       "verificationMethod": "Inspect ownership map and dependency direction; execute each domain module without DOM; verify replacement through interface tests.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "domain isolation",
+      "modules": [
+        "src/engines/",
+        "src/algorithms/",
+        "src/workbench/"
+      ],
+      "contract": "state ownership and replaceable domain interfaces",
+      "verificationRoute": "tests/module-boundaries.test.mjs",
+      "acceptanceChecks": [
+        "Inspect ownership map and dependency direction; execute each domain module without DOM; verify replacement through interface tests.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R04-03",
@@ -308,7 +504,21 @@
       "verificationMethod": "Inspect ownership map and dependency direction; execute each domain module without DOM; verify replacement through interface tests.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "domain isolation",
+      "modules": [
+        "src/engines/",
+        "src/algorithms/",
+        "src/workbench/"
+      ],
+      "contract": "state ownership and replaceable domain interfaces",
+      "verificationRoute": "tests/module-boundaries.test.mjs",
+      "acceptanceChecks": [
+        "Inspect ownership map and dependency direction; execute each domain module without DOM; verify replacement through interface tests.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R04-04",
@@ -325,7 +535,21 @@
       "verificationMethod": "Inspect ownership map and dependency direction; execute each domain module without DOM; verify replacement through interface tests.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "domain isolation",
+      "modules": [
+        "src/engines/",
+        "src/algorithms/",
+        "src/workbench/"
+      ],
+      "contract": "state ownership and replaceable domain interfaces",
+      "verificationRoute": "tests/module-boundaries.test.mjs",
+      "acceptanceChecks": [
+        "Inspect ownership map and dependency direction; execute each domain module without DOM; verify replacement through interface tests.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R04-05",
@@ -342,7 +566,21 @@
       "verificationMethod": "Inspect ownership map and dependency direction; execute each domain module without DOM; verify replacement through interface tests.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "domain isolation",
+      "modules": [
+        "src/engines/",
+        "src/algorithms/",
+        "src/workbench/"
+      ],
+      "contract": "state ownership and replaceable domain interfaces",
+      "verificationRoute": "tests/module-boundaries.test.mjs",
+      "acceptanceChecks": [
+        "Inspect ownership map and dependency direction; execute each domain module without DOM; verify replacement through interface tests.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R05-01",
@@ -359,7 +597,19 @@
       "verificationMethod": "Schema/lifecycle tests for identity and immutable versions; select same entity across views; replay historical version after edit.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "identity and context",
+      "modules": [
+        "src/domain/ (planned)"
+      ],
+      "contract": "entity identity, revisions and lifecycle",
+      "verificationRoute": "tests/domain.test.mjs (planned)",
+      "acceptanceChecks": [
+        "Schema/lifecycle tests for identity and immutable versions; select same entity across views; replay historical version after edit.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R05-02",
@@ -376,7 +626,19 @@
       "verificationMethod": "Schema/lifecycle tests for identity and immutable versions; select same entity across views; replay historical version after edit.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "identity and context",
+      "modules": [
+        "src/domain/ (planned)"
+      ],
+      "contract": "entity identity, revisions and lifecycle",
+      "verificationRoute": "tests/domain.test.mjs (planned)",
+      "acceptanceChecks": [
+        "Schema/lifecycle tests for identity and immutable versions; select same entity across views; replay historical version after edit.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R05-03",
@@ -393,7 +655,19 @@
       "verificationMethod": "Schema/lifecycle tests for identity and immutable versions; select same entity across views; replay historical version after edit.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "identity and context",
+      "modules": [
+        "src/domain/ (planned)"
+      ],
+      "contract": "entity identity, revisions and lifecycle",
+      "verificationRoute": "tests/domain.test.mjs (planned)",
+      "acceptanceChecks": [
+        "Schema/lifecycle tests for identity and immutable versions; select same entity across views; replay historical version after edit.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R05-04",
@@ -410,7 +684,19 @@
       "verificationMethod": "Schema/lifecycle tests for identity and immutable versions; select same entity across views; replay historical version after edit.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "identity and context",
+      "modules": [
+        "src/domain/ (planned)"
+      ],
+      "contract": "entity identity, revisions and lifecycle",
+      "verificationRoute": "tests/domain.test.mjs (planned)",
+      "acceptanceChecks": [
+        "Schema/lifecycle tests for identity and immutable versions; select same entity across views; replay historical version after edit.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R05-05",
@@ -427,7 +713,19 @@
       "verificationMethod": "Schema/lifecycle tests for identity and immutable versions; select same entity across views; replay historical version after edit.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "identity and context",
+      "modules": [
+        "src/domain/ (planned)"
+      ],
+      "contract": "entity identity, revisions and lifecycle",
+      "verificationRoute": "tests/domain.test.mjs (planned)",
+      "acceptanceChecks": [
+        "Schema/lifecycle tests for identity and immutable versions; select same entity across views; replay historical version after edit.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R06-01",
@@ -444,7 +742,20 @@
       "verificationMethod": "Contract tests for valid, malformed, incompatible, duplicate and stale envelopes; adapter round trips and explicit loss checks.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "semantic exchange",
+      "modules": [
+        "src/flow/runtime.ts",
+        "src/flow/contracts.ts (planned)"
+      ],
+      "contract": "versioned envelope and adapter catalogue",
+      "verificationRoute": "tests/contracts.test.mjs (planned)",
+      "acceptanceChecks": [
+        "Contract tests for valid, malformed, incompatible, duplicate and stale envelopes; adapter round trips and explicit loss checks.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R06-02",
@@ -461,7 +772,20 @@
       "verificationMethod": "Contract tests for valid, malformed, incompatible, duplicate and stale envelopes; adapter round trips and explicit loss checks.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "semantic exchange",
+      "modules": [
+        "src/flow/runtime.ts",
+        "src/flow/contracts.ts (planned)"
+      ],
+      "contract": "versioned envelope and adapter catalogue",
+      "verificationRoute": "tests/contracts.test.mjs (planned)",
+      "acceptanceChecks": [
+        "Contract tests for valid, malformed, incompatible, duplicate and stale envelopes; adapter round trips and explicit loss checks.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R06-03",
@@ -478,7 +802,20 @@
       "verificationMethod": "Contract tests for valid, malformed, incompatible, duplicate and stale envelopes; adapter round trips and explicit loss checks.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "semantic exchange",
+      "modules": [
+        "src/flow/runtime.ts",
+        "src/flow/contracts.ts (planned)"
+      ],
+      "contract": "versioned envelope and adapter catalogue",
+      "verificationRoute": "tests/contracts.test.mjs (planned)",
+      "acceptanceChecks": [
+        "Contract tests for valid, malformed, incompatible, duplicate and stale envelopes; adapter round trips and explicit loss checks.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R06-04",
@@ -495,7 +832,20 @@
       "verificationMethod": "Contract tests for valid, malformed, incompatible, duplicate and stale envelopes; adapter round trips and explicit loss checks.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "semantic exchange",
+      "modules": [
+        "src/flow/runtime.ts",
+        "src/flow/contracts.ts (planned)"
+      ],
+      "contract": "versioned envelope and adapter catalogue",
+      "verificationRoute": "tests/contracts.test.mjs (planned)",
+      "acceptanceChecks": [
+        "Contract tests for valid, malformed, incompatible, duplicate and stale envelopes; adapter round trips and explicit loss checks.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R06-05",
@@ -512,7 +862,20 @@
       "verificationMethod": "Contract tests for valid, malformed, incompatible, duplicate and stale envelopes; adapter round trips and explicit loss checks.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "semantic exchange",
+      "modules": [
+        "src/flow/runtime.ts",
+        "src/flow/contracts.ts (planned)"
+      ],
+      "contract": "versioned envelope and adapter catalogue",
+      "verificationRoute": "tests/contracts.test.mjs (planned)",
+      "acceptanceChecks": [
+        "Contract tests for valid, malformed, incompatible, duplicate and stale envelopes; adapter round trips and explicit loss checks.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R07-01",
@@ -529,7 +892,21 @@
       "verificationMethod": "Deterministic state/history replay; clock separation, bounded queues, delayed cycles, cancellation and failure tests.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "schedule and execute",
+      "modules": [
+        "src/engines/",
+        "src/flow/runtime.ts",
+        "src/workbench/engine.ts"
+      ],
+      "contract": "clocks, staged commit, queues and cancellation",
+      "verificationRoute": "tests/kernels.test.mjs; tests/flow.test.mjs; scheduler cases planned",
+      "acceptanceChecks": [
+        "Deterministic state/history replay; clock separation, bounded queues, delayed cycles, cancellation and failure tests.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R07-02",
@@ -546,7 +923,21 @@
       "verificationMethod": "Deterministic state/history replay; clock separation, bounded queues, delayed cycles, cancellation and failure tests.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "schedule and execute",
+      "modules": [
+        "src/engines/",
+        "src/flow/runtime.ts",
+        "src/workbench/engine.ts"
+      ],
+      "contract": "clocks, staged commit, queues and cancellation",
+      "verificationRoute": "tests/kernels.test.mjs; tests/flow.test.mjs; scheduler cases planned",
+      "acceptanceChecks": [
+        "Deterministic state/history replay; clock separation, bounded queues, delayed cycles, cancellation and failure tests.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R07-03",
@@ -563,7 +954,21 @@
       "verificationMethod": "Deterministic state/history replay; clock separation, bounded queues, delayed cycles, cancellation and failure tests.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "schedule and execute",
+      "modules": [
+        "src/engines/",
+        "src/flow/runtime.ts",
+        "src/workbench/engine.ts"
+      ],
+      "contract": "clocks, staged commit, queues and cancellation",
+      "verificationRoute": "tests/kernels.test.mjs; tests/flow.test.mjs; scheduler cases planned",
+      "acceptanceChecks": [
+        "Deterministic state/history replay; clock separation, bounded queues, delayed cycles, cancellation and failure tests.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R07-04",
@@ -580,7 +985,21 @@
       "verificationMethod": "Deterministic state/history replay; clock separation, bounded queues, delayed cycles, cancellation and failure tests.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "schedule and execute",
+      "modules": [
+        "src/engines/",
+        "src/flow/runtime.ts",
+        "src/workbench/engine.ts"
+      ],
+      "contract": "clocks, staged commit, queues and cancellation",
+      "verificationRoute": "tests/kernels.test.mjs; tests/flow.test.mjs; scheduler cases planned",
+      "acceptanceChecks": [
+        "Deterministic state/history replay; clock separation, bounded queues, delayed cycles, cancellation and failure tests.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R07-05",
@@ -597,7 +1016,21 @@
       "verificationMethod": "Deterministic state/history replay; clock separation, bounded queues, delayed cycles, cancellation and failure tests.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "schedule and execute",
+      "modules": [
+        "src/engines/",
+        "src/flow/runtime.ts",
+        "src/workbench/engine.ts"
+      ],
+      "contract": "clocks, staged commit, queues and cancellation",
+      "verificationRoute": "tests/kernels.test.mjs; tests/flow.test.mjs; scheduler cases planned",
+      "acceptanceChecks": [
+        "Deterministic state/history replay; clock separation, bounded queues, delayed cycles, cancellation and failure tests.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R08-01",
@@ -614,7 +1047,19 @@
       "verificationMethod": "Decision comparison plus repository/executor contract tests for offline, revision conflict, unavailable storage and failed jobs.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "repository and executor boundary",
+      "modules": [
+        "src/services/ (planned)"
+      ],
+      "contract": "repository revisions, executor jobs, migrations",
+      "verificationRoute": "tests/services.test.mjs (planned)",
+      "acceptanceChecks": [
+        "Decision comparison plus repository/executor contract tests for offline, revision conflict, unavailable storage and failed jobs.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required. Remote-only security/job API clauses apply if a server is selected; browser service contracts and recovery remain mandatory."
     },
     {
       "id": "R08-02",
@@ -631,7 +1076,19 @@
       "verificationMethod": "Decision comparison plus repository/executor contract tests for offline, revision conflict, unavailable storage and failed jobs.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "repository and executor boundary",
+      "modules": [
+        "src/services/ (planned)"
+      ],
+      "contract": "repository revisions, executor jobs, migrations",
+      "verificationRoute": "tests/services.test.mjs (planned)",
+      "acceptanceChecks": [
+        "Decision comparison plus repository/executor contract tests for offline, revision conflict, unavailable storage and failed jobs.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required. Remote-only security/job API clauses apply if a server is selected; browser service contracts and recovery remain mandatory."
     },
     {
       "id": "R08-03",
@@ -648,7 +1105,19 @@
       "verificationMethod": "Decision comparison plus repository/executor contract tests for offline, revision conflict, unavailable storage and failed jobs.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "repository and executor boundary",
+      "modules": [
+        "src/services/ (planned)"
+      ],
+      "contract": "repository revisions, executor jobs, migrations",
+      "verificationRoute": "tests/services.test.mjs (planned)",
+      "acceptanceChecks": [
+        "Decision comparison plus repository/executor contract tests for offline, revision conflict, unavailable storage and failed jobs.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required. Remote-only security/job API clauses apply if a server is selected; browser service contracts and recovery remain mandatory."
     },
     {
       "id": "R08-04",
@@ -665,7 +1134,19 @@
       "verificationMethod": "Decision comparison plus repository/executor contract tests for offline, revision conflict, unavailable storage and failed jobs.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "repository and executor boundary",
+      "modules": [
+        "src/services/ (planned)"
+      ],
+      "contract": "repository revisions, executor jobs, migrations",
+      "verificationRoute": "tests/services.test.mjs (planned)",
+      "acceptanceChecks": [
+        "Decision comparison plus repository/executor contract tests for offline, revision conflict, unavailable storage and failed jobs.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required. Remote-only security/job API clauses apply if a server is selected; browser service contracts and recovery remain mandatory."
     },
     {
       "id": "R08-05",
@@ -682,7 +1163,19 @@
       "verificationMethod": "Decision comparison plus repository/executor contract tests for offline, revision conflict, unavailable storage and failed jobs.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "repository and executor boundary",
+      "modules": [
+        "src/services/ (planned)"
+      ],
+      "contract": "repository revisions, executor jobs, migrations",
+      "verificationRoute": "tests/services.test.mjs (planned)",
+      "acceptanceChecks": [
+        "Decision comparison plus repository/executor contract tests for offline, revision conflict, unavailable storage and failed jobs.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required. Remote-only security/job API clauses apply if a server is selected; browser service contracts and recovery remain mandatory."
     },
     {
       "id": "R09-01",
@@ -703,7 +1196,20 @@
       "verificationMethod": "Catalogue inspection and browser controls across surfaces; check labels/shapes, actual-delivery animation and equivalent accessible data.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "visual projection and intent",
+      "modules": [
+        "src/ui/ (planned)",
+        "src/styles.css"
+      ],
+      "contract": "visual state, input, command and selection",
+      "verificationRoute": "tests/visual-language-browser.mjs (planned)",
+      "acceptanceChecks": [
+        "Catalogue inspection and browser controls across surfaces; check labels/shapes, actual-delivery animation and equivalent accessible data.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R09-02",
@@ -724,7 +1230,20 @@
       "verificationMethod": "Catalogue inspection and browser controls across surfaces; check labels/shapes, actual-delivery animation and equivalent accessible data.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "visual projection and intent",
+      "modules": [
+        "src/ui/ (planned)",
+        "src/styles.css"
+      ],
+      "contract": "visual state, input, command and selection",
+      "verificationRoute": "tests/visual-language-browser.mjs (planned)",
+      "acceptanceChecks": [
+        "Catalogue inspection and browser controls across surfaces; check labels/shapes, actual-delivery animation and equivalent accessible data.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R09-03",
@@ -745,7 +1264,20 @@
       "verificationMethod": "Catalogue inspection and browser controls across surfaces; check labels/shapes, actual-delivery animation and equivalent accessible data.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "visual projection and intent",
+      "modules": [
+        "src/ui/ (planned)",
+        "src/styles.css"
+      ],
+      "contract": "visual state, input, command and selection",
+      "verificationRoute": "tests/visual-language-browser.mjs (planned)",
+      "acceptanceChecks": [
+        "Catalogue inspection and browser controls across surfaces; check labels/shapes, actual-delivery animation and equivalent accessible data.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R09-04",
@@ -766,7 +1298,20 @@
       "verificationMethod": "Catalogue inspection and browser controls across surfaces; check labels/shapes, actual-delivery animation and equivalent accessible data.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "visual projection and intent",
+      "modules": [
+        "src/ui/ (planned)",
+        "src/styles.css"
+      ],
+      "contract": "visual state, input, command and selection",
+      "verificationRoute": "tests/visual-language-browser.mjs (planned)",
+      "acceptanceChecks": [
+        "Catalogue inspection and browser controls across surfaces; check labels/shapes, actual-delivery animation and equivalent accessible data.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R09-05",
@@ -787,7 +1332,20 @@
       "verificationMethod": "Catalogue inspection and browser controls across surfaces; check labels/shapes, actual-delivery animation and equivalent accessible data.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "visual projection and intent",
+      "modules": [
+        "src/ui/ (planned)",
+        "src/styles.css"
+      ],
+      "contract": "visual state, input, command and selection",
+      "verificationRoute": "tests/visual-language-browser.mjs (planned)",
+      "acceptanceChecks": [
+        "Catalogue inspection and browser controls across surfaces; check labels/shapes, actual-delivery animation and equivalent accessible data.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R10-01",
@@ -808,7 +1366,20 @@
       "verificationMethod": "Browser navigation, Back/Forward, deep links, dirty/applied/run context retention and useful empty-state actions.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "navigate and select",
+      "modules": [
+        "src/site-pages.ts",
+        "src/domain/ (planned)"
+      ],
+      "contract": "shared context, dirty state and safe deep links",
+      "verificationRoute": "tests/context-browser.mjs (planned)",
+      "acceptanceChecks": [
+        "Browser navigation, Back/Forward, deep links, dirty/applied/run context retention and useful empty-state actions.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R10-02",
@@ -829,7 +1400,20 @@
       "verificationMethod": "Browser navigation, Back/Forward, deep links, dirty/applied/run context retention and useful empty-state actions.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "navigate and select",
+      "modules": [
+        "src/site-pages.ts",
+        "src/domain/ (planned)"
+      ],
+      "contract": "shared context, dirty state and safe deep links",
+      "verificationRoute": "tests/context-browser.mjs (planned)",
+      "acceptanceChecks": [
+        "Browser navigation, Back/Forward, deep links, dirty/applied/run context retention and useful empty-state actions.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R10-03",
@@ -850,7 +1434,20 @@
       "verificationMethod": "Browser navigation, Back/Forward, deep links, dirty/applied/run context retention and useful empty-state actions.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "navigate and select",
+      "modules": [
+        "src/site-pages.ts",
+        "src/domain/ (planned)"
+      ],
+      "contract": "shared context, dirty state and safe deep links",
+      "verificationRoute": "tests/context-browser.mjs (planned)",
+      "acceptanceChecks": [
+        "Browser navigation, Back/Forward, deep links, dirty/applied/run context retention and useful empty-state actions.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R10-04",
@@ -871,7 +1468,20 @@
       "verificationMethod": "Browser navigation, Back/Forward, deep links, dirty/applied/run context retention and useful empty-state actions.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "navigate and select",
+      "modules": [
+        "src/site-pages.ts",
+        "src/domain/ (planned)"
+      ],
+      "contract": "shared context, dirty state and safe deep links",
+      "verificationRoute": "tests/context-browser.mjs (planned)",
+      "acceptanceChecks": [
+        "Browser navigation, Back/Forward, deep links, dirty/applied/run context retention and useful empty-state actions.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R10-05",
@@ -892,7 +1502,20 @@
       "verificationMethod": "Browser navigation, Back/Forward, deep links, dirty/applied/run context retention and useful empty-state actions.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "navigate and select",
+      "modules": [
+        "src/site-pages.ts",
+        "src/domain/ (planned)"
+      ],
+      "contract": "shared context, dirty state and safe deep links",
+      "verificationRoute": "tests/context-browser.mjs (planned)",
+      "acceptanceChecks": [
+        "Browser navigation, Back/Forward, deep links, dirty/applied/run context retention and useful empty-state actions.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R11-01",
@@ -913,7 +1536,20 @@
       "verificationMethod": "Start/resume/example tests; select map dependency and blockage; complete workflow and open exact resulting evidence.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "start and resume",
+      "modules": [
+        "src/system-overview.ts",
+        "src/site-pages.ts"
+      ],
+      "contract": "workspace/run selection and workflow result",
+      "verificationRoute": "tests/system-browser.mjs; resume cases planned",
+      "acceptanceChecks": [
+        "Start/resume/example tests; select map dependency and blockage; complete workflow and open exact resulting evidence.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R11-02",
@@ -934,7 +1570,20 @@
       "verificationMethod": "Start/resume/example tests; select map dependency and blockage; complete workflow and open exact resulting evidence.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "start and resume",
+      "modules": [
+        "src/system-overview.ts",
+        "src/site-pages.ts"
+      ],
+      "contract": "workspace/run selection and workflow result",
+      "verificationRoute": "tests/system-browser.mjs; resume cases planned",
+      "acceptanceChecks": [
+        "Start/resume/example tests; select map dependency and blockage; complete workflow and open exact resulting evidence.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R11-03",
@@ -955,7 +1604,20 @@
       "verificationMethod": "Start/resume/example tests; select map dependency and blockage; complete workflow and open exact resulting evidence.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "start and resume",
+      "modules": [
+        "src/system-overview.ts",
+        "src/site-pages.ts"
+      ],
+      "contract": "workspace/run selection and workflow result",
+      "verificationRoute": "tests/system-browser.mjs; resume cases planned",
+      "acceptanceChecks": [
+        "Start/resume/example tests; select map dependency and blockage; complete workflow and open exact resulting evidence.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R11-04",
@@ -976,7 +1638,20 @@
       "verificationMethod": "Start/resume/example tests; select map dependency and blockage; complete workflow and open exact resulting evidence.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "start and resume",
+      "modules": [
+        "src/system-overview.ts",
+        "src/site-pages.ts"
+      ],
+      "contract": "workspace/run selection and workflow result",
+      "verificationRoute": "tests/system-browser.mjs; resume cases planned",
+      "acceptanceChecks": [
+        "Start/resume/example tests; select map dependency and blockage; complete workflow and open exact resulting evidence.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R11-05",
@@ -997,7 +1672,20 @@
       "verificationMethod": "Start/resume/example tests; select map dependency and blockage; complete workflow and open exact resulting evidence.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "start and resume",
+      "modules": [
+        "src/system-overview.ts",
+        "src/site-pages.ts"
+      ],
+      "contract": "workspace/run selection and workflow result",
+      "verificationRoute": "tests/system-browser.mjs; resume cases planned",
+      "acceptanceChecks": [
+        "Start/resume/example tests; select map dependency and blockage; complete workflow and open exact resulting evidence.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R12-01",
@@ -1018,7 +1706,20 @@
       "verificationMethod": "Create/test/version/install/execute/reopen custom rule; edit new version and compare unchanged historical evidence; unsupported adapter rejection.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "author and version",
+      "modules": [
+        "src/algorithm-workshop.ts",
+        "src/algorithms/library.ts"
+      ],
+      "contract": "immutable rule versions and supported adapters",
+      "verificationRoute": "tests/workshop.test.mjs; version-history cases planned",
+      "acceptanceChecks": [
+        "Create/test/version/install/execute/reopen custom rule; edit new version and compare unchanged historical evidence; unsupported adapter rejection.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R12-02",
@@ -1039,7 +1740,20 @@
       "verificationMethod": "Create/test/version/install/execute/reopen custom rule; edit new version and compare unchanged historical evidence; unsupported adapter rejection.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "author and version",
+      "modules": [
+        "src/algorithm-workshop.ts",
+        "src/algorithms/library.ts"
+      ],
+      "contract": "immutable rule versions and supported adapters",
+      "verificationRoute": "tests/workshop.test.mjs; version-history cases planned",
+      "acceptanceChecks": [
+        "Create/test/version/install/execute/reopen custom rule; edit new version and compare unchanged historical evidence; unsupported adapter rejection.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R12-03",
@@ -1060,7 +1774,20 @@
       "verificationMethod": "Create/test/version/install/execute/reopen custom rule; edit new version and compare unchanged historical evidence; unsupported adapter rejection.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "author and version",
+      "modules": [
+        "src/algorithm-workshop.ts",
+        "src/algorithms/library.ts"
+      ],
+      "contract": "immutable rule versions and supported adapters",
+      "verificationRoute": "tests/workshop.test.mjs; version-history cases planned",
+      "acceptanceChecks": [
+        "Create/test/version/install/execute/reopen custom rule; edit new version and compare unchanged historical evidence; unsupported adapter rejection.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R12-04",
@@ -1081,7 +1808,20 @@
       "verificationMethod": "Create/test/version/install/execute/reopen custom rule; edit new version and compare unchanged historical evidence; unsupported adapter rejection.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "author and version",
+      "modules": [
+        "src/algorithm-workshop.ts",
+        "src/algorithms/library.ts"
+      ],
+      "contract": "immutable rule versions and supported adapters",
+      "verificationRoute": "tests/workshop.test.mjs; version-history cases planned",
+      "acceptanceChecks": [
+        "Create/test/version/install/execute/reopen custom rule; edit new version and compare unchanged historical evidence; unsupported adapter rejection.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R12-05",
@@ -1102,7 +1842,20 @@
       "verificationMethod": "Create/test/version/install/execute/reopen custom rule; edit new version and compare unchanged historical evidence; unsupported adapter rejection.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "author and version",
+      "modules": [
+        "src/algorithm-workshop.ts",
+        "src/algorithms/library.ts"
+      ],
+      "contract": "immutable rule versions and supported adapters",
+      "verificationRoute": "tests/workshop.test.mjs; version-history cases planned",
+      "acceptanceChecks": [
+        "Create/test/version/install/execute/reopen custom rule; edit new version and compare unchanged historical evidence; unsupported adapter rejection.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R13-01",
@@ -1123,7 +1876,19 @@
       "verificationMethod": "Build/package/two-instance behavior test, incompatible link atomicity, named ports, nested bounds, undo/redo and keyboard/touch alternatives.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "compose and package",
+      "modules": [
+        "src/workbench/"
+      ],
+      "contract": "versioned graph boundaries, instances and editing history",
+      "verificationRoute": "tests/workbench.test.mjs; tests/workbench-browser.mjs; registry/redo cases planned",
+      "acceptanceChecks": [
+        "Build/package/two-instance behavior test, incompatible link atomicity, named ports, nested bounds, undo/redo and keyboard/touch alternatives.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R13-02",
@@ -1144,7 +1909,19 @@
       "verificationMethod": "Build/package/two-instance behavior test, incompatible link atomicity, named ports, nested bounds, undo/redo and keyboard/touch alternatives.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "compose and package",
+      "modules": [
+        "src/workbench/"
+      ],
+      "contract": "versioned graph boundaries, instances and editing history",
+      "verificationRoute": "tests/workbench.test.mjs; tests/workbench-browser.mjs; registry/redo cases planned",
+      "acceptanceChecks": [
+        "Build/package/two-instance behavior test, incompatible link atomicity, named ports, nested bounds, undo/redo and keyboard/touch alternatives.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R13-03",
@@ -1165,7 +1942,19 @@
       "verificationMethod": "Build/package/two-instance behavior test, incompatible link atomicity, named ports, nested bounds, undo/redo and keyboard/touch alternatives.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "compose and package",
+      "modules": [
+        "src/workbench/"
+      ],
+      "contract": "versioned graph boundaries, instances and editing history",
+      "verificationRoute": "tests/workbench.test.mjs; tests/workbench-browser.mjs; registry/redo cases planned",
+      "acceptanceChecks": [
+        "Build/package/two-instance behavior test, incompatible link atomicity, named ports, nested bounds, undo/redo and keyboard/touch alternatives.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R13-04",
@@ -1186,7 +1975,19 @@
       "verificationMethod": "Build/package/two-instance behavior test, incompatible link atomicity, named ports, nested bounds, undo/redo and keyboard/touch alternatives.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "compose and package",
+      "modules": [
+        "src/workbench/"
+      ],
+      "contract": "versioned graph boundaries, instances and editing history",
+      "verificationRoute": "tests/workbench.test.mjs; tests/workbench-browser.mjs; registry/redo cases planned",
+      "acceptanceChecks": [
+        "Build/package/two-instance behavior test, incompatible link atomicity, named ports, nested bounds, undo/redo and keyboard/touch alternatives.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R13-05",
@@ -1207,7 +2008,19 @@
       "verificationMethod": "Build/package/two-instance behavior test, incompatible link atomicity, named ports, nested bounds, undo/redo and keyboard/touch alternatives.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "compose and package",
+      "modules": [
+        "src/workbench/"
+      ],
+      "contract": "versioned graph boundaries, instances and editing history",
+      "verificationRoute": "tests/workbench.test.mjs; tests/workbench-browser.mjs; registry/redo cases planned",
+      "acceptanceChecks": [
+        "Build/package/two-instance behavior test, incompatible link atomicity, named ports, nested bounds, undo/redo and keyboard/touch alternatives.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R14-01",
@@ -1228,7 +2041,20 @@
       "verificationMethod": "Edit selected G6 environment/edge and assert matching layer, relationship, spatial and metric state updates.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "edit environment and relationships",
+      "modules": [
+        "src/editor.ts",
+        "src/engines/g6.ts (planned)"
+      ],
+      "contract": "one G6 workspace and shared selection",
+      "verificationRoute": "tests/g6-selection-browser.mjs (planned)",
+      "acceptanceChecks": [
+        "Edit selected G6 environment/edge and assert matching layer, relationship, spatial and metric state updates.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R14-02",
@@ -1249,7 +2075,20 @@
       "verificationMethod": "Edit selected G6 environment/edge and assert matching layer, relationship, spatial and metric state updates.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "edit environment and relationships",
+      "modules": [
+        "src/editor.ts",
+        "src/engines/g6.ts (planned)"
+      ],
+      "contract": "one G6 workspace and shared selection",
+      "verificationRoute": "tests/g6-selection-browser.mjs (planned)",
+      "acceptanceChecks": [
+        "Edit selected G6 environment/edge and assert matching layer, relationship, spatial and metric state updates.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R14-03",
@@ -1270,7 +2109,20 @@
       "verificationMethod": "Edit selected G6 environment/edge and assert matching layer, relationship, spatial and metric state updates.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "edit environment and relationships",
+      "modules": [
+        "src/editor.ts",
+        "src/engines/g6.ts (planned)"
+      ],
+      "contract": "one G6 workspace and shared selection",
+      "verificationRoute": "tests/g6-selection-browser.mjs (planned)",
+      "acceptanceChecks": [
+        "Edit selected G6 environment/edge and assert matching layer, relationship, spatial and metric state updates.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R14-04",
@@ -1291,7 +2143,20 @@
       "verificationMethod": "Edit selected G6 environment/edge and assert matching layer, relationship, spatial and metric state updates.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "edit environment and relationships",
+      "modules": [
+        "src/editor.ts",
+        "src/engines/g6.ts (planned)"
+      ],
+      "contract": "one G6 workspace and shared selection",
+      "verificationRoute": "tests/g6-selection-browser.mjs (planned)",
+      "acceptanceChecks": [
+        "Edit selected G6 environment/edge and assert matching layer, relationship, spatial and metric state updates.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R14-05",
@@ -1312,7 +2177,20 @@
       "verificationMethod": "Edit selected G6 environment/edge and assert matching layer, relationship, spatial and metric state updates.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "edit environment and relationships",
+      "modules": [
+        "src/editor.ts",
+        "src/engines/g6.ts (planned)"
+      ],
+      "contract": "one G6 workspace and shared selection",
+      "verificationRoute": "tests/g6-selection-browser.mjs (planned)",
+      "acceptanceChecks": [
+        "Edit selected G6 environment/edge and assert matching layer, relationship, spatial and metric state updates.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R15-01",
@@ -1333,7 +2211,22 @@
       "verificationMethod": "Compile valid/invalid source, compare prior run policy, step matrices/messages, inspect draft/applied revision and attributed output.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "compile and execute binary",
+      "modules": [
+        "src/engines/g7.ts",
+        "src/engines/g8.ts",
+        "src/g7.ts",
+        "src/g8.ts"
+      ],
+      "contract": "draft versus applied program, snapshots and seeds",
+      "verificationRoute": "tests/kernels.test.mjs; provenance cases planned",
+      "acceptanceChecks": [
+        "Compile valid/invalid source, compare prior run policy, step matrices/messages, inspect draft/applied revision and attributed output.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R15-02",
@@ -1354,7 +2247,22 @@
       "verificationMethod": "Compile valid/invalid source, compare prior run policy, step matrices/messages, inspect draft/applied revision and attributed output.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "compile and execute binary",
+      "modules": [
+        "src/engines/g7.ts",
+        "src/engines/g8.ts",
+        "src/g7.ts",
+        "src/g8.ts"
+      ],
+      "contract": "draft versus applied program, snapshots and seeds",
+      "verificationRoute": "tests/kernels.test.mjs; provenance cases planned",
+      "acceptanceChecks": [
+        "Compile valid/invalid source, compare prior run policy, step matrices/messages, inspect draft/applied revision and attributed output.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R15-03",
@@ -1375,7 +2283,22 @@
       "verificationMethod": "Compile valid/invalid source, compare prior run policy, step matrices/messages, inspect draft/applied revision and attributed output.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "compile and execute binary",
+      "modules": [
+        "src/engines/g7.ts",
+        "src/engines/g8.ts",
+        "src/g7.ts",
+        "src/g8.ts"
+      ],
+      "contract": "draft versus applied program, snapshots and seeds",
+      "verificationRoute": "tests/kernels.test.mjs; provenance cases planned",
+      "acceptanceChecks": [
+        "Compile valid/invalid source, compare prior run policy, step matrices/messages, inspect draft/applied revision and attributed output.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R15-04",
@@ -1396,7 +2319,22 @@
       "verificationMethod": "Compile valid/invalid source, compare prior run policy, step matrices/messages, inspect draft/applied revision and attributed output.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "compile and execute binary",
+      "modules": [
+        "src/engines/g7.ts",
+        "src/engines/g8.ts",
+        "src/g7.ts",
+        "src/g8.ts"
+      ],
+      "contract": "draft versus applied program, snapshots and seeds",
+      "verificationRoute": "tests/kernels.test.mjs; provenance cases planned",
+      "acceptanceChecks": [
+        "Compile valid/invalid source, compare prior run policy, step matrices/messages, inspect draft/applied revision and attributed output.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R15-05",
@@ -1417,7 +2355,22 @@
       "verificationMethod": "Compile valid/invalid source, compare prior run policy, step matrices/messages, inspect draft/applied revision and attributed output.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "compile and execute binary",
+      "modules": [
+        "src/engines/g7.ts",
+        "src/engines/g8.ts",
+        "src/g7.ts",
+        "src/g8.ts"
+      ],
+      "contract": "draft versus applied program, snapshots and seeds",
+      "verificationRoute": "tests/kernels.test.mjs; provenance cases planned",
+      "acceptanceChecks": [
+        "Compile valid/invalid source, compare prior run policy, step matrices/messages, inspect draft/applied revision and attributed output.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R16-01",
@@ -1438,7 +2391,20 @@
       "verificationMethod": "Matched open-loop/closed-loop initial state; independently reconcile displayed error/action/saturation; gain change and lineage tests.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "control and measure",
+      "modules": [
+        "src/algorithms/composition.ts",
+        "src/composition-lab.ts"
+      ],
+      "contract": "PID numeric registers, actuator, seed lineage",
+      "verificationRoute": "tests/composition.test.mjs; loop-visual cases planned",
+      "acceptanceChecks": [
+        "Matched open-loop/closed-loop initial state; independently reconcile displayed error/action/saturation; gain change and lineage tests.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R16-02",
@@ -1459,7 +2425,20 @@
       "verificationMethod": "Matched open-loop/closed-loop initial state; independently reconcile displayed error/action/saturation; gain change and lineage tests.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "control and measure",
+      "modules": [
+        "src/algorithms/composition.ts",
+        "src/composition-lab.ts"
+      ],
+      "contract": "PID numeric registers, actuator, seed lineage",
+      "verificationRoute": "tests/composition.test.mjs; loop-visual cases planned",
+      "acceptanceChecks": [
+        "Matched open-loop/closed-loop initial state; independently reconcile displayed error/action/saturation; gain change and lineage tests.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R16-03",
@@ -1480,7 +2459,20 @@
       "verificationMethod": "Matched open-loop/closed-loop initial state; independently reconcile displayed error/action/saturation; gain change and lineage tests.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "control and measure",
+      "modules": [
+        "src/algorithms/composition.ts",
+        "src/composition-lab.ts"
+      ],
+      "contract": "PID numeric registers, actuator, seed lineage",
+      "verificationRoute": "tests/composition.test.mjs; loop-visual cases planned",
+      "acceptanceChecks": [
+        "Matched open-loop/closed-loop initial state; independently reconcile displayed error/action/saturation; gain change and lineage tests.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R16-04",
@@ -1501,7 +2493,20 @@
       "verificationMethod": "Matched open-loop/closed-loop initial state; independently reconcile displayed error/action/saturation; gain change and lineage tests.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "control and measure",
+      "modules": [
+        "src/algorithms/composition.ts",
+        "src/composition-lab.ts"
+      ],
+      "contract": "PID numeric registers, actuator, seed lineage",
+      "verificationRoute": "tests/composition.test.mjs; loop-visual cases planned",
+      "acceptanceChecks": [
+        "Matched open-loop/closed-loop initial state; independently reconcile displayed error/action/saturation; gain change and lineage tests.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R16-05",
@@ -1522,7 +2527,20 @@
       "verificationMethod": "Matched open-loop/closed-loop initial state; independently reconcile displayed error/action/saturation; gain change and lineage tests.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "control and measure",
+      "modules": [
+        "src/algorithms/composition.ts",
+        "src/composition-lab.ts"
+      ],
+      "contract": "PID numeric registers, actuator, seed lineage",
+      "verificationRoute": "tests/composition.test.mjs; loop-visual cases planned",
+      "acceptanceChecks": [
+        "Matched open-loop/closed-loop initial state; independently reconcile displayed error/action/saturation; gain change and lineage tests.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R17-01",
@@ -1543,7 +2561,20 @@
       "verificationMethod": "Select G11 edge, reconcile prior-tick input and actual output difference; repeat seeds/versions; compare isolated runs and parameter sweeps.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "compose algorithms and compare",
+      "modules": [
+        "src/algorithms/library.ts",
+        "src/library-lab.ts"
+      ],
+      "contract": "previous-tick coupling, projection and measured effect",
+      "verificationRoute": "tests/library.test.mjs; edge-inspector cases planned",
+      "acceptanceChecks": [
+        "Select G11 edge, reconcile prior-tick input and actual output difference; repeat seeds/versions; compare isolated runs and parameter sweeps.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R17-02",
@@ -1564,7 +2595,20 @@
       "verificationMethod": "Select G11 edge, reconcile prior-tick input and actual output difference; repeat seeds/versions; compare isolated runs and parameter sweeps.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "compose algorithms and compare",
+      "modules": [
+        "src/algorithms/library.ts",
+        "src/library-lab.ts"
+      ],
+      "contract": "previous-tick coupling, projection and measured effect",
+      "verificationRoute": "tests/library.test.mjs; edge-inspector cases planned",
+      "acceptanceChecks": [
+        "Select G11 edge, reconcile prior-tick input and actual output difference; repeat seeds/versions; compare isolated runs and parameter sweeps.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R17-03",
@@ -1585,7 +2629,20 @@
       "verificationMethod": "Select G11 edge, reconcile prior-tick input and actual output difference; repeat seeds/versions; compare isolated runs and parameter sweeps.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "compose algorithms and compare",
+      "modules": [
+        "src/algorithms/library.ts",
+        "src/library-lab.ts"
+      ],
+      "contract": "previous-tick coupling, projection and measured effect",
+      "verificationRoute": "tests/library.test.mjs; edge-inspector cases planned",
+      "acceptanceChecks": [
+        "Select G11 edge, reconcile prior-tick input and actual output difference; repeat seeds/versions; compare isolated runs and parameter sweeps.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R17-04",
@@ -1606,7 +2663,20 @@
       "verificationMethod": "Select G11 edge, reconcile prior-tick input and actual output difference; repeat seeds/versions; compare isolated runs and parameter sweeps.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "compose algorithms and compare",
+      "modules": [
+        "src/algorithms/library.ts",
+        "src/library-lab.ts"
+      ],
+      "contract": "previous-tick coupling, projection and measured effect",
+      "verificationRoute": "tests/library.test.mjs; edge-inspector cases planned",
+      "acceptanceChecks": [
+        "Select G11 edge, reconcile prior-tick input and actual output difference; repeat seeds/versions; compare isolated runs and parameter sweeps.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R17-05",
@@ -1627,7 +2697,20 @@
       "verificationMethod": "Select G11 edge, reconcile prior-tick input and actual output difference; repeat seeds/versions; compare isolated runs and parameter sweeps.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "compose algorithms and compare",
+      "modules": [
+        "src/algorithms/library.ts",
+        "src/library-lab.ts"
+      ],
+      "contract": "previous-tick coupling, projection and measured effect",
+      "verificationRoute": "tests/library.test.mjs; edge-inspector cases planned",
+      "acceptanceChecks": [
+        "Select G11 edge, reconcile prior-tick input and actual output difference; repeat seeds/versions; compare isolated runs and parameter sweeps.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R18-01",
@@ -1648,7 +2731,20 @@
       "verificationMethod": "Cross-view snapshot/selection equality; camera/color/slice non-mutation test; reject unsupported observation adapter.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "observe and select",
+      "modules": [
+        "src/observation/ (planned)",
+        "src/editor.ts"
+      ],
+      "contract": "engine-specific snapshot projection and shared selection",
+      "verificationRoute": "tests/observation.test.mjs (planned)",
+      "acceptanceChecks": [
+        "Cross-view snapshot/selection equality; camera/color/slice non-mutation test; reject unsupported observation adapter.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R18-02",
@@ -1669,7 +2765,20 @@
       "verificationMethod": "Cross-view snapshot/selection equality; camera/color/slice non-mutation test; reject unsupported observation adapter.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "observe and select",
+      "modules": [
+        "src/observation/ (planned)",
+        "src/editor.ts"
+      ],
+      "contract": "engine-specific snapshot projection and shared selection",
+      "verificationRoute": "tests/observation.test.mjs (planned)",
+      "acceptanceChecks": [
+        "Cross-view snapshot/selection equality; camera/color/slice non-mutation test; reject unsupported observation adapter.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R18-03",
@@ -1690,7 +2799,20 @@
       "verificationMethod": "Cross-view snapshot/selection equality; camera/color/slice non-mutation test; reject unsupported observation adapter.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "observe and select",
+      "modules": [
+        "src/observation/ (planned)",
+        "src/editor.ts"
+      ],
+      "contract": "engine-specific snapshot projection and shared selection",
+      "verificationRoute": "tests/observation.test.mjs (planned)",
+      "acceptanceChecks": [
+        "Cross-view snapshot/selection equality; camera/color/slice non-mutation test; reject unsupported observation adapter.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R18-04",
@@ -1711,7 +2833,20 @@
       "verificationMethod": "Cross-view snapshot/selection equality; camera/color/slice non-mutation test; reject unsupported observation adapter.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "observe and select",
+      "modules": [
+        "src/observation/ (planned)",
+        "src/editor.ts"
+      ],
+      "contract": "engine-specific snapshot projection and shared selection",
+      "verificationRoute": "tests/observation.test.mjs (planned)",
+      "acceptanceChecks": [
+        "Cross-view snapshot/selection equality; camera/color/slice non-mutation test; reject unsupported observation adapter.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R18-05",
@@ -1732,7 +2867,20 @@
       "verificationMethod": "Cross-view snapshot/selection equality; camera/color/slice non-mutation test; reject unsupported observation adapter.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "observe and select",
+      "modules": [
+        "src/observation/ (planned)",
+        "src/editor.ts"
+      ],
+      "contract": "engine-specific snapshot projection and shared selection",
+      "verificationRoute": "tests/observation.test.mjs (planned)",
+      "acceptanceChecks": [
+        "Cross-view snapshot/selection equality; camera/color/slice non-mutation test; reject unsupported observation adapter.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R19-01",
@@ -1753,7 +2901,21 @@
       "verificationMethod": "Save/reopen/replay frozen experiment with versions/state; validate aligned comparison scales; hypothesis edits cannot change execution.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "experiment and annotate",
+      "modules": [
+        "src/discovery.js",
+        "src/g9.ts",
+        "src/emergence.ts"
+      ],
+      "contract": "frozen conditions, evidence and linked hypothesis",
+      "verificationRoute": "tests/discovery.test.mjs; evidence lifecycle cases planned",
+      "acceptanceChecks": [
+        "Save/reopen/replay frozen experiment with versions/state; validate aligned comparison scales; hypothesis edits cannot change execution.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R19-02",
@@ -1774,7 +2936,21 @@
       "verificationMethod": "Save/reopen/replay frozen experiment with versions/state; validate aligned comparison scales; hypothesis edits cannot change execution.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "experiment and annotate",
+      "modules": [
+        "src/discovery.js",
+        "src/g9.ts",
+        "src/emergence.ts"
+      ],
+      "contract": "frozen conditions, evidence and linked hypothesis",
+      "verificationRoute": "tests/discovery.test.mjs; evidence lifecycle cases planned",
+      "acceptanceChecks": [
+        "Save/reopen/replay frozen experiment with versions/state; validate aligned comparison scales; hypothesis edits cannot change execution.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R19-03",
@@ -1795,7 +2971,21 @@
       "verificationMethod": "Save/reopen/replay frozen experiment with versions/state; validate aligned comparison scales; hypothesis edits cannot change execution.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "experiment and annotate",
+      "modules": [
+        "src/discovery.js",
+        "src/g9.ts",
+        "src/emergence.ts"
+      ],
+      "contract": "frozen conditions, evidence and linked hypothesis",
+      "verificationRoute": "tests/discovery.test.mjs; evidence lifecycle cases planned",
+      "acceptanceChecks": [
+        "Save/reopen/replay frozen experiment with versions/state; validate aligned comparison scales; hypothesis edits cannot change execution.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R19-04",
@@ -1816,7 +3006,21 @@
       "verificationMethod": "Save/reopen/replay frozen experiment with versions/state; validate aligned comparison scales; hypothesis edits cannot change execution.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "experiment and annotate",
+      "modules": [
+        "src/discovery.js",
+        "src/g9.ts",
+        "src/emergence.ts"
+      ],
+      "contract": "frozen conditions, evidence and linked hypothesis",
+      "verificationRoute": "tests/discovery.test.mjs; evidence lifecycle cases planned",
+      "acceptanceChecks": [
+        "Save/reopen/replay frozen experiment with versions/state; validate aligned comparison scales; hypothesis edits cannot change execution.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R19-05",
@@ -1837,7 +3041,21 @@
       "verificationMethod": "Save/reopen/replay frozen experiment with versions/state; validate aligned comparison scales; hypothesis edits cannot change execution.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "experiment and annotate",
+      "modules": [
+        "src/discovery.js",
+        "src/g9.ts",
+        "src/emergence.ts"
+      ],
+      "contract": "frozen conditions, evidence and linked hypothesis",
+      "verificationRoute": "tests/discovery.test.mjs; evidence lifecycle cases planned",
+      "acceptanceChecks": [
+        "Save/reopen/replay frozen experiment with versions/state; validate aligned comparison scales; hypothesis edits cannot change execution.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R20-01",
@@ -1858,7 +3076,21 @@
       "verificationMethod": "Disconnect/update/stale/reconnect recovery; inspect delivered versus consumed acknowledgement; reject unsupported semantics and immediate cycles.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "connect and inspect delivery",
+      "modules": [
+        "src/flow/runtime.ts",
+        "src/workflow-view.ts",
+        "src/feature-map.ts"
+      ],
+      "contract": "configured/enabled/delivered/consumed/freshness",
+      "verificationRoute": "tests/flow.test.mjs; receipt/freshness cases planned",
+      "acceptanceChecks": [
+        "Disconnect/update/stale/reconnect recovery; inspect delivered versus consumed acknowledgement; reject unsupported semantics and immediate cycles.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R20-02",
@@ -1879,7 +3111,21 @@
       "verificationMethod": "Disconnect/update/stale/reconnect recovery; inspect delivered versus consumed acknowledgement; reject unsupported semantics and immediate cycles.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "connect and inspect delivery",
+      "modules": [
+        "src/flow/runtime.ts",
+        "src/workflow-view.ts",
+        "src/feature-map.ts"
+      ],
+      "contract": "configured/enabled/delivered/consumed/freshness",
+      "verificationRoute": "tests/flow.test.mjs; receipt/freshness cases planned",
+      "acceptanceChecks": [
+        "Disconnect/update/stale/reconnect recovery; inspect delivered versus consumed acknowledgement; reject unsupported semantics and immediate cycles.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R20-03",
@@ -1900,7 +3146,21 @@
       "verificationMethod": "Disconnect/update/stale/reconnect recovery; inspect delivered versus consumed acknowledgement; reject unsupported semantics and immediate cycles.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "connect and inspect delivery",
+      "modules": [
+        "src/flow/runtime.ts",
+        "src/workflow-view.ts",
+        "src/feature-map.ts"
+      ],
+      "contract": "configured/enabled/delivered/consumed/freshness",
+      "verificationRoute": "tests/flow.test.mjs; receipt/freshness cases planned",
+      "acceptanceChecks": [
+        "Disconnect/update/stale/reconnect recovery; inspect delivered versus consumed acknowledgement; reject unsupported semantics and immediate cycles.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R20-04",
@@ -1921,7 +3181,21 @@
       "verificationMethod": "Disconnect/update/stale/reconnect recovery; inspect delivered versus consumed acknowledgement; reject unsupported semantics and immediate cycles.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "connect and inspect delivery",
+      "modules": [
+        "src/flow/runtime.ts",
+        "src/workflow-view.ts",
+        "src/feature-map.ts"
+      ],
+      "contract": "configured/enabled/delivered/consumed/freshness",
+      "verificationRoute": "tests/flow.test.mjs; receipt/freshness cases planned",
+      "acceptanceChecks": [
+        "Disconnect/update/stale/reconnect recovery; inspect delivered versus consumed acknowledgement; reject unsupported semantics and immediate cycles.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R20-05",
@@ -1942,7 +3216,21 @@
       "verificationMethod": "Disconnect/update/stale/reconnect recovery; inspect delivered versus consumed acknowledgement; reject unsupported semantics and immediate cycles.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "connect and inspect delivery",
+      "modules": [
+        "src/flow/runtime.ts",
+        "src/workflow-view.ts",
+        "src/feature-map.ts"
+      ],
+      "contract": "configured/enabled/delivered/consumed/freshness",
+      "verificationRoute": "tests/flow.test.mjs; receipt/freshness cases planned",
+      "acceptanceChecks": [
+        "Disconnect/update/stale/reconnect recovery; inspect delivered versus consumed acknowledgement; reject unsupported semantics and immediate cycles.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R21-01",
@@ -1963,7 +3251,20 @@
       "verificationMethod": "Invoke same context command through page/menu/keyboard/XR and compare domain result; missing prerequisites, wrong target and cancellation checks.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "dispatch command",
+      "modules": [
+        "src/commands/ (planned)",
+        "src/lab-actions.ts"
+      ],
+      "contract": "validated context command, capability and result",
+      "verificationRoute": "tests/commands.test.mjs (planned)",
+      "acceptanceChecks": [
+        "Invoke same context command through page/menu/keyboard/XR and compare domain result; missing prerequisites, wrong target and cancellation checks.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R21-02",
@@ -1984,7 +3285,20 @@
       "verificationMethod": "Invoke same context command through page/menu/keyboard/XR and compare domain result; missing prerequisites, wrong target and cancellation checks.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "dispatch command",
+      "modules": [
+        "src/commands/ (planned)",
+        "src/lab-actions.ts"
+      ],
+      "contract": "validated context command, capability and result",
+      "verificationRoute": "tests/commands.test.mjs (planned)",
+      "acceptanceChecks": [
+        "Invoke same context command through page/menu/keyboard/XR and compare domain result; missing prerequisites, wrong target and cancellation checks.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R21-03",
@@ -2005,7 +3319,20 @@
       "verificationMethod": "Invoke same context command through page/menu/keyboard/XR and compare domain result; missing prerequisites, wrong target and cancellation checks.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "dispatch command",
+      "modules": [
+        "src/commands/ (planned)",
+        "src/lab-actions.ts"
+      ],
+      "contract": "validated context command, capability and result",
+      "verificationRoute": "tests/commands.test.mjs (planned)",
+      "acceptanceChecks": [
+        "Invoke same context command through page/menu/keyboard/XR and compare domain result; missing prerequisites, wrong target and cancellation checks.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R21-04",
@@ -2026,7 +3353,20 @@
       "verificationMethod": "Invoke same context command through page/menu/keyboard/XR and compare domain result; missing prerequisites, wrong target and cancellation checks.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "dispatch command",
+      "modules": [
+        "src/commands/ (planned)",
+        "src/lab-actions.ts"
+      ],
+      "contract": "validated context command, capability and result",
+      "verificationRoute": "tests/commands.test.mjs (planned)",
+      "acceptanceChecks": [
+        "Invoke same context command through page/menu/keyboard/XR and compare domain result; missing prerequisites, wrong target and cancellation checks.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R21-05",
@@ -2047,7 +3387,20 @@
       "verificationMethod": "Invoke same context command through page/menu/keyboard/XR and compare domain result; missing prerequisites, wrong target and cancellation checks.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "dispatch command",
+      "modules": [
+        "src/commands/ (planned)",
+        "src/lab-actions.ts"
+      ],
+      "contract": "validated context command, capability and result",
+      "verificationRoute": "tests/commands.test.mjs (planned)",
+      "acceptanceChecks": [
+        "Invoke same context command through page/menu/keyboard/XR and compare domain result; missing prerequisites, wrong target and cancellation checks.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R22-01",
@@ -2068,7 +3421,20 @@
       "verificationMethod": "Trace real result to purpose/requirement/method/reference/evidence; search sources; missing evidence remains visibly missing.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "trace purpose and sources",
+      "modules": [
+        "src/theory-lab.ts",
+        "src/references.ts"
+      ],
+      "contract": "purpose/requirement/evidence/reference selection",
+      "verificationRoute": "tests/purpose-browser.mjs (planned)",
+      "acceptanceChecks": [
+        "Trace real result to purpose/requirement/method/reference/evidence; search sources; missing evidence remains visibly missing.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R22-02",
@@ -2089,7 +3455,20 @@
       "verificationMethod": "Trace real result to purpose/requirement/method/reference/evidence; search sources; missing evidence remains visibly missing.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "trace purpose and sources",
+      "modules": [
+        "src/theory-lab.ts",
+        "src/references.ts"
+      ],
+      "contract": "purpose/requirement/evidence/reference selection",
+      "verificationRoute": "tests/purpose-browser.mjs (planned)",
+      "acceptanceChecks": [
+        "Trace real result to purpose/requirement/method/reference/evidence; search sources; missing evidence remains visibly missing.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R22-03",
@@ -2110,7 +3489,20 @@
       "verificationMethod": "Trace real result to purpose/requirement/method/reference/evidence; search sources; missing evidence remains visibly missing.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "trace purpose and sources",
+      "modules": [
+        "src/theory-lab.ts",
+        "src/references.ts"
+      ],
+      "contract": "purpose/requirement/evidence/reference selection",
+      "verificationRoute": "tests/purpose-browser.mjs (planned)",
+      "acceptanceChecks": [
+        "Trace real result to purpose/requirement/method/reference/evidence; search sources; missing evidence remains visibly missing.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R22-04",
@@ -2131,7 +3523,20 @@
       "verificationMethod": "Trace real result to purpose/requirement/method/reference/evidence; search sources; missing evidence remains visibly missing.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "trace purpose and sources",
+      "modules": [
+        "src/theory-lab.ts",
+        "src/references.ts"
+      ],
+      "contract": "purpose/requirement/evidence/reference selection",
+      "verificationRoute": "tests/purpose-browser.mjs (planned)",
+      "acceptanceChecks": [
+        "Trace real result to purpose/requirement/method/reference/evidence; search sources; missing evidence remains visibly missing.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R22-05",
@@ -2152,7 +3557,20 @@
       "verificationMethod": "Trace real result to purpose/requirement/method/reference/evidence; search sources; missing evidence remains visibly missing.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "trace purpose and sources",
+      "modules": [
+        "src/theory-lab.ts",
+        "src/references.ts"
+      ],
+      "contract": "purpose/requirement/evidence/reference selection",
+      "verificationRoute": "tests/purpose-browser.mjs (planned)",
+      "acceptanceChecks": [
+        "Trace real result to purpose/requirement/method/reference/evidence; search sources; missing evidence remains visibly missing.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R23-01",
@@ -2173,7 +3591,20 @@
       "verificationMethod": "Save/reload/export/import/checkpoint-resume where promised; corrupted/unavailable storage and revision conflicts; atomic rejected import and backup recovery.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "persist and recover",
+      "modules": [
+        "src/services/ (planned)",
+        "src/workbench/storage.ts"
+      ],
+      "contract": "revisioned atomic save/import/checkpoint and recovery",
+      "verificationRoute": "tests/persistence.test.mjs (planned)",
+      "acceptanceChecks": [
+        "Save/reload/export/import/checkpoint-resume where promised; corrupted/unavailable storage and revision conflicts; atomic rejected import and backup recovery.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required. Remote-only security/job API clauses apply if a server is selected; browser service contracts and recovery remain mandatory."
     },
     {
       "id": "R23-02",
@@ -2194,7 +3625,20 @@
       "verificationMethod": "Save/reload/export/import/checkpoint-resume where promised; corrupted/unavailable storage and revision conflicts; atomic rejected import and backup recovery.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "persist and recover",
+      "modules": [
+        "src/services/ (planned)",
+        "src/workbench/storage.ts"
+      ],
+      "contract": "revisioned atomic save/import/checkpoint and recovery",
+      "verificationRoute": "tests/persistence.test.mjs (planned)",
+      "acceptanceChecks": [
+        "Save/reload/export/import/checkpoint-resume where promised; corrupted/unavailable storage and revision conflicts; atomic rejected import and backup recovery.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required. Remote-only security/job API clauses apply if a server is selected; browser service contracts and recovery remain mandatory."
     },
     {
       "id": "R23-03",
@@ -2215,7 +3659,20 @@
       "verificationMethod": "Save/reload/export/import/checkpoint-resume where promised; corrupted/unavailable storage and revision conflicts; atomic rejected import and backup recovery.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "persist and recover",
+      "modules": [
+        "src/services/ (planned)",
+        "src/workbench/storage.ts"
+      ],
+      "contract": "revisioned atomic save/import/checkpoint and recovery",
+      "verificationRoute": "tests/persistence.test.mjs (planned)",
+      "acceptanceChecks": [
+        "Save/reload/export/import/checkpoint-resume where promised; corrupted/unavailable storage and revision conflicts; atomic rejected import and backup recovery.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required. Remote-only security/job API clauses apply if a server is selected; browser service contracts and recovery remain mandatory."
     },
     {
       "id": "R23-04",
@@ -2236,7 +3693,20 @@
       "verificationMethod": "Save/reload/export/import/checkpoint-resume where promised; corrupted/unavailable storage and revision conflicts; atomic rejected import and backup recovery.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "persist and recover",
+      "modules": [
+        "src/services/ (planned)",
+        "src/workbench/storage.ts"
+      ],
+      "contract": "revisioned atomic save/import/checkpoint and recovery",
+      "verificationRoute": "tests/persistence.test.mjs (planned)",
+      "acceptanceChecks": [
+        "Save/reload/export/import/checkpoint-resume where promised; corrupted/unavailable storage and revision conflicts; atomic rejected import and backup recovery.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required. Remote-only security/job API clauses apply if a server is selected; browser service contracts and recovery remain mandatory."
     },
     {
       "id": "R23-05",
@@ -2257,7 +3727,20 @@
       "verificationMethod": "Save/reload/export/import/checkpoint-resume where promised; corrupted/unavailable storage and revision conflicts; atomic rejected import and backup recovery.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "persist and recover",
+      "modules": [
+        "src/services/ (planned)",
+        "src/workbench/storage.ts"
+      ],
+      "contract": "revisioned atomic save/import/checkpoint and recovery",
+      "verificationRoute": "tests/persistence.test.mjs (planned)",
+      "acceptanceChecks": [
+        "Save/reload/export/import/checkpoint-resume where promised; corrupted/unavailable storage and revision conflicts; atomic rejected import and backup recovery.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required. Remote-only security/job API clauses apply if a server is selected; browser service contracts and recovery remain mandatory."
     },
     {
       "id": "R24-01",
@@ -2278,7 +3761,20 @@
       "verificationMethod": "Requirement evidence audit, all mandatory demonstrations, narrow/wide keyboard/touch/accessibility, declared-workload measurements; separate human/device limitations.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "verify and validate",
+      "modules": [
+        "tests/",
+        "scripts/check-programme.mjs"
+      ],
+      "contract": "seven full demonstrations, accessibility and workload budget",
+      "verificationRoute": "npm run verify plus new requirement scenarios and measurements",
+      "acceptanceChecks": [
+        "Requirement evidence audit, all mandatory demonstrations, narrow/wide keyboard/touch/accessibility, declared-workload measurements; separate human/device limitations.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required; participant/device validation must be reported honestly when unavailable."
     },
     {
       "id": "R24-02",
@@ -2299,7 +3795,20 @@
       "verificationMethod": "Requirement evidence audit, all mandatory demonstrations, narrow/wide keyboard/touch/accessibility, declared-workload measurements; separate human/device limitations.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "verify and validate",
+      "modules": [
+        "tests/",
+        "scripts/check-programme.mjs"
+      ],
+      "contract": "seven full demonstrations, accessibility and workload budget",
+      "verificationRoute": "npm run verify plus new requirement scenarios and measurements",
+      "acceptanceChecks": [
+        "Requirement evidence audit, all mandatory demonstrations, narrow/wide keyboard/touch/accessibility, declared-workload measurements; separate human/device limitations.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required; participant/device validation must be reported honestly when unavailable."
     },
     {
       "id": "R24-03",
@@ -2320,7 +3829,20 @@
       "verificationMethod": "Requirement evidence audit, all mandatory demonstrations, narrow/wide keyboard/touch/accessibility, declared-workload measurements; separate human/device limitations.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "verify and validate",
+      "modules": [
+        "tests/",
+        "scripts/check-programme.mjs"
+      ],
+      "contract": "seven full demonstrations, accessibility and workload budget",
+      "verificationRoute": "npm run verify plus new requirement scenarios and measurements",
+      "acceptanceChecks": [
+        "Requirement evidence audit, all mandatory demonstrations, narrow/wide keyboard/touch/accessibility, declared-workload measurements; separate human/device limitations.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required; participant/device validation must be reported honestly when unavailable."
     },
     {
       "id": "R24-04",
@@ -2341,7 +3863,20 @@
       "verificationMethod": "Requirement evidence audit, all mandatory demonstrations, narrow/wide keyboard/touch/accessibility, declared-workload measurements; separate human/device limitations.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "verify and validate",
+      "modules": [
+        "tests/",
+        "scripts/check-programme.mjs"
+      ],
+      "contract": "seven full demonstrations, accessibility and workload budget",
+      "verificationRoute": "npm run verify plus new requirement scenarios and measurements",
+      "acceptanceChecks": [
+        "Requirement evidence audit, all mandatory demonstrations, narrow/wide keyboard/touch/accessibility, declared-workload measurements; separate human/device limitations.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required; participant/device validation must be reported honestly when unavailable."
     },
     {
       "id": "R24-05",
@@ -2362,7 +3897,20 @@
       "verificationMethod": "Requirement evidence audit, all mandatory demonstrations, narrow/wide keyboard/touch/accessibility, declared-workload measurements; separate human/device limitations.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "verify and validate",
+      "modules": [
+        "tests/",
+        "scripts/check-programme.mjs"
+      ],
+      "contract": "seven full demonstrations, accessibility and workload budget",
+      "verificationRoute": "npm run verify plus new requirement scenarios and measurements",
+      "acceptanceChecks": [
+        "Requirement evidence audit, all mandatory demonstrations, narrow/wide keyboard/touch/accessibility, declared-workload measurements; separate human/device limitations.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required; participant/device validation must be reported honestly when unavailable."
     },
     {
       "id": "R25-01",
@@ -2379,7 +3927,20 @@
       "verificationMethod": "Audit every original clause and deliverable, generated registry consistency, extension/migration/release rollback instructions and integrated demonstration.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "release and maintain",
+      "modules": [
+        "docs/system-programme/",
+        ".github/workflows/verify.yml"
+      ],
+      "contract": "original-scope completion, extension and rollback",
+      "verificationRoute": "final requirement audit and release smoke/rollback check",
+      "acceptanceChecks": [
+        "Audit every original clause and deliverable, generated registry consistency, extension/migration/release rollback instructions and integrated demonstration.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R25-02",
@@ -2396,7 +3957,20 @@
       "verificationMethod": "Audit every original clause and deliverable, generated registry consistency, extension/migration/release rollback instructions and integrated demonstration.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "release and maintain",
+      "modules": [
+        "docs/system-programme/",
+        ".github/workflows/verify.yml"
+      ],
+      "contract": "original-scope completion, extension and rollback",
+      "verificationRoute": "final requirement audit and release smoke/rollback check",
+      "acceptanceChecks": [
+        "Audit every original clause and deliverable, generated registry consistency, extension/migration/release rollback instructions and integrated demonstration.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R25-03",
@@ -2413,7 +3987,20 @@
       "verificationMethod": "Audit every original clause and deliverable, generated registry consistency, extension/migration/release rollback instructions and integrated demonstration.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "release and maintain",
+      "modules": [
+        "docs/system-programme/",
+        ".github/workflows/verify.yml"
+      ],
+      "contract": "original-scope completion, extension and rollback",
+      "verificationRoute": "final requirement audit and release smoke/rollback check",
+      "acceptanceChecks": [
+        "Audit every original clause and deliverable, generated registry consistency, extension/migration/release rollback instructions and integrated demonstration.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R25-04",
@@ -2430,7 +4017,20 @@
       "verificationMethod": "Audit every original clause and deliverable, generated registry consistency, extension/migration/release rollback instructions and integrated demonstration.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "release and maintain",
+      "modules": [
+        "docs/system-programme/",
+        ".github/workflows/verify.yml"
+      ],
+      "contract": "original-scope completion, extension and rollback",
+      "verificationRoute": "final requirement audit and release smoke/rollback check",
+      "acceptanceChecks": [
+        "Audit every original clause and deliverable, generated registry consistency, extension/migration/release rollback instructions and integrated demonstration.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "R25-05",
@@ -2447,7 +4047,20 @@
       "verificationMethod": "Audit every original clause and deliverable, generated registry consistency, extension/migration/release rollback instructions and integrated demonstration.",
       "evidence": [],
       "status": "not verified",
-      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions.",
+      "function": "release and maintain",
+      "modules": [
+        "docs/system-programme/",
+        ".github/workflows/verify.yml"
+      ],
+      "contract": "original-scope completion, extension and rollback",
+      "verificationRoute": "final requirement audit and release smoke/rollback check",
+      "acceptanceChecks": [
+        "Audit every original clause and deliverable, generated registry consistency, extension/migration/release rollback instructions and integrated demonstration.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required"
     },
     {
       "id": "DEMO-01",
@@ -2467,7 +4080,20 @@
       "acceptance": "Create a custom rule, test it, save a version, install it in a supported runtime, inspect its output, and reopen its definition. Confirm historical runs retain the prior version after an edit.",
       "verificationMethod": "Execute complete demonstration against real domain state; preserve positive/failure evidence and reviewed UI result.",
       "evidence": [],
-      "status": "not verified"
+      "status": "not verified",
+      "function": "verify and validate",
+      "modules": [
+        "tests/",
+        "scripts/check-programme.mjs"
+      ],
+      "contract": "seven full demonstrations, accessibility and workload budget",
+      "verificationRoute": "npm run verify plus new requirement scenarios and measurements",
+      "acceptanceChecks": [
+        "Execute complete demonstration against real domain state; preserve positive/failure evidence and reviewed UI result.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required; participant/device validation must be reported honestly when unavailable."
     },
     {
       "id": "DEMO-02",
@@ -2487,7 +4113,20 @@
       "acceptance": "Build a small input \u2192 transform \u2192 output tool, execute it, package it, and reuse independent instances in another workspace. Show an incompatible connection being rejected without corrupting the graph.",
       "verificationMethod": "Execute complete demonstration against real domain state; preserve positive/failure evidence and reviewed UI result.",
       "evidence": [],
-      "status": "not verified"
+      "status": "not verified",
+      "function": "verify and validate",
+      "modules": [
+        "tests/",
+        "scripts/check-programme.mjs"
+      ],
+      "contract": "seven full demonstrations, accessibility and workload budget",
+      "verificationRoute": "npm run verify plus new requirement scenarios and measurements",
+      "acceptanceChecks": [
+        "Execute complete demonstration against real domain state; preserve positive/failure evidence and reviewed UI result.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required; participant/device validation must be reported honestly when unavailable."
     },
     {
       "id": "DEMO-03",
@@ -2507,7 +4146,20 @@
       "acceptance": "Compile G8, step it, seed the controller, run a matched pattern experiment, verify replay, attach a hypothesis, and export evidence. Show provenance through the entire chain and explain which transfers are seed copies.",
       "verificationMethod": "Execute complete demonstration against real domain state; preserve positive/failure evidence and reviewed UI result.",
       "evidence": [],
-      "status": "not verified"
+      "status": "not verified",
+      "function": "verify and validate",
+      "modules": [
+        "tests/",
+        "scripts/check-programme.mjs"
+      ],
+      "contract": "seven full demonstrations, accessibility and workload budget",
+      "verificationRoute": "npm run verify plus new requirement scenarios and measurements",
+      "acceptanceChecks": [
+        "Execute complete demonstration against real domain state; preserve positive/failure evidence and reviewed UI result.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required; participant/device validation must be reported honestly when unavailable."
     },
     {
       "id": "DEMO-04",
@@ -2527,7 +4179,20 @@
       "acceptance": "Edit a G6 environment and relationship; inspect consistent updates in layers, 3D, metrics, and controlled comparison. Verify comparison does not mutate the source run.",
       "verificationMethod": "Execute complete demonstration against real domain state; preserve positive/failure evidence and reviewed UI result.",
       "evidence": [],
-      "status": "not verified"
+      "status": "not verified",
+      "function": "verify and validate",
+      "modules": [
+        "tests/",
+        "scripts/check-programme.mjs"
+      ],
+      "contract": "seven full demonstrations, accessibility and workload budget",
+      "verificationRoute": "npm run verify plus new requirement scenarios and measurements",
+      "acceptanceChecks": [
+        "Execute complete demonstration against real domain state; preserve positive/failure evidence and reviewed UI result.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required; participant/device validation must be reported honestly when unavailable."
     },
     {
       "id": "DEMO-05",
@@ -2547,7 +4212,20 @@
       "acceptance": "Disconnect a route, trigger new data, show the downstream stale/blocked state, reconnect, and demonstrate the documented recovery. Distinguish transport delivery from verified consumption.",
       "verificationMethod": "Execute complete demonstration against real domain state; preserve positive/failure evidence and reviewed UI result.",
       "evidence": [],
-      "status": "not verified"
+      "status": "not verified",
+      "function": "verify and validate",
+      "modules": [
+        "tests/",
+        "scripts/check-programme.mjs"
+      ],
+      "contract": "seven full demonstrations, accessibility and workload budget",
+      "verificationRoute": "npm run verify plus new requirement scenarios and measurements",
+      "acceptanceChecks": [
+        "Execute complete demonstration against real domain state; preserve positive/failure evidence and reviewed UI result.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required; participant/device validation must be reported honestly when unavailable."
     },
     {
       "id": "DEMO-06",
@@ -2567,7 +4245,20 @@
       "acceptance": "Save and reopen a workspace; resume only where checkpoint continuation is supported. Reject a malformed import atomically and recover from an unavailable persistence service.",
       "verificationMethod": "Execute complete demonstration against real domain state; preserve positive/failure evidence and reviewed UI result.",
       "evidence": [],
-      "status": "not verified"
+      "status": "not verified",
+      "function": "verify and validate",
+      "modules": [
+        "tests/",
+        "scripts/check-programme.mjs"
+      ],
+      "contract": "seven full demonstrations, accessibility and workload budget",
+      "verificationRoute": "npm run verify plus new requirement scenarios and measurements",
+      "acceptanceChecks": [
+        "Execute complete demonstration against real domain state; preserve positive/failure evidence and reviewed UI result.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required; participant/device validation must be reported honestly when unavailable."
     },
     {
       "id": "DEMO-07",
@@ -2587,7 +4278,44 @@
       "acceptance": "Complete the core workflow using keyboard and on a narrow screen. Confirm selections and camera changes leave scientific state unchanged.",
       "verificationMethod": "Execute complete demonstration against real domain state; preserve positive/failure evidence and reviewed UI result.",
       "evidence": [],
-      "status": "not verified"
+      "status": "not verified",
+      "function": "verify and validate",
+      "modules": [
+        "tests/",
+        "scripts/check-programme.mjs"
+      ],
+      "contract": "seven full demonstrations, accessibility and workload budget",
+      "verificationRoute": "npm run verify plus new requirement scenarios and measurements",
+      "acceptanceChecks": [
+        "Execute complete demonstration against real domain state; preserve positive/failure evidence and reviewed UI result.",
+        "Pass every condition in the retained acceptance clause; record negative-path results and unsupported cases."
+      ],
+      "evidenceStatus": "missing for new requirements; baseline proves only its listed coverage",
+      "applicability": "Required; participant/device validation must be reported honestly when unavailable."
+    }
+  ],
+  "proposedTargets": [
+    {
+      "id": "PT01",
+      "target": "Primary task reachable without scrolling through introductory allocations at 390x844",
+      "status": "proposed; verify after shell changes"
+    },
+    {
+      "id": "PT02",
+      "target": "Latency thresholds selected after measured workloads on declared hardware",
+      "status": "measurement prerequisite; no latency claim yet"
+    }
+  ],
+  "optionalCapabilities": [
+    {
+      "id": "OPT01",
+      "capability": "Hosted multi-user collaboration",
+      "condition": "Only select if required by documented use; not implied by current scope"
+    },
+    {
+      "id": "OPT02",
+      "capability": "Physical-headset validation",
+      "condition": "Requires actual available device; simulator results remain distinct"
     }
   ]
 }

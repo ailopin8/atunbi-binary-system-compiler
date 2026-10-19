@@ -9,8 +9,7 @@ const wrap=one.slice();wrap[9]=1;assert.equal(describe(wrap).components,1);asser
 assert.equal(describe(new Uint8Array(1000).fill(1)).largest,1000);
 assert.throws(()=>key([0,1]));assert.throws(()=>key(new Uint8Array(1000).fill(2)));
 for(const v of [[0,0,0,'none'],[129,0,0,'none'],[4,1000,0,'flip'],[4,0,4,'flip'],[4.5,0,0,'none']])assert.throws(()=>validate(...v));
-let source=fs.readFileSync(new URL('../src/g8.ts',import.meta.url),'utf8');
-source=source.slice(source.indexOf('type MatrixID'),source.indexOf('const section=document.createElement'))+'\nexport {VM,compile};';
+let source=fs.readFileSync(new URL('../src/engines/g8.ts',import.meta.url),'utf8');
 const js=ts.transpileModule(source,{compilerOptions:{target:ts.ScriptTarget.ES2022,module:ts.ModuleKind.ES2022}}).outputText;
 const {VM,compile}=await import('data:text/javascript;base64,'+Buffer.from(js).toString('base64'));
 const p=compile('MATRIX A RULE 11001100\nA BIT (0,0,0) = 1');

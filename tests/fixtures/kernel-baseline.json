@@ -1,0 +1,286 @@
+{
+  "baseline": "ed6f9540ee43cf332eb1670e7826eedc8aaacec1",
+  "method": "SHA256 of complete JSON-serialized VM including program, state, queues and counters",
+  "cases": [
+    {
+      "engine": "g7",
+      "preset": "feedback",
+      "coupled": 0.75,
+      "ticks": 0,
+      "sha256": "bc16362aa84d68facf92b39d643722c843ea1c762ef53112f33c8966091a5ede"
+    },
+    {
+      "engine": "g7",
+      "preset": "feedback",
+      "coupled": 0.75,
+      "ticks": 1,
+      "sha256": "27468969d547aeefd327393e59752ca8b09bb23d6f13bc0560333b183a799c12"
+    },
+    {
+      "engine": "g7",
+      "preset": "feedback",
+      "coupled": 0.75,
+      "ticks": 8,
+      "sha256": "fed829ab26af99c60f365aadb587ece935011b32b75488196437dabecdf7f64e"
+    },
+    {
+      "engine": "g7",
+      "preset": "feedback",
+      "coupled": 0.75,
+      "ticks": 24,
+      "sha256": "af16097dee5c4cb870483f338eb111f81bc34d7e28493bf03639abf2424c9363"
+    },
+    {
+      "engine": "g7",
+      "preset": "feedback",
+      "coupled": 0,
+      "ticks": 0,
+      "sha256": "e71f91da2a793335ba59bf301d9891e4a9d337b7e606b1baeea704e979680bd3"
+    },
+    {
+      "engine": "g7",
+      "preset": "feedback",
+      "coupled": 0,
+      "ticks": 1,
+      "sha256": "20524d9168938a3e0eea844abbd81389c863d2703f11b9f3e599ad4888c81533"
+    },
+    {
+      "engine": "g7",
+      "preset": "feedback",
+      "coupled": 0,
+      "ticks": 8,
+      "sha256": "5c5920047f818a384f6c3e5ec8d61f8375be4f62533cbb2bcdbd83f55eac2891"
+    },
+    {
+      "engine": "g7",
+      "preset": "feedback",
+      "coupled": 0,
+      "ticks": 24,
+      "sha256": "9cdc7d05f7f98bc94a7c9e8b314da24b35da6f58f764de4c8f26ecbc434962eb"
+    },
+    {
+      "engine": "g7",
+      "preset": "seek",
+      "coupled": 0.75,
+      "ticks": 0,
+      "sha256": "11d45a9ab03f943ffc067ac0b529e2dcfeb64b081a320fe1e745fdc2cb0c5988"
+    },
+    {
+      "engine": "g7",
+      "preset": "seek",
+      "coupled": 0.75,
+      "ticks": 1,
+      "sha256": "650a5280147838a5101c914b1b1478c9aec413e6e836563c00df8f505e408cc0"
+    },
+    {
+      "engine": "g7",
+      "preset": "seek",
+      "coupled": 0.75,
+      "ticks": 8,
+      "sha256": "dc99682b8a6ab314f2db80eaaac8315e2c85ba57816f94d34e0a063d6589d4d4"
+    },
+    {
+      "engine": "g7",
+      "preset": "seek",
+      "coupled": 0.75,
+      "ticks": 24,
+      "sha256": "beb57653b4c70636573818f44ecd4d6141f374e9fab9e768e42fcc9b9dc13c3c"
+    },
+    {
+      "engine": "g7",
+      "preset": "seek",
+      "coupled": 0,
+      "ticks": 0,
+      "sha256": "7a0d2038ef1c191cebf4fcff514776ea9c4e8ce6a14cd62e79e60b0d40803cfb"
+    },
+    {
+      "engine": "g7",
+      "preset": "seek",
+      "coupled": 0,
+      "ticks": 1,
+      "sha256": "62d4f1ed79b78fc82da12afbc7a4ac26ac44296e7df9e56e616b6b3ab68d7c66"
+    },
+    {
+      "engine": "g7",
+      "preset": "seek",
+      "coupled": 0,
+      "ticks": 8,
+      "sha256": "07bc5e4873a81c968d58d2f87e9885cc24d2a16acc535b370ded470a2c1687e8"
+    },
+    {
+      "engine": "g7",
+      "preset": "seek",
+      "coupled": 0,
+      "ticks": 24,
+      "sha256": "64926fe2e924bebbb75169f22fbfeb9faa842f7bff1d789d51406232d3443ed1"
+    },
+    {
+      "engine": "g8",
+      "preset": "feedback",
+      "coupled": true,
+      "ticks": 0,
+      "sha256": "369555631ff375605b0b558ec2aedf1b43c0ad2d55e715ee45fe5959e92f5f54"
+    },
+    {
+      "engine": "g8",
+      "preset": "feedback",
+      "coupled": true,
+      "ticks": 1,
+      "sha256": "9947e85885e273a1e981313bd1b538bd1c132f9112d050ff8b6de7c02af56d80"
+    },
+    {
+      "engine": "g8",
+      "preset": "feedback",
+      "coupled": true,
+      "ticks": 8,
+      "sha256": "a398bb0e10f74e8d174db09d7a9d05a357cbbd4883292b0abb52a2c710afc344"
+    },
+    {
+      "engine": "g8",
+      "preset": "feedback",
+      "coupled": true,
+      "ticks": 24,
+      "sha256": "d98aaa3aaa076c3aa95b5828e8e9af42132b0c15bc3ee76a045a205aa81c5ad9"
+    },
+    {
+      "engine": "g8",
+      "preset": "feedback",
+      "coupled": false,
+      "ticks": 0,
+      "sha256": "aa44f0318fddede18418469cdb549a0cff1a4631e869177001b11da3342b9933"
+    },
+    {
+      "engine": "g8",
+      "preset": "feedback",
+      "coupled": false,
+      "ticks": 1,
+      "sha256": "b3dfc9cd1b4513700cfa85f72aca8edc5432afc48ca54390e66a6cb6bbe98dfd"
+    },
+    {
+      "engine": "g8",
+      "preset": "feedback",
+      "coupled": false,
+      "ticks": 8,
+      "sha256": "e64666088e8d4f5fe9ce0023d40973322d1a219b2341c07f15267affd8961ce8"
+    },
+    {
+      "engine": "g8",
+      "preset": "feedback",
+      "coupled": false,
+      "ticks": 24,
+      "sha256": "e170cc6ed2c6fb3e4038d70010324ad7550eae19a6165362948d124b8d92193e"
+    },
+    {
+      "engine": "g8",
+      "preset": "oneway",
+      "coupled": true,
+      "ticks": 0,
+      "sha256": "7934e99122736777a3bab951b28051a909f1b5af8d2cf9e459cbbc36f7969c21"
+    },
+    {
+      "engine": "g8",
+      "preset": "oneway",
+      "coupled": true,
+      "ticks": 1,
+      "sha256": "d41cd5dd75f5ffbe8ecf3241569bb8e5e119dd3942e43ac5a8701e63aa09e7fc"
+    },
+    {
+      "engine": "g8",
+      "preset": "oneway",
+      "coupled": true,
+      "ticks": 8,
+      "sha256": "6f0be3596c29ee24c0f4881542ac57bd742ddd3941590e0d7cb3181ee2f80594"
+    },
+    {
+      "engine": "g8",
+      "preset": "oneway",
+      "coupled": true,
+      "ticks": 24,
+      "sha256": "88a86f49846c657d1d181e1b6e75d727b97bce8da35f21ef934a403e49782fa6"
+    },
+    {
+      "engine": "g8",
+      "preset": "oneway",
+      "coupled": false,
+      "ticks": 0,
+      "sha256": "e160f0d2d2d15596d66f66b6c94f59e37c3dda936c644de16c0f607dcb5cca3c"
+    },
+    {
+      "engine": "g8",
+      "preset": "oneway",
+      "coupled": false,
+      "ticks": 1,
+      "sha256": "4d002a925e7a0660b68b0e756d2c39befa96b127dadaeb9a76981712df270193"
+    },
+    {
+      "engine": "g8",
+      "preset": "oneway",
+      "coupled": false,
+      "ticks": 8,
+      "sha256": "f7fbf63344693ab63463e8a4f0b6f80c8993f32177038e0850e1e8bdce3f1369"
+    },
+    {
+      "engine": "g8",
+      "preset": "oneway",
+      "coupled": false,
+      "ticks": 24,
+      "sha256": "f014bddedeeb9cc362bf667ecb24c4ec031fc5d31028e6bd4fbf229d669c7b57"
+    },
+    {
+      "engine": "g8",
+      "preset": "isolated",
+      "coupled": true,
+      "ticks": 0,
+      "sha256": "d8fc8ce3fef0bb0d522dcd9ca674ebcf1dcc4aadc83956d8e1584ec4542b9e38"
+    },
+    {
+      "engine": "g8",
+      "preset": "isolated",
+      "coupled": true,
+      "ticks": 1,
+      "sha256": "48192288afd16c1c291bce670746c6a171fcbc5ab5be164e117b0a111b2498d9"
+    },
+    {
+      "engine": "g8",
+      "preset": "isolated",
+      "coupled": true,
+      "ticks": 8,
+      "sha256": "7bfc4bdb46b2d64b33bff7ae15d375edc081035982fe2b32b2c9206241e5af13"
+    },
+    {
+      "engine": "g8",
+      "preset": "isolated",
+      "coupled": true,
+      "ticks": 24,
+      "sha256": "e2024a856f9d2dac402e1ed50bb81d7accb1daa4028b64dfde4e346f39ec6acf"
+    },
+    {
+      "engine": "g8",
+      "preset": "isolated",
+      "coupled": false,
+      "ticks": 0,
+      "sha256": "d8fc8ce3fef0bb0d522dcd9ca674ebcf1dcc4aadc83956d8e1584ec4542b9e38"
+    },
+    {
+      "engine": "g8",
+      "preset": "isolated",
+      "coupled": false,
+      "ticks": 1,
+      "sha256": "48192288afd16c1c291bce670746c6a171fcbc5ab5be164e117b0a111b2498d9"
+    },
+    {
+      "engine": "g8",
+      "preset": "isolated",
+      "coupled": false,
+      "ticks": 8,
+      "sha256": "7bfc4bdb46b2d64b33bff7ae15d375edc081035982fe2b32b2c9206241e5af13"
+    },
+    {
+      "engine": "g8",
+      "preset": "isolated",
+      "coupled": false,
+      "ticks": 24,
+      "sha256": "e2024a856f9d2dac402e1ed50bb81d7accb1daa4028b64dfde4e346f39ec6acf"
+    }
+  ]
+}

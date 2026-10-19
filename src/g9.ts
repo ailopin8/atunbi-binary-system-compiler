@@ -1,5 +1,5 @@
 import {requestControl,siteFlow,latestSignals,sourceForDiscovery,registerView,publishState,sendEvidence} from './flow/site';
-import {compile, VM} from './g8';
+import {compile, VM} from './engines/g8';
 import {analyze} from './discovery.js';
 import type {ExperimentConfig} from './discovery.js';
 import './g9.css';

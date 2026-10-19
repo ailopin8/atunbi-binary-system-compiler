@@ -1,4 +1,4 @@
-import type {VM, compile} from './g8';
+import type {VM, compile} from './engines/g8';
 export type ExperimentConfig = {ticks: number; address: number; tick: number; mode: 'none' | 'flip' | 'uncouple'};
 export type Descriptor = {population: number; transitions: number; components: number; largest: number; changedBits: number; stability: number};
 export type Occurrence = {run: string; tick: number; matrix: string};
