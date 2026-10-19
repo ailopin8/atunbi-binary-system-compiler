@@ -1,3 +1,4 @@
+import {registerView, publishState, sendEvidence} from './flow/site';
 import './g7.css';
 
 type Opcode = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
@@ -319,17 +320,7 @@ function el<T extends HTMLElement = HTMLElement>(id: string): T {
   if (!found) throw Error('Missing G7 element ' + id);
   return found as T;
 }
-function download(name: string, content: unknown) {
-  const blob = new Blob([JSON.stringify(content,null,2)],{type:'application/json'});
-  const url = URL.createObjectURL(blob);
-  const anchor = document.createElement('a');
-  anchor.href = url;
-  anchor.download = name;
-  document.body.appendChild(anchor);
-  anchor.click();
-  anchor.remove();
-  window.setTimeout(() => URL.revokeObjectURL(url),1000);
-}
+function download(name: string, content: unknown) {sendEvidence('g7',name,content);}
 const panel = document.createElement('section');
 panel.className = 'g7 panel4';
 panel.innerHTML = [
@@ -456,7 +447,7 @@ function draw(canvas: HTMLCanvasElement, u: UnitState | undefined, color: string
   context.font = '11px monospace';
   context.fillText('(' + u.at.join(',') + ')',p[0] + 9,p[1] - 10);
 }
-function update() {
+function render_g7() {
   el('g7-tick').textContent = 'TICK ' + (vm?.tick || 0);
   for (const [label,color] of [['a','#efbc6b'],['b','#58d7e9']]) {
     const u = vm?.units.find(x => x.name.toLowerCase() === label);
@@ -576,6 +567,8 @@ el<HTMLInputElement>('g7-speed').addEventListener('input',event => {
 window.addEventListener('resize',update);
 try { el('g7-selftest').textContent = checkBinary(); }
 catch (e) { el('g7-selftest').textContent = 'SELF TEST FAILED: ' + String(e); }
+registerView('g7',render_g7);
+function update() {publishState('g7',{tick:vm?.tick||0,packets:vm?.totalPackets||0});}
 update();
 (window as unknown as { __ATUNBI_G7: unknown }).__ATUNBI_G7 = {
   parseSource,encode,decode,pack,unpack,paired,

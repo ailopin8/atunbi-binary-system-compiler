@@ -1,4 +1,5 @@
 import './usability.css';
+import {siteFlow,bindInput} from './flow/site';
 
 const resources = [
   { area: 'Website UI', title: 'Vercel Web Interface Guidelines', url: 'https://github.com/vercel-labs/web-interface-guidelines', description: 'Keyboard navigation, focus, forms, layout and interaction.', application: 'Applied: visible focus, skip navigation, larger controls, form errors and reduced motion.' },
@@ -30,7 +31,8 @@ const targets: [string, string, string][] = [
   ['.g6-experiment', 'g6-lab', 'G6 experiments'],
   ['.g7', 'g7-lab', 'G7 compiler'],
   ['.g8:not(.g9)', 'g8-lab', 'G8 binary kernel'],
-  ['.g9', 'g9', 'G9 discovery']
+  ['.g9', 'g9', 'G9 discovery'],
+  ['#g10-lab', 'g10-lab', 'G10 composition']
 ];
 const navigation = document.createElement('nav');
 navigation.className = 'lab-navigation';
@@ -50,6 +52,7 @@ const referencesLink = document.createElement('a');
 referencesLink.href = '#reference-library';
 referencesLink.textContent = 'Reference library';
 navigation.append(referencesLink);
+const modularLink=document.createElement('a');modularLink.href='#modular-workflow';modularLink.textContent='Modular workflow';navigation.append(modularLink);
 studio.querySelector('.mast')?.insertAdjacentElement('afterend', navigation);
 navigation.addEventListener('click', event => {
   const link = (event.target as HTMLElement).closest<HTMLAnchorElement>('a');
@@ -72,7 +75,9 @@ library.tabIndex = -1;
 library.setAttribute('aria-labelledby', 'references-title');
 library.innerHTML = `<div class="section-head"><div><span class="micro">11 / REFERENCE LIBRARY</span><h2 id="references-title">Guidance behind the laboratory</h2></div></div><p>Open the original resources to explore their methods. The notes below distinguish what is applied here from references for future work.</p><div class="reference-grid"></div>`;
 const grid = library.querySelector('.reference-grid')!;
-for (const resource of resources) {
+function renderLibrary(items:typeof resources) {
+grid.replaceChildren();
+for (const resource of items) {
   const card = document.createElement('article');
   const area = document.createElement('span'); area.className = 'micro'; area.textContent = resource.area;
   const heading = document.createElement('h3');
@@ -81,7 +86,12 @@ for (const resource of resources) {
   const application = document.createElement('p'); application.className = 'reference-application'; application.textContent = resource.application;
   card.append(area, heading, description, application); grid.append(card);
 }
-document.querySelector('.g9')?.insertAdjacentElement('afterend', library);
+}
+siteFlow.register({id:'reference-source',label:'Reference catalogue',inputs:{},outputs:{items:'snapshot'}});
+bindInput('references','data',payload=>renderLibrary(payload.items as typeof resources));
+siteFlow.connect({id:'reference-library',from:'reference-source',output:'items',to:'references',input:'data',enabled:true,delayed:false});
+siteFlow.emit('reference-source','items',{items:resources});
+document.querySelector('#g10-lab')?.insertAdjacentElement('afterend', library);
 
 // Provide names for existing controls whose visible context is otherwise implicit.
 const labels: Record<string, string> = {
@@ -108,3 +118,11 @@ for (const id of ['g7-assembly', 'g8-assembly']) {
   assembly.setAttribute('role', 'region');
   assembly.setAttribute('aria-label', id.startsWith('g7') ? 'G7 machine instructions, scroll to inspect' : 'G8 binary instructions, scroll to inspect');
 }
+
+siteFlow.register({id:'identity',label:'Brand configuration',inputs:{},outputs:{identity:'snapshot'}});
+siteFlow.register({id:'shell',label:'Website shell',inputs:{identity:'snapshot'},outputs:{},receive:(_port,payload)=>{
+  const mark=document.querySelector('.identity .mark');if(!mark)return;
+  const logo=document.createElement('img');logo.className='brand-logo';logo.src=String(payload.logo);logo.alt='Àtúnbí eye and renewal logo';logo.width=56;logo.height=56;mark.replaceWith(logo);
+}});
+siteFlow.connect({id:'identity-shell',from:'identity',output:'identity',to:'shell',input:'identity',enabled:true,delayed:false});
+siteFlow.emit('identity','identity',{logo:'/resources/atunbi-logo.png'});

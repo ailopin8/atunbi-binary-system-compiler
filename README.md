@@ -1,8 +1,8 @@
 # Àtúnbí Binary System Compiler
 
-An experimental systems laboratory combining a 3D G6 network, G7 system-sentence compiler, G8 binary-only kernel and G9 Semantic Discovery Lab.
+An experimental systems laboratory combining a 3D G6 network, G7 system-sentence compiler, G8 binary-only kernel and G9 Semantic Discovery Lab, G10 PID/composition lab and an executable modular website workflow.
 
-[Live application](https://atunbi-algorithmic-sandbox-network-g8lqqr.v2.appdeploy.ai/) · [Observed features and controller menu](FEATURES.md)
+[Live application](https://atunbi-algorithmic-sandbox-network-g8lqqr.v2.appdeploy.ai/) · [Observed features and controller menu](FEATURES.md) · [Module contracts and algorithm references](docs/MODULAR-WORKFLOW.md)
 
 ## Run locally
 
@@ -44,3 +44,11 @@ Baseline and intervention share initial state, program and duration. Interventio
 ## Source and merges
 
 This repository was empty when source synchronization began. There were no remote commits, branches or pull requests to merge. The first import includes the existing deployed app, later controller changes and tests. Subsequent updates should fetch and merge remote changes, resolve overlapping edits without discarding features, and rerun verification before pushing.
+
+## PID and modular workflow
+
+Open **G10 composition** for PID, oscillator, logistic map, binary neighborhood diffusion and rule 90. Compare a controlled and open-loop plant from identical 1000-bit seeds and verify exact replay. Open **Modular workflow** to inspect declared ports, connect or disable edges, step delayed messages and save/export wiring. Import a compiled G8 matrix into composition; G9 can explicitly use the received matrix as its initial seed.
+
+The logo is an image resource at `public/resources/atunbi-logo.png`. It is distributed with the source and staged through the deployment resource uploader.
+
+`node scripts/generate-menu.mjs` regenerates the menu inventory. Signal-engine and composition tests run with `npm test`; browser checks exercise all current categorized actions.

@@ -27,9 +27,11 @@ export function validate(ticks, address, tick, mode) {
   if(!Number.isInteger(tick)||tick<0||tick>=ticks) throw Error('Intervention tick must be from 0 to ticks minus 1');
   if(!['none','flip','uncouple'].includes(mode)) throw Error('Unknown intervention');
 }
-export function analyze(VM, program, config) {
+export function analyze(VM, program, config, initialBits) {
+  if(initialBits!==undefined&&(typeof initialBits!=='string'||!/^[01]{1000}$/.test(initialBits)))throw Error('Expected 1000 workflow seed bits');
   const {ticks,address,tick,mode}=config; validate(ticks,address,tick,mode);
   const baseline=new VM(program), intervention=new VM(program,mode!=='uncouple');
+  if(initialBits!==undefined)for(const vm of [baseline,intervention])vm.states[0].bits=Uint8Array.from(initialBits,Number);
   const histories={baseline:[],intervention:[]};
   const signatures={baseline:[],intervention:[]};
   for(let t=0;t<=ticks;t++) {
@@ -62,5 +64,5 @@ export function analyze(VM, program, config) {
     for(let t=ticks-1;t>=start;t--) if(signatures[name][t]===end) {period=ticks-t;break;}
     return [name,period];
   }));
-  return {periodicity,format:'atunbi.g9.discovery.v1',source:program.source,config,shape:[10,10,10],boundary:'periodic',connectivity:6,ruleAxis:'x',rows,patterns,differences,histories};
+  return {initialBits:initialBits??null,periodicity,format:'atunbi.g9.discovery.v1',source:program.source,config,shape:[10,10,10],boundary:'periodic',connectivity:6,ruleAxis:'x',rows,patterns,differences,histories};
 }

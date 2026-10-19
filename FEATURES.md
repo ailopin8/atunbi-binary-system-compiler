@@ -14,15 +14,15 @@ Verified on 19 October 2026 using model/menu tests, desktop/mobile browser flows
 | View and accessibility | Keyboard camera orbit/zoom/recenter, state descriptions, pause-all, responsive controls, visible focus and inline validation |
 | Evidence and notebook | Five JSON export paths, network round trip, invalid-import rejection and hypothesis persistence after reload |
 | References | All eight supplied original links with applied-versus-reference notes |
+| G10 composition | PID regulation, 32-bit fixed-point registers, anti-windup, derivative filtering, simple equation drivers, binary actuation and paired replay |
+| Modular workflow | Typed ports, real edge disconnection, delayed delivery, trace, compatible wiring and atomic import, save/load and graph overview |
 | Controller interaction | Ray selection, thumbstick highlight/select, grip-to-back, pagination, disabled prerequisites, confirmation/cancel and desktop restoration in simulated WebXR |
 
 ## Categorized menu list
 
-The definitions below are generated from `src/lab-actions.ts`, which is shared by the desktop and WebXR menus. Each page contains at most six entries. Previous/Next paginate; Back cancels or returns to categories. Disabled actions explain their prerequisites.
+74 actions across 10 categories share the same desktop/WebXR action registry. Text entry, imports and downloads use the page.
 
 ### Workspace
-
-Create and edit the G6 environment network. File and detailed text editing use the page.
 
 - Load example — confirmation required
 - Add empty sandbox
@@ -31,8 +31,6 @@ Create and edit the G6 environment network. File and detailed text editing use t
 - Clear workspace — confirmation required
 
 ### G6 simulation
-
-Run, pause and step the spatial G6 network. Controlled experiments keep the working state unchanged.
 
 - Run / pause G6
 - Step G6 +1
@@ -43,8 +41,6 @@ Run, pause and step the spatial G6 network. Controlled experiments keep the work
 
 ### G7 compiler
 
-System-sentence compiler: independent runtime. Results are shown as text here; the spatial scene still shows G6.
-
 - Compile G7 source
 - Run / pause G7
 - Step G7 +1
@@ -54,8 +50,6 @@ System-sentence compiler: independent runtime. Results are shown as text here; t
 - Edit system sentences — page only
 
 ### G8 binary kernel
-
-Each matrix contains 1000 bits. Presets compile automatically. The spatial scene remains the G6 network.
 
 - Compile G8 source
 - Run / pause G8
@@ -71,8 +65,6 @@ Each matrix contains 1000 bits. Presets compile automatically. The spatial scene
 
 ### G9 discovery
 
-Matched baseline and intervention, exact recurrence and numeric descriptors. Human labels stay outside the kernel.
-
 - Run discovery
 - Verify exact replay
 - Next intervention mode
@@ -84,8 +76,6 @@ Matched baseline and intervention, exact recurrence and numeric descriptors. Hum
 - Write observer hypothesis — page only
 
 ### View and safety
-
-Recenter without locomotion. Orbit and zoom apply on desktop; in VR look around using the headset.
 
 - Recenter view
 - Describe G6 state
@@ -99,8 +89,6 @@ Recenter without locomotion. Orbit and zoom apply on desktop; in VR look around 
 
 ### Evidence and notebook
 
-Exports download through the browser on the page. Observer notes remain separate from machine state.
-
 - Export G6 network — page only
 - Export G6 experiment — page only
 - Export G7 evidence — page only
@@ -110,13 +98,33 @@ Exports download through the browser on the page. Observer notes remain separate
 
 ### Reference library
 
-Eight original resources, with notes distinguishing applied guidance from future native SDK work.
-
 - Web UI and UX process
 - PhET simulation guidance
 - PhET accessibility
 - Meta Quest references
 - Open all original links — page only
+
+### G10 composition
+
+- Step system +1
+- Run / pause system
+- Reset system — confirmation required
+- Compare PID / open loop
+- Verify system replay
+- Import G8 matrix
+- Export system evidence — page only
+- Next system preset
+- Toggle oscillator edge
+- Edit PID gains — page only
+
+### Modular workflow
+
+- Advance workflow tick
+- Save wiring — page only
+- Load saved wiring — page only
+- Restore default wiring — confirmation required
+- Export wiring JSON — page only
+- Edit module connections — page only
 
 ## Verification and practical limits
 

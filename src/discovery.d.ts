@@ -4,6 +4,7 @@ export type Descriptor = {population: number; transitions: number; components: n
 export type Occurrence = {run: string; tick: number; matrix: string};
 export type DiscoveryResult = {
   format: string;
+  initialBits: string | null;
   source: string;
   config: ExperimentConfig;
   shape: number[];
@@ -19,4 +20,4 @@ export type DiscoveryResult = {
 export function key(bits: Uint8Array): string;
 export function describe(bits: Uint8Array, previous?: Uint8Array): Descriptor;
 export function validate(ticks: number, address: number, tick: number, mode: string): void;
-export function analyze(vm: typeof VM, program: ReturnType<typeof compile>, config: ExperimentConfig): DiscoveryResult;
+export function analyze(vm: typeof VM, program: ReturnType<typeof compile>, config: ExperimentConfig, initialBits?: string): DiscoveryResult;

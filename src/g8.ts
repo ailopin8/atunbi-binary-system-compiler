@@ -1,3 +1,4 @@
+import {siteFlow, registerView, publishState, sendEvidence, bindControl} from './flow/site';
 import './g8.css';
 
 export { compile, VM }; type MatrixID = 'A' | 'B';
@@ -169,7 +170,7 @@ function draw(canvas:HTMLCanvasElement,state:State|undefined,color:string){
   for(let i=0;i<1000;i++)if(state.bits[i]){const x=i%10,y=Math.floor(i/10)%10,z=Math.floor(i/100),p=proj(x,y,z);ctx.fillStyle=color;ctx.globalAlpha=.45+z/18;ctx.fillRect(p[0]-2,p[1]-2,4,4);}
   ctx.globalAlpha=1;
 }
-function refresh(){
+function render_g8(){
   dom('g8-tick').textContent='TICK '+String(vm?.tick||0).padStart(4,'0');
   dom('g8-packets').textContent=(vm?.sent||0)+' PACKETS';
   const z=Number(dom<HTMLInputElement>('g8-depth').value);dom('g8-z').textContent=String(z);
@@ -220,10 +221,7 @@ function load(){
   refresh();
 }
 function fingerprint(state:Uint8Array){let hash=2166136261>>>0;for(const bit of state)hash=Math.imul(hash^bit,16777619)>>>0;return binary(hash,32);}
-function save(data:unknown){
-  const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');
-  a.href=url;a.download='atunbi-g8-binary.json';document.body.appendChild(a);a.click();a.remove();window.setTimeout(()=>URL.revokeObjectURL(url),1000);
-}
+function save(data:unknown){sendEvidence('g8','atunbi-g8-binary.json',data);}
 dom('g8-compile').addEventListener('click',load);
 dom('g8-grammar').addEventListener('click',()=>{const element=dom('g8-help');element.hidden=!element.hidden;});
 dom<HTMLSelectElement>('g8-preset').addEventListener('change',e=>dom<HTMLTextAreaElement>('g8-source').value=examples[(e.target as HTMLSelectElement).value]);
@@ -233,6 +231,7 @@ dom('g8-reset').addEventListener('click',()=>{stop();if(program)vm=new VM(progra
 dom('g8-compare').addEventListener('click',()=>{if(!program)return;observation=experiment(program);
   dom('g8-causality').textContent='24 matched ticks. '+observation.map(r=>'Matrix '+r.matrix+': '+r.differentBits+'/1000 bits differ (Hamming '+r.hamming.toFixed(3)+')').join('; ')+'. This is measured coupling sensitivity, not intrinsic meaning.';});
 dom('g8-save').addEventListener('click',()=>{const text=dom<HTMLInputElement>('g8-name').value.trim();if(!vm||!text)return;
+  siteFlow.emit('g8','annotation',{text,tick:vm.tick});
   labels.push({tick:vm.tick,meaning:text.slice(0,120),fingerprint:fingerprint(vm.states[0].bits)});
   dom('g8-labels').textContent=labels.map(x=>'t'+x.tick+' · '+x.meaning+' · '+x.fingerprint).join('\n');dom<HTMLInputElement>('g8-name').value='';});
 dom('g8-export').addEventListener('click',()=>{if(!vm||!program)return;
@@ -245,7 +244,11 @@ dom('g8-export').addEventListener('click',()=>{if(!vm||!program)return;
 dom<HTMLInputElement>('g8-depth').addEventListener('input',refresh);
 window.addEventListener('resize',refresh);
 try{dom('g8-tests').textContent=check();}catch(error){dom('g8-tests').textContent='SELF TEST FAILED: '+String(error);}
+registerView('g8',render_g8);
+function refresh() {publishState('g8',{tick:vm?.tick||0,population:vm?.states[0]?.bits.reduce((n,b)=>n+b,0)||0});}
 refresh();
 (window as unknown as {__ATUNBI_G8:unknown}).__ATUNBI_G8={compile,VM,enc,dec,pack,unpack,experiment,getState:()=>({tick:vm?.tick||0,states:vm?.states.map(x=>Array.from(new Set(x.bits)))})};
 
 document.addEventListener('atunbi:pause-all',stop);
+
+bindControl('g8-publish',()=>{if(!vm)throw Error('Compile G8 before transferring a matrix.');if(!siteFlow.emit('g8','binary',{bits:Array.from(vm.states[0].bits).join(''),tick:vm.tick}))throw Error('G8 → composition is disconnected.');});

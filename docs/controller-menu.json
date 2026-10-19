@@ -394,5 +394,113 @@
         "confirmationRequired": false
       }
     ]
+  },
+  {
+    "id": "composition",
+    "label": "G10 composition",
+    "actions": [
+      {
+        "id": "g10-step",
+        "label": "Step system +1",
+        "pageOnly": false,
+        "confirmationRequired": false
+      },
+      {
+        "id": "g10-toggle",
+        "label": "Run / pause system",
+        "pageOnly": false,
+        "confirmationRequired": false
+      },
+      {
+        "id": "g10-reset",
+        "label": "Reset system",
+        "pageOnly": false,
+        "confirmationRequired": true
+      },
+      {
+        "id": "g10-compare",
+        "label": "Compare PID / open loop",
+        "pageOnly": false,
+        "confirmationRequired": false
+      },
+      {
+        "id": "g10-replay",
+        "label": "Verify system replay",
+        "pageOnly": false,
+        "confirmationRequired": false
+      },
+      {
+        "id": "g10-import",
+        "label": "Import G8 matrix",
+        "pageOnly": false,
+        "confirmationRequired": false
+      },
+      {
+        "id": "g10-export",
+        "label": "Export system evidence",
+        "pageOnly": true,
+        "confirmationRequired": false
+      },
+      {
+        "id": "g10-preset",
+        "label": "Next system preset",
+        "pageOnly": false,
+        "confirmationRequired": false
+      },
+      {
+        "id": "g10-oscillator",
+        "label": "Toggle oscillator edge",
+        "pageOnly": false,
+        "confirmationRequired": false
+      },
+      {
+        "id": "g10-edit",
+        "label": "Edit PID gains",
+        "pageOnly": true,
+        "confirmationRequired": false
+      }
+    ]
+  },
+  {
+    "id": "workflow",
+    "label": "Modular workflow",
+    "actions": [
+      {
+        "id": "flow-tick",
+        "label": "Advance workflow tick",
+        "pageOnly": false,
+        "confirmationRequired": false
+      },
+      {
+        "id": "flow-save",
+        "label": "Save wiring",
+        "pageOnly": true,
+        "confirmationRequired": false
+      },
+      {
+        "id": "flow-load",
+        "label": "Load saved wiring",
+        "pageOnly": true,
+        "confirmationRequired": false
+      },
+      {
+        "id": "flow-reset",
+        "label": "Restore default wiring",
+        "pageOnly": false,
+        "confirmationRequired": true
+      },
+      {
+        "id": "flow-export",
+        "label": "Export wiring JSON",
+        "pageOnly": true,
+        "confirmationRequired": false
+      },
+      {
+        "id": "flow-edit",
+        "label": "Edit module connections",
+        "pageOnly": true,
+        "confirmationRequired": false
+      }
+    ]
   }
 ]

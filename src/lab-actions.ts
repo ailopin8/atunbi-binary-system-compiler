@@ -1,3 +1,4 @@
+import {requestControl} from './flow/site';
 import type {LabAction, MenuCategory} from './controller-menu';
 
 export type ViewActions = {camera:(action:string)=>void; summary:()=>string; pauseAll:()=>void; clearWorkspace:()=>void};
@@ -8,7 +9,7 @@ function click(id:string) {
   const button=byId<HTMLButtonElement>(id);
   if(!button)throw Error('Control is not available: '+id);
   if(button.disabled)throw Error('Complete the prerequisite before using '+button.textContent+'.');
-  button.click();
+  requestControl(id);
 }
 function button(id:string,label:string,target:string,status?:string,extra:Partial<LabAction>={}):LabAction {
   return {id,label,available:()=>{const control=byId<HTMLButtonElement>(target);return !control?'Control not loaded.':control.disabled?'Compile or run the prerequisite first.':null;},run:()=>{click(target);return status?text(status):label+' completed.';},...extra};
@@ -99,6 +100,26 @@ export function createLabActions(view:ViewActions):MenuCategory[] {
       {id:'references-accessibility',label:'PhET accessibility',run:()=> 'PhET Interactive Description Guide: alternative input, state descriptions and deliberate responsive feedback.'},
       {id:'references-meta',label:'Meta Quest references',run:()=> 'Meta First Hand, Meta Spatial SDK Samples and Meta Quest Agentic Tools. Native Unity and Android SDKs are references; this app uses WebXR.'},
       {id:'references-links',label:'Open all original links',desktopOnly:true,run:()=>focus('reference-library')}
+    ]},
+    {id:'composition',label:'G10 composition',description:'PID and simple equations operate a binary 1000-cell plant. The G6 spatial scene remains independent.',actions:[
+      button('g10-step','Step system +1','g10-step','g10-readout'),
+      button('g10-toggle','Run / pause system','g10-run','g10-readout'),
+      button('g10-reset','Reset system','g10-reset','g10-status',{confirm:'Reset G10 to the same initial matrix and clear its experiment?'}),
+      button('g10-compare','Compare PID / open loop','g10-compare','g10-status'),
+      button('g10-replay','Verify system replay','g10-replay','g10-status'),
+      button('g10-import','Import G8 matrix','g10-import','g10-status'),
+      button('g10-export','Export system evidence','g10-export',undefined,{desktopOnly:true}),
+      {id:'g10-preset',label:'Next system preset',run:()=>cycle('g10-preset')},
+      {id:'g10-oscillator',label:'Toggle oscillator edge',run:()=>{const input=byId<HTMLInputElement>('g10-link-oscillator')!;input.checked=!input.checked;input.dispatchEvent(new Event('change',{bubbles:true}));return text('g10-status');}},
+      {id:'g10-edit',label:'Edit PID gains',desktopOnly:true,run:()=>focus('g10-kp')}
+    ]},
+    {id:'workflow',label:'Modular workflow',description:'Actual website modules exchange typed signals. Disabled edges stop subsequent delivery; delayed feedback advances on explicit ticks.',actions:[
+      button('flow-tick','Advance workflow tick','flow-tick','flow-status'),
+      button('flow-save','Save wiring','flow-save','flow-status',{desktopOnly:true}),
+      button('flow-load','Load saved wiring','flow-load','flow-status',{desktopOnly:true}),
+      button('flow-reset','Restore default wiring','flow-reset','flow-status',{confirm:'Restore default website connections?'}),
+      button('flow-export','Export wiring JSON','flow-export',undefined,{desktopOnly:true}),
+      {id:'flow-edit',label:'Edit module connections',desktopOnly:true,run:()=>focus('modular-workflow')}
     ]}
   ];
 }

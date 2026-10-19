@@ -9,7 +9,9 @@
       "single step",
       "reset confirmation and cancellation",
       "G9 descriptors and recurrence",
-      "G9 exact replay"
+      "G9 exact replay",
+      "typed controller signal routing",
+      "model-to-view delivery"
     ],
     "description": "Exercise the shared menu through a compiled binary state and a reproducible experiment.",
     "steps": [
@@ -79,7 +81,9 @@
       "G9 interventions",
       "G9 hypothesis status and persistence",
       "keyboard hypothesis submission",
-      "responsive layout"
+      "responsive layout",
+      "mobile G10 PID controls",
+      "workflow accessibility"
     ],
     "description": "Reject invalid experiments and retain an explicit observer hypothesis on mobile.",
     "steps": [
@@ -88,30 +92,40 @@
       "Set 8 ticks and run each available intervention, verifying replay",
       "Enter Observed recurrence hypothesis, set Inconclusive and save using Enter",
       "Refresh, run a discovery experiment and inspect the notebook",
-      "Use Controller menu to navigate G8 pages with Previous and Next"
+      "Use Controller menu to navigate G8 pages with Previous and Next",
+      "Navigate to G10 composition and verify the PID gain form and binary state summary are usable on mobile",
+      "Navigate to Modular workflow and inspect the edge table without page overflow"
     ],
     "expected": "Blank required values reject the experiment and focus the invalid field. Valid paired experiments replay exactly, the hypothesis persists with Inconclusive status and the menu remains usable without page overflow."
   },
   {
-    "name": "Navigation, camera controls, references and VR fallback",
+    "name": "PID, logo and executable modular workflow",
     "viewport": "desktop",
     "covers": [
-      "skip link and section navigation",
-      "keyboard camera orbit zoom recenter",
-      "text simulation description",
-      "pause-all",
-      "eight original references",
-      "WebXR availability and controller instructions"
+      "refined logo resource",
+      "G10 PID convergence and limits",
+      "oscillator logistic diffusion XOR composition",
+      "paired open-loop experiment",
+      "exact system replay",
+      "G8 to composition to G9 binary ports",
+      "workflow disconnection and compatible ports",
+      "saved and imported wiring",
+      "workflow graph and trace",
+      "G10 and workflow controller categories"
     ],
-    "description": "Check accessible navigation and the desktop mirror of headset actions.",
+    "description": "Verify an executable PID system and real data flow between website modules.",
     "steps": [
-      "Use Skip to laboratory and Controller menu navigation",
-      "Load the workspace example with confirmation",
-      "Focus the 3D view and use arrow keys, plus/minus and Home",
-      "Choose View and safety, Describe G6 state and Pause all runtimes",
-      "Open VR controls and availability and inspect the support message and ray, grip and thumbstick instructions",
-      "Open Reference library and inspect all eight original links and application notes"
+      "Inspect the \u00c0t\u00fanb\u00ed logo in the header",
+      "In G10 composition select PID regulation, step the binary matrix, compare PID with open loop and verify system replay",
+      "Select Coupled patterns and repeat the comparison and replay",
+      "Compile G8 and click Import G8 matrix in G10",
+      "In G9 select Use matrix from workflow, run discovery and verify replay",
+      "In Modular workflow disable controls-g8 and try stepping G8 from Controller menu; inspect the disconnected message",
+      "Reconnect controls-g8, disable g8-view and step G8 directly; verify the last view state is retained",
+      "Restore default wiring, save it, disable an edge and load saved wiring",
+      "Try connecting an incompatible source output to a view input",
+      "Export the wiring JSON and inspect the delivery trace"
     ],
-    "expected": "Camera changes preserve simulation state, the G6 summary is available as text, pause-all stops active runtimes, references contain all eight supplied resources and unsupported VR has a usable desktop fallback."
+    "expected": "The logo loads, binary cells remain 0/1, PID/open-loop measurements and exact replay appear, matrix transfers work through declared ports, disconnected edges stop delivery, compatible saved wiring reloads and incompatible wiring is rejected visibly."
   }
 ]

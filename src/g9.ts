@@ -1,3 +1,4 @@
+import {siteFlow,latestSignals,sourceForDiscovery,registerView,publishState,sendEvidence} from './flow/site';
 import {compile, VM} from './g8';
 import {analyze} from './discovery.js';
 import type {ExperimentConfig} from './discovery.js';
@@ -16,7 +17,7 @@ section.innerHTML=`
 <label>Intervention <select id="g9-mode"><option value="flip">Flip one bit in first matrix</option><option value="uncouple">Disable all receiving from tick 0</option><option value="none">No intervention / reproducibility control</option></select></label>
 <label>Address <input id="g9-address" name="address" required step="1" aria-describedby="g9-address-error" type="number" min="0" max="999" value="444"></label><span id="g9-address-error" class="field-error"></span>
 <label>At tick <input id="g9-at" name="intervention-tick" required step="1" aria-describedby="g9-at-error" type="number" min="0" value="0"></label><span id="g9-at-error" class="field-error"></span>
-<button id="g9-run" type="submit">Run discovery experiment</button><button id="g9-replay" type="button" disabled>Verify replay</button><button id="g9-export" type="button" disabled>Export G9 evidence</button>
+<label><input id="g9-workflow-seed" type="checkbox"> Use matrix from workflow</label><button id="g9-run" type="submit">Run discovery experiment</button><button id="g9-replay" type="button" disabled>Verify replay</button><button id="g9-export" type="button" disabled>Export G9 evidence</button>
 </form>
 <p id="g9-setup-help">Matched initial bits, rules, scheduling and duration. Flip changes one bit before the selected tick is observed; uncoupling removes receiving from the start (tick field ignored). Address = x + 10y + 100z.</p>
 <p id="g9-status" role="status">Ready to analyze the G8 compiler source.</p></div>
@@ -81,16 +82,19 @@ el('g9-experiment-form').addEventListener('submit', event => {
   try {
   if (mode !== 'none' && mode !== 'flip' && mode !== 'uncouple') throw Error('Choose a supported intervention.');
   const config:ExperimentConfig={ticks:Number(input('g9-ticks')),address:mode==='flip'?Number(input('g9-address')):0,tick:mode==='flip'?Number(input('g9-at')):0,mode};
-  const source=(el('g8-source') as HTMLTextAreaElement).value;
-  const next=analyze(VM,compile(source),config);el('g8-source').removeAttribute('aria-invalid');result=next;render();
+  const source=sourceForDiscovery();
+  const initialBits=(el('g9-workflow-seed') as HTMLInputElement).checked?String(latestSignals.get('g9:binary')?.bits||''):undefined;
+  if(initialBits!==undefined&&!/^[01]{1000}$/.test(initialBits))throw Error('Step G10 or import a matrix through composition-g9 first.');
+  const next=analyze(VM,compile(source),config,initialBits);el('g8-source').removeAttribute('aria-invalid');result=next;publishState('g9',{ticks:result.config.ticks,patterns:result.patterns.length});
   for(const id of ['g9-replay','g9-export'])(el(id) as HTMLButtonElement).disabled=false;
   el('g9-status').textContent=`Experiment complete · ${result.patterns.length} exact patterns · ${config.ticks} matched ticks. Evidence is descriptive, not proof of meaning.`;
 }catch(e){el('g9-status').textContent='Source rejected: '+(e as Error).message+' Correct the G8 source and run again.'; el('g8-source').setAttribute('aria-invalid','true'); el('g8-source').focus();}});
-el('g9-replay').addEventListener('click',()=>{if(!result)return;const again=analyze(VM,compile(result.source),result.config);el('g9-status').textContent=JSON.stringify(again)===JSON.stringify(result)?'Replay PASS · all states, descriptors and pattern occurrences match exactly.':'Replay FAILED';});
+el('g9-replay').addEventListener('click',()=>{if(!result)return;const again=analyze(VM,compile(result.source),result.config,result.initialBits||undefined);el('g9-status').textContent=JSON.stringify(again)===JSON.stringify(result)?'Replay PASS · all states, descriptors and pattern occurrences match exactly.':'Replay FAILED';});
 el('g9-pattern').addEventListener('change',pattern);
 el('g9-note').addEventListener('keydown', event => { if (event.key === 'Enter') { event.preventDefault(); el('g9-save').click(); } });
 el('g9-save').addEventListener('click',()=>{if(!result)return;const text=input('g9-note').trim();if(!text){el('g9-note-error').textContent='Enter a hypothesis before saving.';el('g9-note').setAttribute('aria-invalid','true');el('g9-note').focus();el('g9-status').textContent='Hypothesis not saved. Enter a hypothesis first.';return;}el('g9-note-error').textContent='';el('g9-note').removeAttribute('aria-invalid');
-  const p=result.patterns[Number(input('g9-pattern'))];notes.push({text:text.slice(0,240),status:input('g9-hypothesis'),pattern:p.id,bits:p.bits,source:result.source,config:result.config});notes=notes.slice(-100);
+  const p=result.patterns[Number(input('g9-pattern'))];siteFlow.emit('g9','annotation',{text,status:input('g9-hypothesis')});notes.push({text:text.slice(0,240),status:input('g9-hypothesis'),pattern:p.id,bits:p.bits,source:result.source,config:result.config});notes=notes.slice(-100);
   try{localStorage.setItem('atunbi.g9.notes',JSON.stringify(notes));el('g9-status').textContent='Hypothesis saved as observer metadata.';}catch{el('g9-status').textContent='Browser storage unavailable; export to preserve this hypothesis.';}renderNotes();});
-el('g9-export').addEventListener('click',()=>{if(!result)return;const url=URL.createObjectURL(new Blob([JSON.stringify({...result,observerHypotheses:notes},null,2)],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download='atunbi-g9-evidence.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);});
+el('g9-export').addEventListener('click',()=>{if(result)sendEvidence('g9','atunbi-g9-evidence.json',{...result,observerHypotheses:notes});});
+registerView('g9',render);
 renderNotes();

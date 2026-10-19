@@ -1,3 +1,4 @@
+import {registerView, publishState, sendEvidence} from './flow/site';
 import './g4.css';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
@@ -320,15 +321,7 @@ function exportGraph(): void {
       targetPort: 'specific_algorithm_input', mapping: 'identity_xyz'
     }))
   };
-  const file = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
-  const url = URL.createObjectURL(file);
-  const anchor = document.createElement('a');
-  anchor.href = url;
-  anchor.download = 'atunbi-g5-network.json';
-  document.body.appendChild(anchor);
-  anchor.click();
-  anchor.remove();
-  window.setTimeout(() => URL.revokeObjectURL(url), 1000);
+  if(!sendEvidence('g6','atunbi-g5-network.json',payload))return;
   notice('Exported ' + nodes.length + ' environments, ' +
     nodes.reduce((total,n) => total + n.layers.length, 0) + ' algorithms, and all relationships.');
 }
@@ -576,7 +569,7 @@ function internalPanel(): void {
     +'<label>Receiving algorithm<select id="inner-to"'+(n.layers.length<2?' disabled':'')+'>'+receivingOptions+'</select></label>'
     +'<button id="inner-connect" type="button"'+(n.layers.length<2?' disabled':'')+'>Connect internal patterns</button></div>';
 }
-function refreshDynamic(): void {
+function render_g6(): void {
   const tickLabel=document.querySelector<HTMLElement>('#tick-label');
   if (tickLabel) tickLabel.textContent='TICK '+String(tick).padStart(4,'0');
   const nc=document.querySelector<HTMLElement>('#node-count');if (nc) nc.textContent=String(nodes.length);
@@ -948,13 +941,11 @@ document.querySelector('#g6-export')?.addEventListener('click',()=>{
     },
     result:lastExperiment
   };
-  const blob=new Blob([JSON.stringify(report,null,2)],{type:'application/json'});
-  const url=URL.createObjectURL(blob),anchor=document.createElement('a');
-  anchor.href=url;anchor.download='atunbi-g6-evidence.json';
-  document.body.appendChild(anchor);anchor.click();anchor.remove();
-  window.setTimeout(()=>URL.revokeObjectURL(url),1000);
+  if(!sendEvidence('g6','atunbi-g6-evidence.json',report))return;
   notice('G6 evidence JSON exported with the starting network and complete paired trajectory measurements.');
 });
+registerView('g6',render_g6);
+function refreshDynamic() {publishState('g6',{tick,environments:nodes.length,algorithms:nodes.reduce((sum,n)=>sum+n.layers.length,0)});}
 redraw();resize();
 notice('Workspace ready. Start with an empty environment; nothing runs until an algorithm is assigned.');
 const updateSpatialControls = installSpatialControls({

@@ -108,6 +108,32 @@ try {
     await category('references');for(const id of ['references-web','references-simulation','references-accessibility','references-meta','references-links'])await action(id);
     assert.equal(await page.locator('#reference-library article a').count(),8);await page.locator('#scene').focus();await page.keyboard.press('Home');assert.match(await page.locator('#spatial-feedback').innerText(),/recentered/);
   });
+  await check('PID composition, all drivers, matrix transfer and exact replay',async()=>{
+    await category('composition');await action('g10-step');assert.match(await page.locator('#g10-readout').innerText(),/Tick 1/);
+    await action('g10-toggle');await page.waitForFunction(()=>Number(document.querySelector('#g10-readout').textContent.match(/Tick (\d+)/)[1])>1);await action('g10-toggle');
+    await action('g10-reset',true);await action('g10-compare');await action('g10-replay');assert.match(await page.locator('#g10-status').innerText(),/replay PASS/);
+    const report=await page.locator('#g10-comparison').innerText();assert.match(report,/64 matched ticks/);
+    const download=page.waitForEvent('download');await action('g10-export');assert.equal((await download).suggestedFilename(),'atunbi-composition-evidence.json');
+    await action('g10-preset');await action('g10-step');await action('g10-oscillator');await action('g10-edit');
+    await page.locator('#g10-kp').fill('');await page.locator('#g10-apply').click();assert.ok(await page.locator('#g10-kp').evaluate(e=>document.activeElement===e));await page.locator('#g10-kp').fill('.7');await page.locator('#g10-apply').click();
+    await action('g10-import');assert.match(await page.locator('#g10-status').innerText(),/Imported 1000 bits/);
+    await page.locator('#g9-workflow-seed').check();await page.locator('#g9-run').click();await page.locator('#g9-replay').click();assert.match(await page.locator('#g9-status').innerText(),/Replay PASS/);await page.locator('#g9-workflow-seed').uncheck();
+    await page.locator('#g10-preset').selectOption('coupled');await page.locator('#g10-step').click();await page.locator('#g10-compare').click();await page.locator('#g10-replay').click();assert.match(await page.locator('#g10-status').innerText(),/replay PASS/);
+  });
+  await check('Actual workflow disconnection, delayed delivery, validation and saved wiring',async()=>{
+    await page.getByRole('checkbox',{name:'Enable controls-g8',exact:true}).uncheck();await category('g8');await action('g8-step').catch(()=>{});assert.match(await feedback(),/disconnected/);
+    await page.getByRole('checkbox',{name:'Enable controls-g8',exact:true}).check();await action('g8-step');
+    const old=await page.locator('#g8-tick').innerText();await page.getByRole('checkbox',{name:'Enable g8-view',exact:true}).uncheck();await page.locator('#g8-step').click();assert.equal(await page.locator('#g8-tick').innerText(),old);await page.getByRole('checkbox',{name:'Enable g8-view',exact:true}).check();await page.locator('#g8-step').click();assert.notEqual(await page.locator('#g8-tick').innerText(),old);
+    await page.getByRole('checkbox',{name:'Enable source-g9',exact:true}).uncheck();await page.locator('#g9-run').click();assert.match(await page.locator('#g9-status').innerText(),/Reconnect source-g9/);await page.getByRole('checkbox',{name:'Enable source-g9',exact:true}).check();
+    await page.locator('#flow-from').selectOption('sources.source');await page.locator('#flow-to').selectOption('g6-view.state');await page.getByRole('button',{name:'Connect modules',exact:true}).click();assert.match(await page.locator('#flow-status').innerText(),/Rejected/);
+    await page.locator('#flow-from').selectOption('g8.state');await page.locator('#flow-to').selectOption('metrics.data');await page.locator('#flow-delay').check();await page.getByRole('button',{name:'Connect modules',exact:true}).click();await page.locator('#g8-step').click();
+    await category('workflow');await action('flow-tick');await action('flow-save');await page.getByRole('checkbox',{name:'Enable controls-g8',exact:true}).uncheck();await action('flow-load');assert.ok(await page.getByRole('checkbox',{name:'Enable controls-g8',exact:true}).isChecked());
+    const downloading=page.waitForEvent('download');await action('flow-export');const file=await downloading;const output=path.join(root,'test-results/atunbi-workflow.json');await file.saveAs(output);await page.locator('#flow-file').setInputFiles(output);await page.waitForFunction(()=>document.querySelector('#flow-status').textContent.includes('imported'));
+    await action('flow-edit');await action('flow-reset',true);assert.equal(await page.locator('.flow-nodes article').count()>15,true);
+  });
+  await check('Logo and modular view state are present',async()=>{
+    const logo=page.getByRole('img',{name:'Àtúnbí eye and renewal logo',exact:true});assert.ok(await logo.evaluate(e=>e.complete&&e.naturalWidth>0));assert.equal(await page.locator('#g10-slice span').count(),100);
+  });
   await check('Notebook persistence, mobile forms, keyboard navigation and accessibility',async()=>{
     await page.reload();await page.locator('#g9-run').click();assert.match(await page.locator('#g9-notes').innerText(),/Observed deterministic recurrence/);
     await page.setViewportSize({width:375,height:812});assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth),375);assert.equal(await page.locator('#g9-ticks').evaluate(e=>getComputedStyle(e).fontSize),'16px');
@@ -119,7 +145,7 @@ try {
   await check('Simulated WebXR controller menu and restored desktop state',async()=>{
     const xrPage=await browser.newPage();await xrPage.goto(base+'/tests/spatial.test.html');await xrPage.waitForFunction(()=>document.body.dataset.result==='PASS',{},{timeout:10000});await xrPage.close();
   });
-  await check('Coverage of all 58 controller actions',async()=>{
+  await check('Coverage of all categorized controller actions',async()=>{
     const inventory=JSON.parse(await fs.readFile(path.join(root,'docs/controller-menu.json'),'utf8'));
     const ids=inventory.flatMap(category=>category.actions.map(action=>action.id));
     assert.deepEqual(ids.filter(id=>!exercisedActions.has(id)),[],'Every categorized menu action must be exercised');
