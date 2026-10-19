@@ -16,6 +16,7 @@ function button(id:string,label:string,target:string,status?:string,extra:Partia
 }
 function focus(id:string) {
   const control=byId(id);if(!control)throw Error('Editor not loaded.');
+  window.dispatchEvent(new CustomEvent('atunbi:navigate-module',{detail:id}));
   control.scrollIntoView({block:'center'});if(!control.hasAttribute('tabindex')&&!control.matches('input,textarea,select'))control.tabIndex=-1;
   control.focus();return 'Editing controls are focused on the page.';
 }

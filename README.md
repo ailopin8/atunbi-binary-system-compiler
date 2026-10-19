@@ -65,3 +65,7 @@ Deployment of this revision is pending: AppDeploy reported its daily deployment 
 Create native binary algorithms using one explicit contract: three prior-state bit inputs → eight-row truth table → one next-state bit per cell. A three-step creator validates and tests each rule before registering it for G11. Saved rules include name, category, purpose, aim and color, support browser persistence and JSON backup, and remain embedded in running experiments after later edits. Registry delivery is a genuine workflow connection.
 
 The interface now offers module guides, grouped explanations, a module focus mode and an exportable feature/connection map. See [workshop documentation](docs/ALGORITHM-WORKSHOP.md) and [complete feature and controller list](docs/FEATURE-CONNECTIONS.md). The shared menu contains 12 categories and 88 actions.
+
+### Home and dedicated module pages
+
+The root opens a home page organized into Create, Simulate, Inspect, Connect and Learn. Each of the 17 modules has its own address, heading, title and related links. For example, `?page=workshop` opens the creator and `?page=ecology` opens G11. Browser navigation retains models and drafts in the current session. Old section links continue to work. See [page directory and navigation contracts](docs/WEBSITE-PAGES.md).

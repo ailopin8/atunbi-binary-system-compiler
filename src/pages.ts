@@ -1,0 +1,23 @@
+export const pages=[
+ {id:'workshop',title:'Create algorithms',group:'Create',description:'Define, test and save new binary rules.',selectors:['#algorithm-workshop'],aliases:['algorithm-workshop'],related:['ecology','features','wiring']},
+ {id:'compiler',title:'System compiler · G7',group:'Create',description:'Turn system sentences into executable instructions.',selectors:['#g7-lab'],aliases:['g7-lab'],related:['binary','discovery']},
+ {id:'network',title:'Pattern network · G6',group:'Simulate',description:'Create environments and connect their algorithmic outputs.',selectors:['.intro4','.toolbar','#toast','.graph-section'],aliases:['network'],related:['layers','relationships','spatial','experiments']},
+ {id:'layers',title:'Inside an environment',group:'Simulate',description:'Install algorithms and wire their internal layers.',selectors:['.inner-section'],aliases:['internal-algorithms'],related:['network','spatial','relationships']},
+ {id:'relationships',title:'Environment connections',group:'Connect',description:'Control how one environment affects another.',selectors:['.connections'],aliases:['environment-connections'],related:['network','experiments','metrics']},
+ {id:'spatial',title:'3D viewer and WebXR',group:'Inspect',description:'Observe the G6 volume, orbit the camera or enter VR.',selectors:['.spatial-section'],aliases:['spatial-viewer'],related:['network','controllers','metrics']},
+ {id:'binary',title:'Binary kernel · G8',group:'Simulate',description:'Compile and run two 1,000-bit matrices with binary messages.',selectors:['#g8-lab'],aliases:['g8-lab'],related:['pid','discovery','compiler']},
+ {id:'pid',title:'PID composition · G10',group:'Simulate',description:'Connect feedback, drivers and a bounded binary actuator.',selectors:['#g10-lab'],aliases:['g10-lab'],related:['binary','discovery','ecology']},
+ {id:'ecology',title:'Algorithm ecology · G11',group:'Simulate',description:'Combine built-in and custom algorithms in connected cubes.',selectors:['#g11-lab'],aliases:['g11-lab'],related:['workshop','wiring','features']},
+ {id:'discovery',title:'Semantic discovery · G9',group:'Inspect',description:'Measure patterns and test explicit observer hypotheses.',selectors:['#g9'],aliases:['g9','g9-lab'],related:['binary','pid','experiments']},
+ {id:'experiments',title:'Controlled experiments · G6',group:'Inspect',description:'Compare the same network with selected connections removed.',selectors:['.g6-experiment','.method4'],aliases:['g6-lab'],related:['network','relationships','metrics']},
+ {id:'metrics',title:'Live inspection · G6',group:'Inspect',description:'Read the current state of the G6 environments.',selectors:['.metrics'],aliases:['live-inspection'],related:['network','spatial','experiments']},
+ {id:'wiring',title:'Website wiring',group:'Connect',description:'Connect typed module ports and inspect deliveries.',selectors:['#modular-workflow'],aliases:['modular-workflow'],related:['features','workshop','ecology']},
+ {id:'features',title:'Features and connections',group:'Connect',description:'See what each module receives, produces and affects.',selectors:['#feature-map'],aliases:['feature-map'],related:['wiring','controllers','workshop']},
+ {id:'controllers',title:'Controller menu',group:'Connect',description:'Operate the labs through a shared categorized action menu.',selectors:['#controller-menu'],aliases:['controller-menu'],related:['spatial','features','network']},
+ {id:'references',title:'Reference library',group:'Learn',description:'Read the UI, accessibility, simulation and Quest references.',selectors:['#reference-library','.workflow-guide'],aliases:['reference-library'],related:['theory','features','workshop']},
+ {id:'theory',title:'Purpose and experimental theory',group:'Learn',description:'Understand the assumptions and hypotheses behind the lab.',selectors:['.g6-theory'],aliases:['theory'],related:['experiments','discovery','references']}
+] as const;
+export type PageId=typeof pages[number]['id']|'home';
+export function pageForAlias(alias:string):PageId|undefined{return alias==='home'?'home':pages.find(page=>page.id===alias||(page.aliases as readonly string[]).includes(alias))?.id;}
+export function resolvePage(search:string,hash:string):{page:PageId;missing:boolean}{const query=new URLSearchParams(search),requested=query.get('page');if(requested!==null){const page=pageForAlias(requested);return {page:page||'home',missing:!page};}const page=pageForAlias(hash.replace(/^#/,''));return {page:page||'home',missing:false};}
+export function pageHref(id:PageId){return id==='home'?'./':'?page='+id;}

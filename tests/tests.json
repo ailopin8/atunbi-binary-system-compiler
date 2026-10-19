@@ -180,5 +180,31 @@
       "Open Features and connections; inspect input/output/effect contracts and current edges",
       "Focus the workshop module, restore all modules and export the feature inventory"
     ]
+  },
+  {
+    "name": "Home and dedicated module pages",
+    "sanity": false,
+    "viewport": "mobile",
+    "covers": [
+      "grouped home page",
+      "17 dedicated module pages",
+      "direct URLs and reload",
+      "browser history",
+      "legacy bookmarks",
+      "state and draft retention",
+      "mobile navigation",
+      "invalid page recovery"
+    ],
+    "description": "Navigate between addressable modules without resetting the working session.",
+    "steps": [
+      "Open the root URL and inspect Create, Simulate, Inspect, Connect and Learn groups",
+      "Open Create algorithms and enter a draft name",
+      "Use Open module to visit Algorithm ecology, step once, then return to the workshop",
+      "Verify the draft name remains and use browser Back/Forward",
+      "Open ?page=binary directly and refresh; verify only the Binary kernel page is visible",
+      "Open #g11-lab and verify it resolves to ?page=ecology",
+      "Open ?page=unknown and verify a readable Home recovery message",
+      "Return Home and check the card grid at mobile width"
+    ]
   }
 ]

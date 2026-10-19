@@ -8,3 +8,4 @@ import './algorithm-workshop';
 import './references';
 import './workflow-view';
 import './feature-map';
+import './site-pages';

@@ -20,7 +20,7 @@ try {
   catch(error) {if(process.env.BROWSER_CHANNEL)throw error;browser=await chromium.launch({headless:true});}
   const page=await browser.newPage({viewport:{width:1280,height:900}});
   page.on('pageerror',error=>errors.push(error.message));
-  await page.goto(base);
+  await page.goto(base+'/?integration-test=1');
   const menu=page.locator('#controller-menu');
   const feedback=()=>menu.locator('#controller-feedback').innerText();
   async function category(id) {
@@ -176,6 +176,23 @@ try {
   });
   await check('Simulated WebXR controller menu and restored desktop state',async()=>{
     const xrPage=await browser.newPage();await xrPage.goto(base+'/tests/spatial.test.html');await xrPage.waitForFunction(()=>document.body.dataset.result==='PASS',{},{timeout:10000});await xrPage.close();
+  });
+  await check('Home and seventeen dedicated module pages, history, state and direct links',async()=>{
+    const routed=await browser.newPage({viewport:{width:1280,height:900}});routed.on('pageerror',error=>errors.push(error.message));await routed.goto(base);
+    assert.equal(await routed.locator('#home-page').isVisible(),true);assert.equal(await routed.locator('.home-card').count(),17);assert.equal(await routed.locator('.module-page:visible').count(),0);
+    const manifest=JSON.parse(await fs.readFile(path.join(root,'docs/pages.json'),'utf8'));const ids=await routed.locator('.home-card').evaluateAll(links=>links.map(link=>new URL(link.href).searchParams.get('page')));
+    for(const id of ids){await routed.locator('#site-page-select').selectOption(id);assert.equal(await routed.locator('.module-page:visible').count(),1);assert.equal(await routed.locator('#page-'+id).isVisible(),true);assert.match(routed.url(),new RegExp('page='+id));for(const selector of manifest.pages.find(p=>p.id===id).selectors)assert.equal(await routed.locator('#page-'+id).locator(selector).count(),1,'Module content must live on its own page: '+selector);}
+    await routed.locator('#site-page-select').selectOption('ecology');await routed.locator('#g11-step').click();const snapshot=await routed.evaluate(()=>JSON.stringify(window.__ATUNBI_G11.engine.snapshot()));
+    await routed.locator('#site-page-select').selectOption('workshop');await routed.locator('#g12-new').click();await routed.locator('#g12-name').fill('Draft survives page navigation');await routed.locator('#site-page-select').selectOption('ecology');assert.equal(await routed.evaluate(()=>JSON.stringify(window.__ATUNBI_G11.engine.snapshot())),snapshot);
+    await routed.goBack();assert.ok(await routed.locator('#page-workshop').isVisible());assert.equal(await routed.locator('#g12-name').inputValue(),'Draft survives page navigation');await routed.goForward();assert.ok(await routed.locator('#page-ecology').isVisible());
+    await routed.locator('#site-page-select').selectOption('controllers');await routed.locator('[data-menu=next]').click();await routed.locator('[data-menu=workshop]').click();await routed.locator('[data-menu=g12-registry]').click();assert.ok(await routed.locator('#page-workshop').isVisible());
+    await routed.goto(base+'/?page=binary');assert.ok(await routed.locator('#page-binary').isVisible());await routed.reload();assert.ok(await routed.locator('#page-binary').isVisible());
+    await routed.goto(base+'/#g11-lab');assert.ok(await routed.locator('#page-ecology').isVisible());assert.match(routed.url(),/page=ecology/);
+    await routed.goto(base+'/?page=unknown');assert.ok(await routed.locator('#home-page').isVisible());assert.match(await routed.locator('#page-route-status').innerText(),/does not exist/);
+    await routed.goto(base);await routed.setViewportSize({width:375,height:812});assert.equal(await routed.evaluate(()=>document.documentElement.scrollWidth),375);
+    await routed.addScriptTag({path:path.join(root,'node_modules/axe-core/axe.min.js')});assert.deepEqual(await routed.evaluate(async()=>{const result=await window.axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21a','wcag21aa']}});return result.violations.map(v=>v.id);}),[]);
+    await routed.locator('.home-card').filter({hasText:'Create algorithms'}).click();assert.ok(await routed.locator('#page-workshop').isVisible());await routed.locator('#g12-new').click();await routed.addScriptTag({path:path.join(root,'node_modules/axe-core/axe.min.js')});assert.deepEqual(await routed.evaluate(async()=>{const result=await window.axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21a','wcag21aa']}});return result.violations.map(v=>v.id);}),[]);
+    await routed.locator('.site-home-link').click();assert.ok(await routed.locator('#home-page').isVisible());await routed.screenshot({path:path.join(root,'test-results/home-mobile.png')});await routed.setViewportSize({width:1280,height:900});await routed.screenshot({path:path.join(root,'test-results/home-desktop.png')});await routed.close();
   });
   await check('Coverage of all categorized controller actions',async()=>{
     const inventory=JSON.parse(await fs.readFile(path.join(root,'docs/controller-menu.json'),'utf8'));

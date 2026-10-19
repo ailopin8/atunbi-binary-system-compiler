@@ -63,3 +63,6 @@ siteFlow.connect({id:'composition-g9',from:'composition',output:'binary',to:'g9'
 siteFlow.register({id:'feature-inventory',label:'Feature and connection map',inputs:{snapshot:'snapshot'},outputs:{evidence:'evidence'},receive:(_port,payload)=>{latestSignals.set('feature-inventory',payload);inputs.get('feature-inventory:snapshot')?.(payload);}});
 siteFlow.connect({id:'workflow-feature-inventory',from:'workflow',output:'state',to:'feature-inventory',input:'snapshot',enabled:true,delayed:false});
 siteFlow.connect({id:'feature-inventory-exports',from:'feature-inventory',output:'evidence',to:'exports',input:'data',enabled:true,delayed:false});
+
+siteFlow.register({id:'navigation',label:'Home and module pages',inputs:{},outputs:{page:'snapshot'}});
+siteFlow.connect({id:'navigation-metrics',from:'navigation',output:'page',to:'metrics',input:'data',enabled:true,delayed:false});

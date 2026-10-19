@@ -159,3 +159,7 @@ A guided three-step creator produces tested, versioned native binary rules. Name
 Every major module has an input/process/output/effect guide. A focus mode reduces visible modules; the feature map retains restore controls, categorized controller actions, page controls and actual edge status. Export the current feature and connection inventory as JSON.
 
 New controller category: Algorithm workshop (four page actions). Total: 12 categories, 88 actions. Read [all feature contracts and control lists](docs/FEATURE-CONNECTIONS.md), [machine-readable contracts](docs/feature-contracts.json), and [the binary instruction format](docs/ALGORITHM-WORKSHOP.md).
+
+## Home and module pages
+
+The home page organizes 17 dedicated module pages into five purpose groups. Navigation includes direct URLs, related tools, a shared module selector, browser Back/Forward, legacy bookmark handling and unknown-page recovery. Working models and drafts survive in-session navigation; refresh starts a new unsaved simulation session. The home and each routed page are tested separately from the cross-module integration harness. See [the full page directory](docs/WEBSITE-PAGES.md).
