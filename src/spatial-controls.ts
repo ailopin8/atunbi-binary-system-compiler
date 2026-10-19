@@ -249,7 +249,7 @@ export function installSpatialControls(options: SpatialOptions) {
     });
     if (!renderer.xr.isPresenting) return;
     controllers.forEach((controller,index)=>{
-      const source=controller.userData.inputSource as XRInputSource|undefined;
+      const source=controller.userData.inputSource as {gamepad?:{axes:readonly number[]}}|undefined;
       const axes=source?.gamepad?.axes;
       const value=axes?.[3]??axes?.[1]??0;
       if(Math.abs(value)<.3)stickReady[index]=true;
