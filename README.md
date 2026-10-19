@@ -95,3 +95,7 @@ The home page presents components, current connections, published state and deli
 Open `?page=builder` to start with a blank canvas. Add modules, connect matching ports, and step the graph. Use a target example to try inversion, counting or a Unicode text round trip. Verify replay before saving a reusable tool; its Tool input/output modules become its ports. Save work locally or export JSON for a portable backup. Reusable instances have separate memory, and feedback requires an explicit delay.
 
 The binary matrix remains the engine substrate. Number and text adapters declare their encodings; browser modules do not imply physical energy or material conservation. See [the 15-step delivery record and limits](docs/WORKSPACE-BUILD.md). Run `npm run verify` for the full automated checks.
+
+## Coherent modular environment programme
+
+The ongoing 25-subgoal programme is tracked in [the implementation plan](docs/system-programme/PLAN.md), [living ledger](docs/system-programme/ledger.json), and [requirements](docs/system-programme/requirements.json). [Fresh baseline evidence](docs/system-programme/BASELINE.md) distinguishes current working behavior from the new acceptance requirements. Run `node scripts/check-programme.mjs` to check record integrity; it does not certify product completion.

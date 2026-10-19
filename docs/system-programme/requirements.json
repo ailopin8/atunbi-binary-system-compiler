@@ -1,0 +1,2593 @@
+{
+  "scope": "Every original SG paragraph/deliverable/gate plus all mandatory demonstrations. No baseline pass implies new acceptance.",
+  "requirements": [
+    {
+      "id": "R01-01",
+      "subgoal": "SG01",
+      "priority": "mandatory",
+      "need": [
+        "N04"
+      ],
+      "owner": {
+        "function": "Establish the current system baseline",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Depends on:** none.",
+      "verificationMethod": "Inspect every registered route and source boundary; rerun baseline tests; capture empty/populated widths; verify restoration SHA.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R01-02",
+      "subgoal": "SG01",
+      "priority": "mandatory",
+      "need": [
+        "N04"
+      ],
+      "owner": {
+        "function": "Establish the current system baseline",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "Visit every route and inspect the source, assets, runtime, storage, tests, and available backend. Inventory controls, algorithms, visuals, saved artifacts, imports/exports, routes, contracts, and dependencies. Classify each as observed working, partially working, documented only, untested, or broken. Capture representative populated and empty states. Distinguish review evidence from inherited test reports.",
+      "verificationMethod": "Inspect every registered route and source boundary; rerun baseline tests; capture empty/populated widths; verify restoration SHA.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R01-03",
+      "subgoal": "SG01",
+      "priority": "mandatory",
+      "need": [
+        "N04"
+      ],
+      "owner": {
+        "function": "Establish the current system baseline",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Deliver:** an evidence-backed system inventory and reproducible baseline.",
+      "verificationMethod": "Inspect every registered route and source boundary; rerun baseline tests; capture empty/populated widths; verify restoration SHA.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R01-04",
+      "subgoal": "SG01",
+      "priority": "mandatory",
+      "need": [
+        "N04"
+      ],
+      "owner": {
+        "function": "Establish the current system baseline",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Gate:** every current route and major feature is accounted for; uncertain capability is explicitly labelled; the baseline can be restored.",
+      "verificationMethod": "Inspect every registered route and source boundary; rerun baseline tests; capture empty/populated widths; verify restoration SHA.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R02-01",
+      "subgoal": "SG02",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Define purpose, users, and operating scenarios",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Depends on:** SG01.",
+      "verificationMethod": "Review each capability allocation against purpose and three scenario success/failure conditions; distinguish assumptions from participant evidence.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R02-02",
+      "subgoal": "SG02",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Define purpose, users, and operating scenarios",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "Define Atunbi\u2019s system boundary and its primary purpose: compose explicit processes above the binary engine to create useful, inspectable tools. Treat research, simulation, feedback control, and pattern exploration as supported applications. Define provisional users\u2014new explorer, tool author, researcher, maintainer\u2014and validate them when people are available. Describe their goals without assuming every user understands G6\u2013G11 terminology.",
+      "verificationMethod": "Review each capability allocation against purpose and three scenario success/failure conditions; distinguish assumptions from participant evidence.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R02-03",
+      "subgoal": "SG02",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Define purpose, users, and operating scenarios",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "Specify three end-to-end scenarios: create and reuse a rule; compose and operate a tool; run a controlled experiment and preserve reproducible evidence.",
+      "verificationMethod": "Review each capability allocation against purpose and three scenario success/failure conditions; distinguish assumptions from participant evidence.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R02-04",
+      "subgoal": "SG02",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Define purpose, users, and operating scenarios",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Deliver:** a short concept of operations, purpose tree, stakeholder needs, and scenario success measures.",
+      "verificationMethod": "Review each capability allocation against purpose and three scenario success/failure conditions; distinguish assumptions from participant evidence.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R02-05",
+      "subgoal": "SG02",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Define purpose, users, and operating scenarios",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Gate:** each existing capability supports a stated outcome or has a justified disposition; no page exists solely because of implementation history.",
+      "verificationMethod": "Review each capability allocation against purpose and three scenario success/failure conditions; distinguish assumptions from participant evidence.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R03-01",
+      "subgoal": "SG03",
+      "priority": "mandatory",
+      "need": [
+        "N04"
+      ],
+      "owner": {
+        "function": "Turn needs into measurable requirements",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Depends on:** SG01\u2013SG02.",
+      "verificationMethod": "Audit each mandatory requirement for owner, measurable acceptance and linked verification; reject missing coverage.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R03-02",
+      "subgoal": "SG03",
+      "priority": "mandatory",
+      "need": [
+        "N04"
+      ],
+      "owner": {
+        "function": "Turn needs into measurable requirements",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "Assign stable requirement IDs. Cover modularity, visual understanding, consistent language, shared context, meaningful integration, deterministic execution, persistence, recovery, accessibility, performance, and backend operation. Separate mandatory requirements from proposed targets and optional capabilities. Attach a verification method to each requirement.",
+      "verificationMethod": "Audit each mandatory requirement for owner, measurable acceptance and linked verification; reject missing coverage.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R03-03",
+      "subgoal": "SG03",
+      "priority": "mandatory",
+      "need": [
+        "N04"
+      ],
+      "owner": {
+        "function": "Turn needs into measurable requirements",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "Initial proposed targets: all retained routes have a functional task; every advertised data connection has an enforced schema and behavioural test; every displayed result identifies its run and source; core commands work with keyboard and touch; supported saves survive reload; invalid imports cause no partial changes. Establish device and graph-size budgets before fixing latency thresholds.",
+      "verificationMethod": "Audit each mandatory requirement for owner, measurable acceptance and linked verification; reject missing coverage.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R03-04",
+      "subgoal": "SG03",
+      "priority": "mandatory",
+      "need": [
+        "N04"
+      ],
+      "owner": {
+        "function": "Turn needs into measurable requirements",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Deliver:** requirements and traceability matrix: need \u2192 requirement \u2192 function \u2192 module \u2192 contract \u2192 test \u2192 evidence.",
+      "verificationMethod": "Audit each mandatory requirement for owner, measurable acceptance and linked verification; reject missing coverage.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R03-05",
+      "subgoal": "SG03",
+      "priority": "mandatory",
+      "need": [
+        "N04"
+      ],
+      "owner": {
+        "function": "Turn needs into measurable requirements",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Gate:** no mandatory requirement lacks an owner, acceptance condition, or verification route.",
+      "verificationMethod": "Audit each mandatory requirement for owner, measurable acceptance and linked verification; reject missing coverage.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R04-01",
+      "subgoal": "SG04",
+      "priority": "mandatory",
+      "need": [
+        "N04"
+      ],
+      "owner": {
+        "function": "Decompose functions and choose module boundaries",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Depends on:** SG02\u2013SG03.",
+      "verificationMethod": "Inspect ownership map and dependency direction; execute each domain module without DOM; verify replacement through interface tests.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R04-02",
+      "subgoal": "SG04",
+      "priority": "mandatory",
+      "need": [
+        "N04"
+      ],
+      "owner": {
+        "function": "Decompose functions and choose module boundaries",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "Decompose into author, validate, compile, compose, execute, observe, compare, annotate, persist, and share/export. Allocate each function to modules with high internal cohesion and limited external dependencies. Separate domain algorithms, runtime orchestration, storage, presentation, and commands. Map pages to these capabilities; allow several pages to share one model.",
+      "verificationMethod": "Inspect ownership map and dependency direction; execute each domain module without DOM; verify replacement through interface tests.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R04-03",
+      "subgoal": "SG04",
+      "priority": "mandatory",
+      "need": [
+        "N04"
+      ],
+      "owner": {
+        "function": "Decompose functions and choose module boundaries",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "Prefer an initially modular application/backend over creating a microservice for every page. Split deployment units only when independent scaling, security, ownership, or failure isolation justifies it.",
+      "verificationMethod": "Inspect ownership map and dependency direction; execute each domain module without DOM; verify replacement through interface tests.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R04-04",
+      "subgoal": "SG04",
+      "priority": "mandatory",
+      "need": [
+        "N04"
+      ],
+      "owner": {
+        "function": "Decompose functions and choose module boundaries",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Deliver:** context diagram, functional decomposition, module responsibility map, and architecture decision record.",
+      "verificationMethod": "Inspect ownership map and dependency direction; execute each domain module without DOM; verify replacement through interface tests.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R04-05",
+      "subgoal": "SG04",
+      "priority": "mandatory",
+      "need": [
+        "N04"
+      ],
+      "owner": {
+        "function": "Decompose functions and choose module boundaries",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Gate:** each state item has one authoritative owner; each module can be exercised without mounting a page or clicking a hidden button.",
+      "verificationMethod": "Inspect ownership map and dependency direction; execute each domain module without DOM; verify replacement through interface tests.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R05-01",
+      "subgoal": "SG05",
+      "priority": "mandatory",
+      "need": [
+        "N04"
+      ],
+      "owner": {
+        "function": "Define the shared domain and identity model",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Depends on:** SG03\u2013SG04.",
+      "verificationMethod": "Schema/lifecycle tests for identity and immutable versions; select same entity across views; replay historical version after edit.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R05-02",
+      "subgoal": "SG05",
+      "priority": "mandatory",
+      "need": [
+        "N04"
+      ],
+      "owner": {
+        "function": "Define the shared domain and identity model",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "Specify Project, Workspace, AlgorithmDefinition, AlgorithmVersion, ModuleInstance, Port, Connection, Run, Snapshot, Experiment, Observation, Hypothesis, EvidenceArtifact, and Reference. Give them stable IDs and version relationships. Define a shared context containing project, workspace, run, selected module, selected time, and saved/dirty status.",
+      "verificationMethod": "Schema/lifecycle tests for identity and immutable versions; select same entity across views; replay historical version after edit.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R05-03",
+      "subgoal": "SG05",
+      "priority": "mandatory",
+      "need": [
+        "N04"
+      ],
+      "owner": {
+        "function": "Define the shared domain and identity model",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "Keep definition, editable draft, applied configuration, running state, view state, and recorded evidence distinct. Specify full replay state including matrices, numeric registers, message queues, clocks, seeds, scheduler version, and algorithm versions where applicable.",
+      "verificationMethod": "Schema/lifecycle tests for identity and immutable versions; select same entity across views; replay historical version after edit.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R05-04",
+      "subgoal": "SG05",
+      "priority": "mandatory",
+      "need": [
+        "N04"
+      ],
+      "owner": {
+        "function": "Define the shared domain and identity model",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Deliver:** domain schemas, lifecycle diagrams, identity rules, and ownership table.",
+      "verificationMethod": "Schema/lifecycle tests for identity and immutable versions; select same entity across views; replay historical version after edit.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R05-05",
+      "subgoal": "SG05",
+      "priority": "mandatory",
+      "need": [
+        "N04"
+      ],
+      "owner": {
+        "function": "Define the shared domain and identity model",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Gate:** two interfaces selecting the same entity refer to the same ID and revision; historical runs remain interpretable after definitions change.",
+      "verificationMethod": "Schema/lifecycle tests for identity and immutable versions; select same entity across views; replay historical version after edit.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R06-01",
+      "subgoal": "SG06",
+      "priority": "mandatory",
+      "need": [
+        "N04"
+      ],
+      "owner": {
+        "function": "Specify contracts and semantic adapters",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Depends on:** SG04\u2013SG05.",
+      "verificationMethod": "Contract tests for valid, malformed, incompatible, duplicate and stale envelopes; adapter round trips and explicit loss checks.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R06-02",
+      "subgoal": "SG06",
+      "priority": "mandatory",
+      "need": [
+        "N04"
+      ],
+      "owner": {
+        "function": "Specify contracts and semantic adapters",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "For every connection specify producer, consumer, purpose, schema/version, units, shape, topology, encoding, ordering, timing, validity, delivery behaviour, and failure policy. Distinguish commands, source, binary matrices, numeric fields, snapshots, measurements, evidence, and annotations. A 1,000-bit payload must declare dimension order and coordinate addressing; numeric conversions must declare range, precision, threshold, clipping, and information loss.",
+      "verificationMethod": "Contract tests for valid, malformed, incompatible, duplicate and stale envelopes; adapter round trips and explicit loss checks.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R06-03",
+      "subgoal": "SG06",
+      "priority": "mandatory",
+      "need": [
+        "N04"
+      ],
+      "owner": {
+        "function": "Specify contracts and semantic adapters",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "Use an envelope containing event ID, project/workspace/run IDs, producer, schema version, source tick, sequence, configuration revision, and payload. Include causation/correlation IDs where needed. Document live subscriptions versus copied seeds versus full checkpoints. Reject unsupported adapters visibly.",
+      "verificationMethod": "Contract tests for valid, malformed, incompatible, duplicate and stale envelopes; adapter round trips and explicit loss checks.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R06-04",
+      "subgoal": "SG06",
+      "priority": "mandatory",
+      "need": [
+        "N04"
+      ],
+      "owner": {
+        "function": "Specify contracts and semantic adapters",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Deliver:** an interface contract catalogue and adapter compatibility matrix.",
+      "verificationMethod": "Contract tests for valid, malformed, incompatible, duplicate and stale envelopes; adapter round trips and explicit loss checks.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R06-05",
+      "subgoal": "SG06",
+      "priority": "mandatory",
+      "need": [
+        "N04"
+      ],
+      "owner": {
+        "function": "Specify contracts and semantic adapters",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Gate:** matching type names alone never authorise a connection; malformed, incompatible, duplicate, and obsolete messages have defined outcomes.",
+      "verificationMethod": "Contract tests for valid, malformed, incompatible, duplicate and stale envelopes; adapter round trips and explicit loss checks.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R07-01",
+      "subgoal": "SG07",
+      "priority": "mandatory",
+      "need": [
+        "N04"
+      ],
+      "owner": {
+        "function": "Define execution, scheduling, and feedback",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Depends on:** SG05\u2013SG06.",
+      "verificationMethod": "Deterministic state/history replay; clock separation, bounded queues, delayed cycles, cancellation and failure tests.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R07-02",
+      "subgoal": "SG07",
+      "priority": "mandatory",
+      "need": [
+        "N04"
+      ],
+      "owner": {
+        "function": "Define execution, scheduling, and feedback",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "Document each engine\u2019s transition rule, clock, update ordering, and numeric assumptions. Define how a composed workflow coordinates multiple engines without silently equating their clocks. Establish deterministic reads, computations, commits, emissions, and observation points. Require explicit delays for cycles where the scheduler needs them; reject accidental immediate recursion.",
+      "verificationMethod": "Deterministic state/history replay; clock separation, bounded queues, delayed cycles, cancellation and failure tests.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R07-03",
+      "subgoal": "SG07",
+      "priority": "mandatory",
+      "need": [
+        "N04"
+      ],
+      "owner": {
+        "function": "Define execution, scheduling, and feedback",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "Separate simulation time, workflow delivery ticks, and wall-clock playback speed. Specify queue bounds, cancellation, backpressure, stale events, failure propagation, and restart behaviour. View refresh and camera motion must not advance scientific state.",
+      "verificationMethod": "Deterministic state/history replay; clock separation, bounded queues, delayed cycles, cancellation and failure tests.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R07-04",
+      "subgoal": "SG07",
+      "priority": "mandatory",
+      "need": [
+        "N04"
+      ],
+      "owner": {
+        "function": "Define execution, scheduling, and feedback",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Deliver:** scheduler specification and sequence diagrams for a normal tick, delayed cycle, cancellation, and failure.",
+      "verificationMethod": "Deterministic state/history replay; clock separation, bounded queues, delayed cycles, cancellation and failure tests.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R07-05",
+      "subgoal": "SG07",
+      "priority": "mandatory",
+      "need": [
+        "N04"
+      ],
+      "owner": {
+        "function": "Define execution, scheduling, and feedback",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Gate:** the same complete initial state and command history produces the promised reproducibility level; disconnecting a route has an observable, documented effect.",
+      "verificationMethod": "Deterministic state/history replay; clock separation, bounded queues, delayed cycles, cancellation and failure tests.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R08-01",
+      "subgoal": "SG08",
+      "priority": "mandatory",
+      "need": [
+        "N04"
+      ],
+      "owner": {
+        "function": "Design the backend and persistence boundary",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Depends on:** SG04\u2013SG07.",
+      "verificationMethod": "Decision comparison plus repository/executor contract tests for offline, revision conflict, unavailable storage and failed jobs.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R08-02",
+      "subgoal": "SG08",
+      "priority": "mandatory",
+      "need": [
+        "N04"
+      ],
+      "owner": {
+        "function": "Design the backend and persistence boundary",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "Compare browser-only, local service, and hosted service against offline use, portability, long runs, collaboration, recovery, privacy, cost, and maintenance. Select and justify the smallest architecture meeting the requirements. Explicitly design backend services for projects/workspaces, versioned algorithms, run jobs, snapshots, evidence, and export/import. Even with browser execution, domain and persistence services must be independent of UI code.",
+      "verificationMethod": "Decision comparison plus repository/executor contract tests for offline, revision conflict, unavailable storage and failed jobs.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R08-03",
+      "subgoal": "SG08",
+      "priority": "mandatory",
+      "need": [
+        "N04"
+      ],
+      "owner": {
+        "function": "Design the backend and persistence boundary",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "Define repository interfaces and schema migrations. If a server is selected, specify APIs, validation, authorisation, job ownership, progress/cancellation, revision-conflict handling, idempotency, and backup/restore. Do not imply that browser local storage is cloud synchronisation. Keep heavy compute behind a worker/executor interface so it can later run locally or remotely without rewriting pages.",
+      "verificationMethod": "Decision comparison plus repository/executor contract tests for offline, revision conflict, unavailable storage and failed jobs.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R08-04",
+      "subgoal": "SG08",
+      "priority": "mandatory",
+      "need": [
+        "N04"
+      ],
+      "owner": {
+        "function": "Design the backend and persistence boundary",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Deliver:** frontend/backend responsibility diagram, data schema, API/service contracts, storage decision, and migration plan.",
+      "verificationMethod": "Decision comparison plus repository/executor contract tests for offline, revision conflict, unavailable storage and failed jobs.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R08-05",
+      "subgoal": "SG08",
+      "priority": "mandatory",
+      "need": [
+        "N04"
+      ],
+      "owner": {
+        "function": "Design the backend and persistence boundary",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Gate:** save/load and run management have an implementable contract; offline, unavailable storage, stale revisions, and failed jobs have defined behaviour.",
+      "verificationMethod": "Decision comparison plus repository/executor contract tests for offline, revision conflict, unavailable storage and failed jobs.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R09-01",
+      "subgoal": "SG09",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Build the shared visual language",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Depends on:** SG02\u2013SG06.",
+      "verificationMethod": "Catalogue inspection and browser controls across surfaces; check labels/shapes, actual-delivery animation and equivalent accessible data.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R09-02",
+      "subgoal": "SG09",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Build the shared visual language",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "Define common node shapes, port markers, arrows, status symbols, selection states, units, chart axes, typography, spacing, and motion. Use short verbs: Create, Connect, Run, Pause, Step, Inspect, Compare, Save, Export. Use the same word for the same action; hide historical generation labels in technical details where practical.",
+      "verificationMethod": "Catalogue inspection and browser controls across surfaces; check labels/shapes, actual-delivery animation and equivalent accessible data.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R09-03",
+      "subgoal": "SG09",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Build the shared visual language",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "Give each functional visual a specification: input \u2192 transformation/projection \u2192 display \u2192 user action \u2192 emitted command/selection \u2192 consumers. Use shape, labels, and line style as well as colour. Show actual flow on delivery, not continuous decorative particles. Keep readable labels and accessible descriptions rather than replacing all text with ambiguous icons.",
+      "verificationMethod": "Catalogue inspection and browser controls across surfaces; check labels/shapes, actual-delivery animation and equivalent accessible data.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R09-04",
+      "subgoal": "SG09",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Build the shared visual language",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Deliver:** design tokens, component/state catalogue, terminology map, and worked visual examples.",
+      "verificationMethod": "Catalogue inspection and browser controls across surfaces; check labels/shapes, actual-delivery animation and equivalent accessible data.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R09-05",
+      "subgoal": "SG09",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Build the shared visual language",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Gate:** equivalent controls behave consistently across pages; a user can distinguish editable state, observation, action, and navigation.",
+      "verificationMethod": "Catalogue inspection and browser controls across surfaces; check labels/shapes, actual-delivery animation and equivalent accessible data.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R10-01",
+      "subgoal": "SG10",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Create the common application shell and context",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Depends on:** SG05, SG09.",
+      "verificationMethod": "Browser navigation, Back/Forward, deep links, dirty/applied/run context retention and useful empty-state actions.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R10-02",
+      "subgoal": "SG10",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Create the common application shell and context",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "Make project/workspace, active run, selection, time, and save status visible and persistent across navigation. Organise navigation around Create \u2192 Connect \u2192 Run \u2192 Inspect \u2192 Compare \u2192 Save while preserving direct routes and useful aliases. Provide contextual next steps and upstream/downstream links that carry entity identity.",
+      "verificationMethod": "Browser navigation, Back/Forward, deep links, dirty/applied/run context retention and useful empty-state actions.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R10-03",
+      "subgoal": "SG10",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Create the common application shell and context",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "Use one concise page title and purpose sentence. Put the primary task and working visual near the top. Move detailed purpose allocations and implementation explanations into Inspect or Help. Distinguish dirty drafts from applied state and running jobs; do not discard work through routine navigation.",
+      "verificationMethod": "Browser navigation, Back/Forward, deep links, dirty/applied/run context retention and useful empty-state actions.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R10-04",
+      "subgoal": "SG10",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Create the common application shell and context",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Deliver:** common shell, navigation/context service, and recovery states.",
+      "verificationMethod": "Browser navigation, Back/Forward, deep links, dirty/applied/run context retention and useful empty-state actions.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R10-05",
+      "subgoal": "SG10",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Create the common application shell and context",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Gate:** route changes and Back/Forward retain the intended context; deep links resolve safely; empty routes offer a relevant creation or selection action.",
+      "verificationMethod": "Browser navigation, Back/Forward, deep links, dirty/applied/run context retention and useful empty-state actions.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R11-01",
+      "subgoal": "SG11",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Turn Home into a useful system overview",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Depends on:** SG06, SG09\u2013SG10.",
+      "verificationMethod": "Start/resume/example tests; select map dependency and blockage; complete workflow and open exact resulting evidence.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R11-02",
+      "subgoal": "SG11",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Turn Home into a useful system overview",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "Replace the long introductory directory as the dominant view with a compact, live system map and clear Start blank, Resume, and Open example actions. Show the current workspace, its upstream/downstream structure, blocked dependencies, and saved state. Keep the full directory available on demand.",
+      "verificationMethod": "Start/resume/example tests; select map dependency and blockage; complete workflow and open exact resulting evidence.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R11-03",
+      "subgoal": "SG11",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Turn Home into a useful system overview",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "Show the verified engine \u2192 controller \u2192 experiment path as selectable connected stages. Explain whether running it changes current state or creates a new run. Provide progress and a direct link to its resulting evidence. Make component counts secondary and sourced from the registry.",
+      "verificationMethod": "Start/resume/example tests; select map dependency and blockage; complete workflow and open exact resulting evidence.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R11-04",
+      "subgoal": "SG11",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Turn Home into a useful system overview",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Deliver:** operational Home interface driven by shared project/run data.",
+      "verificationMethod": "Start/resume/example tests; select map dependency and blockage; complete workflow and open exact resulting evidence.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R11-05",
+      "subgoal": "SG11",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Turn Home into a useful system overview",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Gate:** the user can start or resume a task and inspect a blockage without reading the whole site; completion links to the actual resulting run.",
+      "verificationMethod": "Start/resume/example tests; select map dependency and blockage; complete workflow and open exact resulting evidence.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R12-01",
+      "subgoal": "SG12",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Unify algorithm authoring and the registry",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Depends on:** SG05\u2013SG10.",
+      "verificationMethod": "Create/test/version/install/execute/reopen custom rule; edit new version and compare unchanged historical evidence; unsupported adapter rejection.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R12-02",
+      "subgoal": "SG12",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Unify algorithm authoring and the registry",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "Improve Create algorithms with a visual neighbourhood selector, truth table, input preview, output preview, and explicit test controls. Retain equations and technical contracts in details. Version each saved rule; changing it creates a new version rather than silently altering past runs.",
+      "verificationMethod": "Create/test/version/install/execute/reopen custom rule; edit new version and compare unchanged historical evidence; unsupported adapter rejection.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R12-03",
+      "subgoal": "SG12",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Unify algorithm authoring and the registry",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "Make the registry the source of available algorithms for compatible consumers. Show which engines support each definition and which adapter is required. Pass algorithm IDs and versions directly into Build a tool, Build connected systems, and Combine algorithms where execution is supported.",
+      "verificationMethod": "Create/test/version/install/execute/reopen custom rule; edit new version and compare unchanged historical evidence; unsupported adapter rejection.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R12-04",
+      "subgoal": "SG12",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Unify algorithm authoring and the registry",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Deliver:** versioned registry service and visual authoring workflow.",
+      "verificationMethod": "Create/test/version/install/execute/reopen custom rule; edit new version and compare unchanged historical evidence; unsupported adapter rejection.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R12-05",
+      "subgoal": "SG12",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Unify algorithm authoring and the registry",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Gate:** a saved supported rule can be selected and executed downstream with traceable provenance; unsupported consumers are identified; prior evidence remains unchanged.",
+      "verificationMethod": "Create/test/version/install/execute/reopen custom rule; edit new version and compare unchanged historical evidence; unsupported adapter rejection.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R13-01",
+      "subgoal": "SG13",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Make Build a tool the main composition workspace",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Depends on:** SG06\u2013SG10, SG12.",
+      "verificationMethod": "Build/package/two-instance behavior test, incompatible link atomicity, named ports, nested bounds, undo/redo and keyboard/touch alternatives.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R13-02",
+      "subgoal": "SG13",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Make Build a tool the main composition workspace",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "Present a modular canvas with an add-module palette, visible typed ports, compatible-connection hints, selected-node inspector, and live outputs. Provide a keyboard/touch alternative to dragging. Use explicit input and output boundary nodes. Keep internal graphs encapsulated when packaging a reusable tool.",
+      "verificationMethod": "Build/package/two-instance behavior test, incompatible link atomicity, named ports, nested bounds, undo/redo and keyboard/touch alternatives.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R13-03",
+      "subgoal": "SG13",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Make Build a tool the main composition workspace",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "Support nested composition with bounded depth, named ports, versioned definitions, undo/redo, portable import/export, and meaningful validation. Show whether the selected node is waiting, ready, running, stale, or failed. Provide a tiny runnable example without replacing the blank-start option.",
+      "verificationMethod": "Build/package/two-instance behavior test, incompatible link atomicity, named ports, nested bounds, undo/redo and keyboard/touch alternatives.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R13-04",
+      "subgoal": "SG13",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Make Build a tool the main composition workspace",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Deliver:** reusable graph workspace connected to the registry, runtime, and persistence services.",
+      "verificationMethod": "Build/package/two-instance behavior test, incompatible link atomicity, named ports, nested bounds, undo/redo and keyboard/touch alternatives.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R13-05",
+      "subgoal": "SG13",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Make Build a tool the main composition workspace",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Gate:** create a tool, verify its behaviour, package it, instantiate it twice, and show that instances have independent state and the same declared contract.",
+      "verificationMethod": "Build/package/two-instance behavior test, incompatible link atomicity, named ports, nested bounds, undo/redo and keyboard/touch alternatives.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R14-01",
+      "subgoal": "SG14",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Integrate environments, layers, and relationships",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Depends on:** SG06\u2013SG07, SG09\u2013SG10, SG12.",
+      "verificationMethod": "Edit selected G6 environment/edge and assert matching layer, relationship, spatial and metric state updates.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R14-02",
+      "subgoal": "SG14",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Integrate environments, layers, and relationships",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "Treat Build connected systems, Build internal layers, and Connect systems as coordinated views of the same G6 workspace. Selecting an environment carries its ID into the internal-layer editor; selecting an edge opens its transformation and effect. Changes update all affected views through model events.",
+      "verificationMethod": "Edit selected G6 environment/edge and assert matching layer, relationship, spatial and metric state updates.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R14-03",
+      "subgoal": "SG14",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Integrate environments, layers, and relationships",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "Visually distinguish internal algorithm edges, environment-to-environment influences, and website-module data routes. Provide clear parameter units and boundary conditions. Empty layer/relationship pages offer the exact prerequisite action and return to the intended context afterward.",
+      "verificationMethod": "Edit selected G6 environment/edge and assert matching layer, relationship, spatial and metric state updates.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R14-04",
+      "subgoal": "SG14",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Integrate environments, layers, and relationships",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Deliver:** synchronised G6 editing and inspection views.",
+      "verificationMethod": "Edit selected G6 environment/edge and assert matching layer, relationship, spatial and metric state updates.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R14-05",
+      "subgoal": "SG14",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Integrate environments, layers, and relationships",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Gate:** edit one selected environment or relationship and observe the corresponding state and visuals change without manually recreating data elsewhere.",
+      "verificationMethod": "Edit selected G6 environment/edge and assert matching layer, relationship, spatial and metric state updates.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R15-01",
+      "subgoal": "SG15",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Make compilation and binary execution legible",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Depends on:** SG06\u2013SG10.",
+      "verificationMethod": "Compile valid/invalid source, compare prior run policy, step matrices/messages, inspect draft/applied revision and attributed output.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R15-02",
+      "subgoal": "SG15",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Make compilation and binary execution legible",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "Present source \u2192 validation \u2192 compiled instructions \u2192 engine state \u2192 messages as a compact visual sequence. Link diagnostics to source and affected modules. Provide stable Run/Pause/Step/Reset semantics and show compiled versus edited versions.",
+      "verificationMethod": "Compile valid/invalid source, compare prior run policy, step matrices/messages, inspect draft/applied revision and attributed output.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R15-03",
+      "subgoal": "SG15",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Make compilation and binary execution legible",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "Preserve G7 and G8 as distinct execution backends unless an explicit equivalence/migration case is proved. Make G8 binary outputs available through supported contracts to the builder, controller, and experiments. Label snapshot seeding separately from live coupling. Keep instruction words and packet fields available for detailed inspection.",
+      "verificationMethod": "Compile valid/invalid source, compare prior run policy, step matrices/messages, inspect draft/applied revision and attributed output.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R15-04",
+      "subgoal": "SG15",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Make compilation and binary execution legible",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Deliver:** coherent compiler/engine interfaces and tested output adapters.",
+      "verificationMethod": "Compile valid/invalid source, compare prior run policy, step matrices/messages, inspect draft/applied revision and attributed output.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R15-05",
+      "subgoal": "SG15",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Make compilation and binary execution legible",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Gate:** invalid source leaves the previous valid run intact or clearly replaces it according to a documented policy; stepping produces inspectable state and correctly attributed outputs.",
+      "verificationMethod": "Compile valid/invalid source, compare prior run policy, step matrices/messages, inspect draft/applied revision and attributed output.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R16-01",
+      "subgoal": "SG16",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Make feedback control visually understandable",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Depends on:** SG06\u2013SG10, SG15.",
+      "verificationMethod": "Matched open-loop/closed-loop initial state; independently reconcile displayed error/action/saturation; gain change and lineage tests.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R16-02",
+      "subgoal": "SG16",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Make feedback control visually understandable",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "Present Control a system as target \u2192 error \u2192 controller \u2192 actuator \u2192 matrix \u2192 sensor \u2192 feedback. Show target and measured trajectories, actuator limits, and saturation state. Expose relevant gains beside the selected controller; reveal advanced equations on demand.",
+      "verificationMethod": "Matched open-loop/closed-loop initial state; independently reconcile displayed error/action/saturation; gain change and lineage tests.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R16-03",
+      "subgoal": "SG16",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Make feedback control visually understandable",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "Receive an explicit G8 snapshot or another supported source, preserve its lineage, and emit identified controlled snapshots to downstream tests. Differentiate previewed parameter edits from Apply/reset and current-run changes. Keep PID numeric registers distinct from binary cells.",
+      "verificationMethod": "Matched open-loop/closed-loop initial state; independently reconcile displayed error/action/saturation; gain change and lineage tests.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R16-04",
+      "subgoal": "SG16",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Make feedback control visually understandable",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Deliver:** functional feedback-loop interface with source and consumer visibility.",
+      "verificationMethod": "Matched open-loop/closed-loop initial state; independently reconcile displayed error/action/saturation; gain change and lineage tests.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R16-05",
+      "subgoal": "SG16",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Make feedback control visually understandable",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Gate:** a controlled/open-loop comparison uses matched initial conditions; displayed numbers reconcile with the underlying result; a changed gain has a traceable effect.",
+      "verificationMethod": "Matched open-loop/closed-loop initial state; independently reconcile displayed error/action/saturation; gain change and lineage tests.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R17-01",
+      "subgoal": "SG17",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Improve algorithm composition and influence inspection",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Depends on:** SG06\u2013SG10, SG12.",
+      "verificationMethod": "Select G11 edge, reconcile prior-tick input and actual output difference; repeat seeds/versions; compare isolated runs and parameter sweeps.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R17-02",
+      "subgoal": "SG17",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Improve algorithm composition and influence inspection",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "Make Combine algorithms primarily a network of algorithm instances with miniature state previews and selectable edges. Put the reference catalogue behind search/details. Show node-specific parameters with meaningful labels instead of a generic Parameter field whose interpretation changes across algorithms.",
+      "verificationMethod": "Select G11 edge, reconcile prior-tick input and actual output difference; repeat seeds/versions; compare isolated runs and parameter sweeps.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R17-03",
+      "subgoal": "SG17",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Improve algorithm composition and influence inspection",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "Expose binary projection thresholds, numeric-register state, boundary rules, seed, and previous-tick coupling. Distinguish active edges from measured effects: a delivered input may legitimately change zero output bits. Provide matched coupled/isolated runs and parameter sweeps with clear result context.",
+      "verificationMethod": "Select G11 edge, reconcile prior-tick input and actual output difference; repeat seeds/versions; compare isolated runs and parameter sweeps.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R17-04",
+      "subgoal": "SG17",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Improve algorithm composition and influence inspection",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Deliver:** G11 graph interface and compatible observation/output contracts.",
+      "verificationMethod": "Select G11 edge, reconcile prior-tick input and actual output difference; repeat seeds/versions; compare isolated runs and parameter sweeps.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R17-05",
+      "subgoal": "SG17",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Improve algorithm composition and influence inspection",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Gate:** an edge selection reveals its actual source, receiver, transformation, timing, and measured effect; identical seeds and versions reproduce supported results.",
+      "verificationMethod": "Select G11 edge, reconcile prior-tick input and actual output difference; repeat seeds/versions; compare isolated runs and parameter sweeps.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R18-01",
+      "subgoal": "SG18",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Unify inspection, charts, slices, and spatial views",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Depends on:** SG05\u2013SG10, SG14\u2013SG17.",
+      "verificationMethod": "Cross-view snapshot/selection equality; camera/color/slice non-mutation test; reject unsupported observation adapter.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R18-02",
+      "subgoal": "SG18",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Unify inspection, charts, slices, and spatial views",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "Provide a common inspection context across Inspect system state, 3D views, matrix slices, trajectories, and node previews. Selecting a node, cell, region, or time should highlight the same entity in compatible views. Display source engine, run, revision, tick, and live/frozen/stale status.",
+      "verificationMethod": "Cross-view snapshot/selection equality; camera/color/slice non-mutation test; reject unsupported observation adapter.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R18-03",
+      "subgoal": "SG18",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Unify inspection, charts, slices, and spatial views",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "Keep the G6 viewer explicitly G6-specific until real adapters support other engines. Add engine adapters deliberately; never relabel a G6 scene as another runtime. Use 3D when it helps a spatial question; use 2D slices/charts when more legible. Preserve accessible summaries and numerical inspection.",
+      "verificationMethod": "Cross-view snapshot/selection equality; camera/color/slice non-mutation test; reject unsupported observation adapter.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R18-04",
+      "subgoal": "SG18",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Unify inspection, charts, slices, and spatial views",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Deliver:** observation adapter interfaces and linked visual inspection.",
+      "verificationMethod": "Cross-view snapshot/selection equality; camera/color/slice non-mutation test; reject unsupported observation adapter.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R18-05",
+      "subgoal": "SG18",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Unify inspection, charts, slices, and spatial views",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Gate:** changing camera, colour, selection, or slice does not change model state; multiple views of one snapshot agree; unsupported sources cannot appear as supported.",
+      "verificationMethod": "Cross-view snapshot/selection equality; camera/color/slice non-mutation test; reject unsupported observation adapter.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R19-01",
+      "subgoal": "SG19",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Integrate experiments, evidence, and hypotheses",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Depends on:** SG05\u2013SG08, SG15\u2013SG18.",
+      "verificationMethod": "Save/reopen/replay frozen experiment with versions/state; validate aligned comparison scales; hypothesis edits cannot change execution.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R19-02",
+      "subgoal": "SG19",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Integrate experiments, evidence, and hypotheses",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "Unify the experiment workflow across Find and test patterns and Compare system changes: choose source \u2192 freeze starting conditions \u2192 select intervention \u2192 run matched baseline/control \u2192 inspect difference \u2192 verify \u2192 record interpretation \u2192 preserve evidence. Keep engine-specific experiment semantics explicit.",
+      "verificationMethod": "Save/reopen/replay frozen experiment with versions/state; validate aligned comparison scales; hypothesis edits cannot change execution.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R19-03",
+      "subgoal": "SG19",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Integrate experiments, evidence, and hypotheses",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "Show baseline/intervention side by side with shared scales and time selection. Store observations separately from hypotheses and link each claim to the exact run, metric, intervention, and reference. Represent inconclusive and zero-effect results clearly. Do not equate replay success with scientific validity or visual complexity with emergence.",
+      "verificationMethod": "Save/reopen/replay frozen experiment with versions/state; validate aligned comparison scales; hypothesis edits cannot change execution.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R19-04",
+      "subgoal": "SG19",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Integrate experiments, evidence, and hypotheses",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Deliver:** experiment specification, comparison interface, evidence bundle, and hypothesis records.",
+      "verificationMethod": "Save/reopen/replay frozen experiment with versions/state; validate aligned comparison scales; hypothesis edits cannot change execution.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R19-05",
+      "subgoal": "SG19",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Integrate experiments, evidence, and hypotheses",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Gate:** a saved experiment records enough state and versions to reproduce the promised result; changing an observer label cannot alter execution.",
+      "verificationMethod": "Save/reopen/replay frozen experiment with versions/state; validate aligned comparison scales; hypothesis edits cannot change execution.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R20-01",
+      "subgoal": "SG20",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Make connection editing and inspection one coherent capability",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Depends on:** SG06\u2013SG07, SG09\u2013SG10, SG13\u2013SG19.",
+      "verificationMethod": "Disconnect/update/stale/reconnect recovery; inspect delivered versus consumed acknowledgement; reject unsupported semantics and immediate cycles.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R20-02",
+      "subgoal": "SG20",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Make connection editing and inspection one coherent capability",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "Use one authoritative module/contract registry for Connect tools, Explore tool connections, and the Home map. Provide a visual graph plus a searchable accessible table. Selecting an edge shows its contract, source snapshot, last receipt, actual application, consumer freshness, and failure details.",
+      "verificationMethod": "Disconnect/update/stale/reconnect recovery; inspect delivered versus consumed acknowledgement; reject unsupported semantics and immediate cycles.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R20-03",
+      "subgoal": "SG20",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Make connection editing and inspection one coherent capability",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "Distinguish configured, enabled, delivered, consumed, and behaviourally verified states. A transport count must not be presented as proof that the receiver used the information. Show impacts before disconnecting; retain last data with a visible stale/frozen label where appropriate. Reject semantically unsupported routes and immediate cycles.",
+      "verificationMethod": "Disconnect/update/stale/reconnect recovery; inspect delivered versus consumed acknowledgement; reject unsupported semantics and immediate cycles.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R20-04",
+      "subgoal": "SG20",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Make connection editing and inspection one coherent capability",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Deliver:** graph editor, live connection inspector, and generated inventory.",
+      "verificationMethod": "Disconnect/update/stale/reconnect recovery; inspect delivered versus consumed acknowledgement; reject unsupported semantics and immediate cycles.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R20-05",
+      "subgoal": "SG20",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Make connection editing and inspection one coherent capability",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Gate:** disconnecting stops subsequent delivery, reconnecting has documented resynchronisation semantics, and a delivered-but-unused message is detectable.",
+      "verificationMethod": "Disconnect/update/stale/reconnect recovery; inspect delivered versus consumed acknowledgement; reject unsupported semantics and immediate cycles.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R21-01",
+      "subgoal": "SG21",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Unify commands across pages, keyboard, and spatial controls",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Depends on:** SG06, SG09\u2013SG10, SG14\u2013SG20.",
+      "verificationMethod": "Invoke same context command through page/menu/keyboard/XR and compare domain result; missing prerequisites, wrong target and cancellation checks.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R21-02",
+      "subgoal": "SG21",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Unify commands across pages, keyboard, and spatial controls",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "Replace command routing that relies on hidden DOM buttons with a command service and one capability-aware action registry. Choose an action, page controls, keyboard shortcuts, and optional VR controls invoke the same validated command with explicit target context.",
+      "verificationMethod": "Invoke same context command through page/menu/keyboard/XR and compare domain result; missing prerequisites, wrong target and cancellation checks.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R21-03",
+      "subgoal": "SG21",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Unify commands across pages, keyboard, and spatial controls",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "Show prerequisites beside unavailable actions. Identify which runtime is being controlled. Keep text entry and file operations on appropriate interfaces. Stop background work predictably and preserve cancellation/recovery behaviour. Keep simulated VR tests distinct from physical-headset validation.",
+      "verificationMethod": "Invoke same context command through page/menu/keyboard/XR and compare domain result; missing prerequisites, wrong target and cancellation checks.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R21-04",
+      "subgoal": "SG21",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Unify commands across pages, keyboard, and spatial controls",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Deliver:** shared command service and consistent control surfaces.",
+      "verificationMethod": "Invoke same context command through page/menu/keyboard/XR and compare domain result; missing prerequisites, wrong target and cancellation checks.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R21-05",
+      "subgoal": "SG21",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Unify commands across pages, keyboard, and spatial controls",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Gate:** equivalent inputs produce the same domain command and result; a menu cannot accidentally run one engine while displaying another as its target.",
+      "verificationMethod": "Invoke same context command through page/menu/keyboard/XR and compare domain result; missing prerequisites, wrong target and cancellation checks.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R22-01",
+      "subgoal": "SG22",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Turn purpose and references into working interfaces",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Depends on:** SG02\u2013SG06, SG09\u2013SG10, SG19\u2013SG20.",
+      "verificationMethod": "Trace real result to purpose/requirement/method/reference/evidence; search sources; missing evidence remains visibly missing.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R22-02",
+      "subgoal": "SG22",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Turn purpose and references into working interfaces",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "Give Purpose and design a navigable purpose \u2192 requirement \u2192 module \u2192 test \u2192 evidence map with coverage gaps and change impact. Give Read references searchable topic cards linked to the algorithms, assumptions, design decisions, or hypotheses they support. Preserve established findings, proposed adaptations, implemented measurements, and future ideas as separate statuses.",
+      "verificationMethod": "Trace real result to purpose/requirement/method/reference/evidence; search sources; missing evidence remains visibly missing.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R22-03",
+      "subgoal": "SG22",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Turn purpose and references into working interfaces",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "These pages receive registry/evidence/context data and emit useful selections, linked reference IDs, or review actions. They need not mutate simulation state to be functional.",
+      "verificationMethod": "Trace real result to purpose/requirement/method/reference/evidence; search sources; missing evidence remains visibly missing.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R22-04",
+      "subgoal": "SG22",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Turn purpose and references into working interfaces",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Deliver:** purpose/evidence explorer and contextual reference browser.",
+      "verificationMethod": "Trace real result to purpose/requirement/method/reference/evidence; search sources; missing evidence remains visibly missing.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R22-05",
+      "subgoal": "SG22",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Turn purpose and references into working interfaces",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Gate:** a user can trace a visible result to its purpose, method, and supporting source; missing evidence stays visibly missing.",
+      "verificationMethod": "Trace real result to purpose/requirement/method/reference/evidence; search sources; missing evidence remains visibly missing.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R23-01",
+      "subgoal": "SG23",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Implement durable saves, recovery, and backend operations",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Depends on:** SG08, SG12\u2013SG22.",
+      "verificationMethod": "Save/reload/export/import/checkpoint-resume where promised; corrupted/unavailable storage and revision conflicts; atomic rejected import and backup recovery.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R23-02",
+      "subgoal": "SG23",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Implement durable saves, recovery, and backend operations",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "Implement the selected storage/backend design with incremental migration from existing browser saves. Separate saving a definition, saving a workspace, checkpointing execution, and exporting evidence. Make each operation\u2019s scope explicit. Preserve embedded versions, clocks, and pending messages when promising continuation.",
+      "verificationMethod": "Save/reload/export/import/checkpoint-resume where promised; corrupted/unavailable storage and revision conflicts; atomic rejected import and backup recovery.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R23-03",
+      "subgoal": "SG23",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Implement durable saves, recovery, and backend operations",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "Implement atomic imports, schema checks, size limits, corrupted-storage recovery, useful errors, and portable exports. For remote services, enforce ownership/permissions, idempotent commands, revision checks, cancellation, and recoverable job states. Keep secrets out of client code. Define retention and backup/restore according to actual deployment needs.",
+      "verificationMethod": "Save/reload/export/import/checkpoint-resume where promised; corrupted/unavailable storage and revision conflicts; atomic rejected import and backup recovery.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R23-04",
+      "subgoal": "SG23",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Implement durable saves, recovery, and backend operations",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Deliver:** working persistence/API integration, migrations, recovery procedures, and operational diagnostics.",
+      "verificationMethod": "Save/reload/export/import/checkpoint-resume where promised; corrupted/unavailable storage and revision conflicts; atomic rejected import and backup recovery.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R23-05",
+      "subgoal": "SG23",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Implement durable saves, recovery, and backend operations",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Gate:** reload, export/import, interrupted operation, rejected import, and supported resume scenarios behave as specified; one project cannot access another project\u2019s protected data if multi-user service exists.",
+      "verificationMethod": "Save/reload/export/import/checkpoint-resume where promised; corrupted/unavailable storage and revision conflicts; atomic rejected import and backup recovery.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R24-01",
+      "subgoal": "SG24",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Verify integration and validate visual usability",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Depends on:** SG01\u2013SG23.",
+      "verificationMethod": "Requirement evidence audit, all mandatory demonstrations, narrow/wide keyboard/touch/accessibility, declared-workload measurements; separate human/device limitations.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R24-02",
+      "subgoal": "SG24",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Verify integration and validate visual usability",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "Run proportionate unit, contract, integration, and browser checks. Cover positive and negative data paths, versions, clocks, feedback, stale states, duplicate events, failed saves, and rollback. Validate all routes at representative narrow and wide widths; test keyboard navigation, touch alternatives, reduced motion, descriptions, focus, contrast, and chart/table equivalence.",
+      "verificationMethod": "Requirement evidence audit, all mandatory demonstrations, narrow/wide keyboard/touch/accessibility, declared-workload measurements; separate human/device limitations.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R24-03",
+      "subgoal": "SG24",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Verify integration and validate visual usability",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "Measure performance with declared hardware and workloads. Test meaningful workflows with representative users when available: can they identify the next action, follow an input to its consequence, and explain what a result means? Record time, errors, and assistance. If people are unavailable, record heuristic review separately and leave user-validation claims unverified.",
+      "verificationMethod": "Requirement evidence audit, all mandatory demonstrations, narrow/wide keyboard/touch/accessibility, declared-workload measurements; separate human/device limitations.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R24-04",
+      "subgoal": "SG24",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Verify integration and validate visual usability",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Deliver:** requirement-by-requirement evidence, performance results, usability findings, and remaining defects.",
+      "verificationMethod": "Requirement evidence audit, all mandatory demonstrations, narrow/wide keyboard/touch/accessibility, declared-workload measurements; separate human/device limitations.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R24-05",
+      "subgoal": "SG24",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Verify integration and validate visual usability",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Gate:** critical workflows pass; mandatory requirements have appropriate evidence; limitations and pending human/device validation are explicit.",
+      "verificationMethod": "Requirement evidence audit, all mandatory demonstrations, narrow/wide keyboard/touch/accessibility, declared-workload measurements; separate human/device limitations.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R25-01",
+      "subgoal": "SG25",
+      "priority": "mandatory",
+      "need": [
+        "N04"
+      ],
+      "owner": {
+        "function": "Complete integration, release readiness, and maintainability",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Depends on:** SG24 and closure of mandatory failures.",
+      "verificationMethod": "Audit every original clause and deliverable, generated registry consistency, extension/migration/release rollback instructions and integrated demonstration.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R25-02",
+      "subgoal": "SG25",
+      "priority": "mandatory",
+      "need": [
+        "N04"
+      ],
+      "owner": {
+        "function": "Complete integration, release readiness, and maintainability",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "Run a final audit against the original purpose and every requirement, not just completed tickets. Reconcile routes, diagrams, contracts, documentation, and actual runtime behaviour. Produce a concise architecture guide, module-extension recipe, migration/recovery guide, known limitations, and prioritised backlog.",
+      "verificationMethod": "Audit every original clause and deliverable, generated registry consistency, extension/migration/release rollback instructions and integrated demonstration.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R25-03",
+      "subgoal": "SG25",
+      "priority": "mandatory",
+      "need": [
+        "N04"
+      ],
+      "owner": {
+        "function": "Complete integration, release readiness, and maintainability",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "Record residual risks with owner, trigger, mitigation, and evidence. Prepare a release and rollback plan appropriate to the selected deployment. Demonstrate the complete system; do not mark complete on screenshots, static cards, successful builds, or unverified connection counts alone.",
+      "verificationMethod": "Audit every original clause and deliverable, generated registry consistency, extension/migration/release rollback instructions and integrated demonstration.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R25-04",
+      "subgoal": "SG25",
+      "priority": "mandatory",
+      "need": [
+        "N04"
+      ],
+      "owner": {
+        "function": "Complete integration, release readiness, and maintainability",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Deliver:** integrated working application, final evidence index, and maintainable handover.",
+      "verificationMethod": "Audit every original clause and deliverable, generated registry consistency, extension/migration/release rollback instructions and integrated demonstration.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "R25-05",
+      "subgoal": "SG25",
+      "priority": "mandatory",
+      "need": [
+        "N04"
+      ],
+      "owner": {
+        "function": "Complete integration, release readiness, and maintainability",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "**Gate:** every mandatory requirement passes or is explicitly changed by the authorised stakeholder; no hidden mock replaces a promised function; deferred work is clearly reported.",
+      "verificationMethod": "Audit every original clause and deliverable, generated registry consistency, extension/migration/release rollback instructions and integrated demonstration.",
+      "evidence": [],
+      "status": "not verified",
+      "note": "Full original clause retained. Split into finer linked checks during owning subgoal; do not drop conditions."
+    },
+    {
+      "id": "DEMO-01",
+      "subgoal": "SG24",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Integrated validation",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "Create a custom rule, test it, save a version, install it in a supported runtime, inspect its output, and reopen its definition. Confirm historical runs retain the prior version after an edit.",
+      "verificationMethod": "Execute complete demonstration against real domain state; preserve positive/failure evidence and reviewed UI result.",
+      "evidence": [],
+      "status": "not verified"
+    },
+    {
+      "id": "DEMO-02",
+      "subgoal": "SG24",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Integrated validation",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "Build a small input \u2192 transform \u2192 output tool, execute it, package it, and reuse independent instances in another workspace. Show an incompatible connection being rejected without corrupting the graph.",
+      "verificationMethod": "Execute complete demonstration against real domain state; preserve positive/failure evidence and reviewed UI result.",
+      "evidence": [],
+      "status": "not verified"
+    },
+    {
+      "id": "DEMO-03",
+      "subgoal": "SG24",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Integrated validation",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "Compile G8, step it, seed the controller, run a matched pattern experiment, verify replay, attach a hypothesis, and export evidence. Show provenance through the entire chain and explain which transfers are seed copies.",
+      "verificationMethod": "Execute complete demonstration against real domain state; preserve positive/failure evidence and reviewed UI result.",
+      "evidence": [],
+      "status": "not verified"
+    },
+    {
+      "id": "DEMO-04",
+      "subgoal": "SG24",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Integrated validation",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "Edit a G6 environment and relationship; inspect consistent updates in layers, 3D, metrics, and controlled comparison. Verify comparison does not mutate the source run.",
+      "verificationMethod": "Execute complete demonstration against real domain state; preserve positive/failure evidence and reviewed UI result.",
+      "evidence": [],
+      "status": "not verified"
+    },
+    {
+      "id": "DEMO-05",
+      "subgoal": "SG24",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Integrated validation",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "Disconnect a route, trigger new data, show the downstream stale/blocked state, reconnect, and demonstrate the documented recovery. Distinguish transport delivery from verified consumption.",
+      "verificationMethod": "Execute complete demonstration against real domain state; preserve positive/failure evidence and reviewed UI result.",
+      "evidence": [],
+      "status": "not verified"
+    },
+    {
+      "id": "DEMO-06",
+      "subgoal": "SG24",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Integrated validation",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "Save and reopen a workspace; resume only where checkpoint continuation is supported. Reject a malformed import atomically and recover from an unavailable persistence service.",
+      "verificationMethod": "Execute complete demonstration against real domain state; preserve positive/failure evidence and reviewed UI result.",
+      "evidence": [],
+      "status": "not verified"
+    },
+    {
+      "id": "DEMO-07",
+      "subgoal": "SG24",
+      "priority": "mandatory",
+      "need": [
+        "N01",
+        "N02",
+        "N03",
+        "N05",
+        "N06"
+      ],
+      "owner": {
+        "function": "Integrated validation",
+        "role": "Atunbi implementation maintainer"
+      },
+      "acceptance": "Complete the core workflow using keyboard and on a narrow screen. Confirm selections and camera changes leave scientific state unchanged.",
+      "verificationMethod": "Execute complete demonstration against real domain state; preserve positive/failure evidence and reviewed UI result.",
+      "evidence": [],
+      "status": "not verified"
+    }
+  ]
+}

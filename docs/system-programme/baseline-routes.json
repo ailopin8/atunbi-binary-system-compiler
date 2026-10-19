@@ -1,0 +1,4948 @@
+{
+  "commit": "ed6f9540ee43cf332eb1670e7826eedc8aaacec1",
+  "capturedAt": "2026-10-19T16:02:47.670Z",
+  "base": "http://127.0.0.1:4173",
+  "method": "Fresh isolated context; route visibility and control inventory. This does not prove every control functions.",
+  "routes": [
+    {
+      "id": "home",
+      "status": "observed rendering; function coverage recorded separately",
+      "headings": [
+        "A place to build, connect and understand algorithms.",
+        "A useful starting path",
+        "One system · connected tools",
+        "Create",
+        "Simulate",
+        "Inspect",
+        "Connect",
+        "Learn"
+      ],
+      "controls": [
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Build your first tool →",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Explore how the website connects →",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Read the philosophy and evidence →",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Create a binary rule",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Connect it to other algorithms",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Inspect the module relationships",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "system-run-path",
+          "type": null,
+          "text": "Run engine → controller → pattern test",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Build connected systems",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Compile instructions",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Run the binary engine",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Control a system",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Combine algorithms",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Create algorithms",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Connect tools",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Build a tool",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Edit instructions",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Share saved algorithms",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Find and test patterns",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Collect state updates",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Collect observer notes",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Download results",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Purpose and design",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Read references",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Explore tool connections",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Provide references",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Choose an action",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Choose a page",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "View: Build connected systems",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "View: Compile instructions",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "View: Run the binary engine",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "View: Find and test patterns",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "View: Control a system",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "View: Combine algorithms",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Set the logo",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Show the website",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Edit system connections →",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Inspect architecture and relationship purposes →",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Build a toolStart with a blank canvas; connect, verify, save and reuse binary-driven modules.Open module →",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Create algorithmsDefine, test and save new binary rules.Open module →",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Compile instructionsTurn system sentences into executable instructions.Open module →",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Build connected systemsCreate environments and connect their algorithmic outputs.Open module →",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Build internal layersInstall algorithms and wire their internal layers.Open module →",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Run the binary engineCompile and run two 1,000-bit matrices with binary messages.Open module →",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Control a systemConnect feedback, drivers and a bounded binary actuator.Open module →",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Combine algorithmsCombine built-in and custom algorithms in connected cubes.Open module →",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "View systems in 3DObserve the G6 volume, orbit the camera or enter VR.Open module →",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Find and test patternsMeasure patterns and test explicit observer hypotheses.Open module →",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Compare system changesCompare the same network with selected connections removed.Open module →",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Inspect system stateRead the current state of the G6 environments.Open module →",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Connect systemsControl how one environment affects another.Open module →",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Connect toolsConnect typed module ports and inspect deliveries.Open module →",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Explore tool connectionsSee what each module receives, produces and affects.Open module →",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Choose an actionOperate the labs through a shared categorized action menu.Open module →",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Read referencesRead the UI, accessibility, simulation and Quest references.Open module →",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Purpose and designTrace the purpose hierarchy, research evidence and testable hypotheses.Open module →",
+          "disabled": false,
+          "visible": true
+        }
+      ],
+      "visuals": [],
+      "narrowOverflow": false
+    },
+    {
+      "id": "builder",
+      "status": "observed rendering; function coverage recorded separately",
+      "headings": [
+        "Build a tool",
+        "Build a tool",
+        "Add a module",
+        "Selected module",
+        "Tool outputs",
+        "Save and reopen",
+        "Make a reusable tool",
+        "Test a target purpose"
+      ],
+      "controls": [
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "← Home",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "wb-name",
+          "type": null,
+          "text": "Workspace name",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "wb-new",
+          "type": null,
+          "text": "Start blank",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "wb-undo",
+          "type": null,
+          "text": "Undo change",
+          "disabled": true,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "wb-step",
+          "type": null,
+          "text": "Step one tick",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "wb-run",
+          "type": null,
+          "text": "Run eight ticks",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "wb-reset",
+          "type": null,
+          "text": "Reset execution",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "wb-verify",
+          "type": null,
+          "text": "Verify replay",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "wb-import-engine",
+          "type": null,
+          "text": "Import engine matrix into selected input",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "SELECT",
+          "id": "wb-palette",
+          "type": null,
+          "text": "Module type Tool inputBinary inputNumber inputText inputTool outputInvert bitsBoth bitsEither bitDifferent bitsMove bitsApply binary ruleRemember one tickCount ticksNumber to bitsB",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "wb-add",
+          "type": null,
+          "text": "Add module",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "SELECT",
+          "id": "wb-library",
+          "type": null,
+          "text": "Saved tool",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "wb-add-tool",
+          "type": null,
+          "text": "Add saved tool",
+          "disabled": true,
+          "visible": true
+        },
+        {
+          "tag": "SELECT",
+          "id": "wb-from",
+          "type": null,
+          "text": "From output",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "SELECT",
+          "id": "wb-to",
+          "type": null,
+          "text": "To input",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "wb-connect-button",
+          "type": null,
+          "text": "Connect",
+          "disabled": true,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "wb-save",
+          "type": null,
+          "text": "Save a copy locally",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "SELECT",
+          "id": "wb-saves",
+          "type": null,
+          "text": "Saved workspace",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "wb-load",
+          "type": null,
+          "text": "Open selected save",
+          "disabled": true,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "wb-delete-save",
+          "type": null,
+          "text": "Delete selected save",
+          "disabled": true,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "wb-export",
+          "type": null,
+          "text": "Export workspace",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "wb-import",
+          "type": "file",
+          "text": "Import workspace JSON",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "wb-tool-name",
+          "type": null,
+          "text": "Tool name",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "wb-tool-purpose",
+          "type": null,
+          "text": "Purpose",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "wb-tool-color",
+          "type": "color",
+          "text": "Tool color",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "wb-package",
+          "type": null,
+          "text": "Save verified tool",
+          "disabled": true,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "wb-delete-tool",
+          "type": null,
+          "text": "Delete selected library tool",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "SELECT",
+          "id": "wb-target",
+          "type": null,
+          "text": "Target Invert a matrixCount from zeroPreserve a message",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "wb-load-example",
+          "type": null,
+          "text": "Load target example",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "wb-check-target",
+          "type": null,
+          "text": "Check current tool",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Run the binary engine",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Create algorithms",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Connect tools",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Purpose and design",
+          "disabled": false,
+          "visible": true
+        }
+      ],
+      "visuals": [
+        {
+          "tag": "svg",
+          "id": "wb-lines",
+          "label": null
+        }
+      ],
+      "narrowOverflow": false
+    },
+    {
+      "id": "workshop",
+      "status": "observed rendering; function coverage recorded separately",
+      "headings": [
+        "Create algorithms",
+        "Create algorithms",
+        "Complete algorithm registry",
+        "XOR / rule 90",
+        "Rule 30",
+        "Face majority",
+        "3D B6/S567",
+        "Diffusion",
+        "Periodic shift",
+        "Logistic map",
+        "Tent map",
+        "Coupled logistic lattice",
+        "Sine oscillator",
+        "Local phase coupling",
+        "Gray–Scott",
+        "PID feedback controller",
+        "G6 growth field",
+        "G6 automaton layer",
+        "G7 compiled system programs",
+        "G8 binary packet programs"
+      ],
+      "controls": [
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "← Home",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "g12-new",
+          "type": "button",
+          "text": "Create new algorithm",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "g12-name",
+          "type": null,
+          "text": "Name",
+          "disabled": false,
+          "visible": false
+        },
+        {
+          "tag": "SELECT",
+          "id": "g12-category",
+          "type": null,
+          "text": "Category Boolean logicTransportMemory and feedbackExperimental",
+          "disabled": false,
+          "visible": false
+        },
+        {
+          "tag": "INPUT",
+          "id": "g12-purpose",
+          "type": null,
+          "text": "Purpose",
+          "disabled": false,
+          "visible": false
+        },
+        {
+          "tag": "INPUT",
+          "id": "g12-aim",
+          "type": null,
+          "text": "Aim / hypothesis",
+          "disabled": false,
+          "visible": false
+        },
+        {
+          "tag": "INPUT",
+          "id": "g12-color",
+          "type": "color",
+          "text": "Algorithm color",
+          "disabled": false,
+          "visible": false
+        },
+        {
+          "tag": "SELECT",
+          "id": "g12-input-0",
+          "type": null,
+          "text": "Input a selfleftrightdownupbackfrontzeroone",
+          "disabled": false,
+          "visible": false
+        },
+        {
+          "tag": "SELECT",
+          "id": "g12-input-1",
+          "type": null,
+          "text": "Input b selfleftrightdownupbackfrontzeroone",
+          "disabled": false,
+          "visible": false
+        },
+        {
+          "tag": "SELECT",
+          "id": "g12-input-2",
+          "type": null,
+          "text": "Input c selfleftrightdownupbackfrontzeroone",
+          "disabled": false,
+          "visible": false
+        },
+        {
+          "tag": "INPUT",
+          "id": "g12-table",
+          "type": null,
+          "text": "Eight output bits in row order",
+          "disabled": false,
+          "visible": false
+        },
+        {
+          "tag": "BUTTON",
+          "id": "g12-test",
+          "type": "button",
+          "text": "Test this algorithm",
+          "disabled": false,
+          "visible": false
+        },
+        {
+          "tag": "BUTTON",
+          "id": "g12-save",
+          "type": "submit",
+          "text": "Save algorithm to library",
+          "disabled": true,
+          "visible": false
+        },
+        {
+          "tag": "BUTTON",
+          "id": "g12-back",
+          "type": "button",
+          "text": "Previous step",
+          "disabled": false,
+          "visible": false
+        },
+        {
+          "tag": "BUTTON",
+          "id": "g12-next",
+          "type": "button",
+          "text": "Next step",
+          "disabled": false,
+          "visible": false
+        },
+        {
+          "tag": "BUTTON",
+          "id": "g12-cancel",
+          "type": "button",
+          "text": "Cancel creation",
+          "disabled": false,
+          "visible": false
+        },
+        {
+          "tag": "SELECT",
+          "id": "g12-filter",
+          "type": null,
+          "text": "Filter category All categoriesBooleanTransportNonlinear mapsOscillatorsReaction–diffusionFeedback controlSpatial fieldCompiled systems",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Open algorithm module",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Open algorithm module",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Open algorithm module",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Open algorithm module",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Open algorithm module",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "g12-export",
+          "type": null,
+          "text": "Export custom rules",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "g12-import",
+          "type": "file",
+          "text": "Import custom rules JSON",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Use an algorithm in G11 →",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Combine algorithms",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Explore tool connections",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Connect tools",
+          "disabled": false,
+          "visible": true
+        }
+      ],
+      "visuals": [
+        {
+          "tag": "TABLE",
+          "id": "",
+          "label": null
+        }
+      ],
+      "narrowOverflow": false
+    },
+    {
+      "id": "compiler",
+      "status": "observed rendering; function coverage recorded separately",
+      "headings": [
+        "Compile instructions",
+        "System sentences → instructions → observable behaviour"
+      ],
+      "controls": [
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "← Home",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "SELECT",
+          "id": "g7-preset",
+          "type": null,
+          "text": "Adaptive feedbackSpatial seeking",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "TEXTAREA",
+          "id": "g7-source",
+          "type": null,
+          "text": "System sentence source",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "g7-compile",
+          "type": null,
+          "text": "⚙ Compile & load",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "g7-help",
+          "type": null,
+          "text": "Grammar reference",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "g7-run",
+          "type": null,
+          "text": "▶ Run",
+          "disabled": true,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "g7-step",
+          "type": null,
+          "text": "Step +1",
+          "disabled": true,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "g7-reset",
+          "type": null,
+          "text": "↻ Reset",
+          "disabled": true,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "g7-paired",
+          "type": null,
+          "text": "Compare coupling vs zero",
+          "disabled": true,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "g7-export",
+          "type": null,
+          "text": "↓ Export binary evidence",
+          "disabled": true,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "g7-coupling",
+          "type": "range",
+          "text": "Coupling 75%",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "g7-speed",
+          "type": "range",
+          "text": "Rate 6/s",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Run the binary engine",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Find and test patterns",
+          "disabled": false,
+          "visible": true
+        }
+      ],
+      "visuals": [
+        {
+          "tag": "CANVAS",
+          "id": "g7-canvas-a",
+          "label": null
+        },
+        {
+          "tag": "CANVAS",
+          "id": "g7-canvas-b",
+          "label": null
+        }
+      ],
+      "narrowOverflow": false
+    },
+    {
+      "id": "network",
+      "status": "observed rendering; function coverage recorded separately",
+      "headings": [
+        "Build connected systems",
+        "Build connected systems",
+        "Node graph",
+        "No algorithms exist yet."
+      ],
+      "controls": [
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "← Home",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "add-btn",
+          "type": "button",
+          "text": "＋ Add empty sandbox",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "example-btn",
+          "type": "button",
+          "text": "Load example",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "clear-btn",
+          "type": "button",
+          "text": "Clear workspace",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "export-btn",
+          "type": "button",
+          "text": "↓ Export JSON",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "import-btn",
+          "type": "button",
+          "text": "↑ Import JSON",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "import-file",
+          "type": "file",
+          "text": "",
+          "disabled": false,
+          "visible": false
+        },
+        {
+          "tag": "BUTTON",
+          "id": "empty-add",
+          "type": "button",
+          "text": "＋ Add first empty sandbox",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Build internal layers",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Connect systems",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "View systems in 3D",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Compare system changes",
+          "disabled": false,
+          "visible": true
+        }
+      ],
+      "visuals": [
+        {
+          "tag": "svg",
+          "id": "wires",
+          "label": "Pattern relationships"
+        }
+      ],
+      "narrowOverflow": false
+    },
+    {
+      "id": "layers",
+      "status": "observed rendering; function coverage recorded separately",
+      "headings": [
+        "Build internal layers",
+        "Inside an environment"
+      ],
+      "controls": [
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "← Home",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Build connected systems",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "View systems in 3D",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Connect systems",
+          "disabled": false,
+          "visible": true
+        }
+      ],
+      "visuals": [],
+      "narrowOverflow": false
+    },
+    {
+      "id": "relationships",
+      "status": "observed rendering; function coverage recorded separately",
+      "headings": [
+        "Connect systems",
+        "Connections"
+      ],
+      "controls": [
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "← Home",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Build connected systems",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Compare system changes",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Inspect system state",
+          "disabled": false,
+          "visible": true
+        }
+      ],
+      "visuals": [],
+      "narrowOverflow": false
+    },
+    {
+      "id": "spatial",
+      "status": "observed rendering; function coverage recorded separately",
+      "headings": [
+        "View systems in 3D",
+        "Algorithm-generated patterns"
+      ],
+      "controls": [
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "← Home",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "run-btn",
+          "type": null,
+          "text": "▶ Run",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "step-btn",
+          "type": null,
+          "text": "Step +1",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "reset-btn",
+          "type": null,
+          "text": "↻ Reset",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "enter-vr",
+          "type": null,
+          "text": "VR NOT SUPPORTED",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Orbit left",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Orbit right",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Orbit up",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Orbit down",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Zoom in",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Zoom out",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Recenter view",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "describe-scene",
+          "type": "button",
+          "text": "Describe current state",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Build connected systems",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Choose an action",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Inspect system state",
+          "disabled": false,
+          "visible": true
+        }
+      ],
+      "visuals": [
+        {
+          "tag": "CANVAS",
+          "id": "scene",
+          "label": "Interactive 3D G6 pattern view"
+        }
+      ],
+      "narrowOverflow": false
+    },
+    {
+      "id": "binary",
+      "status": "observed rendering; function coverage recorded separately",
+      "headings": [
+        "Run the binary engine",
+        "Bits first. Meaning later."
+      ],
+      "controls": [
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "← Home",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "SELECT",
+          "id": "g8-preset",
+          "type": null,
+          "text": "Reciprocal XOROne-way propagationIsolated patterns",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "TEXTAREA",
+          "id": "g8-source",
+          "type": null,
+          "text": "Binary compiler source",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "g8-compile",
+          "type": null,
+          "text": "Compile into bits",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "g8-grammar",
+          "type": null,
+          "text": "Grammar",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "g8-step",
+          "type": null,
+          "text": "Step +1",
+          "disabled": true,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "g8-run",
+          "type": null,
+          "text": "▶ Run",
+          "disabled": true,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "g8-reset",
+          "type": null,
+          "text": "↻ Reset",
+          "disabled": true,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "g8-compare",
+          "type": null,
+          "text": "Test causality",
+          "disabled": true,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "g8-export",
+          "type": null,
+          "text": "↓ Export binary JSON",
+          "disabled": true,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "g8-depth",
+          "type": "range",
+          "text": "Depth Z 4",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "g8-name",
+          "type": null,
+          "text": "G8 observer interpretation",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "g8-save",
+          "type": null,
+          "text": "Assign meaning",
+          "disabled": true,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Control a system",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Find and test patterns",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Compile instructions",
+          "disabled": false,
+          "visible": true
+        }
+      ],
+      "visuals": [
+        {
+          "tag": "CANVAS",
+          "id": "g8-canvas-a",
+          "label": "Matrix A spatial binary visualization"
+        },
+        {
+          "tag": "CANVAS",
+          "id": "g8-canvas-b",
+          "label": "Matrix B spatial binary visualization"
+        }
+      ],
+      "narrowOverflow": false
+    },
+    {
+      "id": "pid",
+      "status": "observed rendering; function coverage recorded separately",
+      "headings": [
+        "Control a system",
+        "Control a system",
+        "Algorithm nodes and edges",
+        "Binary plant · 1,000 cells",
+        "Controller and observed structure"
+      ],
+      "controls": [
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "← Home",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "SELECT",
+          "id": "g10-preset",
+          "type": null,
+          "text": "Preset PID regulationOscillator + PIDCoupled patternsOpen loop",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "g10-target",
+          "type": "number",
+          "text": "Target ON bits",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "g10-kp",
+          "type": "number",
+          "text": "Kp",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "g10-ki",
+          "type": "number",
+          "text": "Ki",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "g10-kd",
+          "type": "number",
+          "text": "Kd",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "g10-seed",
+          "type": "number",
+          "text": "Seed",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "g10-apply",
+          "type": "submit",
+          "text": "Apply and reset",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "g10-link-feedback",
+          "type": "checkbox",
+          "text": "Matrix → sensor → PID measurement",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "g10-link-pid",
+          "type": "checkbox",
+          "text": "PID output → bit actuator → matrix",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "g10-link-oscillator",
+          "type": "checkbox",
+          "text": "Oscillator → target modulation",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "g10-link-logistic",
+          "type": "checkbox",
+          "text": "Logistic map → target modulation",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "g10-link-diffusion",
+          "type": "checkbox",
+          "text": "Neighbor diffusion → matrix",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "g10-link-xor",
+          "type": "checkbox",
+          "text": "XOR rule 90 → matrix",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "g10-step",
+          "type": null,
+          "text": "Step system +1",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "g10-run",
+          "type": null,
+          "text": "Run system",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "g10-reset",
+          "type": null,
+          "text": "Reset system",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "g10-compare",
+          "type": null,
+          "text": "Compare PID / open loop",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "g10-replay",
+          "type": null,
+          "text": "Verify system replay",
+          "disabled": true,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "g10-import",
+          "type": null,
+          "text": "Import G8 matrix",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "g10-export",
+          "type": null,
+          "text": "Export system evidence",
+          "disabled": true,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "g10-depth",
+          "type": "range",
+          "text": "Depth Z 4",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Åström and Murray: PID implementation",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Kaneko and Yanagita: coupled maps",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Run the binary engine",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Find and test patterns",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Combine algorithms",
+          "disabled": false,
+          "visible": true
+        }
+      ],
+      "visuals": [
+        {
+          "tag": "CANVAS",
+          "id": "g10-canvas",
+          "label": "G10 binary plant"
+        },
+        {
+          "tag": "CANVAS",
+          "id": "g10-plot",
+          "label": "Controlled and open-loop population trajectories"
+        }
+      ],
+      "narrowOverflow": false
+    },
+    {
+      "id": "ecology",
+      "status": "observed rendering; function coverage recorded separately",
+      "headings": [
+        "Combine algorithms",
+        "Combine algorithms",
+        "XOR / rule 90",
+        "Rule 30",
+        "Face majority",
+        "3D B6/S567",
+        "Diffusion",
+        "Periodic shift",
+        "Logistic map",
+        "Tent map",
+        "Coupled logistic lattice",
+        "Sine oscillator",
+        "Local phase coupling",
+        "Gray–Scott",
+        "Compose one to six nodes",
+        "Directed input → output edges",
+        "A · XOR / rule 90 · #ff709c",
+        "B · Coupled logistic lattice · #b197fc",
+        "C · Gray–Scott · #c0eb75"
+      ],
+      "controls": [
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "← Home",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Equation family / implementation reference",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Equation family / implementation reference",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Equation family / implementation reference",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Equation family / implementation reference",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Equation family / implementation reference",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Equation family / implementation reference",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Equation family / implementation reference",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Equation family / implementation reference",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Equation family / implementation reference",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Equation family / implementation reference",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Equation family / implementation reference",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Equation family / implementation reference",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "future research candidate",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "ETH Gray–Scott implementation reference",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Pearson: Complex Patterns in a Simple System",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "3D automata implementation reference",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "g11-seed",
+          "type": "number",
+          "text": "Reproducible seed",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "SELECT",
+          "id": "",
+          "type": null,
+          "text": "Algorithm XOR / rule 90 · BooleanRule 30 · BooleanFace majority · Boolean3D B6/S567 · BooleanDiffusion · TransportPeriodic shift · TransportLogistic map · Nonlinear mapsTent map · ",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "",
+          "type": "number",
+          "text": "Parameter",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "",
+          "type": "number",
+          "text": "Output threshold",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Remove A",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "SELECT",
+          "id": "",
+          "type": null,
+          "text": "Algorithm XOR / rule 90 · BooleanRule 30 · BooleanFace majority · Boolean3D B6/S567 · BooleanDiffusion · TransportPeriodic shift · TransportLogistic map · Nonlinear mapsTent map · ",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "",
+          "type": "number",
+          "text": "Parameter",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "",
+          "type": "number",
+          "text": "Output threshold",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Remove B",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "SELECT",
+          "id": "",
+          "type": null,
+          "text": "Algorithm XOR / rule 90 · BooleanRule 30 · BooleanFace majority · Boolean3D B6/S567 · BooleanDiffusion · TransportPeriodic shift · TransportLogistic map · Nonlinear mapsTent map · ",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "",
+          "type": "number",
+          "text": "Parameter",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "",
+          "type": "number",
+          "text": "Output threshold",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Remove C",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "g11-add",
+          "type": "button",
+          "text": "Add node",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Remove A → B",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Remove B → C",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Remove C → A",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "SELECT",
+          "id": "g11-from",
+          "type": null,
+          "text": "Source ABC",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "SELECT",
+          "id": "g11-to",
+          "type": null,
+          "text": "Receiver ABC",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "g11-weight",
+          "type": "number",
+          "text": "Weight",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "g11-connect",
+          "type": "button",
+          "text": "Connect edge",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "g11-apply",
+          "type": "submit",
+          "text": "Apply and reset",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "g11-step",
+          "type": null,
+          "text": "Step network +1",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "g11-run",
+          "type": null,
+          "text": "Run network",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "g11-reset",
+          "type": null,
+          "text": "Reset same seed",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "g11-compare",
+          "type": null,
+          "text": "Compare coupled / isolated · 32 ticks",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "g11-replay",
+          "type": null,
+          "text": "Verify exact replay",
+          "disabled": true,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "g11-sweep",
+          "type": null,
+          "text": "Sweep seeds and parameters",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "g11-export",
+          "type": null,
+          "text": "Export evidence",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "g11-influence",
+          "type": "checkbox",
+          "text": "Show direct input influence",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "SELECT",
+          "id": "g11-view",
+          "type": null,
+          "text": "View All sandboxesABC",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "g11-depth",
+          "type": "range",
+          "text": "Depth Z",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Create algorithms",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Connect tools",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Explore tool connections",
+          "disabled": false,
+          "visible": true
+        }
+      ],
+      "visuals": [
+        {
+          "tag": "CANVAS",
+          "id": "",
+          "label": "A, 10 by 10 by 10 binary matrix; 513 ON bits. Input influence."
+        },
+        {
+          "tag": "CANVAS",
+          "id": "",
+          "label": "B, 10 by 10 by 10 binary matrix; 514 ON bits. Input influence."
+        },
+        {
+          "tag": "CANVAS",
+          "id": "",
+          "label": "C, 10 by 10 by 10 binary matrix; 103 ON bits. Input influence."
+        }
+      ],
+      "narrowOverflow": false
+    },
+    {
+      "id": "discovery",
+      "status": "observed rendering; function coverage recorded separately",
+      "headings": [
+        "Find and test patterns",
+        "Observe. Intervene. Form a hypothesis."
+      ],
+      "controls": [
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "← Home",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "g9-ticks",
+          "type": "number",
+          "text": "Ticks",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "SELECT",
+          "id": "g9-mode",
+          "type": null,
+          "text": "Intervention Flip one bit in first matrixDisable all receiving from tick 0No intervention / reproducibility control",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "g9-address",
+          "type": "number",
+          "text": "Address",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "g9-at",
+          "type": "number",
+          "text": "At tick",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "g9-workflow-seed",
+          "type": "checkbox",
+          "text": "Use matrix from workflow",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "g9-import-kernel",
+          "type": "button",
+          "text": "Use binary engine matrix",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "g9-run",
+          "type": "submit",
+          "text": "Run discovery experiment",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "g9-replay",
+          "type": "button",
+          "text": "Verify replay",
+          "disabled": true,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "g9-export",
+          "type": "button",
+          "text": "Export G9 evidence",
+          "disabled": true,
+          "visible": true
+        },
+        {
+          "tag": "SELECT",
+          "id": "g9-pattern",
+          "type": null,
+          "text": "Pattern",
+          "disabled": false,
+          "visible": false
+        },
+        {
+          "tag": "INPUT",
+          "id": "g9-note",
+          "type": null,
+          "text": "Hypothesis",
+          "disabled": false,
+          "visible": false
+        },
+        {
+          "tag": "SELECT",
+          "id": "g9-hypothesis",
+          "type": null,
+          "text": "Status UntestedConsistent with this experimentContradicted by this experimentInconclusive",
+          "disabled": false,
+          "visible": false
+        },
+        {
+          "tag": "BUTTON",
+          "id": "g9-save",
+          "type": null,
+          "text": "Save hypothesis",
+          "disabled": false,
+          "visible": false
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Run the binary engine",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Control a system",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Compare system changes",
+          "disabled": false,
+          "visible": true
+        }
+      ],
+      "visuals": [
+        {
+          "tag": "TABLE",
+          "id": "",
+          "label": null
+        }
+      ],
+      "narrowOverflow": false
+    },
+    {
+      "id": "experiments",
+      "status": "observed rendering; function coverage recorded separately",
+      "headings": [
+        "Compare system changes",
+        "Connected system vs controlled ablation"
+      ],
+      "controls": [
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "← Home",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "SELECT",
+          "id": "g6-ablation",
+          "type": null,
+          "text": "Remove relationships in controlAll connectionsInternal connections onlyExternal connections only",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "SELECT",
+          "id": "g6-horizon",
+          "type": null,
+          "text": "Experiment horizon10 ticks24 ticks48 ticks80 ticks",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "g6-run",
+          "type": "button",
+          "text": "▶ Run controlled experiment",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "g6-export",
+          "type": "button",
+          "text": "↓ Export evidence JSON",
+          "disabled": true,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Build connected systems",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Connect systems",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Inspect system state",
+          "disabled": false,
+          "visible": true
+        }
+      ],
+      "visuals": [],
+      "narrowOverflow": false
+    },
+    {
+      "id": "metrics",
+      "status": "observed rendering; function coverage recorded separately",
+      "headings": [
+        "Inspect system state",
+        "Observe the experiment"
+      ],
+      "controls": [
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "← Home",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Build connected systems",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "View systems in 3D",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Compare system changes",
+          "disabled": false,
+          "visible": true
+        }
+      ],
+      "visuals": [],
+      "narrowOverflow": false
+    },
+    {
+      "id": "wiring",
+      "status": "observed rendering; function coverage recorded separately",
+      "headings": [
+        "Connect tools",
+        "Connect tools",
+        "Choose an action",
+        "Build connected systems",
+        "Compile instructions",
+        "Run the binary engine",
+        "Find and test patterns",
+        "Control a system",
+        "Combine algorithms",
+        "Create algorithms",
+        "Purpose and design",
+        "Connect tools",
+        "Build a tool",
+        "Edit instructions",
+        "Collect state updates",
+        "Collect observer notes",
+        "Download results",
+        "Read references",
+        "Explore tool connections",
+        "Choose a page",
+        "View: Build connected systems",
+        "View: Compile instructions",
+        "View: Run the binary engine",
+        "View: Find and test patterns",
+        "View: Control a system",
+        "View: Combine algorithms",
+        "Share saved algorithms",
+        "Provide references",
+        "Set the logo",
+        "Show the website"
+      ],
+      "controls": [
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "← Home",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "SELECT",
+          "id": "flow-from",
+          "type": null,
+          "text": "Output Choose an action / workbench [command]Choose an action / g6 [command]Choose an action / g7 [command]Choose an action / g8 [command]Choose an action / g9 [command]Choose an a",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "SELECT",
+          "id": "flow-to",
+          "type": null,
+          "text": "Input Build connected systems / command [command]Build connected systems / library [snapshot]Compile instructions / command [command]Run the binary engine / command [command]Find a",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "flow-delay",
+          "type": "checkbox",
+          "text": "Deliver on next workflow tick",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "submit",
+          "text": "Connect modules",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "flow-tick",
+          "type": null,
+          "text": "Advance workflow tick",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "flow-reset",
+          "type": null,
+          "text": "Restore default wiring",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "flow-save",
+          "type": null,
+          "text": "Save wiring in browser",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "flow-load",
+          "type": null,
+          "text": "Load saved wiring",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "flow-export",
+          "type": null,
+          "text": "Export wiring JSON",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "flow-file",
+          "type": "file",
+          "text": "Import wiring",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "",
+          "type": "checkbox",
+          "text": "Enable controls-g6",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Remove",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "",
+          "type": "checkbox",
+          "text": "Enable controls-g7",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Remove",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "",
+          "type": "checkbox",
+          "text": "Enable controls-g8",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Remove",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "",
+          "type": "checkbox",
+          "text": "Enable controls-g9",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Remove",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "",
+          "type": "checkbox",
+          "text": "Enable controls-composition",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Remove",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "",
+          "type": "checkbox",
+          "text": "Enable controls-ecology",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Remove",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "",
+          "type": "checkbox",
+          "text": "Enable controls-workshop",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Remove",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "",
+          "type": "checkbox",
+          "text": "Enable controls-foundation",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Remove",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "",
+          "type": "checkbox",
+          "text": "Enable controls-workflow",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Remove",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "",
+          "type": "checkbox",
+          "text": "Enable controls-workbench",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Remove",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "",
+          "type": "checkbox",
+          "text": "Enable source-g9",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Remove",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "",
+          "type": "checkbox",
+          "text": "Enable g6-metrics",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Remove",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "",
+          "type": "checkbox",
+          "text": "Enable g6-exports",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Remove",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "",
+          "type": "checkbox",
+          "text": "Enable g7-metrics",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Remove",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "",
+          "type": "checkbox",
+          "text": "Enable g7-exports",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Remove",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "",
+          "type": "checkbox",
+          "text": "Enable g8-metrics",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Remove",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "",
+          "type": "checkbox",
+          "text": "Enable g8-exports",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Remove",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "",
+          "type": "checkbox",
+          "text": "Enable g9-metrics",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Remove",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "",
+          "type": "checkbox",
+          "text": "Enable g9-exports",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Remove",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "",
+          "type": "checkbox",
+          "text": "Enable composition-metrics",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Remove",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "",
+          "type": "checkbox",
+          "text": "Enable composition-exports",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Remove",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "",
+          "type": "checkbox",
+          "text": "Enable ecology-metrics",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Remove",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "",
+          "type": "checkbox",
+          "text": "Enable ecology-exports",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Remove",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "",
+          "type": "checkbox",
+          "text": "Enable workshop-metrics",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Remove",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "",
+          "type": "checkbox",
+          "text": "Enable workshop-exports",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Remove",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "",
+          "type": "checkbox",
+          "text": "Enable foundation-metrics",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Remove",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "",
+          "type": "checkbox",
+          "text": "Enable foundation-exports",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Remove",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "",
+          "type": "checkbox",
+          "text": "Enable workflow-metrics",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Remove",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "",
+          "type": "checkbox",
+          "text": "Enable workflow-exports",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Remove",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "",
+          "type": "checkbox",
+          "text": "Enable workbench-metrics",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Remove",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "",
+          "type": "checkbox",
+          "text": "Enable workbench-exports",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Remove",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "",
+          "type": "checkbox",
+          "text": "Enable g8-notebook",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Remove",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "",
+          "type": "checkbox",
+          "text": "Enable g9-notebook",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Remove",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "",
+          "type": "checkbox",
+          "text": "Enable g8-composition",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Remove",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "",
+          "type": "checkbox",
+          "text": "Enable composition-g9",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Remove",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "",
+          "type": "checkbox",
+          "text": "Enable workflow-feature-inventory",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Remove",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "",
+          "type": "checkbox",
+          "text": "Enable feature-inventory-exports",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Remove",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "",
+          "type": "checkbox",
+          "text": "Enable navigation-metrics",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Remove",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "",
+          "type": "checkbox",
+          "text": "Enable g8-discovery",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Remove",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "",
+          "type": "checkbox",
+          "text": "Enable g8-workbench",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Remove",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "",
+          "type": "checkbox",
+          "text": "Enable g6-view",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Remove",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "",
+          "type": "checkbox",
+          "text": "Enable g7-view",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Remove",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "",
+          "type": "checkbox",
+          "text": "Enable g8-view",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Remove",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "",
+          "type": "checkbox",
+          "text": "Enable g9-view",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Remove",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "",
+          "type": "checkbox",
+          "text": "Enable composition-view",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Remove",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "",
+          "type": "checkbox",
+          "text": "Enable ecology-view",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Remove",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "",
+          "type": "checkbox",
+          "text": "Enable workshop-registry",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Remove",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "",
+          "type": "checkbox",
+          "text": "Enable registry-ecology",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Remove",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "",
+          "type": "checkbox",
+          "text": "Enable registry-g6",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Remove",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "",
+          "type": "checkbox",
+          "text": "Enable reference-library",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Remove",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "",
+          "type": "checkbox",
+          "text": "Enable identity-shell",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Remove",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Explore tool connections",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Create algorithms",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Combine algorithms",
+          "disabled": false,
+          "visible": true
+        }
+      ],
+      "visuals": [
+        {
+          "tag": "svg",
+          "id": "flow-map",
+          "label": null
+        },
+        {
+          "tag": "TABLE",
+          "id": "",
+          "label": null
+        }
+      ],
+      "narrowOverflow": false
+    },
+    {
+      "id": "features",
+      "status": "observed rendering; function coverage recorded separately",
+      "headings": [
+        "Explore tool connections",
+        "Explore tool connections"
+      ],
+      "controls": [
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "← Home",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "SELECT",
+          "id": "module-choice",
+          "type": null,
+          "text": "Focus on a module Show all modulesBuild a toolBuild connected systemsCompile instructionsRun the binary engineFind and test patternsControl a systemCombine algorithmsCreate algorit",
+          "disabled": false,
+          "visible": false
+        },
+        {
+          "tag": "BUTTON",
+          "id": "module-show",
+          "type": null,
+          "text": "Open selected module",
+          "disabled": false,
+          "visible": false
+        },
+        {
+          "tag": "BUTTON",
+          "id": "module-all",
+          "type": null,
+          "text": "Show all modules",
+          "disabled": false,
+          "visible": false
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Build a tool",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Build connected systems",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Compile instructions",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Run the binary engine",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Find and test patterns",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Control a system",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Combine algorithms",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Create algorithms",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Connect tools",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Choose an action",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Purpose and design",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Explore tool connections",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Read references",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Website wiring",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "feature-refresh",
+          "type": null,
+          "text": "Refresh page control inventory",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "feature-export",
+          "type": null,
+          "text": "Export feature and connection inventory",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Connect tools",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Choose an action",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Create algorithms",
+          "disabled": false,
+          "visible": true
+        }
+      ],
+      "visuals": [
+        {
+          "tag": "TABLE",
+          "id": "",
+          "label": null
+        },
+        {
+          "tag": "TABLE",
+          "id": "",
+          "label": null
+        }
+      ],
+      "narrowOverflow": false
+    },
+    {
+      "id": "controllers",
+      "status": "observed rendering; function coverage recorded separately",
+      "headings": [
+        "Choose an action",
+        "Controller menu"
+      ],
+      "controls": [
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "← Home",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Workspace",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Run connected systems",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Compile instructions",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Run the binary engine",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Find and test patterns",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "View and safety",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Back / cancel",
+          "disabled": true,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Previous",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": "button",
+          "text": "Next",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "View systems in 3D",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Explore tool connections",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Build connected systems",
+          "disabled": false,
+          "visible": true
+        }
+      ],
+      "visuals": [],
+      "narrowOverflow": false
+    },
+    {
+      "id": "references",
+      "status": "observed rendering; function coverage recorded separately",
+      "headings": [
+        "Read references",
+        "Read references",
+        "Vercel Web Interface Guidelines",
+        "UX Project Checklist",
+        "PhET Development Overview",
+        "PhET Scenery components",
+        "PhET Interactive Description Guide",
+        "Meta First Hand",
+        "Meta Spatial SDK Samples",
+        "Meta Quest Agentic Tools",
+        "Read references"
+      ],
+      "controls": [
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "← Home",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Vercel Web Interface Guidelines",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "UX Project Checklist",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "PhET Development Overview",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "PhET Scenery components",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "PhET Interactive Description Guide",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Meta First Hand",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Meta Spatial SDK Samples",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Meta Quest Agentic Tools",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Purpose and design",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Explore tool connections",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Create algorithms",
+          "disabled": false,
+          "visible": true
+        }
+      ],
+      "visuals": [],
+      "narrowOverflow": false
+    },
+    {
+      "id": "theory",
+      "status": "observed rendering; function coverage recorded separately",
+      "headings": [
+        "Purpose and design",
+        "Purpose, philosophy and research foundation",
+        "Underlying purpose · matrix engine",
+        "Secondary aim · modular workspace",
+        "Applications · exploration and research",
+        "Supporting capabilities · purpose decomposition",
+        "Testable hypotheses and current evidence status",
+        "What each webpage contributes",
+        "Research library · 22 papers",
+        "Systems design and architecture · 2D relationship matrix",
+        "Why tools connect"
+      ],
+      "controls": [
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "← Home",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "research-export",
+          "type": null,
+          "text": "Export research and purpose map",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "SELECT",
+          "id": "research-topic",
+          "type": null,
+          "text": "Find a research topic All topicsCellular automataMorphogenesisSystems theoryCellular systemsComplexityEmergenceNetworks and dimensionFractalityVirtual reality",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Home",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Build a tool",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Create algorithms",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Compile instructions",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Build connected systems",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Build internal layers",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Connect systems",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "View systems in 3D",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Run the binary engine",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Control a system",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Combine algorithms",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Find and test patterns",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Compare system changes",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Inspect system state",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Connect tools",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Explore tool connections",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Choose an action",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Read references",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Purpose and design",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Mathematical Games: the fantastic combinations of Conway’s game Life",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "The Chemical Basis of Morphogenesis",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "An Outline of General System Theory",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "The Theory of Open Systems in Physics and Biology",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Computational Systems Biology",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Computational Approaches to Cellular Rhythms",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Between Order and Chaos",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Computation at the Edge of Chaos",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Dynamics, Computation, and the Edge of Chaos: A Re-Examination",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Weak Emergence",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Measuring Emergence via Nonlinear Granger Causality",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Quantifying Causal Emergence Shows That Macro Can Beat Micro",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Complex Patterns in a Simple System",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Testing Turing’s Theory of Morphogenesis in Chemical Cells",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "The Theory of Pattern Formation on Directed Networks",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Combining Turing and 3D Vertex Models Reproduces Autonomous Multicellular Morphogenesis with Undulation, Tubulation, and Branching",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Lenia: Biology of Artificial Life",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Lenia and Expanded Universe",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "How Long Is the Coast of Britain? Statistical Self-Similarity and Fractional Dimension",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Place Illusion and Plausibility Can Lead to Realistic Behaviour in Immersive Virtual Environments",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "A Separate Reality: An Update on Place Illusion and Plausibility in Virtual Reality",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Immersive Analytics with Abstract 3D Visualizations: A Survey",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "SEBoK technical management",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Metaphorum VSM",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "System Dynamics Society UK",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "SELECT",
+          "id": "arch-group",
+          "type": null,
+          "text": "Module group All groupsEngineWorkspaceObservationGovernanceInterface",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "arch-refresh",
+          "type": null,
+          "text": "Refresh connections",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "arch-export",
+          "type": null,
+          "text": "Export architecture",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": null,
+          "text": "1",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": null,
+          "text": "3",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": null,
+          "text": "2",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": null,
+          "text": "2",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": null,
+          "text": "1",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": null,
+          "text": "2",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": null,
+          "text": "2",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": null,
+          "text": "1",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": null,
+          "text": "2",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": null,
+          "text": "2",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": null,
+          "text": "1",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": null,
+          "text": "2",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": null,
+          "text": "2",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": null,
+          "text": "3",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": null,
+          "text": "3",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": null,
+          "text": "1",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": null,
+          "text": "3",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": null,
+          "text": "2",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": null,
+          "text": "1",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": null,
+          "text": "2",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": null,
+          "text": "2",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": null,
+          "text": "2",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": null,
+          "text": "3",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": null,
+          "text": "1",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": null,
+          "text": "2",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": null,
+          "text": "1",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": null,
+          "text": "2",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": null,
+          "text": "2",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": null,
+          "text": "2",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": null,
+          "text": "1",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": null,
+          "text": "2",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": null,
+          "text": "1",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": null,
+          "text": "2",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": null,
+          "text": "1",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": null,
+          "text": "2",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": null,
+          "text": "1",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": null,
+          "text": "1",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": null,
+          "text": "2",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": null,
+          "text": "2",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": null,
+          "text": "3",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": null,
+          "text": "3",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": null,
+          "text": "3",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": null,
+          "text": "3",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": null,
+          "text": "3",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": null,
+          "text": "3",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": null,
+          "text": "3",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": null,
+          "text": "3",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": null,
+          "text": "3",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": null,
+          "text": "3",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": null,
+          "text": "2",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "type": null,
+          "text": "2",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "relation-check",
+          "type": null,
+          "text": "Check current relationships",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "relation-export",
+          "type": null,
+          "text": "Export relationship purposes",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Compare system changes",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Find and test patterns",
+          "disabled": false,
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "type": null,
+          "text": "Read references",
+          "disabled": false,
+          "visible": true
+        }
+      ],
+      "visuals": [
+        {
+          "tag": "TABLE",
+          "id": "",
+          "label": null
+        },
+        {
+          "tag": "TABLE",
+          "id": "arch-matrix",
+          "label": null
+        },
+        {
+          "tag": "TABLE",
+          "id": "",
+          "label": null
+        }
+      ],
+      "narrowOverflow": false
+    }
+  ],
+  "errors": [],
+  "requests": [],
+  "populatedBuilder": {
+    "status": "Completed 1 tick(s). Inspect module and tool outputs.",
+    "outputs": "Tool output: 01111111111111111111111111111111… · 999 active / 1000"
+  },
+  "storageKeys": [
+    "atunbi.custom-rules.v1"
+  ]
+}

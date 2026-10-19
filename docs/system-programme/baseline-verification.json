@@ -1,0 +1,96 @@
+{
+  "commit": "ed6f9540ee43cf332eb1670e7826eedc8aaacec1",
+  "date": "2026-10-19",
+  "command": "npm run verify",
+  "exitCode": 0,
+  "modelTests": 45,
+  "browserChecks": [
+    {
+      "name": "Controller prerequisites, confirmation and cancel",
+      "status": "PASS"
+    },
+    {
+      "name": "Workspace creation, clear guards, internal and external editing",
+      "status": "PASS"
+    },
+    {
+      "name": "G6 transport, horizon, ablation modes and non-mutating experiments",
+      "status": "PASS"
+    },
+    {
+      "name": "G6 executes all twelve library algorithms and preserves extended-state imports",
+      "status": "PASS"
+    },
+    {
+      "name": "G7 compile, presets, transport, coupling and evidence comparison",
+      "status": "PASS"
+    },
+    {
+      "name": "G8 preset compilation, packets, causality, source validation and annotations",
+      "status": "PASS"
+    },
+    {
+      "name": "G9 controller settings, all interventions, descriptors, recurrence and replay",
+      "status": "PASS"
+    },
+    {
+      "name": "Evidence exports and G6 import round trip with invalid-file guard",
+      "status": "PASS"
+    },
+    {
+      "name": "View, pause-all, reference categories and eight original links",
+      "status": "PASS"
+    },
+    {
+      "name": "PID composition, all drivers, matrix transfer and exact replay",
+      "status": "PASS"
+    },
+    {
+      "name": "G11 library, influence overlay, directed edges, single sandbox and replay",
+      "status": "PASS"
+    },
+    {
+      "name": "Algorithm workshop creates executable rules and maps modular features",
+      "status": "PASS"
+    },
+    {
+      "name": "Actual workflow disconnection, delayed delivery, validation and saved wiring",
+      "status": "PASS"
+    },
+    {
+      "name": "Logo and modular view state are present",
+      "status": "PASS"
+    },
+    {
+      "name": "Notebook persistence, mobile forms, keyboard navigation and accessibility",
+      "status": "PASS"
+    },
+    {
+      "name": "Simulated WebXR controller menu and restored desktop state",
+      "status": "PASS"
+    },
+    {
+      "name": "Home and eighteen dedicated module pages, history, state and direct links",
+      "status": "PASS"
+    },
+    {
+      "name": "Tool workspace controller actions and replay",
+      "status": "PASS"
+    },
+    {
+      "name": "Coverage of all categorized controller actions",
+      "status": "PASS"
+    }
+  ],
+  "additionalPassedSuites": [
+    "architecture",
+    "relationships",
+    "system",
+    "workbench"
+  ],
+  "limitations": [
+    "Only tested behavior established",
+    "Human usability and physical headset unverified",
+    "New SG requirements not established by baseline"
+  ]
+}
