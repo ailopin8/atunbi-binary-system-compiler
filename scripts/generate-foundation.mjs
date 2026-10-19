@@ -1,0 +1,9 @@
+import fs from 'node:fs';import ts from 'typescript';
+const mod=async path=>{const code=ts.transpileModule(fs.readFileSync(path,'utf8'),{compilerOptions:{module:ts.ModuleKind.ES2022,target:ts.ScriptTarget.ES2022}}).outputText;return import('data:text/javascript;base64,'+Buffer.from(code).toString('base64'));};
+const f=await mod('src/research-foundation.ts'),{pages}=await mod('src/pages.ts');const categories=JSON.parse(fs.readFileSync('docs/controller-menu.json','utf8'));const allocations=categories.flatMap(c=>c.actions.map(a=>({category:c.id,action:a.id,label:a.label,purposes:f.actionPurposes(c.id,a.id)})));
+fs.writeFileSync('docs/research-foundation.json',JSON.stringify({...f,format:'atunbi.foundation.v2',reviewed:'2026-10-19',allocations},null,2)+'\n');
+let appendix='\n## Annotated research library\n\n';for(const p of f.bibliography)appendix+=`### ${p.authors} (${p.year}) — ${p.title}\n\n[Paper / primary record](${p.url}) · ${p.topic} · Access: ${p.access}.\n\n${p.finding} ${p.application}\n\n`;
+appendix+='## Page allocation\n\n| Page | Purposes | Contribution |\n|---|---|---|\n';for(const p of [{id:'home',title:'Home',description:'Orient users and make the purpose navigable.'},...pages])appendix+=`| ${p.title} | ${f.pagePurposes[p.id].join(', ')} | ${p.description} |\n`;
+appendix+='\n## Complete controller-function allocation\n\n| Category | Function | Purposes |\n|---|---|---|\n';for(const a of allocations)appendix+=`| ${a.category} | ${a.label} | ${a.purposes.join(', ')} |\n`;
+const report=fs.readFileSync('docs/RESEARCH-FOUNDATION.md','utf8').split('\n## Annotated research library')[0];fs.writeFileSync('docs/RESEARCH-FOUNDATION.md',report+appendix);
+fs.writeFileSync('docs/pages.json',JSON.stringify({home:'./',pages:pages.map(p=>({...p,url:'?page='+p.id}))},null,2)+'\n');

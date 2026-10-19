@@ -15,7 +15,7 @@ export const pages=[
  {id:'features',title:'Features and connections',group:'Connect',description:'See what each module receives, produces and affects.',selectors:['#feature-map'],aliases:['feature-map'],related:['wiring','controllers','workshop']},
  {id:'controllers',title:'Controller menu',group:'Connect',description:'Operate the labs through a shared categorized action menu.',selectors:['#controller-menu'],aliases:['controller-menu'],related:['spatial','features','network']},
  {id:'references',title:'Reference library',group:'Learn',description:'Read the UI, accessibility, simulation and Quest references.',selectors:['#reference-library','.workflow-guide'],aliases:['reference-library'],related:['theory','features','workshop']},
- {id:'theory',title:'Purpose and experimental theory',group:'Learn',description:'Understand the assumptions and hypotheses behind the lab.',selectors:['.g6-theory'],aliases:['theory'],related:['experiments','discovery','references']}
+ {id:'theory',title:'Purpose and research foundation',group:'Learn',description:'Trace the purpose hierarchy, research evidence and testable hypotheses.',selectors:['.g6-theory'],aliases:['theory'],related:['experiments','discovery','references']}
 ] as const;
 export type PageId=typeof pages[number]['id']|'home';
 export function pageForAlias(alias:string):PageId|undefined{return alias==='home'?'home':pages.find(page=>page.id===alias||(page.aliases as readonly string[]).includes(alias))?.id;}

@@ -13,6 +13,9 @@ export interface PatternLayer<A extends string = string> {
   id: number;
   algorithm: A;
   state: Float32Array;
+  registers?: {u:Float64Array;phase:Float64Array};
+  definition?: import('./algorithms/library').CustomRule;
+  parameter?: number;
 }
 export interface PatternEdge {
   from: number;
@@ -60,7 +63,7 @@ export type Transition<A extends string> = (
   layer: PatternLayer<A>,
   input: Float32Array,
   simulationTime: number
-) => Float32Array;
+) => Float32Array | {state:Float32Array;registers?:{u:Float64Array;phase:Float64Array}};
 
 const SIZE = 10;
 const COUNT = SIZE ** 3;
@@ -72,7 +75,7 @@ function cloneNetwork<A extends string>(network: PatternNetwork<A>): PatternNetw
       id: world.id,
       outputLayerId: world.outputLayerId,
       layers: world.layers.map(layer => ({
-        id: layer.id, algorithm: layer.algorithm, state: layer.state.slice()
+        id: layer.id, algorithm: layer.algorithm, state: layer.state.slice(), registers:layer.registers?{u:layer.registers.u.slice(),phase:layer.registers.phase.slice()}:undefined,definition:layer.definition?structuredClone(layer.definition):undefined,parameter:layer.parameter
       })),
       innerLinks: world.innerLinks.map(edge => ({ ...edge }))
     })),
@@ -112,7 +115,7 @@ function advance<A extends string>(
           for (let i = 0; i < COUNT; i++) input[i] += weight * source.state[i];
         }
       }
-      return { id: layer.id, state: transition(layer, input, time) };
+      const result=transition(layer,input,time);return {id:layer.id,state:result instanceof Float32Array?result:result.state,registers:result instanceof Float32Array?layer.registers:result.registers};
     })
   }));
   for (const update of next) {
@@ -120,7 +123,7 @@ function advance<A extends string>(
     if (!world) continue;
     for (const layerUpdate of update.layers) {
       const layer = world.layers.find(current => current.id === layerUpdate.id);
-      if (layer) layer.state = layerUpdate.state;
+      if (layer) {layer.state = layerUpdate.state;layer.registers=layerUpdate.registers;}
     }
   }
 }

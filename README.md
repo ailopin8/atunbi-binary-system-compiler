@@ -69,3 +69,11 @@ The interface now offers module guides, grouped explanations, a module focus mod
 ### Home and dedicated module pages
 
 The root opens a home page organized into Create, Simulate, Inspect, Connect and Learn. Each of the 17 modules has its own address, heading, title and related links. For example, `?page=workshop` opens the creator and `?page=ecology` opens G11. Browser navigation retains models and drafts in the current session. Old section links continue to work. See [page directory and navigation contracts](docs/WEBSITE-PAGES.md).
+
+### Research foundation and G6 algorithm expansion
+
+The Theory page now provides BARE v2: a proposed purpose hierarchy with six decomposed purposes, seven principles, five testable hypotheses, 22 annotated papers and purpose allocations for all pages and 90 controller actions. The home and page headers expose their contribution to this hierarchy. Read the [research report](docs/RESEARCH-FOUNDATION.md) or export the structured map from `?page=theory`.
+
+G6 now executes its original four fields plus all 12 lattice algorithms and saved workshop rules. Both primary and internal selectors group the choices by type. Numeric registers and embedded custom definitions survive steps, counterfactual experiments and network export/import. See [the G6 adapter contract](docs/RESEARCH-FOUNDATION.md#5-g6-execution-repair-and-numerical-contract). The original field solvers and periodic library solvers have explicitly different boundaries; G8 remains the strict binary kernel.
+
+The framework does not claim that visual complexity proves emergence, that voxels reproduce biological cells, or that 10³ output establishes a fractal dimension. G-emergence, effective information, Lenia, mechanical morphogenesis and VR cognitive benefits are clearly labelled research proposals. Deployment remains pending the existing hosting credit limit.

@@ -206,5 +206,34 @@
       "Open ?page=unknown and verify a readable Home recovery message",
       "Return Home and check the card grid at mobile width"
     ]
+  },
+  {
+    "name": "Research purpose hierarchy and expanded G6 algorithms",
+    "sanity": false,
+    "viewport": "desktop",
+    "covers": [
+      "six purpose branches",
+      "22 annotated papers",
+      "page and function allocations",
+      "research filtering and export",
+      "12 executable G6 lattice algorithms",
+      "custom G6 rules",
+      "extended register persistence",
+      "nonmutating ablation",
+      "network continuation import"
+    ],
+    "description": "Trace the laboratory purpose to implemented capabilities and execute the added G6 choices.",
+    "steps": [
+      "Open Purpose and research foundation from Home",
+      "Inspect P0, P1\u2013P6, working principles, hypotheses, page allocations and controller functions",
+      "Filter the research library to Fractality and then restore all topics",
+      "Export the research and purpose map JSON",
+      "Open Pattern network, add an environment and inspect categorized algorithm options",
+      "Choose Gray\u2013Scott lattice, open Inside an environment and add a logistic lattice layer",
+      "Set a numerical parameter, connect the layers and step",
+      "Run a controlled experiment and verify the working state is unchanged",
+      "Export the G6 network, step, import the export and verify continuation",
+      "Create a binary workshop rule and verify it is selectable and executable in G6"
+    ]
   }
 ]

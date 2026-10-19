@@ -297,9 +297,9 @@
     },
     {
       "id": "theory",
-      "title": "Purpose and experimental theory",
+      "title": "Purpose and research foundation",
       "group": "Learn",
-      "description": "Understand the assumptions and hypotheses behind the lab.",
+      "description": "Trace the purpose hierarchy, research evidence and testable hypotheses.",
       "selectors": [
         ".g6-theory"
       ],

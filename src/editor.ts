@@ -1,4 +1,8 @@
-import {registerView, publishState, sendEvidence} from './flow/site';
+import {expandedMetadata,evolveExpanded,seedExpanded,validateRegisters,defaultParameter} from './algorithms/g6-library';
+import type {ExpandedAlgorithm,Registers} from './algorithms/g6-library';
+import {validateRule} from './algorithms/library';
+import type {CustomRule} from './algorithms/library';
+import {registerView, publishState, sendEvidence,bindInput} from './flow/site';
 import './g4.css';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
@@ -11,7 +15,7 @@ const N = 10;
 const CELLS = N ** 3;
 const MAX_NODES = 6;
 const MAX_LAYERS = 4;
-type Algorithm = 'empty' | 'diffusion' | 'oscillator' | 'growth' | 'automaton';
+type Algorithm = 'empty' | 'diffusion' | 'oscillator' | 'growth' | 'automaton' | ExpandedAlgorithm;
 type Mode = 'excite' | 'inhibit';
 type ActiveAlgorithm = Exclude<Algorithm, 'empty'>;
 interface Layer {
@@ -19,6 +23,9 @@ interface Layer {
   algorithm: ActiveAlgorithm;
   state: Float32Array;
   influence: number;
+  registers?:Registers;
+  definition?:CustomRule;
+  parameter?:number;
 }
 interface InnerLink {
   id: number;
@@ -48,13 +55,18 @@ interface Relation {
   strength: number;
   enabled: boolean;
 }
-const meta: Record<Algorithm, { label: string; description: string; color: string }> = {
+const meta = {
   empty: { label: 'No algorithm', description: 'Empty environment · no pattern exists', color: '#526176' },
-  diffusion: { label: 'Diffusion', description: 'Energy spreads through neighbouring positions', color: '#38cfff' },
+  diffusion: { label: 'Diffusion', description: 'Driven field values spread through neighbouring positions', color: '#38cfff' },
   oscillator: { label: 'Oscillator', description: 'A 3D travelling wave and rhythmic excitation', color: '#d2a0fc' },
   growth: { label: 'Growth', description: 'A self-reinforcing local growth process', color: '#58dfab' },
   automaton: { label: 'Cellular activation', description: 'Neighbourhood thresholds create clusters', color: '#f2bc74' }
-};
+} as Record<Algorithm,{label:string;description:string;color:string;category?:string}>;
+for(const entry of expandedMetadata())meta[entry.id]=entry;
+let customRules:CustomRule[]=[];
+const definitionFor=(id:Algorithm)=>customRules.find(r=>r.id===id)||nodes.flatMap(n=>n.layers).find(l=>l.algorithm===id)?.definition;
+const legacy=(id:Algorithm)=>['empty','diffusion','oscillator','growth','automaton'].includes(id);
+const safe=(text:string)=>text.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]!));
 let nodes: Sandbox[] = [];
 let edges: Relation[] = [];
 let nextNodeId = 1;
@@ -76,6 +88,7 @@ const noise = (x: number, y: number, z: number, seed: number) => {
 function seed(algorithm: Algorithm, id: number): Float32Array {
   const data = new Float32Array(CELLS);
   if (algorithm === 'empty') return data;
+  if(!legacy(algorithm))return seedExpanded(algorithm as ExpandedAlgorithm,id,definitionFor(algorithm));
   for (let z = 0; z < N; z++) for (let y = 0; y < N; y++) for (let x = 0; x < N; x++) {
     const r = (x - 4.5) ** 2 + (y - 4.5) ** 2 + (z - 4.5) ** 2;
     const random = noise(x, y, z, id);
@@ -129,6 +142,7 @@ function evolve(node: Layer, input: Float32Array, currentTick: number): Float32A
   }
   return next;
 }
+function transitionG6(layer:Layer,input:Float32Array,time:number){return legacy(layer.algorithm)?{state:evolve(layer,input,time),registers:layer.registers}:evolveExpanded(layer as Layer & {algorithm:ExpandedAlgorithm},input);}
 function syncSandbox(n: Sandbox): void {
   const chosen = n.layers.find(layer => layer.id === n.outputLayerId) || n.layers[0];
   n.outputLayerId = chosen?.id ?? null;
@@ -143,7 +157,7 @@ function addLayer(n: Sandbox, algorithm: ActiveAlgorithm): Layer | null {
   }
   const id = Math.max(0, ...n.layers.map(layer => layer.id)) + 1;
   const layer: Layer = {
-    id, algorithm, state: seed(algorithm, n.id * 17 + id), influence: 0
+    id, algorithm, state: seed(algorithm, n.id * 17 + id), influence: 0,definition:definitionFor(algorithm)?structuredClone(definitionFor(algorithm)!):undefined
   };
   n.layers.push(layer);
   if (n.outputLayerId === null) n.outputLayerId = id;
@@ -197,11 +211,11 @@ function step(): void {
         const factor = edge.strength * (edge.mode === 'excite' ? 1 : -1);
         for (let i = 0; i < CELLS; i++) input[i] += factor * sourceSandbox.state[i];
       }
-      const next = evolve(layer, input, tick);
-      const uncoupled = evolve(layer, zero, tick);
+      const result = transitionG6(layer, input, tick);const next=result.state;
+      const uncoupled = transitionG6(layer, zero, tick).state;
       let error = 0;
       for (let i = 0; i < CELLS; i++) error += (next[i] - uncoupled[i]) ** 2;
-      return { id: layer.id, state: next, influence: Math.sqrt(error / CELLS) };
+      return { id: layer.id, state: next, registers:result.registers, influence: Math.sqrt(error / CELLS) };
     })
   }));
   for (const update of updates) {
@@ -210,7 +224,7 @@ function step(): void {
     for (const result of update.layers) {
       const layer = n.layers.find(l => l.id === result.id);
       if (!layer) continue;
-      layer.state = result.state;
+      layer.state = result.state;layer.registers=result.registers;
       layer.influence = result.influence;
     }
     syncSandbox(n);
@@ -223,8 +237,8 @@ function resetSimulation(): void {
   tick = 0;
   for (const n of nodes) {
     for (const layer of n.layers) {
-      layer.state = seed(layer.algorithm, n.id * 17 + layer.id);
-      layer.influence = 0;
+      layer.state = legacy(layer.algorithm)?seed(layer.algorithm,n.id*17+layer.id):seedExpanded(layer.algorithm as ExpandedAlgorithm,n.id*17+layer.id,layer.definition);
+      layer.influence = 0;layer.registers=undefined;
     }
     syncSandbox(n);
   }
@@ -311,7 +325,7 @@ function exportGraph(): void {
       id: n.id, position: { x: n.x, y: n.y },
       outputLayerId: n.outputLayerId,
       layers: n.layers.map(l => ({
-        id: l.id, algorithm: l.algorithm, state: Array.from(l.state),
+        id: l.id, algorithm: l.algorithm, state: Array.from(l.state), registers:l.registers?{u:Array.from(l.registers.u),phase:Array.from(l.registers.phase)}:undefined,definition:l.definition,parameter:l.parameter,
         lastTickInfluenceRMS: l.influence
       })),
       innerLinks: n.innerLinks
@@ -368,7 +382,7 @@ function importGraph(file: File): void {
         layers:[], innerLinks:[], outputLayerId:null
       };
       if (record.format === 'atunbi.node-network.v2') {
-        if (isActive(n.algorithm)) obj.layers.push({
+        if (isActive(n.algorithm)&&legacy(n.algorithm)) obj.layers.push({
           id:1, algorithm:n.algorithm, state:validateState(n.state), influence:0
         });
         else if (n.algorithm !== 'empty') throw new Error('Invalid algorithm.');
@@ -379,11 +393,12 @@ function importGraph(file: File): void {
         }
         obj.layers=n.layers.map((item:unknown) => {
           if (!item || typeof item !== 'object') throw new Error('Invalid algorithm layer.');
-          const layer=item as {id:number;algorithm:unknown;state:unknown};
-          if (!Number.isSafeInteger(layer.id) || layer.id < 1 || !isActive(layer.algorithm)) {
+          const layer=item as {id:number;algorithm:unknown;state:unknown;registers?:unknown;definition?:CustomRule;parameter?:number};
+          if(layer.definition){validateRule(layer.definition);if(layer.algorithm!==layer.definition.id)throw Error('Embedded rule does not match the algorithm.');}
+          if (!Number.isSafeInteger(layer.id) || layer.id < 1 || !(isActive(layer.algorithm)||(typeof layer.algorithm==='string'&&layer.definition?.id===layer.algorithm))) {
             throw new Error('Invalid algorithm type or layer ID.');
           }
-          return {id:layer.id,algorithm:layer.algorithm,state:validateState(layer.state),influence:0};
+          if(typeof layer.algorithm==='string'&&layer.algorithm.startsWith('custom-')&&layer.definition?.id!==layer.algorithm)throw Error('Missing embedded custom definition.');if(layer.parameter!==undefined&&(!Number.isFinite(layer.parameter)||layer.parameter<0||layer.parameter>4))throw Error('Invalid algorithm parameter.');return {id:layer.id,algorithm:layer.algorithm as ActiveAlgorithm,state:validateState(layer.state),influence:0,registers:validateRegisters(layer.registers),definition:layer.definition?structuredClone(layer.definition):undefined,parameter:layer.parameter};
         });
         if (new Set(obj.layers.map(l => l.id)).size !== obj.layers.length) {
           throw new Error('Duplicate algorithm IDs.');
@@ -435,6 +450,7 @@ function importGraph(file: File): void {
         new Set(outgoing.map(e => e.id)).size !== outgoing.length) {
       throw new Error('Duplicate external relationships.');
     }
+    for(const node of incoming)for(const layer of node.layers)if(layer.definition)meta[layer.algorithm]={label:safe(layer.definition.name),description:safe(layer.definition.purpose),color:layer.definition.color};
     nodes=incoming; edges=outgoing;
     tick=Number.isSafeInteger(record.tick) && record.tick! >= 0 && record.tick! < 10_000_000 ? record.tick! : 0;
     nextNodeId=Math.max(0,...nodes.map(n=>n.id))+1;
@@ -480,8 +496,9 @@ function notice(message: string): void {
   const el = document.querySelector<HTMLElement>('#toast');
   if (el) el.textContent = message;
 }
-function algoOptions(current: Algorithm): string {
-  return (Object.keys(meta) as Algorithm[]).map(k => '<option value="' + k + '"' + (k===current?' selected':'') + '>' + meta[k].label + '</option>').join('');
+function algoOptions(current: Algorithm,includeEmpty=true): string {
+  const groups=new Map<string,Algorithm[]>();for(const id of Object.keys(meta) as Algorithm[]){if(id==='empty')continue;const category=meta[id].category||(id.startsWith('custom-')?'Custom binary rules':'Original G6 fields');groups.set(category,[...(groups.get(category)||[]),id]);}
+  return (includeEmpty?'<option value="empty"'+(current==='empty'?' selected':'')+'>No algorithm</option>':'')+[...groups].map(([category,ids])=>'<optgroup label="'+safe(category)+'">'+ids.map(id=>'<option value="'+id+'"'+(id===current?' selected':'')+'>'+meta[id].label+'</option>').join('')+'</optgroup>').join('');
 }
 function nodeMarkup(n: Sandbox): string {
   const color = meta[n.algorithm].color;
@@ -539,8 +556,7 @@ function internalPanel(): void {
     el.innerHTML='<p class="placeholder">Select or create an environment to edit its internal algorithm graph. The workspace starts empty.</p>';
     return;
   }
-  const options=(Object.keys(meta) as Algorithm[]).filter((key): key is ActiveAlgorithm => key !== 'empty')
-    .map(key=>'<option value="'+key+'">'+meta[key].label+'</option>').join('');
+  const options=algoOptions('empty',false);
   const sourceOptions=n.layers.map(layer=>'<option value="'+layer.id+'">A'+layer.id+' · '+meta[layer.algorithm].label+'</option>').join('');
   const receivingOptions=n.layers.map((layer,i)=>'<option value="'+layer.id+'"'+(i===1?' selected':'')+'>A'+layer.id+' · '+meta[layer.algorithm].label+'</option>').join('');
   el.innerHTML='<div class="inner-summary"><span>ENVIRONMENT '+n.id+' · 10³ coordinate cells</span><strong>'+n.layers.length+' / '+MAX_LAYERS+' algorithms</strong></div>'
@@ -549,6 +565,7 @@ function internalPanel(): void {
       '<div class="layer-row"><span class="layer-color" style="background:'+meta[layer.algorithm].color+'"></span>'
       +'<div class="layer-name"><strong>A'+layer.id+' · '+meta[layer.algorithm].label+'</strong><small>Own evolving field · mean <span id="layer-avg-'+n.id+'-'+layer.id+'">'+mean(layer.state).toFixed(3)+'</span>'
       +' · influence <span id="layer-impact-'+n.id+'-'+layer.id+'">'+layer.influence.toFixed(4)+'</span></small></div>'
+      +(['library-diffusion','library-logistic','library-tent','library-coupled','library-oscillator','library-kuramoto','library-gray'].includes(layer.algorithm)?'<label>Equation parameter<input data-layer-parameter="'+layer.id+'" type="number" min="0" max="4" step=".01" value="'+(layer.parameter??defaultParameter(layer.algorithm.slice(8)))+'" aria-label="Equation parameter for layer '+layer.id+'" /></label>':'')
       +'<button type="button" data-delete-layer="'+layer.id+'" title="Remove algorithm">Remove</button></div>'
       ).join(''):'<div class="empty-layers">No algorithms inside this environment. Its space is empty.</div>')+'</div>'
     +'<div class="inner-tools"><label>Install algorithm<select id="add-layer-type">'+options+'</select></label>'
@@ -716,7 +733,7 @@ board.addEventListener('change', event => {
   if (first) {
     first.algorithm=algo;
     first.state=seed(algo,n.id*17+first.id);
-    first.influence=0;
+    first.influence=0;first.registers=undefined;first.parameter=undefined;first.definition=definitionFor(algo)?structuredClone(definitionFor(algo)!):undefined;
   } else addLayer(n,algo);
   syncSandbox(n);
   activeId=n.id;
@@ -824,6 +841,7 @@ internalRoot.addEventListener('click',event=>{
 internalRoot.addEventListener('change',event=>{
   const target=event.target as HTMLSelectElement|HTMLInputElement;
   const n=nodes.find(n=>n.id===activeId);if(!n)return;
+  if(target.matches('[data-layer-parameter]')){const chosen=n.layers.find(l=>l.id===Number(target.getAttribute('data-layer-parameter'))),value=Number(target.value);if(chosen&&target.value.trim()&&Number.isFinite(value)&&value>=0&&value<=4){chosen.parameter=value;notice('Equation parameter updated. '+chosen.algorithm+' now uses '+value+'.');}else notice('Parameter must be a finite number from 0 to 4.');return;}
   if(target.id==='output-layer'){
     const layerId=Number(target.value);
     if(n.layers.some(l=>l.id===layerId)){
@@ -877,7 +895,7 @@ function experimentSnapshot() {
   return {
     worlds: nodes.map(n => ({
       id: n.id, outputLayerId: n.outputLayerId,
-      layers: n.layers.map(l => ({ id: l.id, algorithm: l.algorithm, state: l.state.slice() })),
+      layers: n.layers.map(l => ({ id: l.id, algorithm: l.algorithm, state: l.state.slice(),registers:l.registers?{u:l.registers.u.slice(),phase:l.registers.phase.slice()}:undefined,definition:l.definition?structuredClone(l.definition):undefined,parameter:l.parameter })),
       innerLinks: n.innerLinks.map(edge => ({ ...edge }))
     })),
     externalLinks: edges.map(edge => ({ ...edge }))
@@ -893,7 +911,7 @@ function experimentPlot(data: ExperimentResult): string {
   const y = (value:number) => top + (1 - value/maxValue) * (height-top-bottom);
   const path = data.observations.map((o,i) => (i ? 'L' : 'M') + x(o.step).toFixed(2) + ' ' + y(o.divergence).toFixed(2)).join(' ');
   const lines = [0,.25,.5,.75,1].map(v => '<line x1="'+left+'" y1="'+y(v*maxValue)+'" x2="'+(width-right)+'" y2="'+y(v*maxValue)+'" stroke="#27405a" stroke-dasharray="3 5"/><text x="'+(left-6)+'" y="'+(y(v*maxValue)+3)+'" text-anchor="end" font-size="10" fill="#91a8c5">'+(v*maxValue).toFixed(3)+'</text>').join('');
-  return '<div class="g6-plot-title"><strong>Trajectory divergence</strong><span>RMS across all algorithm states · '+data.horizon+' ticks</span></div><svg viewBox="0 0 620 194" role="img" aria-label="Divergence between connected and ablated network trajectories">'+lines+'<path d="'+path+'" fill="none" stroke="#66cfff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><text x="'+left+'" y="187" fill="#9aafc7" font-size="10">Tick 1</text><text x="'+(width-right)+'" y="187" text-anchor="end" fill="#9aafc7" font-size="10">Tick '+data.horizon+'</text></svg>';
+  return '<div class="g6-plot-title"><strong>Trajectory divergence</strong><span>RMS across output fields · '+data.horizon+' ticks</span></div><svg viewBox="0 0 620 194" role="img" aria-label="Divergence between connected and ablated network trajectories">'+lines+'<path d="'+path+'" fill="none" stroke="#66cfff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><text x="'+left+'" y="187" fill="#9aafc7" font-size="10">Tick 1</text><text x="'+(width-right)+'" y="187" text-anchor="end" fill="#9aafc7" font-size="10">Tick '+data.horizon+'</text></svg>';
 }
 function renderExperiment(data: ExperimentResult): void {
   const plot=document.querySelector<HTMLElement>('#g6-plot');
@@ -916,7 +934,7 @@ document.querySelector('#g6-run')?.addEventListener('click',()=>{
   const ablation=(document.querySelector<HTMLSelectElement>('#g6-ablation')?.value??'all') as Ablation;
   try {
     const snapshot=experimentSnapshot();
-    const result=runAblationExperiment(snapshot,(layer,input,time)=>evolve({id:layer.id,algorithm:layer.algorithm,state:layer.state,influence:0},input,time),horizon,ablation,tick);
+    const result=runAblationExperiment(snapshot,(layer,input,time)=>transitionG6({...layer,influence:0},input,time),horizon,ablation,tick);
     lastExperiment=result;
     lastExperimentSource=snapshot;
     lastExperimentStartTime=tick;
@@ -930,13 +948,13 @@ document.querySelector('#g6-export')?.addEventListener('click',()=>{
     format:'atunbi.g6.ablation.v1',
     name:'Bounded Algorithmic Relational Emergence intervention experiment',
     purpose:'Quantify the influence of algorithmic pattern relationships under matched starting conditions.',
-    theory:'BARE v1.0 (proposed, not scientifically validated)',
+    theory:'BARE v2 (proposed research framework, not scientifically validated)',
     initialTick:lastExperimentStartTime,
     environmentSize:[N,N,N],
-    hypothesis:['H1 relational influence','H2 structural differentiation','H3 persistence','H4 configuration dependence'],
+    hypothesis:['H1 specified edge sensitivity','H2 spatial structural consequence'],stateContract:'Original G6 fields and numeric lattice registers in [0,1]; native binary rules output 0 or 1; auxiliary u/phase registers preserved',boundaries:'Original G6: bounded neighbors; library/custom rules: periodic lattice',adapterVersion:'g6-library.v1',metricScope:'Divergence, gradient and coactivation measure output fields; auxiliary registers propagate but are not included in these descriptor distances',
     baseline:'Identical initial states, selected relationships disabled in control',
     initialNetwork:{
-      worlds:lastExperimentSource.worlds.map(n=>({id:n.id,outputLayerId:n.outputLayerId,layers:n.layers.map(l=>({id:l.id,algorithm:l.algorithm,state:Array.from(l.state)})),innerLinks:n.innerLinks})),
+      worlds:lastExperimentSource.worlds.map(n=>({id:n.id,outputLayerId:n.outputLayerId,layers:n.layers.map(l=>({id:l.id,algorithm:l.algorithm,state:Array.from(l.state),registers:l.registers?{u:Array.from(l.registers.u),phase:Array.from(l.registers.phase)}:undefined,definition:l.definition,parameter:l.parameter})),innerLinks:n.innerLinks})),
       externalLinks:lastExperimentSource.externalLinks
     },
     result:lastExperiment
@@ -967,3 +985,6 @@ renderer.setAnimationLoop((now:number)=>{
   updateSpatialControls(now);
   renderer.render(scene,camera);
 });
+
+bindInput('g6','library',payload=>{customRules=structuredClone(payload.rules as CustomRule[]);for(const rule of customRules){validateRule(rule);meta[rule.id]={label:safe(rule.name)+' · custom binary',description:safe(rule.purpose),color:rule.color};}redraw();});
+(window as unknown as {__ATUNBI_G6:unknown}).__ATUNBI_G6={get nodes(){return nodes;},get tick(){return tick;},snapshot:experimentSnapshot};

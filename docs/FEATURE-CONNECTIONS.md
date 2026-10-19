@@ -1,6 +1,6 @@
 # Website features and connections
 
-Generated from the module contracts and controller registry. The app’s Feature map adds live edge status, page controls and an export.
+Generated from the module contracts and controller registry. See [purpose and research foundation](RESEARCH-FOUNDATION.md) for the purpose allocations of every page and controller function.
 
 ## G6 pattern network and 3D / WebXR
 
@@ -64,6 +64,13 @@ Generated from the module contracts and controller registry. The app’s Feature
 - Process: Check prerequisites, confirmations and available actions
 - Output: Commands, focus changes and action feedback
 - Affects: Selected lab only; camera commands affect G6; pause-all pauses active runtimes
+
+## Research and purpose hierarchy
+
+- Input: Primary research, design intent and module/action registry
+- Process: Decompose purpose and trace functions to research questions
+- Output: Purpose hierarchy, paper library, hypotheses and allocations
+- Affects: Design and interpretation; research labels never alter kernel bits
 
 ## Feature and connection map
 
@@ -159,6 +166,8 @@ Generated from the module contracts and controller registry. The app’s Feature
 - PhET simulation guidance
 - PhET accessibility
 - Meta Quest references
+- Read purpose hierarchy — page only
+- Export research and purpose map — page only
 - Open all original links — page only
 
 ## Controls: G10 composition
@@ -205,8 +214,6 @@ Generated from the module contracts and controller registry. The app’s Feature
 
 ## Executable wiring
 
-Controllers → each lab command input. Each lab state → its view and metrics. Each lab evidence → export sink. G8 → G10 binary seed. G10 → optional G9 binary seed. Source editor → G9 source. G8/G9 annotations → notebook. Workshop definitions → registry → G11 library. Identity → shell. Reference source → reference view. Delayed edges deliver only on an explicit workflow tick; disabled edges stop future delivery.
+Controllers → each lab command input. Each lab state → its view and metrics. Each lab evidence → export sink. G8 → G10 binary seed. G10 → optional G9 binary seed. Source editor → G9 source. G8/G9 annotations → notebook. Workshop definitions → registry → G6 and G11 libraries. Identity → shell. Reference source → reference view. Workflow state → feature map; feature map evidence → exports. Navigation snapshots → metrics. Research foundation → metrics and exports. Delayed edges deliver only on an explicit workflow tick; disabled edges stop future delivery.
 
-G6/G11 simulated node edges are independent of website edges. Local draft controls update local settings until Apply/Compile/Save; view controls affect presentation. The Feature map exports exact current endpoint IDs and state.
-
-The feature map receives `workflow.state` at `feature-inventory.snapshot` and sends its own evidence through `feature-inventory-exports`. Turning off that export edge prevents download and reports the disconnected route. Module navigation restores hidden sections when necessary.
+G6/G11 simulated node edges are independent of website edges. Local draft controls update local settings until Apply/Compile/Save; view controls affect presentation. Each module has a dedicated page; see [the page directory](WEBSITE-PAGES.md).

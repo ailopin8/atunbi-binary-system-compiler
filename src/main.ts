@@ -6,6 +6,7 @@ import './composition-lab';
 import './library-lab';
 import './algorithm-workshop';
 import './references';
+import './theory-lab';
 import './workflow-view';
 import './feature-map';
 import './site-pages';

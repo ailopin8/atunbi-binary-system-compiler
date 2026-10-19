@@ -83,6 +83,15 @@
       "affects": "Selected lab only; camera commands affect G6; pause-all pauses active runtimes"
     },
     {
+      "id": "research-foundation",
+      "module": "foundation",
+      "name": "Research and purpose hierarchy",
+      "input": "Primary research, design intent and module/action registry",
+      "process": "Decompose purpose and trace functions to research questions",
+      "output": "Purpose hierarchy, paper library, hypotheses and allocations",
+      "affects": "Design and interpretation; research labels never alter kernel bits"
+    },
+    {
       "id": "feature-map",
       "module": "feature-inventory",
       "name": "Feature and connection map",
@@ -488,6 +497,18 @@
           "id": "references-meta",
           "label": "Meta Quest references",
           "pageOnly": false,
+          "confirmationRequired": false
+        },
+        {
+          "id": "research-purpose",
+          "label": "Read purpose hierarchy",
+          "pageOnly": true,
+          "confirmationRequired": false
+        },
+        {
+          "id": "research-export",
+          "label": "Export research and purpose map",
+          "pageOnly": true,
           "confirmationRequired": false
         },
         {

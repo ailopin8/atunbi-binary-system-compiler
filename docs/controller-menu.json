@@ -388,6 +388,18 @@
         "confirmationRequired": false
       },
       {
+        "id": "research-purpose",
+        "label": "Read purpose hierarchy",
+        "pageOnly": true,
+        "confirmationRequired": false
+      },
+      {
+        "id": "research-export",
+        "label": "Export research and purpose map",
+        "pageOnly": true,
+        "confirmationRequired": false
+      },
+      {
         "id": "references-links",
         "label": "Open all original links",
         "pageOnly": true,

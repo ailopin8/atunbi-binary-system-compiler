@@ -163,3 +163,22 @@ New controller category: Algorithm workshop (four page actions). Total: 12 categ
 ## Home and module pages
 
 The home page organizes 17 dedicated module pages into five purpose groups. Navigation includes direct URLs, related tools, a shared module selector, browser Back/Forward, legacy bookmark handling and unknown-page recovery. Working models and drafts survive in-session navigation; refresh starts a new unsaved simulation session. The home and each routed page are tested separately from the cross-module integration harness. See [the full page directory](docs/WEBSITE-PAGES.md).
+
+## Research philosophy and purpose hierarchy
+
+- BARE v2 top purpose decomposed into P1 define, P2 generate, P3 relate, P4 observe, P5 test and P6 preserve/communicate.
+- Every page and all 90 controller actions allocated to purposes; home and page headings display their contribution.
+- 22 annotated research papers covering cellular automata, complexity, emergence, systems and cellular biology, morphogenesis, topology, fractality and VR.
+- Filter papers by topic; export bibliography, hypotheses and complete purpose allocations.
+- Separate established source findings, proposed design choices, implemented measurements and future research.
+
+## G6 expanded execution library
+
+- Original diffusion, oscillator, growth and cellular activation retained.
+- Twelve executable lattice choices added: XOR, rule 30, majority, 3D B6/S567, diffusion, shift, logistic, tent, coupled logistic, sine oscillator, local phase coupling and Gray–Scott.
+- Categorized primary and internal-layer selectors; numeric equation parameters where meaningful.
+- Saved custom binary rules delivered from registry to G6 as well as G11.
+- Persistent chemical/phase registers, nonmutating matched ablation and export/import continuation.
+- Explicit bounded/periodic boundary and binary/numeric input-adapter contracts.
+
+See [the complete research report](docs/RESEARCH-FOUNDATION.md) and [current feature inventory](docs/FEATURE-CONNECTIONS.md).

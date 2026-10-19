@@ -100,6 +100,8 @@ export function createLabActions(view:ViewActions):MenuCategory[] {
       {id:'references-simulation',label:'PhET simulation guidance',run:()=> 'PhET Development Overview and Scenery components: separate simulation state from presentation, and provide play, pause, step and reset controls.'},
       {id:'references-accessibility',label:'PhET accessibility',run:()=> 'PhET Interactive Description Guide: alternative input, state descriptions and deliberate responsive feedback.'},
       {id:'references-meta',label:'Meta Quest references',run:()=> 'Meta First Hand, Meta Spatial SDK Samples and Meta Quest Agentic Tools. Native Unity and Android SDKs are references; this app uses WebXR.'},
+      {id:'research-purpose',label:'Read purpose hierarchy',desktopOnly:true,run:()=>focus('research-tree')},
+      button('research-export','Export research and purpose map','research-export','research-status',{desktopOnly:true}),
       {id:'references-links',label:'Open all original links',desktopOnly:true,run:()=>focus('reference-library')}
     ]},
     {id:'composition',label:'G10 composition',description:'PID and simple equations operate a binary 1000-cell plant. The G6 spatial scene remains independent.',actions:[
