@@ -142,6 +142,14 @@ export function createLabActions(view:ViewActions):MenuCategory[] {
       button('flow-reset','Restore default wiring','flow-reset','flow-status',{confirm:'Restore default website connections?'}),
       button('flow-export','Export wiring JSON','flow-export',undefined,{desktopOnly:true}),
       {id:'flow-edit',label:'Edit module connections',desktopOnly:true,run:()=>focus('modular-workflow')}
+    ]},
+    {id:'workbench',label:'Build a tool',description:'Build, verify, save and reuse connected binary-driven tools.',actions:[
+      {id:'wb-open',label:'Open tool canvas',desktopOnly:true,run:()=>focus('tool-workspace')},
+      button('wb-step','Step tool','wb-step','wb-status'),
+      button('wb-run','Run eight ticks','wb-run','wb-status'),
+      button('wb-reset','Reset tool execution','wb-reset','wb-status'),
+      button('wb-verify','Verify tool replay','wb-verify','wb-status'),
+      button('wb-export','Export tool workspace','wb-export','wb-status',{desktopOnly:true})
     ]}
   ];
 }

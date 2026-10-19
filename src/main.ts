@@ -7,6 +7,7 @@ import './library-lab';
 import './algorithm-workshop';
 import './references';
 import './theory-lab';
+import './workbench/ui';
 import './module-names';
 import './workflow-view';
 import './feature-map';

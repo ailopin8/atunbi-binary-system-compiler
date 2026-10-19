@@ -114,7 +114,7 @@ try {
     await category('view');for(const id of ['view-left','view-right','view-up','view-down','view-in','view-out','view-recenter','view-describe','pause-all'])await action(id);
     assert.match(await feedback(),/G6, G7 and G8 paused/);
     await category('references');for(const id of ['references-web','references-simulation','references-accessibility','references-meta','references-links','research-purpose'])await action(id);
-    const researchDownload=page.waitForEvent('download');await action('research-export');assert.equal((await researchDownload).suggestedFilename(),'atunbi-research-purpose-map.json');assert.equal(await page.locator('#research-bibliography article').count(),22);await page.locator('#research-topic').selectOption('Fractality');assert.equal(await page.locator('#research-bibliography article').count(),1);await page.locator('#research-topic').selectOption('all');assert.equal(await page.locator('#research-pages tr').count(),18);
+    const researchDownload=page.waitForEvent('download');await action('research-export');assert.equal((await researchDownload).suggestedFilename(),'atunbi-research-purpose-map.json');assert.equal(await page.locator('#research-bibliography article').count(),22);await page.locator('#research-topic').selectOption('Fractality');assert.equal(await page.locator('#research-bibliography article').count(),1);await page.locator('#research-topic').selectOption('all');assert.equal(await page.locator('#research-pages tr').count(),19);
     assert.equal(await page.locator('#reference-library article a').count(),8);await page.locator('#scene').focus();await page.keyboard.press('Home');assert.match(await page.locator('#spatial-feedback').innerText(),/recentered/);
   });
   await check('PID composition, all drivers, matrix transfer and exact replay',async()=>{
@@ -186,9 +186,9 @@ try {
   await check('Simulated WebXR controller menu and restored desktop state',async()=>{
     const xrPage=await browser.newPage();await xrPage.goto(base+'/tests/spatial.test.html');await xrPage.waitForFunction(()=>document.body.dataset.result==='PASS',{},{timeout:10000});await xrPage.close();
   });
-  await check('Home and seventeen dedicated module pages, history, state and direct links',async()=>{
+  await check('Home and eighteen dedicated module pages, history, state and direct links',async()=>{
     const routed=await browser.newPage({viewport:{width:1280,height:900}});routed.on('pageerror',error=>errors.push(error.message));await routed.goto(base);
-    assert.equal(await routed.locator('#home-page').isVisible(),true);assert.equal(await routed.locator('.home-card').count(),17);assert.equal(await routed.locator('.module-page:visible').count(),0);
+    assert.equal(await routed.locator('#home-page').isVisible(),true);assert.equal(await routed.locator('.home-card').count(),18);assert.equal(await routed.locator('.module-page:visible').count(),0);
     const manifest=JSON.parse(await fs.readFile(path.join(root,'docs/pages.json'),'utf8'));const ids=await routed.locator('.home-card').evaluateAll(links=>links.map(link=>new URL(link.href).searchParams.get('page')));
     for(const id of ids){await routed.locator('#site-page-select').selectOption(id);assert.equal(await routed.locator('.module-page:visible').count(),1);assert.equal(await routed.locator('#page-'+id).isVisible(),true);assert.match(routed.url(),new RegExp('page='+id));for(const selector of manifest.pages.find(p=>p.id===id).selectors)assert.equal(await routed.locator('#page-'+id).locator(selector).count(),1,'Module content must live on its own page: '+selector);}
     await routed.locator('#site-page-select').selectOption('ecology');await routed.locator('#g11-step').click();const snapshot=await routed.evaluate(()=>JSON.stringify(window.__ATUNBI_G11.engine.snapshot()));
@@ -202,6 +202,9 @@ try {
     await routed.addScriptTag({path:path.join(root,'node_modules/axe-core/axe.min.js')});assert.deepEqual(await routed.evaluate(async()=>{const result=await window.axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21a','wcag21aa']}});return result.violations.map(v=>v.id);}),[]);
     await routed.locator('.home-card').filter({hasText:'Create algorithms'}).click();assert.ok(await routed.locator('#page-workshop').isVisible());await routed.locator('#g12-new').click();await routed.addScriptTag({path:path.join(root,'node_modules/axe-core/axe.min.js')});assert.deepEqual(await routed.evaluate(async()=>{const result=await window.axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21a','wcag21aa']}});return result.violations.map(v=>v.id);}),[]);
     await routed.locator('.site-home-link').click();assert.ok(await routed.locator('#home-page').isVisible());await routed.screenshot({path:path.join(root,'test-results/home-mobile.png')});await routed.setViewportSize({width:1280,height:900});await routed.screenshot({path:path.join(root,'test-results/home-desktop.png')});await routed.close();
+  });
+  await check('Tool workspace controller actions and replay',async()=>{
+    await page.locator('#wb-load-example').click();await category('workbench');await action('wb-open');await action('wb-step');await action('wb-run');await action('wb-reset');await action('wb-verify');assert.match(await page.locator('#wb-status').innerText(),/Replay verified/);const file=page.waitForEvent('download');await action('wb-export');await file;
   });
   await check('Coverage of all categorized controller actions',async()=>{
     const inventory=JSON.parse(await fs.readFile(path.join(root,'docs/controller-menu.json'),'utf8'));

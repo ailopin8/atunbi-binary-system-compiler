@@ -244,6 +244,13 @@
     }
   ],
   "categoryPurposes": {
+    "workbench": [
+      "P1",
+      "P2",
+      "P3",
+      "P5",
+      "P6"
+    ],
     "workspace": [
       "P1",
       "P2",
@@ -332,6 +339,13 @@
     }
   ],
   "pagePurposes": {
+    "builder": [
+      "P1",
+      "P2",
+      "P3",
+      "P5",
+      "P6"
+    ],
     "home": [
       "P1",
       "P6"
@@ -416,7 +430,7 @@
   "principles": [
     {
       "name": "The engine stays the engine",
-      "text": "The binary matrix engine executes declared instructions and exchanges state. The modular workspace sits above it and composes processes through explicit ports. Pages and visualizations expose modules; they do not redefine the engine. Blank-canvas tool composition is the secondary product aim, not a claim that every proposed workspace capability is already implemented."
+      "text": "The binary matrix engine executes declared instructions and exchanges state. The modular workspace sits above it and composes processes through explicit ports. Pages and visualizations expose modules; they do not redefine the engine. The Build a tool workspace implements bounded composition and reuse; future domain capabilities remain explicitly proposed."
     },
     {
       "name": "Operational patterns before semantic labels",
@@ -1376,6 +1390,74 @@
       "label": "Edit module connections",
       "purposes": [
         "P3",
+        "P6"
+      ]
+    },
+    {
+      "category": "workbench",
+      "action": "wb-open",
+      "label": "Open tool canvas",
+      "purposes": [
+        "P1",
+        "P2",
+        "P3",
+        "P5",
+        "P6"
+      ]
+    },
+    {
+      "category": "workbench",
+      "action": "wb-step",
+      "label": "Step tool",
+      "purposes": [
+        "P1",
+        "P2",
+        "P3",
+        "P5",
+        "P6"
+      ]
+    },
+    {
+      "category": "workbench",
+      "action": "wb-run",
+      "label": "Run eight ticks",
+      "purposes": [
+        "P1",
+        "P2",
+        "P3",
+        "P5",
+        "P6"
+      ]
+    },
+    {
+      "category": "workbench",
+      "action": "wb-reset",
+      "label": "Reset tool execution",
+      "purposes": [
+        "P1",
+        "P2",
+        "P3",
+        "P5",
+        "P6"
+      ]
+    },
+    {
+      "category": "workbench",
+      "action": "wb-verify",
+      "label": "Verify tool replay",
+      "purposes": [
+        "P1",
+        "P2",
+        "P3",
+        "P5",
+        "P6"
+      ]
+    },
+    {
+      "category": "workbench",
+      "action": "wb-export",
+      "label": "Export tool workspace",
+      "purposes": [
         "P6"
       ]
     }

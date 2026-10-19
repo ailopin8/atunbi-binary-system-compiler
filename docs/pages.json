@@ -2,6 +2,25 @@
   "home": "./",
   "pages": [
     {
+      "id": "builder",
+      "title": "Build a tool",
+      "group": "Create",
+      "description": "Start with a blank canvas; connect, verify, save and reuse binary-driven modules.",
+      "selectors": [
+        "#tool-workspace"
+      ],
+      "aliases": [
+        "tool-workspace"
+      ],
+      "related": [
+        "binary",
+        "workshop",
+        "wiring",
+        "theory"
+      ],
+      "url": "?page=builder"
+    },
+    {
       "id": "workshop",
       "title": "Create algorithms",
       "group": "Create",

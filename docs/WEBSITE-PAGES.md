@@ -10,12 +10,12 @@ Old bookmarks such as `#g11-lab` are canonicalized to `?page=ecology`. Internal 
 
 The `navigation.page → metrics.data` edge records the selected page as a presentation snapshot. It does not feed page selection into the binary kernels. Module wiring and simulated algorithm edges retain their existing execution contracts.
 
-The feature map's old single-page focus toolbar is superseded by page navigation in normal use. Navigation to hidden modules restores their visibility. `?integration-test=1` exposes all mounted modules only for the existing cross-module regression harness; it is not linked from the home page. Separate browser tests exercise the real default home and all 17 page routes.
+The feature map's old single-page focus toolbar is superseded by page navigation in normal use. Navigation to hidden modules restores their visibility. `?integration-test=1` exposes all mounted modules only for the existing cross-module regression harness; it is not linked from the home page. Separate browser tests exercise the real default home and all 18 page routes.
 
 ## Validation
 
 - Every page has unique IDs and valid related links.
-- Check home, all 17 pages, legacy URLs, refresh, Back/Forward and invalid route recovery.
+- Check home, all 18 pages, legacy URLs, refresh, Back/Forward and invalid route recovery.
 - Verify a G11 matrix and a workshop draft survive navigation.
 - Verify controller editor-focus navigation and mobile width.
 - Check automated accessibility on home and an open workshop page, plus existing integration workflows and simulated WebXR.
@@ -43,3 +43,5 @@ Deployment remains blocked by AppDeploy's daily credit limit reported 19 October
 | Connect | Controller menu | `?page=controllers` |
 | Learn | Reference library | `?page=references` |
 | Learn | Purpose and experimental theory | `?page=theory` |
+
+Build a tool (`?page=builder`) is the blank-canvas workspace. Its dedicated browser checks exercise creation, typed wiring, saving, packaging, reuse, target checks and the explicit engine input.

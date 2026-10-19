@@ -616,5 +616,47 @@
         "confirmationRequired": false
       }
     ]
+  },
+  {
+    "id": "workbench",
+    "label": "Build a tool",
+    "actions": [
+      {
+        "id": "wb-open",
+        "label": "Open tool canvas",
+        "pageOnly": true,
+        "confirmationRequired": false
+      },
+      {
+        "id": "wb-step",
+        "label": "Step tool",
+        "pageOnly": false,
+        "confirmationRequired": false
+      },
+      {
+        "id": "wb-run",
+        "label": "Run eight ticks",
+        "pageOnly": false,
+        "confirmationRequired": false
+      },
+      {
+        "id": "wb-reset",
+        "label": "Reset tool execution",
+        "pageOnly": false,
+        "confirmationRequired": false
+      },
+      {
+        "id": "wb-verify",
+        "label": "Verify tool replay",
+        "pageOnly": false,
+        "confirmationRequired": false
+      },
+      {
+        "id": "wb-export",
+        "label": "Export tool workspace",
+        "pageOnly": true,
+        "confirmationRequired": false
+      }
+    ]
   }
 ]

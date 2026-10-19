@@ -1,4 +1,5 @@
 export const pages=[
+ {id:'builder',title:'Build a tool',group:'Create',description:'Start with a blank canvas; connect, verify, save and reuse binary-driven modules.',selectors:['#tool-workspace'],aliases:['tool-workspace'],related:['binary','workshop','wiring','theory']},
  {id:'workshop',title:'Create algorithms',group:'Create',description:'Define, test and save new binary rules.',selectors:['#algorithm-workshop'],aliases:['algorithm-workshop'],related:['ecology','features','wiring']},
  {id:'compiler',title:'Compile instructions',group:'Create',description:'Turn system sentences into executable instructions.',selectors:['#g7-lab'],aliases:['g7-lab'],related:['binary','discovery']},
  {id:'network',title:'Build connected systems',group:'Simulate',description:'Create environments and connect their algorithmic outputs.',selectors:['.intro4','.toolbar','#toast','.graph-section'],aliases:['network'],related:['layers','relationships','spatial','experiments']},

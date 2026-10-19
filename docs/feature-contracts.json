@@ -2,6 +2,15 @@
   "format": "atunbi.feature-contracts.v1",
   "modules": [
     {
+      "id": "tool-workspace",
+      "module": "workbench",
+      "name": "Build a tool",
+      "input": "Typed graph, binary engine seed, explicit codecs and embedded tool definitions",
+      "process": "Validate and execute deterministic ticks; package verified graphs as independent reusable modules",
+      "output": "1000-bit matrices, typed values, portable workspaces and behavioral target results",
+      "affects": "Workspace canvas, state collector and exports; page routing retains working graphs"
+    },
+    {
       "id": "network",
       "module": "g6",
       "name": "Build connected systems",
@@ -724,6 +733,48 @@
         {
           "id": "flow-edit",
           "label": "Edit module connections",
+          "pageOnly": true,
+          "confirmationRequired": false
+        }
+      ]
+    },
+    {
+      "id": "workbench",
+      "label": "Build a tool",
+      "actions": [
+        {
+          "id": "wb-open",
+          "label": "Open tool canvas",
+          "pageOnly": true,
+          "confirmationRequired": false
+        },
+        {
+          "id": "wb-step",
+          "label": "Step tool",
+          "pageOnly": false,
+          "confirmationRequired": false
+        },
+        {
+          "id": "wb-run",
+          "label": "Run eight ticks",
+          "pageOnly": false,
+          "confirmationRequired": false
+        },
+        {
+          "id": "wb-reset",
+          "label": "Reset tool execution",
+          "pageOnly": false,
+          "confirmationRequired": false
+        },
+        {
+          "id": "wb-verify",
+          "label": "Verify tool replay",
+          "pageOnly": false,
+          "confirmationRequired": false
+        },
+        {
+          "id": "wb-export",
+          "label": "Export tool workspace",
           "pageOnly": true,
           "confirmationRequired": false
         }

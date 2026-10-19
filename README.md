@@ -89,3 +89,9 @@ Pages and runtime modules use plain action names while IDs and saved links stay 
 ## Whole-system home
 
 The home page presents components, current connections, published state and delivery activity as one system. A staged workflow runs engine → controller → pattern testing → exact replay using existing settings and validated routes. See [whole-system architecture](docs/WHOLE-SYSTEM-WORKSPACE.md). Artifacts and processing activity are distinguished from physical material and energy. `npm run test:system` checks the connected workflow and failure guards.
+
+## Build a modular tool
+
+Open `?page=builder` to start with a blank canvas. Add modules, connect matching ports, and step the graph. Use a target example to try inversion, counting or a Unicode text round trip. Verify replay before saving a reusable tool; its Tool input/output modules become its ports. Save work locally or export JSON for a portable backup. Reusable instances have separate memory, and feedback requires an explicit delay.
+
+The binary matrix remains the engine substrate. Number and text adapters declare their encodings; browser modules do not imply physical energy or material conservation. See [the 15-step delivery record and limits](docs/WORKSPACE-BUILD.md). Run `npm run verify` for the full automated checks.

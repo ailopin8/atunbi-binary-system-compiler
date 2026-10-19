@@ -2,6 +2,13 @@
 
 Generated from the module contracts and controller registry. See [purpose and research foundation](RESEARCH-FOUNDATION.md) for the purpose allocations of every page and controller function.
 
+## Build a tool
+
+- Input: Typed graph, binary engine seed, explicit codecs and embedded tool definitions
+- Process: Validate and execute deterministic ticks; package verified graphs as independent reusable modules
+- Output: 1000-bit matrices, typed values, portable workspaces and behavioral target results
+- Affects: Workspace canvas, state collector and exports; page routing retains working graphs
+
 ## Build connected systems
 
 - Input: Algorithms, layers, parameters, enabled internal and external edges
@@ -212,6 +219,15 @@ Generated from the module contracts and controller registry. See [purpose and re
 - Restore default wiring
 - Export wiring JSON — page only
 - Edit module connections — page only
+
+## Controls: Build a tool
+
+- Open tool canvas — page only
+- Step tool
+- Run eight ticks
+- Reset tool execution
+- Verify tool replay
+- Export tool workspace — page only
 
 ## Executable wiring
 

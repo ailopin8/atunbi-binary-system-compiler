@@ -16,7 +16,7 @@ The systems-engineering starting point was SEBoK v2.14, **Logical Architecture**
 
 **Applications:** Simulation, feedback control, pattern discovery and reproducible experimentation. BARE is a research framework for these applications, rather than the overarching purpose of the engine.
 
-Existing labs, algorithms and wiring supply building blocks. General blank-canvas composition and packaging whole tools as reusable modules remain development aims. A 1,000-bit cube is bounded; larger tool data requires declared storage or adapters. Pages are interfaces to processes, not the underlying execution engine.
+Existing labs, algorithms and wiring supply building blocks. Bounded blank-canvas composition and packaging verified tools as reusable modules are implemented on Build a tool. A 1,000-bit cube is bounded; larger tool data requires declared storage or adapters. Pages are interfaces to processes, not the underlying execution engine.
 
 P1–P6 below are supporting capabilities across these layers. They preserve traceability for current pages and controller actions; they are not six competing top-level purposes.
 
@@ -301,6 +301,7 @@ Surveys visualization, interaction and evaluation in immersive analytics. Choose
 | Page | Purposes | Contribution |
 |---|---|---|
 | Home | P1, P6 | Orient users and make the purpose navigable. |
+| Build a tool | P1, P2, P3, P5, P6 | Start with a blank canvas; connect, verify, save and reuse binary-driven modules. |
 | Create algorithms | P1, P2, P6 | Define, test and save new binary rules. |
 | Compile instructions | P1, P2 | Turn system sentences into executable instructions. |
 | Build connected systems | P1, P2, P3 | Create environments and connect their algorithmic outputs. |
@@ -414,3 +415,9 @@ Surveys visualization, interaction and evaluation in immersive analytics. Choose
 | workflow | Restore default wiring | P3, P6 |
 | workflow | Export wiring JSON | P6 |
 | workflow | Edit module connections | P3, P6 |
+| workbench | Open tool canvas | P1, P2, P3, P5, P6 |
+| workbench | Step tool | P1, P2, P3, P5, P6 |
+| workbench | Run eight ticks | P1, P2, P3, P5, P6 |
+| workbench | Reset tool execution | P1, P2, P3, P5, P6 |
+| workbench | Verify tool replay | P1, P2, P3, P5, P6 |
+| workbench | Export tool workspace | P6 |

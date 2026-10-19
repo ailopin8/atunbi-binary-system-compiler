@@ -42,6 +42,7 @@ The website’s Check current relationships button is deliberately read-only: it
 | workshop | Create algorithms |
 | foundation | Purpose and design |
 | workflow | Connect tools |
+| workbench | Build a tool |
 | sources | Edit instructions |
 | metrics | Collect state updates |
 | exports | Download results |
@@ -147,6 +148,16 @@ Functional check: Exercise the action and inspect its result; disconnect this ro
 ID: controls-workflow. Output workflow → input command (command); immediate delivery.
 
 Purpose: Send a chosen action to Connect tools.
+
+Expected result: The requested control executes only when its prerequisites and guards allow it.
+
+Functional check: Exercise the action and inspect its result; disconnect this route and confirm the action is blocked.
+
+### Choose an action → Build a tool
+
+ID: controls-workbench. Output workbench → input command (command); immediate delivery.
+
+Purpose: Send a chosen action to Build a tool.
 
 Expected result: The requested control executes only when its prerequisites and guards allow it.
 
@@ -342,6 +353,26 @@ Expected result: An evidence payload with download=true produces a JSON file; do
 
 Functional check: Download and parse the file; verify provenance and content, and check disconnected-export feedback.
 
+### Build a tool → Collect state updates
+
+ID: workbench-metrics. Output state → input data (snapshot); immediate delivery.
+
+Purpose: Keep the latest state update for inspection.
+
+Expected result: The shared collector stores the latest payload; this alone does not imply a cross-tool dashboard or aggregation.
+
+Functional check: Publish a state change and check the stored payload and delivery trace.
+
+### Build a tool → Download results
+
+ID: workbench-exports. Output evidence → input data (evidence); immediate delivery.
+
+Purpose: Let the user download results from Build a tool.
+
+Expected result: An evidence payload with download=true produces a JSON file; download=false only stores a payload.
+
+Functional check: Download and parse the file; verify provenance and content, and check disconnected-export feedback.
+
 ### Run the binary engine → Collect observer notes
 
 ID: g8-notebook. Output annotation → input data (annotation); immediate delivery.
@@ -421,6 +452,16 @@ Purpose: Test the current binary matrix directly, without changing it through a 
 Expected result: Pattern tests receive the exact 1000-bit matrix, with origin and tick.
 
 Functional check: Import a compiled matrix, run discovery and replay; disabling this edge must block import.
+
+### Run the binary engine → Build a tool
+
+ID: g8-workbench. Output workspaceBinary → input binary (binary); immediate delivery.
+
+Purpose: Seed a selected workspace input with the binary engine matrix.
+
+Expected result: The selected binary input receives all 1000 bits; execution and verification are reset.
+
+Functional check: Import into a selected input and compare all bits; missing selection or disabled route blocks import.
 
 ### Build connected systems → View: Build connected systems
 

@@ -5,10 +5,10 @@ export const siteFlow=new FlowRuntime();
 export const latestSignals=new Map<string,Payload>();
 const handlers=new Map<string,()=>void>();
 const inputs=new Map<string,(payload:Payload)=>void>();
-const moduleFor=(target:string)=>target.startsWith('g7-')?'g7':target.startsWith('g8-')?'g8':target.startsWith('g9-')?'g9':target.startsWith('g10-')?'composition':target.startsWith('g11-')?'ecology':target.startsWith('g12-')?'workshop':target.startsWith('research-')?'foundation':target.startsWith('flow-')?'workflow':'g6';
-siteFlow.register({id:'controllers',label:'Controller menu',inputs:{},outputs:{g6:'command',g7:'command',g8:'command',g9:'command',composition:'command',ecology:'command',workshop:'command',foundation:'command',workflow:'command'}});
-for(const id of ['g6','g7','g8','g9','composition','ecology','workshop','foundation','workflow']) {
-  siteFlow.register({id,label:moduleName(id),inputs:{command:'command',...(id==='g9'?{source:'source' as const,binary:'binary' as const}:{}),...(['ecology','g6'].includes(id)?{library:'snapshot' as const}:{}),...(id==='composition'?{binary:'binary' as const}:{})},outputs:{...(id==='g8'?{directBinary:'binary' as const}:{}),state:'snapshot',definitions:'snapshot',binary:'binary',evidence:'evidence',annotation:'annotation'},receive:(port,payload)=>{
+const moduleFor=(target:string)=>target.startsWith('wb-')?'workbench':target.startsWith('g7-')?'g7':target.startsWith('g8-')?'g8':target.startsWith('g9-')?'g9':target.startsWith('g10-')?'composition':target.startsWith('g11-')?'ecology':target.startsWith('g12-')?'workshop':target.startsWith('research-')?'foundation':target.startsWith('flow-')?'workflow':'g6';
+siteFlow.register({id:'controllers',label:'Controller menu',inputs:{},outputs:{workbench:'command',g6:'command',g7:'command',g8:'command',g9:'command',composition:'command',ecology:'command',workshop:'command',foundation:'command',workflow:'command'}});
+for(const id of ['g6','g7','g8','g9','composition','ecology','workshop','foundation','workflow','workbench']) {
+  siteFlow.register({id,label:moduleName(id),inputs:{command:'command',...(id==='g9'?{source:'source' as const,binary:'binary' as const}:{}),...(['ecology','g6'].includes(id)?{library:'snapshot' as const}:{}),...(['composition','workbench'].includes(id)?{binary:'binary' as const}:{})},outputs:{...(id==='g8'?{directBinary:'binary' as const,workspaceBinary:'binary' as const}:{}),state:'snapshot',definitions:'snapshot',binary:'binary',evidence:'evidence',annotation:'annotation'},receive:(port,payload)=>{
     if(port!=='command'){latestSignals.set(id+':'+port,payload);inputs.get(id+':'+port)?.(payload);return;}
     const target=String(payload.target),handler=handlers.get(target);
     if(moduleFor(target)!==id)throw Error('This module cannot process '+target+'.');
@@ -25,7 +25,7 @@ siteFlow.connect({id:'source-g9',from:'sources',output:'source',to:'g9',input:'s
 for(const id of ['metrics','notebook','exports','references']) {
   siteFlow.register({id,label:id[0].toUpperCase()+id.slice(1),inputs:{data:id==='notebook'?'annotation':id==='exports'?'evidence':'snapshot'},outputs:{},receive:(_port,payload)=>{latestSignals.set(id,payload);inputs.get(id+':data')?.(payload);if(id==='exports'&&payload.download===true){const blob=new Blob([JSON.stringify(payload.data,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=String(payload.filename);a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}}});
 }
-for(const id of ['g6','g7','g8','g9','composition','ecology','workshop','foundation','workflow']) {
+for(const id of ['g6','g7','g8','g9','composition','ecology','workshop','foundation','workflow','workbench']) {
   siteFlow.connect({id:id+'-metrics',from:id,output:'state',to:'metrics',input:'data',enabled:true,delayed:false});
   siteFlow.connect({id:id+'-exports',from:id,output:'evidence',to:'exports',input:'data',enabled:true,delayed:false});
 }
@@ -69,3 +69,5 @@ siteFlow.register({id:'navigation',label:'Home and module pages',inputs:{},outpu
 siteFlow.connect({id:'navigation-metrics',from:'navigation',output:'page',to:'metrics',input:'data',enabled:true,delayed:false});
 
 siteFlow.connect({id:'g8-discovery',from:'g8',output:'directBinary',to:'g9',input:'binary',enabled:true,delayed:false});
+
+siteFlow.connect({id:'g8-workbench',from:'g8',output:'workspaceBinary',to:'workbench',input:'binary',enabled:true,delayed:false});

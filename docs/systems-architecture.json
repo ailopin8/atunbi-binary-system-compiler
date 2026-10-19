@@ -15,7 +15,7 @@
       "group": "Workspace",
       "role": "S1 operations / S2 coordination",
       "purpose": "Compose processes above the engine; keep definitions separate from running instances.",
-      "parts": "Rule workshop: identity, truth table, validation, saved definitions. Registry: versioned definitions and installation. Flow runtime: typed ports, edge validation, queues, delay ticks and trace. Wiring editor: connect, disconnect and save. General blank canvas and reusable composite modules: proposed.",
+      "parts": "Rule workshop: identity, truth table, validation, saved definitions. Registry: versioned definitions and installation. Flow runtime: typed ports, edge validation, queues, delay ticks and trace. Wiring editor: connect, disconnect and save. Tool workspace: blank canvas, typed binary/number/text ports, deterministic ticks, explicit delay, local saves, embedded reusable graphs and behavioral targets.",
       "contract": "Definitions + graph + commands → validated instances and routed messages. A process has inputs, state, algorithm and outputs.",
       "verification": "Reject incompatible ports and immediate cycles; bound messages; preserve explicit delays; reject invalid imports atomically."
     },
@@ -81,6 +81,7 @@
       "group": "Interface",
       "inputs": {},
       "outputs": {
+        "workbench": "command",
         "g6": "command",
         "g7": "command",
         "g8": "command",
@@ -132,6 +133,7 @@
       },
       "outputs": {
         "directBinary": "binary",
+        "workspaceBinary": "binary",
         "state": "snapshot",
         "definitions": "snapshot",
         "binary": "binary",
@@ -224,6 +226,22 @@
       "group": "Workspace",
       "inputs": {
         "command": "command"
+      },
+      "outputs": {
+        "state": "snapshot",
+        "definitions": "snapshot",
+        "binary": "binary",
+        "evidence": "evidence",
+        "annotation": "annotation"
+      }
+    },
+    {
+      "id": "workbench",
+      "label": "Build a tool",
+      "group": "Workspace",
+      "inputs": {
+        "command": "command",
+        "binary": "binary"
       },
       "outputs": {
         "state": "snapshot",
@@ -538,6 +556,23 @@
       "delayed": false,
       "kind": "command",
       "purpose": "Send a chosen action to Connect tools.",
+      "expected": "The requested control executes only when its prerequisites and guards allow it.",
+      "verification": "Exercise the action and inspect its result; disconnect this route and confirm the action is blocked.",
+      "importance": {
+        "level": 3,
+        "label": "required for this routed operation"
+      }
+    },
+    {
+      "id": "controls-workbench",
+      "from": "controllers",
+      "output": "workbench",
+      "to": "workbench",
+      "input": "command",
+      "enabled": true,
+      "delayed": false,
+      "kind": "command",
+      "purpose": "Send a chosen action to Build a tool.",
       "expected": "The requested control executes only when its prerequisites and guards allow it.",
       "verification": "Exercise the action and inspect its result; disconnect this route and confirm the action is blocked.",
       "importance": {
@@ -869,6 +904,40 @@
       }
     },
     {
+      "id": "workbench-metrics",
+      "from": "workbench",
+      "output": "state",
+      "to": "metrics",
+      "input": "data",
+      "enabled": true,
+      "delayed": false,
+      "kind": "snapshot",
+      "purpose": "Keep the latest state update for inspection.",
+      "expected": "The shared collector stores the latest payload; this alone does not imply a cross-tool dashboard or aggregation.",
+      "verification": "Publish a state change and check the stored payload and delivery trace.",
+      "importance": {
+        "level": 2,
+        "label": "supports state visibility or definition delivery"
+      }
+    },
+    {
+      "id": "workbench-exports",
+      "from": "workbench",
+      "output": "evidence",
+      "to": "exports",
+      "input": "data",
+      "enabled": true,
+      "delayed": false,
+      "kind": "evidence",
+      "purpose": "Let the user download results from Build a tool.",
+      "expected": "An evidence payload with download=true produces a JSON file; download=false only stores a payload.",
+      "verification": "Download and parse the file; verify provenance and content, and check disconnected-export feedback.",
+      "importance": {
+        "level": 1,
+        "label": "supports evidence or observer records"
+      }
+    },
+    {
       "id": "g8-notebook",
       "from": "g8",
       "output": "annotation",
@@ -999,6 +1068,23 @@
       "purpose": "Test the current binary matrix directly, without changing it through a controller.",
       "expected": "Pattern tests receive the exact 1000-bit matrix, with origin and tick.",
       "verification": "Import a compiled matrix, run discovery and replay; disabling this edge must block import.",
+      "importance": {
+        "level": 3,
+        "label": "required for this routed operation"
+      }
+    },
+    {
+      "id": "g8-workbench",
+      "from": "g8",
+      "output": "workspaceBinary",
+      "to": "workbench",
+      "input": "binary",
+      "enabled": true,
+      "delayed": false,
+      "kind": "binary",
+      "purpose": "Seed a selected workspace input with the binary engine matrix.",
+      "expected": "The selected binary input receives all 1000 bits; execution and verification are reset.",
+      "verification": "Import into a selected input and compare all bits; missing selection or disabled route blocks import.",
       "importance": {
         "level": 3,
         "label": "required for this routed operation"

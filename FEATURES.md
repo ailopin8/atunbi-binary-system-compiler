@@ -167,7 +167,7 @@ The home page organizes 17 dedicated module pages into five purpose groups. Navi
 ## Research philosophy and purpose hierarchy
 
 - BARE v2 top purpose decomposed into P1 define, P2 generate, P3 relate, P4 observe, P5 test and P6 preserve/communicate.
-- Every page and all 91 controller actions allocated to purposes; home and page headings display their contribution.
+- Every page and all 97 controller actions allocated to purposes; home and page headings display their contribution.
 - 22 annotated research papers covering cellular automata, complexity, emergence, systems and cellular biology, morphogenesis, topology, fractality and VR.
 - Filter papers by topic; export bibliography, hypotheses and complete purpose allocations.
 - Separate established source findings, proposed design choices, implemented measurements and future research.
@@ -190,3 +190,7 @@ See [the complete research report](docs/RESEARCH-FOUNDATION.md) and [current fea
 - Nine-step update algorithm; read-only live contract review distinguishes observed delivery from verified behavior.
 - Direct binary engine → pattern tests import, with exact-bit/replay checks and disabled-route guards.
 - Proposed integrations document missing adapters rather than creating misleading type-only connections.
+
+## Modular tool workspace
+
+Build a tool starts empty, with typed inputs and outputs, Boolean operators, local rules, delay feedback, counters and explicit number/text encodings. Connect and edit modules, inspect outputs, verify deterministic replay, save or export graphs, and package verified graphs as independently stateful reusable tools. Three behavioral challenges check inversion, counting and Unicode round trips. The binary engine can explicitly supply a selected workspace input. See [delivery and limits](docs/WORKSPACE-BUILD.md).

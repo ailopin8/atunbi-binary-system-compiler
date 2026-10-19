@@ -23,7 +23,7 @@ The browser application includes engines, process definitions, message routing, 
 
 ## Matrix interpretation
 
-The website's theory page contains the interactive 27 × 27 dependency matrix. Rows send; columns receive. Components are grouped Engine (blue), Workspace (purple), Observation (green), Governance (amber), Interface (pink). Cell colors have a separate meaning: crimson 3 = operation dependency (command, binary, source); blue 2 = state or definition support (snapshot); olive 1 = evidence or annotation support. Disabled cells say off; D marks delayed edges. These are editorial design ratings by signal function, not measured causal strengths or global criticality. Parallel edges share a cell; the highest enabled rating is displayed and inspection lists every edge. Group filtering hides cross-group cells; full export retains them. Refresh reads current wiring.
+The website's theory page contains the interactive 28 × 28 dependency matrix. Rows send; columns receive. Components are grouped Engine (blue), Workspace (purple), Observation (green), Governance (amber), Interface (pink). Cell colors have a separate meaning: crimson 3 = operation dependency (command, binary, source); blue 2 = state or definition support (snapshot); olive 1 = evidence or annotation support. Disabled cells say off; D marks delayed edges. These are editorial design ratings by signal function, not measured causal strengths or global criticality. Parallel edges share a cell; the highest enabled rating is displayed and inspection lists every edge. Group filtering hides cross-group cells; full export retains them. Refresh reads current wiring.
 
 ## Subsystem architecture
 
@@ -41,7 +41,7 @@ Acceptance: Binary bounds; deterministic replay; prior-state immutability; full-
 
 Compose processes above the engine; keep definitions separate from running instances.
 
-Rule workshop: identity, truth table, validation, saved definitions. Registry: versioned definitions and installation. Flow runtime: typed ports, edge validation, queues, delay ticks and trace. Wiring editor: connect, disconnect and save. General blank canvas and reusable composite modules: proposed.
+Rule workshop: identity, truth table, validation, saved definitions. Registry: versioned definitions and installation. Flow runtime: typed ports, edge validation, queues, delay ticks and trace. Wiring editor: connect, disconnect and save. Tool workspace: blank canvas, typed binary/number/text ports, deterministic ticks, explicit delay, local saves, embedded reusable graphs and behavioral targets.
 
 Contract: Definitions + graph + commands → validated instances and routed messages. A process has inputs, state, algorithm and outputs.
 
@@ -81,16 +81,17 @@ Acceptance: Keyboard and screen-reader checks; routing/history; controller guard
 
 | Group | Component | Inputs | Outputs |
 |---|---|---|---|
-| Interface | controllers — Choose an action | none | g6: command, g7: command, g8: command, g9: command, composition: command, ecology: command, workshop: command, foundation: command, workflow: command |
+| Interface | controllers — Choose an action | none | workbench: command, g6: command, g7: command, g8: command, g9: command, composition: command, ecology: command, workshop: command, foundation: command, workflow: command |
 | Engine | g6 — Build connected systems | command: command, library: snapshot | state: snapshot, definitions: snapshot, binary: binary, evidence: evidence, annotation: annotation |
 | Engine | g7 — Compile instructions | command: command | state: snapshot, definitions: snapshot, binary: binary, evidence: evidence, annotation: annotation |
-| Engine | g8 — Run the binary engine | command: command | directBinary: binary, state: snapshot, definitions: snapshot, binary: binary, evidence: evidence, annotation: annotation |
+| Engine | g8 — Run the binary engine | command: command | directBinary: binary, workspaceBinary: binary, state: snapshot, definitions: snapshot, binary: binary, evidence: evidence, annotation: annotation |
 | Observation | g9 — Find and test patterns | command: command, source: source, binary: binary | state: snapshot, definitions: snapshot, binary: binary, evidence: evidence, annotation: annotation |
 | Engine | composition — Control a system | command: command, binary: binary | state: snapshot, definitions: snapshot, binary: binary, evidence: evidence, annotation: annotation |
 | Engine | ecology — Combine algorithms | command: command, library: snapshot | state: snapshot, definitions: snapshot, binary: binary, evidence: evidence, annotation: annotation |
 | Workspace | workshop — Create algorithms | command: command | state: snapshot, definitions: snapshot, binary: binary, evidence: evidence, annotation: annotation |
 | Governance | foundation — Purpose and design | command: command | state: snapshot, definitions: snapshot, binary: binary, evidence: evidence, annotation: annotation |
 | Workspace | workflow — Connect tools | command: command | state: snapshot, definitions: snapshot, binary: binary, evidence: evidence, annotation: annotation |
+| Workspace | workbench — Build a tool | command: command, binary: binary | state: snapshot, definitions: snapshot, binary: binary, evidence: evidence, annotation: annotation |
 | Workspace | sources — Edit instructions | none | source: source |
 | Observation | metrics — Collect state updates | data: snapshot | none |
 | Observation | notebook — Collect observer notes | data: annotation | none |
@@ -122,6 +123,7 @@ Acceptance: Keyboard and screen-reader checks; routing/history; controller guard
 | controllers.workshop → workshop.command | command | 3 | enabled | immediate |
 | controllers.foundation → foundation.command | command | 3 | enabled | immediate |
 | controllers.workflow → workflow.command | command | 3 | enabled | immediate |
+| controllers.workbench → workbench.command | command | 3 | enabled | immediate |
 | sources.source → g9.source | source | 3 | enabled | immediate |
 | g6.state → metrics.data | snapshot | 2 | enabled | immediate |
 | g6.evidence → exports.data | evidence | 1 | enabled | immediate |
@@ -141,6 +143,8 @@ Acceptance: Keyboard and screen-reader checks; routing/history; controller guard
 | foundation.evidence → exports.data | evidence | 1 | enabled | immediate |
 | workflow.state → metrics.data | snapshot | 2 | enabled | immediate |
 | workflow.evidence → exports.data | evidence | 1 | enabled | immediate |
+| workbench.state → metrics.data | snapshot | 2 | enabled | immediate |
+| workbench.evidence → exports.data | evidence | 1 | enabled | immediate |
 | g8.annotation → notebook.data | annotation | 1 | enabled | immediate |
 | g9.annotation → notebook.data | annotation | 1 | enabled | immediate |
 | g8.binary → composition.binary | binary | 3 | enabled | immediate |
@@ -149,6 +153,7 @@ Acceptance: Keyboard and screen-reader checks; routing/history; controller guard
 | feature-inventory.evidence → exports.data | evidence | 1 | enabled | immediate |
 | navigation.page → metrics.data | snapshot | 2 | enabled | immediate |
 | g8.directBinary → g9.binary | binary | 3 | enabled | immediate |
+| g8.workspaceBinary → workbench.binary | binary | 3 | enabled | immediate |
 | g6.state → g6-view.state | snapshot | 2 | enabled | immediate |
 | g7.state → g7-view.state | snapshot | 2 | enabled | immediate |
 | g8.state → g8-view.state | snapshot | 2 | enabled | immediate |
@@ -183,6 +188,6 @@ Inflow: Measurements, experiments, annotations. Outflow: User deletion or extern
 
 ## Management, risks and next decisions
 
-People own S5 policy and S4 research decisions. CI and experiment evidence provide audit; a full resource supervisor, automatic throttling, compatibility migrations and reusable composite workspace tools remain proposed. Existing queues have bounds, not adaptive scheduling. Adding another engine needs a versioned port/state contract, owner, validation and acceptance tests.
+People own S5 policy and S4 research decisions. CI and experiment evidence provide audit; a full resource supervisor, automatic throttling, and compatibility migrations remain proposed. Bounded reusable workspace tools are implemented. Existing queues have bounds, not adaptive scheduling. Adding another engine needs a versioned port/state contract, owner, validation and acceptance tests.
 
 Central typed routing improves traceability but can become a bottleneck; bounded local queues and explicit delay semantics are current controls. The matrix remains readable by grouping and filtering, but larger inventories may need hierarchical zoom. Persistence and external release availability remain separate concerns: local storage is not a durable shared database. Physical headset usability requires real-device evaluation. Review importance per use case before treating any connection as mission-critical.
