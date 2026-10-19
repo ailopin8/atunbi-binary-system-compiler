@@ -40,7 +40,7 @@ export function requestControl(target:string) {
   if(!siteFlow.emit('controllers',module,{target}))throw Error('The controller → '+module+' edge is disconnected. Reconnect it in Modular workflow.');
 }
 export function bindControl(target:string,handler:()=>void) {handlers.set(target,handler);}
-export function publishState(id:string,payload:Payload) {siteFlow.emit(id,'state',{...payload,module:id});}
+export function publishState(id:string,payload:Payload) {latestSignals.set(id+':state',structuredClone(payload));siteFlow.emit(id,'state',{...payload,module:id});}
 export function sourceForDiscovery() {
   const source=(document.getElementById('g8-source') as HTMLTextAreaElement).value;
   const edge=[...siteFlow.edges.values()].find(edge=>edge.from==='sources'&&edge.output==='source'&&edge.to==='g9'&&edge.input==='source'&&edge.enabled&&!edge.delayed);

@@ -85,3 +85,7 @@ The theory page includes a grouped, directed 2D dependency matrix, component por
 ## Relationship purposes and verification
 
 Pages and runtime modules use plain action names while IDs and saved links stay stable. The theory page lists every relationship’s purpose, expected receiving result, check method and live delivery evidence. Use binary engine matrix on the pattern-test page imports bits directly without passing through the controller. See [relationship contracts and the update algorithm](docs/RELATIONSHIP-PURPOSES.md). Run `npm run verify` before accepting changes; CI includes the architecture and relationship browser checks. Proposed integrations remain explicitly marked.
+
+## Whole-system home
+
+The home page presents components, current connections, published state and delivery activity as one system. A staged workflow runs engine → controller → pattern testing → exact replay using existing settings and validated routes. See [whole-system architecture](docs/WHOLE-SYSTEM-WORKSPACE.md). Artifacts and processing activity are distinguished from physical material and energy. `npm run test:system` checks the connected workflow and failure guards.

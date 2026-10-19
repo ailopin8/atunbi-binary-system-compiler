@@ -13,3 +13,5 @@ import './feature-map';
 import './architecture-view';
 import './relationship-view';
 import './site-pages';
+
+import './system-overview';

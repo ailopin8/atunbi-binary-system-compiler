@@ -12,7 +12,8 @@
     "test:browser": "node tests/browser.mjs",
     "test:architecture": "node tests/architecture-browser.mjs",
     "test:relationships": "node tests/relationship-browser.mjs",
-    "verify": "npm run typecheck && npm test && npm run build && npm run test:browser && npm run test:architecture && npm run test:relationships"
+    "verify": "npm run typecheck && npm test && npm run build && npm run test:browser && npm run test:architecture && npm run test:relationships && npm run test:system",
+    "test:system": "node tests/system-browser.mjs"
   },
   "dependencies": {
     "lucide": "^0.469.0",
