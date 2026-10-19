@@ -153,5 +153,32 @@
       "Edit node parameters and add a valid directed edge, then Apply and reset",
       "Export evidence JSON"
     ]
+  },
+  {
+    "name": "Binary algorithm workshop and modular feature inventory",
+    "sanity": false,
+    "viewport": "desktop",
+    "covers": [
+      "guided binary rule creator",
+      "truth-table validation",
+      "tested definition save",
+      "registry connection guard",
+      "G11 custom rule execution",
+      "rule export/import",
+      "browser persistence",
+      "feature inventory",
+      "module focus and restore"
+    ],
+    "description": "Create and execute a custom algorithm using a consistent binary contract, then inspect the live module relationships.",
+    "steps": [
+      "Open Create algorithms and choose Create new algorithm",
+      "Enter a name, category, purpose and color; advance to input selection",
+      "Choose left, self, right with table 01011010; inspect all eight rows",
+      "Advance, run Test this algorithm and save to the library",
+      "Select the saved rule in G11, apply the network and step",
+      "Export custom rules and import the same backup",
+      "Open Features and connections; inspect input/output/effect contracts and current edges",
+      "Focus the workshop module, restore all modules and export the feature inventory"
+    ]
   }
 ]

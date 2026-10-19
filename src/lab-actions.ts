@@ -125,6 +125,12 @@ export function createLabActions(view:ViewActions):MenuCategory[] {
       {id:'g11-view',label:'Next sandbox view',run:()=>cycle('g11-view')},
       {id:'g11-edit',label:'Edit algorithms and edges',desktopOnly:true,run:()=>focus('g11-form')}
     ]},
+    {id:'workshop',label:'Algorithm workshop',description:'Create, test and register versioned binary rules.',actions:[
+      button('g12-new','Create new algorithm','g12-new','g12-status',{desktopOnly:true}),
+      button('g12-export','Export custom rules','g12-export','g12-status',{desktopOnly:true}),
+      {id:'g12-registry',label:'Browse complete registry',desktopOnly:true,run:()=>focus('g12-registry')},
+      {id:'feature-map',label:'Read features and connections',desktopOnly:true,run:()=>focus('feature-map')}
+    ]},
     {id:'workflow',label:'Modular workflow',description:'Actual website modules exchange typed signals. Disabled edges stop subsequent delivery; delayed feedback advances on explicit ticks.',actions:[
       button('flow-tick','Advance workflow tick','flow-tick','flow-status'),
       button('flow-save','Save wiring','flow-save','flow-status',{desktopOnly:true}),

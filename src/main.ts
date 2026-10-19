@@ -4,5 +4,7 @@ import './g7';
 import './g8'; import './g9';
 import './composition-lab';
 import './library-lab';
+import './algorithm-workshop';
 import './references';
 import './workflow-view';
+import './feature-map';

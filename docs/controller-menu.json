@@ -528,6 +528,36 @@
     ]
   },
   {
+    "id": "workshop",
+    "label": "Algorithm workshop",
+    "actions": [
+      {
+        "id": "g12-new",
+        "label": "Create new algorithm",
+        "pageOnly": true,
+        "confirmationRequired": false
+      },
+      {
+        "id": "g12-export",
+        "label": "Export custom rules",
+        "pageOnly": true,
+        "confirmationRequired": false
+      },
+      {
+        "id": "g12-registry",
+        "label": "Browse complete registry",
+        "pageOnly": true,
+        "confirmationRequired": false
+      },
+      {
+        "id": "feature-map",
+        "label": "Read features and connections",
+        "pageOnly": true,
+        "confirmationRequired": false
+      }
+    ]
+  },
+  {
     "id": "workflow",
     "label": "Modular workflow",
     "actions": [

@@ -151,3 +151,11 @@ Controller menu category: **G11 algorithm ecology**.
 - Edit algorithms and edges — page only
 
 The page supports one to six nodes, directed signed edges, draft editing, per-node thresholds and parameters, three-seed and nearby-parameter trials, binary descriptors, exact replay, 3D previews and exact depth slices. Color bands measure one-step edge removal effects; the outcome-only view does not change simulation state. G11 commands, state views and exports use the website's actual modular flow. G6–G10 remain available. Total menu inventory: 11 categories and 84 actions.
+
+## Algorithm workshop and interface organization
+
+A guided three-step creator produces tested, versioned native binary rules. Name, purpose, category, color, three read locations and eight truth-table outputs define each algorithm. Saved rules are selectable in G11; definitions are embedded in experiments. The registry also links legacy algorithm families to their own modules. Editing, cancellation, browser persistence and portable import/export are supported.
+
+Every major module has an input/process/output/effect guide. A focus mode reduces visible modules; the feature map retains restore controls, categorized controller actions, page controls and actual edge status. Export the current feature and connection inventory as JSON.
+
+New controller category: Algorithm workshop (four page actions). Total: 12 categories, 88 actions. Read [all feature contracts and control lists](docs/FEATURE-CONNECTIONS.md), [machine-readable contracts](docs/feature-contracts.json), and [the binary instruction format](docs/ALGORITHM-WORKSHOP.md).

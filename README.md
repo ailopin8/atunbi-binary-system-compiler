@@ -59,3 +59,9 @@ The logo is an image resource at `public/resources/atunbi-logo.png`. It is distr
 The researched 12-algorithm library adds configurable directed networks in periodic 10×10×10 matrices, measured influence colors, outcome-only and individual views, coupled/isolated comparisons, seed/parameter sweeps and exact replay. Read [ALGORITHM-ECOLOGY.md](docs/ALGORITHM-ECOLOGY.md) for formulas, primary research, GitHub references, numerical adaptations and limits. `npm test` includes 128-tick boundedness checks for every equation and exact counterfactual mask checks. The full browser suite covers all 84 controller actions.
 
 Deployment of this revision is pending: AppDeploy reported its daily deployment credit limit on 19 October 2026, resetting 20 October at 00:00 UTC. The existing live app remains available; the G11 source can be run locally with `npm ci && npm run dev`.
+
+### Algorithm workshop and feature map
+
+Create native binary algorithms using one explicit contract: three prior-state bit inputs → eight-row truth table → one next-state bit per cell. A three-step creator validates and tests each rule before registering it for G11. Saved rules include name, category, purpose, aim and color, support browser persistence and JSON backup, and remain embedded in running experiments after later edits. Registry delivery is a genuine workflow connection.
+
+The interface now offers module guides, grouped explanations, a module focus mode and an exportable feature/connection map. See [workshop documentation](docs/ALGORITHM-WORKSHOP.md) and [complete feature and controller list](docs/FEATURE-CONNECTIONS.md). The shared menu contains 12 categories and 88 actions.
