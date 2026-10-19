@@ -8,13 +8,17 @@ The review followed six question families: local rules and cellular automata; sy
 
 The systems-engineering starting point was SEBoK v2.14, **Logical Architecture**, printed pp. 574–575 and 578 (physical PDF pp. 587–588 and 591). Its distinction between functional decomposition and behavioral/input–output views informs the approach: a hierarchy alone does not show whether functions exchange the information needed to achieve an outcome. The particular purpose, ontology and allocations below are our interpretation for this website.
 
-## 1. The top purpose, built from its contributions
+## 1. Underlying purpose and secondary aim
 
-**P0: Make the formation, organization and causal dependence of patterns constructible, observable and testable, so sandbox exploration can produce reproducible knowledge.**
+**Underlying purpose — matrix engine:** Provide a binary matrix engine that executes declared algorithms, transforms state and exchanges inputs and outputs between connected cube systems.
 
-The artifact is a laboratory for asking questions, not a machine that guarantees emergence. Its value is not the number of algorithms, the brightness of a visualization or the apparent lifelikeness of a pattern. Its value is the ability to construct a declared system, observe it through declared measurements, change a cause under controlled conditions and preserve enough information to repeat or challenge the interpretation.
+**Secondary aim — modular workspace:** Build a workspace above that engine, starting with a blank canvas where users add process modules with explicit inputs and outputs and connect them into tools for exploring different concepts. The engine stays the engine; the workspace composes its capabilities without redefining its role.
 
-Start from existing capabilities as well as desired outcomes. The creator and compilers contribute constructibility; the engines contribute execution; edges contribute controllable interaction; descriptors and views contribute observability; ablations contribute experimental discrimination; and exports, references and usable controls contribute repeatability and critique. Synthesizing those contributions gives P0. If a tool does not contribute to any branch, it needs either a justified new purpose or removal. If a branch lacks a working capability, its purpose is a requirement rather than an accomplished result.
+**Applications:** Simulation, feedback control, pattern discovery and reproducible experimentation. BARE is a research framework for these applications, rather than the overarching purpose of the engine.
+
+Existing labs, algorithms and wiring supply building blocks. General blank-canvas composition and packaging whole tools as reusable modules remain development aims. A 1,000-bit cube is bounded; larger tool data requires declared storage or adapters. Pages are interfaces to processes, not the underlying execution engine.
+
+P1–P6 below are supporting capabilities across these layers. They preserve traceability for current pages and controller actions; they are not six competing top-level purposes.
 
 ### P1 — Define a bounded system
 

@@ -415,6 +415,10 @@
   },
   "principles": [
     {
+      "name": "The engine stays the engine",
+      "text": "The binary matrix engine executes declared instructions and exchanges state. The modular workspace sits above it and composes processes through explicit ports. Pages and visualizations expose modules; they do not redefine the engine. Blank-canvas tool composition is the secondary product aim, not a claim that every proposed workspace capability is already implemented."
+    },
+    {
       "name": "Operational patterns before semantic labels",
       "text": "A cell is an indexed state position, not automatically a biological cell. Meaning is an observer hypothesis. Pattern descriptors must not depend on the name or color assigned by an observer."
     },
@@ -443,6 +447,23 @@
       "text": "Use matched baselines, disclose thresholds and numerical approximations, preserve failed or trivial outcomes, and keep hypotheses revisable. VR is an optional inspection interface whose value needs user studies, not a source of extra physical validity."
     }
   ],
+  "purposeHierarchy": {
+    "primary": {
+      "id": "engine",
+      "title": "Underlying purpose · matrix engine",
+      "description": "Provide a binary matrix engine that executes declared algorithms, transforms state and exchanges inputs and outputs between connected cube systems."
+    },
+    "secondary": {
+      "id": "workspace",
+      "title": "Secondary aim · modular workspace",
+      "description": "Build a modular workspace above the matrix engine: start with a blank canvas, add process modules with explicit inputs and outputs, and connect them into tools for exploring different concepts."
+    },
+    "application": {
+      "id": "exploration",
+      "title": "Applications · exploration and research",
+      "description": "Use composed tools for simulation, feedback control, pattern discovery and reproducible experiments. Emergence is one research question, not a guaranteed result."
+    }
+  },
   "purposes": [
     {
       "id": "P1",
@@ -511,7 +532,8 @@
       "evidence": "Evidence includes provenance; every page and controller action has a purpose allocation."
     }
   ],
-  "topPurpose": "Make the formation, organization and causal dependence of patterns constructible, observable and testable, so sandbox exploration can produce reproducible knowledge.",
+  "secondaryAim": "Build a modular workspace above the matrix engine: start with a blank canvas, add process modules with explicit inputs and outputs, and connect them into tools for exploring different concepts.",
+  "topPurpose": "Provide a binary matrix engine that executes declared algorithms, transforms state and exchanges inputs and outputs between connected cube systems.",
   "format": "atunbi.foundation.v2",
   "reviewed": "2026-10-19",
   "allocations": [
