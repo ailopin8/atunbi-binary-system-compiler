@@ -26,7 +26,7 @@ This is the target boundary map. Command, identity and repository extraction rem
 | Compile G8 | pure compile | binary language source → Program or diagnostic | src/engines/g8.ts extracted |
 | Execute G8 | one VM instance | Program + coupling/step → matrices, queues, trace, tick | src/engines/g8.ts; pages own playback timer only |
 | Compose/execute tools | GraphEngine instance; builder owns draft | validated graph + exposed values → Frame | pure engine exists; draft history and service extraction needed |
-| Execute G6 | currently editor closure | environments/layers/edges + tick → fields and registers | coupled to UI; must extract workspace owner before SG04 gate |
+| Execute G6 | G6Workspace instance | environments/layers/edges + tick → fields and registers | src/engines/g6.ts now owns state, numerical step/reset, snapshot and atomic restore; visual editing wrappers remain |
 | Control | CompositionEngine | config + seed + step → bits, PID memory, trajectory | pure; orchestration/input draft extraction needed |
 | Combine algorithms | library engine instance | definitions/config + tick → registers/projections | pure; registry identity/version integration needed |
 | Compare | analyze / runAblationExperiment / compareComposition | frozen state + intervention → matched outputs | domain functions exist; evidence ownership/IDs needed |
@@ -47,4 +47,10 @@ Page allocation: network/layers/relationships/spatial/metrics/experiments are co
 
 Compare full serialized VM states at 0, 1, 8 and 24 ticks, across all baseline presets and both coupled/uncoupled modes, against fixtures generated from baseline commit ed6f954. Pure module imports are exercised without document/window. Existing grammar, packet, coordinate and malformed-source checks remain. Browser regression verifies page controls still invoke the same engines.
 
-SG04 remains in progress until G6, authoring, annotation, orchestration and persistence ownership are independently exercisable. This document is not evidence that all modules meet that gate.
+SG04 remains in progress until the remaining authoring, annotation, orchestration and persistence ownership are independently exercisable. G6 has a headless workspace owner; remaining edit commands still need the shared command boundary. This document is not evidence that all modules meet that gate.
+
+## G6 extraction
+
+The editor now refers to one G6Workspace for nodes, edges, tick, identifiers and installed custom definitions. Rendering, active selection, drag gestures and playback timing remain view state. Numerical transitions, initial fields, staged updates, reset, export and full validation/restore are in src/engines/g6.ts. No kernel imports Three.js or the document. A snapshot is detached from its source; restore validates a staged network before replacing state.
+
+Baseline fixtures cover all four legacy algorithms, twelve library algorithms and the linked example at ticks 0, 1, 8 and 24. This preserves existing clipped/periodic topology distinctions and numeric-register semantics. Negative tests cover malformed fields and edges, foreign environment ownership, capacity limits, failed-tick atomicity and invalid algorithm creation. Numeric continuation is tested after restore; this is the existing G6 network format, not a universal cross-engine checkpoint claim.

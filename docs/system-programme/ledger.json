@@ -95,20 +95,24 @@
         "R04-05"
       ],
       "artifacts": [
-        "ARCHITECTURE.md"
+        "ARCHITECTURE.md",
+        "g6-extraction-evidence.json"
       ],
       "changedModules": [
         "src/engines/g7.ts",
-        "src/engines/g8.ts"
+        "src/engines/g8.ts",
+        "src/engines/g6.ts",
+        "src/editor.ts"
       ],
       "evidence": [
         "G7/G8 imported and executed without document/window; 40 full VM state comparisons against ed6f954 fixtures pass",
-        "Fresh npm run verify passed on 20 October 2026: 47 model tests, 19 main browser checks, architecture, relationships, system and builder suites"
+        "Fresh npm run verify passed on 20 October 2026: 47 model tests, 19 main browser checks, architecture, relationships, system and builder suites",
+        "G6: 68 exact baseline snapshot comparisons; headless ownership, atomic imports, detached exports, numeric continuation, reset and failed tick checks. Full npm run verify passed with 51 model tests and 19 main browser checks plus four integration suites."
       ],
       "risks": [
         "G6 and remaining UI-owned state/services not yet isolated; SG04 gate not passed"
       ],
-      "nextAction": "Extract G6 workspace state and transformations from editor.ts into an independently testable owner; preserve browser and experiment behavior."
+      "nextAction": "Separate remaining authoring/annotation/persistence responsibilities and domain command interfaces; do not mark SG04 verified while page-owned operations remain."
     },
     {
       "id": "SG05",

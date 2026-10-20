@@ -1,0 +1,4 @@
+import fs from 'node:fs';import path from 'node:path';import ts from 'typescript';import {fileURLToPath} from 'node:url';
+const root=fileURLToPath(new URL('../src/',import.meta.url)),cache=new Map();
+export function domainURL(relative){const filename=path.resolve(root,relative);if(!filename.startsWith(root))throw Error('Domain fixture outside source');if(cache.has(filename))return cache.get(filename);let code=ts.transpileModule(fs.readFileSync(filename,'utf8'),{compilerOptions:{module:ts.ModuleKind.ES2022,target:ts.ScriptTarget.ES2022}}).outputText;code=code.replace(/from ['"](\.[^'"]+)['"]/g,(_,importPath)=>{let resolved=path.resolve(path.dirname(filename),importPath);if(!path.extname(resolved))resolved+='.ts';return 'from '+JSON.stringify(domainURL(path.relative(root,resolved)));});const url='data:text/javascript;base64,'+Buffer.from(code).toString('base64');cache.set(filename,url);return url;}
+export const loadDomain=relative=>import(domainURL(relative));

@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-20",
+  "scope": "G6 state, numerical execution, reset, snapshots and atomic restore extracted into headless workspace; SG04 remains in progress",
+  "baseline": "ed6f9540ee43cf332eb1670e7826eedc8aaacec1",
+  "fixtures": "tests/fixtures/g6-baseline.json",
+  "exactSnapshotCases": 68,
+  "verification": {
+    "command": "npm run verify",
+    "exitCode": 0,
+    "modelTests": 51,
+    "mainBrowserChecks": 19,
+    "otherSuites": [
+      "architecture",
+      "relationships",
+      "system",
+      "workbench"
+    ]
+  },
+  "limitations": [
+    "UI editing wrappers and command routing still need separation",
+    "No universal cross-engine checkpoint or hosted persistence claim"
+  ]
+}

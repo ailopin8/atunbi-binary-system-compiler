@@ -1,6 +1,6 @@
-import {expandedMetadata,evolveExpanded,seedExpanded,validateRegisters,defaultParameter} from './algorithms/g6-library';
-import type {ExpandedAlgorithm,Registers} from './algorithms/g6-library';
 import {validateRule} from './algorithms/library';
+import {G6Workspace,N,CELLS,MAX_LAYERS,at,mean,syncSandbox,transitionG6,type Algorithm,type ActiveAlgorithm,type Layer,type Sandbox,type Mode} from './engines/g6';
+import {expandedMetadata,defaultParameter} from './algorithms/g6-library';
 import type {CustomRule} from './algorithms/library';
 import {registerView, publishState, sendEvidence,bindInput} from './flow/site';
 import './g4.css';
@@ -11,50 +11,8 @@ import { VRButton } from 'three/addons/webxr/VRButton.js';
 import { runAblationExperiment } from './emergence';
 import type { ExperimentResult, Ablation } from './emergence';
 
-const N = 10;
-const CELLS = N ** 3;
-const MAX_NODES = 6;
-const MAX_LAYERS = 4;
-type Algorithm = 'empty' | 'diffusion' | 'oscillator' | 'growth' | 'automaton' | ExpandedAlgorithm;
-type Mode = 'excite' | 'inhibit';
-type ActiveAlgorithm = Exclude<Algorithm, 'empty'>;
-interface Layer {
-  id: number;
-  algorithm: ActiveAlgorithm;
-  state: Float32Array;
-  influence: number;
-  registers?:Registers;
-  definition?:CustomRule;
-  parameter?:number;
-}
-interface InnerLink {
-  id: number;
-  from: number;
-  to: number;
-  strength: number;
-  mode: Mode;
-  enabled: boolean;
-}
-interface Sandbox {
-  id: number;
-  algorithm: Algorithm;
-  x: number;
-  y: number;
-  state: Float32Array;
-  influence: number;
-  layers: Layer[];
-  innerLinks: InnerLink[];
-  outputLayerId: number | null;
-}
-interface Relation {
-  id: number;
-  from: number;
-  to: number;
-  targetLayerId: number;
-  mode: Mode;
-  strength: number;
-  enabled: boolean;
-}
+const workspace=new G6Workspace();
+const seed=(algorithm:Algorithm,id:number)=>workspace.seed(algorithm,id);
 const meta = {
   empty: { label: 'No algorithm', description: 'Empty environment · no pattern exists', color: '#526176' },
   diffusion: { label: 'Diffusion', description: 'Driven field values spread through neighbouring positions', color: '#38cfff' },
@@ -63,113 +21,20 @@ const meta = {
   automaton: { label: 'Cellular activation', description: 'Neighbourhood thresholds create clusters', color: '#f2bc74' }
 } as Record<Algorithm,{label:string;description:string;color:string;category?:string}>;
 for(const entry of expandedMetadata())meta[entry.id]=entry;
-let customRules:CustomRule[]=[];
-const definitionFor=(id:Algorithm)=>customRules.find(r=>r.id===id)||nodes.flatMap(n=>n.layers).find(l=>l.algorithm===id)?.definition;
-const legacy=(id:Algorithm)=>['empty','diffusion','oscillator','growth','automaton'].includes(id);
+const definitionFor=(id:Algorithm)=>workspace.definitionFor(id);
 const safe=(text:string)=>text.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]!));
-let nodes: Sandbox[] = [];
-let edges: Relation[] = [];
-let nextNodeId = 1;
-let nextEdgeId = 1;
 let pendingSource: number | null = null;
 let activeId: number | null = null;
-let tick = 0;
 let running = false;
 let lastStep = 0;
 const clockHz = 7;
-const zero = new Float32Array(CELLS);
-const at = (x: number, y: number, z: number) => x + N * (y + N * z);
-const clamp = (x: number) => Math.min(1, Math.max(0, x));
-const logistic = (x: number) => 1 / (1 + Math.exp(-x));
-const noise = (x: number, y: number, z: number, seed: number) => {
-  const p = Math.sin((x + 1) * 127.1 + (y + 1) * 311.7 + (z + 1) * 74.7 + seed * 13.79) * 43758.5453;
-  return p - Math.floor(p);
-};
-function seed(algorithm: Algorithm, id: number): Float32Array {
-  const data = new Float32Array(CELLS);
-  if (algorithm === 'empty') return data;
-  if(!legacy(algorithm))return seedExpanded(algorithm as ExpandedAlgorithm,id,definitionFor(algorithm));
-  for (let z = 0; z < N; z++) for (let y = 0; y < N; y++) for (let x = 0; x < N; x++) {
-    const r = (x - 4.5) ** 2 + (y - 4.5) ** 2 + (z - 4.5) ** 2;
-    const random = noise(x, y, z, id);
-    const i = at(x, y, z);
-    if (algorithm === 'diffusion') data[i] = clamp(0.92 * Math.exp(-r / 9) + random * 0.055);
-    if (algorithm === 'oscillator') data[i] = clamp(0.22 + 0.26 * Math.sin(x * 0.7 + y * 0.4) * Math.cos(z * 0.75));
-    if (algorithm === 'growth') data[i] = clamp(0.93 * Math.exp(-r / 7) + random * 0.07);
-    if (algorithm === 'automaton') data[i] = clamp(0.65 * Math.exp(-r / 13) + random * 0.18);
-  }
-  return data;
-}
-function neighbours(f: Float32Array, x: number, y: number, z: number): number {
-  let total = 0;
-  let count = 0;
-  for (const [dx, dy, dz] of [[1,0,0],[-1,0,0],[0,1,0],[0,-1,0],[0,0,1],[0,0,-1]]) {
-    const xx=x+dx, yy=y+dy, zz=z+dz;
-    if (xx>=0 && yy>=0 && zz>=0 && xx<N && yy<N && zz<N) {
-      total += f[at(xx,yy,zz)];
-      count++;
-    }
-  }
-  return total / count;
-}
-function mean(f: Float32Array): number {
-  let sum = 0;
-  for (let i=0; i<CELLS; i++) sum += f[i];
-  return sum / CELLS;
-}
-function evolve(node: Layer, input: Float32Array, currentTick: number): Float32Array {
-  const next = new Float32Array(CELLS);
-  const f = node.state;
-  for (let z=0; z<N; z++) for (let y=0; y<N; y++) for (let x=0; x<N; x++) {
-    const i = at(x,y,z);
-    const p = f[i];
-    const u = input[i];
-    const nb = neighbours(f,x,y,z);
-    const phase = currentTick * 0.11;
-    if (node.algorithm === 'diffusion') {
-      const sourceD = (x - (4.5 + 2.3 * Math.sin(phase))) ** 2 + (y - (4.5 + 2.2 * Math.cos(phase * 0.83))) ** 2 + (z - 4.5) ** 2;
-      const source = 0.09 * Math.exp(-sourceD / 3.5);
-      next[i] = clamp(p + 0.31 * (nb - p) + source - 0.018 * p + 0.24 * u);
-    } else if (node.algorithm === 'oscillator') {
-      const wave = 0.5 + 0.37 * Math.sin(x * 0.55 + z * 0.82 - phase * 2.2) * Math.cos(y * 0.45 + phase);
-      next[i] = clamp(0.73 * p + 0.27 * wave + 0.21 * u);
-    } else if (node.algorithm === 'growth') {
-      next[i] = clamp(p + 0.18 * (nb - p) + 0.055 * p * (1 - p) - 0.006 + 0.27 * u);
-    } else {
-      const texture = 0.058 * Math.sin(x * 1.41 + z * 0.76) * Math.cos(y * 0.87);
-      next[i] = clamp(0.77 * p + 0.23 * logistic(9 * (0.5 * p + 0.5 * nb + texture - 0.36 + 0.8 * u)));
-    }
-  }
-  return next;
-}
-function transitionG6(layer:Layer,input:Float32Array,time:number){return legacy(layer.algorithm)?{state:evolve(layer,input,time),registers:layer.registers}:evolveExpanded(layer as Layer & {algorithm:ExpandedAlgorithm},input);}
-function syncSandbox(n: Sandbox): void {
-  const chosen = n.layers.find(layer => layer.id === n.outputLayerId) || n.layers[0];
-  n.outputLayerId = chosen?.id ?? null;
-  n.algorithm = chosen?.algorithm ?? 'empty';
-  n.state = chosen?.state ?? zero;
-  n.influence = chosen?.influence ?? 0;
-}
-function addLayer(n: Sandbox, algorithm: ActiveAlgorithm): Layer | null {
-  if (n.layers.length >= MAX_LAYERS) {
-    notice('Each environment supports up to four algorithms in this prototype.');
-    return null;
-  }
-  const id = Math.max(0, ...n.layers.map(layer => layer.id)) + 1;
-  const layer: Layer = {
-    id, algorithm, state: seed(algorithm, n.id * 17 + id), influence: 0,definition:definitionFor(algorithm)?structuredClone(definitionFor(algorithm)!):undefined
-  };
-  n.layers.push(layer);
-  if (n.outputLayerId === null) n.outputLayerId = id;
-  syncSandbox(n);
-  return layer;
-}
+function addLayer(n:Sandbox,algorithm:ActiveAlgorithm):Layer|null {try{return workspace.addLayer(n,algorithm);}catch(error){notice((error as Error).message);return null;}}
 function deleteLayer(n: Sandbox, id: number): void {
   n.layers = n.layers.filter(layer => layer.id !== id);
   n.innerLinks = n.innerLinks.filter(edge => edge.from !== id && edge.to !== id);
-  edges = edges.filter(edge => !(edge.to === n.id && edge.targetLayerId === id));
+  workspace.edges = workspace.edges.filter(edge => !(edge.to === n.id && edge.targetLayerId === id));
   syncSandbox(n);
-  if (!n.layers.length) edges = edges.filter(edge => edge.from !== n.id && edge.to !== n.id);
+  if (!n.layers.length) workspace.edges = workspace.edges.filter(edge => edge.from !== n.id && edge.to !== n.id);
   redraw();
   notice('Algorithm removed. Remaining patterns and algorithms are preserved.');
 }
@@ -189,78 +54,18 @@ function addInternalLink(n: Sandbox, from: number, to: number): void {
   redraw();
   notice('Internal connection added. Source pattern will influence the receiving algorithm.');
 }
-function step(): void {
-  if (!nodes.some(n => n.layers.length)) return;
-  // All inputs are calculated from the previous tick. No algorithm sees a
-  // partially updated pattern from another layer or sandbox.
-  const updates = nodes.map(n => ({
-    id: n.id,
-    layers: n.layers.map(layer => {
-      const input = new Float32Array(CELLS);
-      for (const edge of n.innerLinks) {
-        if (!edge.enabled || edge.to !== layer.id) continue;
-        const source = n.layers.find(l => l.id === edge.from);
-        if (!source) continue;
-        const factor = edge.strength * (edge.mode === 'excite' ? 1 : -1);
-        for (let i = 0; i < CELLS; i++) input[i] += factor * source.state[i];
-      }
-      for (const edge of edges) {
-        if (!edge.enabled || edge.to !== n.id || edge.targetLayerId !== layer.id) continue;
-        const sourceSandbox = nodes.find(other => other.id === edge.from);
-        if (!sourceSandbox || !sourceSandbox.layers.length) continue;
-        const factor = edge.strength * (edge.mode === 'excite' ? 1 : -1);
-        for (let i = 0; i < CELLS; i++) input[i] += factor * sourceSandbox.state[i];
-      }
-      const result = transitionG6(layer, input, tick);const next=result.state;
-      const uncoupled = transitionG6(layer, zero, tick).state;
-      let error = 0;
-      for (let i = 0; i < CELLS; i++) error += (next[i] - uncoupled[i]) ** 2;
-      return { id: layer.id, state: next, registers:result.registers, influence: Math.sqrt(error / CELLS) };
-    })
-  }));
-  for (const update of updates) {
-    const n = nodes.find(node => node.id === update.id);
-    if (!n) continue;
-    for (const result of update.layers) {
-      const layer = n.layers.find(l => l.id === result.id);
-      if (!layer) continue;
-      layer.state = result.state;layer.registers=result.registers;
-      layer.influence = result.influence;
-    }
-    syncSandbox(n);
-  }
-  tick++;
-  refreshDynamic();
-}
+function step():void {workspace.step();refreshDynamic();}
 function resetSimulation(): void {
   running = false;
-  tick = 0;
-  for (const n of nodes) {
-    for (const layer of n.layers) {
-      layer.state = legacy(layer.algorithm)?seed(layer.algorithm,n.id*17+layer.id):seedExpanded(layer.algorithm as ExpandedAlgorithm,n.id*17+layer.id,layer.definition);
-      layer.influence = 0;layer.registers=undefined;
-    }
-    syncSandbox(n);
-  }
+  workspace.reset();
   const run = document.querySelector<HTMLElement>('#run-btn');
   if (run) run.textContent = '▶ Run';
   refreshDynamic();
   notice('Reset complete. Each algorithm has returned to its own initial pattern.');
 }
-function addSandbox(algo: Algorithm = 'empty'): Sandbox | null {
-  if (nodes.length >= MAX_NODES) {
-    notice('The prototype supports up to six environments.');
-    return null;
-  }
-  const id = nextNodeId++;
-  const count = nodes.length;
-  const n: Sandbox = {
-    id, algorithm: 'empty', x: 58 + (count % 3) * 295,
-    y: 65 + Math.floor(count / 3) * 260, state: zero,
-    influence: 0, layers: [], innerLinks: [], outputLayerId: null
-  };
-  nodes.push(n);
-  if (algo !== 'empty') addLayer(n, algo);
+function addSandbox(algo:Algorithm='empty'):Sandbox|null {
+  let n:Sandbox;try{n=workspace.addSandbox(algo);}catch(error){notice((error as Error).message);return null;}
+  const id=n.id;
   activeId = id;
   redraw();
   notice(algo === 'empty'
@@ -269,33 +74,33 @@ function addSandbox(algo: Algorithm = 'empty'): Sandbox | null {
   return n;
 }
 function deleteSandbox(id: number): void {
-  nodes = nodes.filter(n => n.id !== id);
-  edges = edges.filter(e => e.from !== id && e.to !== id);
+  workspace.nodes = workspace.nodes.filter(n => n.id !== id);
+  workspace.edges = workspace.edges.filter(e => e.from !== id && e.to !== id);
   if (pendingSource === id) pendingSource = null;
-  if (activeId === id) activeId = nodes[0]?.id ?? null;
+  if (activeId === id) activeId = workspace.nodes[0]?.id ?? null;
   redraw();
   notice('Environment removed, including all its pattern connections.');
 }
 function connect(to: number): void {
   if (pendingSource === null) { notice('Choose a pattern output first.'); return; }
   const from = pendingSource;
-  const source = nodes.find(n => n.id === from);
-  const dest = nodes.find(n => n.id === to);
+  const source = workspace.nodes.find(n => n.id === from);
+  const dest = workspace.nodes.find(n => n.id === to);
   if (!source || !dest) return;
   if (from === to) { notice('A sandbox cannot connect to itself in this prototype.'); return; }
   if (source.algorithm === 'empty' || dest.algorithm === 'empty') {
     notice('Assign algorithms to both environments before connecting their patterns.');
     return;
   }
-  if (edges.some(e => e.from === from && e.to === to)) { notice('Those patterns already have a connection.'); return; }
-  edges.push({ id: nextEdgeId++, from, to, targetLayerId: dest.outputLayerId!, strength: 0.65, mode: 'excite', enabled: true });
+  if (workspace.edges.some(e => e.from === from && e.to === to)) { notice('Those patterns already have a connection.'); return; }
+  workspace.edges.push({ id: workspace.nextEdgeId++, from, to, targetLayerId: dest.outputLayerId!, strength: 0.65, mode: 'excite', enabled: true });
   pendingSource = null;
   redraw();
   notice('Pattern output from A' + from + ' now modifies the existing algorithm in B' + to + '.');
 }
 function loadExample(): void {
-  nodes = []; edges = []; tick = 0; running = false;
-  nextNodeId = 1; nextEdgeId = 1; pendingSource = null;
+  workspace.nodes = []; workspace.edges = []; workspace.tick = 0; running = false;
+  workspace.nextNodeId = 1; workspace.nextEdgeId = 1; pendingSource = null;
   const a = addSandbox('diffusion');
   const b = addSandbox('oscillator');
   if (!a || !b) return;
@@ -307,8 +112,8 @@ function loadExample(): void {
     b.outputLayerId = automaton.id;
     syncSandbox(b);
   }
-  edges.push({
-    id: nextEdgeId++, from: a.id, to: b.id,
+  workspace.edges.push({
+    id: workspace.nextEdgeId++, from: a.id, to: b.id,
     targetLayerId: automaton?.id ?? b.layers[0].id,
     strength: 0.65, mode: 'excite', enabled: true
   });
@@ -317,27 +122,10 @@ function loadExample(): void {
   notice('Example loaded: each environment contains two algorithms and an internal pattern link; an external link connects the two environments.');
 }
 function exportGraph(): void {
-  const payload = {
-    format: 'atunbi.node-network.v3',
-    architecture: 'Empty spatial environments host independently evolving algorithms. Pattern ports and typed transformations form inner and outer graphs.',
-    spatialDomain: [N, N, N], tick, clockHz,
-    sandboxes: nodes.map(n => ({
-      id: n.id, position: { x: n.x, y: n.y },
-      outputLayerId: n.outputLayerId,
-      layers: n.layers.map(l => ({
-        id: l.id, algorithm: l.algorithm, state: Array.from(l.state), registers:l.registers?{u:Array.from(l.registers.u),phase:Array.from(l.registers.phase)}:undefined,definition:l.definition,parameter:l.parameter,
-        lastTickInfluenceRMS: l.influence
-      })),
-      innerLinks: n.innerLinks
-    })),
-    relationships: edges.map(e => ({
-      ...e, sourcePort: 'selected_pattern_field',
-      targetPort: 'specific_algorithm_input', mapping: 'identity_xyz'
-    }))
-  };
+  const payload=workspace.snapshot(clockHz);
   if(!sendEvidence('g6','atunbi-g5-network.json',payload))return;
-  notice('Exported ' + nodes.length + ' environments, ' +
-    nodes.reduce((total,n) => total + n.layers.length, 0) + ' algorithms, and all relationships.');
+  notice('Exported ' + workspace.nodes.length + ' environments, ' +
+    workspace.nodes.reduce((total,n) => total + n.layers.length, 0) + ' algorithms, and all relationships.');
 }
 function importGraph(file: File): void {
   if (file.size > 8_000_000) {
@@ -346,116 +134,9 @@ function importGraph(file: File): void {
   }
   file.text().then(content => {
     const parsed: unknown = JSON.parse(content);
-    if (!parsed || typeof parsed !== 'object') throw new Error('Invalid network.');
-    const record = parsed as {
-      format?: string; sandboxes?: unknown; relationships?: unknown; tick?: number
-    };
-    if (!['atunbi.node-network.v2', 'atunbi.node-network.v3'].includes(record.format ?? '') ||
-        !Array.isArray(record.sandboxes) || !Array.isArray(record.relationships)) {
-      throw new Error('Expected an ÀTÚNBÍ v2 or v3 network.');
-    }
-    if (record.sandboxes.length > MAX_NODES || record.relationships.length > 48) {
-      throw new Error('Too many environments or relationships.');
-    }
-    const isActive = (value: unknown): value is ActiveAlgorithm =>
-      typeof value === 'string' && value !== 'empty' &&
-      Object.prototype.hasOwnProperty.call(meta, value);
-    const validateState = (value: unknown): Float32Array => {
-      if (!Array.isArray(value) || value.length !== CELLS ||
-          !value.every(v => typeof v === 'number' && Number.isFinite(v) && v >= 0 && v <= 1)) {
-        throw new Error('A pattern must contain exactly 1,000 finite values in [0,1].');
-      }
-      return Float32Array.from(value);
-    };
-    const incoming: Sandbox[] = record.sandboxes.map((item: unknown) => {
-      if (!item || typeof item !== 'object') throw new Error('Malformed environment.');
-      const n = item as {
-        id:number; algorithm?:Algorithm; state?:unknown;
-        position?:{x:number;y:number}; outputLayerId?:number|null;
-        layers?:unknown; innerLinks?:unknown
-      };
-      if (!Number.isSafeInteger(n.id) || n.id < 1) throw new Error('Invalid environment identifier.');
-      const obj: Sandbox = {
-        id:n.id, algorithm:'empty', state:zero, influence:0,
-        x:Math.max(0, Math.min(836, Number(n.position?.x) || 58)),
-        y:Math.max(0, Math.min(375, Number(n.position?.y) || 65)),
-        layers:[], innerLinks:[], outputLayerId:null
-      };
-      if (record.format === 'atunbi.node-network.v2') {
-        if (isActive(n.algorithm)&&legacy(n.algorithm)) obj.layers.push({
-          id:1, algorithm:n.algorithm, state:validateState(n.state), influence:0
-        });
-        else if (n.algorithm !== 'empty') throw new Error('Invalid algorithm.');
-        obj.outputLayerId=obj.layers[0]?.id ?? null;
-      } else {
-        if (!Array.isArray(n.layers) || n.layers.length > MAX_LAYERS) {
-          throw new Error('Too many algorithms or invalid algorithm layers.');
-        }
-        obj.layers=n.layers.map((item:unknown) => {
-          if (!item || typeof item !== 'object') throw new Error('Invalid algorithm layer.');
-          const layer=item as {id:number;algorithm:unknown;state:unknown;registers?:unknown;definition?:CustomRule;parameter?:number};
-          if(layer.definition){validateRule(layer.definition);if(layer.algorithm!==layer.definition.id)throw Error('Embedded rule does not match the algorithm.');}
-          if (!Number.isSafeInteger(layer.id) || layer.id < 1 || !(isActive(layer.algorithm)||(typeof layer.algorithm==='string'&&layer.definition?.id===layer.algorithm))) {
-            throw new Error('Invalid algorithm type or layer ID.');
-          }
-          if(typeof layer.algorithm==='string'&&layer.algorithm.startsWith('custom-')&&layer.definition?.id!==layer.algorithm)throw Error('Missing embedded custom definition.');if(layer.parameter!==undefined&&(!Number.isFinite(layer.parameter)||layer.parameter<0||layer.parameter>4))throw Error('Invalid algorithm parameter.');return {id:layer.id,algorithm:layer.algorithm as ActiveAlgorithm,state:validateState(layer.state),influence:0,registers:validateRegisters(layer.registers),definition:layer.definition?structuredClone(layer.definition):undefined,parameter:layer.parameter};
-        });
-        if (new Set(obj.layers.map(l => l.id)).size !== obj.layers.length) {
-          throw new Error('Duplicate algorithm IDs.');
-        }
-        if (n.outputLayerId != null && !obj.layers.some(l => l.id === n.outputLayerId)) {
-          throw new Error('Exported pattern output is missing.');
-        }
-        obj.outputLayerId=n.outputLayerId ?? obj.layers[0]?.id ?? null;
-        if (!Array.isArray(n.innerLinks) || n.innerLinks.length > 16) {
-          throw new Error('Invalid internal relationship list.');
-        }
-        obj.innerLinks=n.innerLinks.map((item:unknown) => {
-          const e=item as InnerLink;
-          if (!e || !Number.isSafeInteger(e.id) || e.id < 1 ||
-              !obj.layers.some(l => l.id === e.from) ||
-              !obj.layers.some(l => l.id === e.to) || e.from === e.to ||
-              (e.mode !== 'excite' && e.mode !== 'inhibit') ||
-              !Number.isFinite(e.strength) || e.strength < 0 || e.strength > 1 ||
-              typeof e.enabled !== 'boolean') throw new Error('Invalid internal connection.');
-          return {id:e.id,from:e.from,to:e.to,strength:e.strength,mode:e.mode,enabled:e.enabled};
-        });
-        if (new Set(obj.innerLinks.map(e => e.from + ':' + e.to)).size !== obj.innerLinks.length ||
-            new Set(obj.innerLinks.map(e => e.id)).size !== obj.innerLinks.length) {
-          throw new Error('Duplicate internal connections.');
-        }
-      }
-      syncSandbox(obj);
-      return obj;
-    });
-    if (new Set(incoming.map(n => n.id)).size !== incoming.length) {
-      throw new Error('Duplicate environment IDs.');
-    }
-    const outgoing: Relation[] = record.relationships.map((item:unknown) => {
-      if (!item || typeof item !== 'object') throw new Error('Invalid relationship.');
-      const e=item as Relation;
-      const target=incoming.find(n => n.id === e.to);
-      const source=incoming.find(n => n.id === e.from);
-      const layerId=record.format === 'atunbi.node-network.v2' ? target?.outputLayerId : e.targetLayerId;
-      if (!Number.isSafeInteger(e.id) || e.id < 1 || !target || !source ||
-          source.id === target.id || !source.layers.length ||
-          !target.layers.some(l => l.id === layerId) ||
-          !Number.isFinite(e.strength) || e.strength < 0 || e.strength > 1 ||
-          (e.mode !== 'excite' && e.mode !== 'inhibit') ||
-          typeof e.enabled !== 'boolean') throw new Error('Invalid external relationship.');
-      return {id:e.id,from:e.from,to:e.to,targetLayerId:layerId!,mode:e.mode,
-        strength:e.strength,enabled:e.enabled};
-    });
-    if (new Set(outgoing.map(e => e.from + ':' + e.to)).size !== outgoing.length ||
-        new Set(outgoing.map(e => e.id)).size !== outgoing.length) {
-      throw new Error('Duplicate external relationships.');
-    }
-    for(const node of incoming)for(const layer of node.layers)if(layer.definition)meta[layer.algorithm]={label:safe(layer.definition.name),description:safe(layer.definition.purpose),color:layer.definition.color};
-    nodes=incoming; edges=outgoing;
-    tick=Number.isSafeInteger(record.tick) && record.tick! >= 0 && record.tick! < 10_000_000 ? record.tick! : 0;
-    nextNodeId=Math.max(0,...nodes.map(n=>n.id))+1;
-    nextEdgeId=Math.max(0,...edges.map(e=>e.id))+1;
-    activeId=nodes[0]?.id ?? null;
+    workspace.restore(parsed);
+    for(const node of workspace.nodes)for(const layer of node.layers)if(layer.definition)meta[layer.algorithm]={label:safe(layer.definition.name),description:safe(layer.definition.purpose),color:layer.definition.color};
+    activeId=workspace.nodes[0]?.id ?? null;
     pendingSource=null; running=false;
     redraw();
     notice('Network restored: algorithm layers, patterns, and inner/outer relationships.');
@@ -517,8 +198,8 @@ function nodeMarkup(n: Sandbox): string {
 function drawEdges(): void {
   const svg = document.querySelector<SVGSVGElement>('#wires');
   if (!svg) return;
-  svg.innerHTML = edges.map(e => {
-    const a = nodes.find(n=>n.id===e.from), b=nodes.find(n=>n.id===e.to);
+  svg.innerHTML = workspace.edges.map(e => {
+    const a = workspace.nodes.find(n=>n.id===e.from), b=workspace.nodes.find(n=>n.id===e.to);
     if (!a || !b) return '';
     const x1=a.x+248, y1=a.y+181, x2=b.x+3, y2=b.y+181;
     const bend=Math.max(55,Math.abs(x2-x1)*0.5);
@@ -529,15 +210,15 @@ function drawEdges(): void {
 function graphRender(): void {
   const layer=document.querySelector<HTMLElement>('#node-layer');
   const empty=document.querySelector<HTMLElement>('#empty-graph');
-  if (layer) layer.innerHTML=nodes.map(nodeMarkup).join('');
-  if (empty) empty.style.display=nodes.length?'none':'flex';
+  if (layer) layer.innerHTML=workspace.nodes.map(nodeMarkup).join('');
+  if (empty) empty.style.display=workspace.nodes.length?'none':'flex';
   drawEdges();
 }
 function edgeRender(): void {
   const root=document.querySelector<HTMLElement>('#edge-list');
   if (!root) return;
-  root.innerHTML=edges.length?edges.map(e => {
-    const target=nodes.find(n=>n.id===e.to);
+  root.innerHTML=workspace.edges.length?workspace.edges.map(e => {
+    const target=workspace.nodes.find(n=>n.id===e.to);
     const choices=target?.layers.map(layer=>'<option value="'+layer.id+'"'+
       (layer.id===e.targetLayerId?' selected':'')+'>A'+layer.id+' · '+
       meta[layer.algorithm].label+'</option>').join('') ?? '';
@@ -551,7 +232,7 @@ function edgeRender(): void {
 function internalPanel(): void {
   const el=document.querySelector<HTMLElement>('#layers-body');
   if (!el) return;
-  const n=nodes.find(n=>n.id===activeId);
+  const n=workspace.nodes.find(n=>n.id===activeId);
   if (!n) {
     el.innerHTML='<p class="placeholder">Select or create an environment to edit its internal algorithm graph. The workspace starts empty.</p>';
     return;
@@ -588,25 +269,25 @@ function internalPanel(): void {
 }
 function render_g6(): void {
   const tickLabel=document.querySelector<HTMLElement>('#tick-label');
-  if (tickLabel) tickLabel.textContent='TICK '+String(tick).padStart(4,'0');
-  const nc=document.querySelector<HTMLElement>('#node-count');if (nc) nc.textContent=String(nodes.length);
-  const ec=document.querySelector<HTMLElement>('#edge-count');if (ec) ec.textContent=String(edges.length);
-  for (const n of nodes) for (const layer of n.layers) {
+  if (tickLabel) tickLabel.textContent='TICK '+String(workspace.tick).padStart(4,'0');
+  const nc=document.querySelector<HTMLElement>('#node-count');if (nc) nc.textContent=String(workspace.nodes.length);
+  const ec=document.querySelector<HTMLElement>('#edge-count');if (ec) ec.textContent=String(workspace.edges.length);
+  for (const n of workspace.nodes) for (const layer of n.layers) {
     const avg=document.querySelector<HTMLElement>('#layer-avg-'+n.id+'-'+layer.id);
     const impact=document.querySelector<HTMLElement>('#layer-impact-'+n.id+'-'+layer.id);
     if (avg) avg.textContent=mean(layer.state).toFixed(3);
     if (impact) impact.textContent=layer.influence.toFixed(4);
   }
   const status=document.querySelector<HTMLElement>('#view-label');
-  if (status) status.textContent=nodes.length===0?'EMPTY WORKSPACE':nodes.reduce((sum,n)=>sum+n.layers.length,0)+' ALGORITHMS / '+nodes.length+' ENVIRONMENTS';
-  for (const n of nodes) {
+  if (status) status.textContent=workspace.nodes.length===0?'EMPTY WORKSPACE':workspace.nodes.reduce((sum,n)=>sum+n.layers.length,0)+' ALGORITHMS / '+workspace.nodes.length+' ENVIRONMENTS';
+  for (const n of workspace.nodes) {
     const avg=document.querySelector<HTMLElement>('#node-mean-'+n.id);
     const effect=document.querySelector<HTMLElement>('#node-impact-'+n.id);
     if (avg) avg.textContent=mean(n.state).toFixed(3);
     if (effect) effect.textContent=n.influence.toFixed(4);
   }
   const metrics=document.querySelector<HTMLElement>('#metrics-list');
-  if (metrics) metrics.innerHTML=nodes.length?nodes.map(n=>'<div class="metric-line"><span class="metric-dot" style="background:'+meta[n.algorithm].color+'"></span><span>Env '+n.id+' · '+n.layers.length+' algorithms</span><span>output mean '+mean(n.state).toFixed(3)+'</span><strong>impact '+n.influence.toFixed(4)+'</strong></div>').join(''):'<p class="placeholder">No algorithms or patterns to inspect. Create an environment first.</p>';
+  if (metrics) metrics.innerHTML=workspace.nodes.length?workspace.nodes.map(n=>'<div class="metric-line"><span class="metric-dot" style="background:'+meta[n.algorithm].color+'"></span><span>Env '+n.id+' · '+n.layers.length+' algorithms</span><span>output mean '+mean(n.state).toFixed(3)+'</span><strong>impact '+n.influence.toFixed(4)+'</strong></div>').join(''):'<p class="placeholder">No algorithms or patterns to inspect. Create an environment first.</p>';
   paintVolume();
 }
 function redraw(): void {
@@ -643,7 +324,7 @@ function rebuildVolume(): void {
     }
   }
   instances.clear();
-  nodes.forEach((n,i) => {
+  workspace.nodes.forEach((n,i) => {
     const groupX=(i%3-1)*1.52;
     const groupY=(Math.floor(i/3)===0?.82:-.82);
     const outline=new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(1.19,1.19,1.19)),new THREE.LineBasicMaterial({color: new THREE.Color(meta[n.algorithm].color),transparent:true,opacity:n.algorithm==='empty'?.28:.50}));
@@ -657,7 +338,7 @@ function rebuildVolume(): void {
 }
 function paintVolume(): void {
   let index=0;
-  for (const n of nodes) {
+  for (const n of workspace.nodes) {
     const mesh=instances.get(n.id);
     const groupX=(index%3-1)*1.52;
     const groupY=(Math.floor(index/3)===0?.82:-.82);
@@ -709,7 +390,7 @@ board.addEventListener('click', event => {
   if(el.dataset.action==='delete'){deleteSandbox(id);return;}
   if(el.dataset.action==='inspect'){activeId=id;graphRender();internalPanel();notice('Editing algorithms inside environment '+id+'.');return;}
   if(el.dataset.action==='source'){
-    const n=nodes.find(n=>n.id===id);
+    const n=workspace.nodes.find(n=>n.id===id);
     if(!n||n.algorithm==='empty'){notice('Assign an algorithm before exposing its pattern output.');return;}
     pendingSource=id;activeId=id;graphRender();
     notice('Source selected: environment '+id+'. Select Input on the receiving algorithm.');
@@ -720,7 +401,7 @@ board.addEventListener('click', event => {
 board.addEventListener('change', event => {
   const t=event.target as HTMLSelectElement;
   if(!t.matches('[data-algo]'))return;
-  const n=nodes.find(n=>n.id===Number(t.dataset.algo));
+  const n=workspace.nodes.find(n=>n.id===Number(t.dataset.algo));
   if(!n)return;
   const algo=t.value as Algorithm;
   if (!(algo in meta)) return;
@@ -746,7 +427,7 @@ board.addEventListener('keydown', event => {
   const header = event.target as HTMLElement;
   if (!header.matches('[data-drag]') || !['ArrowLeft','ArrowRight','ArrowUp','ArrowDown'].includes(event.key)) return;
   event.preventDefault();
-  const n = nodes.find(node => node.id === Number(header.dataset.drag));
+  const n = workspace.nodes.find(node => node.id === Number(header.dataset.drag));
   if (!n) return;
   const amount = event.shiftKey ? 40 : 10;
   if (event.key === 'ArrowLeft') n.x -= amount;
@@ -761,7 +442,7 @@ board.addEventListener('keydown', event => {
 board.addEventListener('pointerdown',event=>{
   const target=(event.target as HTMLElement).closest<HTMLElement>('[data-drag]');
   if(!target || (event.target as HTMLElement).closest('button'))return;
-  const id=Number(target.dataset.drag),n=nodes.find(n=>n.id===id);
+  const id=Number(target.dataset.drag),n=workspace.nodes.find(n=>n.id===id);
   if(!n)return;
   drag={id,sx:event.clientX,sy:event.clientY,x:n.x,y:n.y};
   target.setPointerCapture(event.pointerId);
@@ -769,7 +450,7 @@ board.addEventListener('pointerdown',event=>{
 });
 board.addEventListener('pointermove',event=>{
   if(!drag)return;
-  const n=nodes.find(n=>n.id===drag!.id);
+  const n=workspace.nodes.find(n=>n.id===drag!.id);
   if(!n)return;
   n.x=Math.max(10,Math.min(836,drag.x+event.clientX-drag.sx));
   n.y=Math.max(10,Math.min(375,drag.y+event.clientY-drag.sy));
@@ -784,13 +465,13 @@ edgeList.addEventListener('click', event=>{
   const btn=(event.target as HTMLElement).closest<HTMLElement>('[data-edge-action]');
   if(!btn)return;
   const id=Number(btn.dataset.id);
-  if(btn.dataset.edgeAction==='delete'){edges=edges.filter(e=>e.id!==id);redraw();notice('Relationship removed. Receiving algorithm remains intact.');}
+  if(btn.dataset.edgeAction==='delete'){workspace.edges=workspace.edges.filter(e=>e.id!==id);redraw();notice('Relationship removed. Receiving algorithm remains intact.');}
 });
 edgeList.addEventListener('input', event=>{
   const t=event.target as HTMLInputElement;
   const id=Number(t.dataset.edgeStrength);
   if(!Number.isSafeInteger(id)||!t.matches('[data-edge-strength]'))return;
-  const e=edges.find(e=>e.id===id);if(!e)return;
+  const e=workspace.edges.find(e=>e.id===id);if(!e)return;
   e.strength=Number(t.value);
   const label=document.querySelector<HTMLOutputElement>('#edge-strength-'+id);if(label)label.textContent=e.strength.toFixed(2);
 });
@@ -798,11 +479,11 @@ edgeList.addEventListener('change',event=>{
   const t=event.target as HTMLInputElement|HTMLSelectElement;
   const mode=t.getAttribute('data-edge-mode'), enabled=t.getAttribute('data-edge-enabled');
   const target=t.getAttribute('data-target-layer');
-  const e=edges.find(e=>e.id===Number(mode??enabled??target));
+  const e=workspace.edges.find(e=>e.id===Number(mode??enabled??target));
   if(!e)return;
   if(target!==null){
     const chosen=Number(t.value);
-    if(nodes.find(n=>n.id===e.to)?.layers.some(l=>l.id===chosen))e.targetLayerId=chosen;
+    if(workspace.nodes.find(n=>n.id===e.to)?.layers.some(l=>l.id===chosen))e.targetLayerId=chosen;
   }
   if(mode!==null)e.mode=t.value as Mode;
   if(enabled!==null)e.enabled=(t as HTMLInputElement).checked;
@@ -812,7 +493,7 @@ edgeList.addEventListener('change',event=>{
 const internalRoot=document.querySelector<HTMLElement>('#layers-body')!;
 internalRoot.addEventListener('click',event=>{
   const target=event.target as HTMLElement;
-  const n=nodes.find(n=>n.id===activeId);
+  const n=workspace.nodes.find(n=>n.id===activeId);
   if(!n)return;
   const add=target.closest('#add-layer-btn');
   const remove=target.closest<HTMLElement>('[data-delete-layer]');
@@ -840,7 +521,7 @@ internalRoot.addEventListener('click',event=>{
 });
 internalRoot.addEventListener('change',event=>{
   const target=event.target as HTMLSelectElement|HTMLInputElement;
-  const n=nodes.find(n=>n.id===activeId);if(!n)return;
+  const n=workspace.nodes.find(n=>n.id===activeId);if(!n)return;
   if(target.matches('[data-layer-parameter]')){const chosen=n.layers.find(l=>l.id===Number(target.getAttribute('data-layer-parameter'))),value=Number(target.value);if(chosen&&target.value.trim()&&Number.isFinite(value)&&value>=0&&value<=4){chosen.parameter=value;notice('Equation parameter updated. '+chosen.algorithm+' now uses '+value+'.');}else notice('Parameter must be a finite number from 0 to 4.');return;}
   if(target.id==='output-layer'){
     const layerId=Number(target.value);
@@ -861,7 +542,7 @@ internalRoot.addEventListener('input',event=>{
   const target=event.target as HTMLInputElement;
   const key=target.getAttribute('data-inner-strength');
   if(key===null)return;
-  const n=nodes.find(n=>n.id===activeId);
+  const n=workspace.nodes.find(n=>n.id===activeId);
   const edge=n?.innerLinks.find(e=>e.id===Number(key));
   if(edge)edge.strength=Number(target.value);
 });
@@ -869,18 +550,18 @@ document.querySelector('#add-btn')?.addEventListener('click',()=>addSandbox());
 document.querySelector('#empty-add')?.addEventListener('click',()=>addSandbox());
 document.querySelector('#example-btn')?.addEventListener('click',()=>loadExample());
 document.querySelector('#clear-btn')?.addEventListener('click',()=>{
-  if(!nodes.length){notice('The workspace is already empty.');return;}
+  if(!workspace.nodes.length){notice('The workspace is already empty.');return;}
   if(!window.confirm('Clear every sandbox and relationship? This cannot be undone unless you exported the network.'))return;
-  nodes=[];edges=[];running=false;tick=0;pendingSource=null;activeId=null;redraw();notice('Workspace cleared. No algorithms or patterns exist.');
+  workspace.nodes=[];workspace.edges=[];running=false;workspace.tick=0;pendingSource=null;activeId=null;redraw();notice('Workspace cleared. No algorithms or patterns exist.');
 });
 document.querySelector('#run-btn')?.addEventListener('click',()=>{
-  if(!nodes.some(n=>n.algorithm!=='empty')){notice('Assign an algorithm before running the simulation.');return;}
+  if(!workspace.nodes.some(n=>n.algorithm!=='empty')){notice('Assign an algorithm before running the simulation.');return;}
   running=!running;lastStep=performance.now();
   const el=document.querySelector<HTMLElement>('#run-btn');if(el)el.textContent=running?'Ⅱ Pause':'▶ Run';
 });
 document.querySelector('#step-btn')?.addEventListener('click',()=>{
   running=false;const el=document.querySelector<HTMLElement>('#run-btn');if(el)el.textContent='▶ Run';
-  if(!nodes.some(n=>n.algorithm!=='empty')){notice('There is no algorithm to step.');return;}
+  if(!workspace.nodes.some(n=>n.algorithm!=='empty')){notice('There is no algorithm to step.');return;}
   step();
 });
 document.querySelector('#reset-btn')?.addEventListener('click',resetSimulation);
@@ -893,12 +574,12 @@ document.querySelector<HTMLInputElement>('#import-file')?.addEventListener('chan
 });
 function experimentSnapshot() {
   return {
-    worlds: nodes.map(n => ({
+    worlds: workspace.nodes.map(n => ({
       id: n.id, outputLayerId: n.outputLayerId,
       layers: n.layers.map(l => ({ id: l.id, algorithm: l.algorithm, state: l.state.slice(),registers:l.registers?{u:l.registers.u.slice(),phase:l.registers.phase.slice()}:undefined,definition:l.definition?structuredClone(l.definition):undefined,parameter:l.parameter })),
       innerLinks: n.innerLinks.map(edge => ({ ...edge }))
     })),
-    externalLinks: edges.map(edge => ({ ...edge }))
+    externalLinks: workspace.edges.map(edge => ({ ...edge }))
   };
 }
 let lastExperiment: ExperimentResult | null = null;
@@ -929,15 +610,15 @@ function renderExperiment(data: ExperimentResult): void {
   if(exportButton)exportButton.disabled=false;
 }
 document.querySelector('#g6-run')?.addEventListener('click',()=>{
-  if(!nodes.some(n => n.layers.length)) {notice('Install algorithms before running an experiment.');return;}
+  if(!workspace.nodes.some(n => n.layers.length)) {notice('Install algorithms before running an experiment.');return;}
   const horizon=Number(document.querySelector<HTMLSelectElement>('#g6-horizon')?.value??24);
   const ablation=(document.querySelector<HTMLSelectElement>('#g6-ablation')?.value??'all') as Ablation;
   try {
     const snapshot=experimentSnapshot();
-    const result=runAblationExperiment(snapshot,(layer,input,time)=>transitionG6({...layer,influence:0},input,time),horizon,ablation,tick);
+    const result=runAblationExperiment(snapshot,(layer,input,time)=>transitionG6({...layer,influence:0},input,time),horizon,ablation,workspace.tick);
     lastExperiment=result;
     lastExperimentSource=snapshot;
-    lastExperimentStartTime=tick;
+    lastExperimentStartTime=workspace.tick;
     renderExperiment(result);
     notice('Controlled experiment finished. The live simulation was not modified.');
   }catch(e){notice('Experiment could not run: '+(e instanceof Error?e.message:'Unknown failure'));}
@@ -963,15 +644,15 @@ document.querySelector('#g6-export')?.addEventListener('click',()=>{
   notice('G6 evidence JSON exported with the starting network and complete paired trajectory measurements.');
 });
 registerView('g6',render_g6);
-function refreshDynamic() {publishState('g6',{tick,environments:nodes.length,algorithms:nodes.reduce((sum,n)=>sum+n.layers.length,0)});}
+function refreshDynamic() {publishState('g6',{tick: workspace.tick,environments:workspace.nodes.length,algorithms:workspace.nodes.reduce((sum,n)=>sum+n.layers.length,0)});}
 redraw();resize();
 notice('Workspace ready. Start with an empty environment; nothing runs until an algorithm is assigned.');
 const updateSpatialControls = installSpatialControls({
   renderer, scene, camera, controls, content:volumeGroup,
-  clearWorkspace:() => {nodes=[];edges=[];running=false;tick=0;pendingSource=null;activeId=null;redraw();notice('Workspace cleared. No algorithms or patterns exist.');},
+  clearWorkspace:() => {workspace.nodes=[];workspace.edges=[];running=false;workspace.tick=0;pendingSource=null;activeId=null;redraw();notice('Workspace cleared. No algorithms or patterns exist.');},
   isRunning:() => running,
   toggleRun:() => {document.querySelector<HTMLButtonElement>('#run-btn')?.click();},
-  getSummary:() => 'G6 '+(running?'running':'paused')+' at tick '+tick+'. '+nodes.length+' environments, '+edges.length+' external relationships. '+nodes.map(n=>'Environment '+n.id+': '+n.layers.length+' algorithms, output mean '+mean(n.state).toFixed(3)+', input impact '+n.influence.toFixed(4)+'.').join(' '),
+  getSummary:() => 'G6 '+(running?'running':'paused')+' at tick '+workspace.tick+'. '+workspace.nodes.length+' environments, '+workspace.edges.length+' external relationships. '+workspace.nodes.map(n=>'Environment '+n.id+': '+n.layers.length+' algorithms, output mean '+mean(n.state).toFixed(3)+', input impact '+n.influence.toFixed(4)+'.').join(' '),
   pause:() => {running=false; const button=document.querySelector<HTMLElement>('#run-btn'); if(button)button.textContent='▶ Run';},
   step:() => {document.querySelector<HTMLButtonElement>('#step-btn')?.click();}
 });
@@ -986,5 +667,5 @@ renderer.setAnimationLoop((now:number)=>{
   renderer.render(scene,camera);
 });
 
-bindInput('g6','library',payload=>{customRules=structuredClone(payload.rules as CustomRule[]);for(const rule of customRules){validateRule(rule);meta[rule.id]={label:safe(rule.name)+' · custom binary',description:safe(rule.purpose),color:rule.color};}redraw();});
-(window as unknown as {__ATUNBI_G6:unknown}).__ATUNBI_G6={get nodes(){return nodes;},get tick(){return tick;},snapshot:experimentSnapshot};
+bindInput('g6','library',payload=>{workspace.customRules=structuredClone(payload.rules as CustomRule[]);for(const rule of workspace.customRules){validateRule(rule);meta[rule.id]={label:safe(rule.name)+' · custom binary',description:safe(rule.purpose),color:rule.color};}redraw();});
+(window as unknown as {__ATUNBI_G6:unknown}).__ATUNBI_G6={get nodes(){return workspace.nodes;},get tick(){return workspace.tick;},snapshot:experimentSnapshot};
