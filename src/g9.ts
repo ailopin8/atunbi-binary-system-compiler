@@ -1,3 +1,4 @@
+import {HypothesisNotebook} from './services/hypotheses';
 import {requestControl,siteFlow,latestSignals,sourceForDiscovery,registerView,publishState,sendEvidence} from './flow/site';
 import {compile, VM} from './engines/g8';
 import {analyze} from './discovery.js';
@@ -25,15 +26,15 @@ section.innerHTML=`
 <div class="g8-columns"><div class="g8-pane"><h4>Measured descriptors</h4><div class="g9-scroll" tabindex="0" role="region" aria-label="Binary descriptors, scroll horizontally if needed"><table><caption>Final-step binary descriptors by experimental arm</caption><thead><tr><th scope="col">Run / matrix</th><th scope="col">On</th><th scope="col">Edges</th><th scope="col">Components</th><th scope="col">Largest</th><th scope="col">Δ bits</th><th scope="col">Stability</th></tr></thead><tbody id="g9-metrics"></tbody></table></div><p>Edges: unlike face-neighbor pairs; components: connected ON cells. Six-neighbor periodic 3D topology. Stability = 1 − changed bits / 1000 over the final step.</p></div>
 <div class="g8-pane"><h4>Experimental evidence</h4><pre id="g9-effect"></pre><p id="g9-period"></p><p>A full-VM repeat includes all matrices and pending messages. Period is an exact final-state cycle length within this observation window; no repeat does not prove aperiodicity.</p></div></div>
 <div class="g8-pane"><h4>Exact-state pattern registry</h4><p>Identity uses all 1,000 bits, without hash collisions. Recurrence is exact position-specific equality, not similarity or inferred meaning. Cross-run counts refer to the two paired arms, not independent replications.</p><label>Pattern <select id="g9-pattern"></select></label><pre id="g9-pattern-info" aria-live="polite" aria-atomic="true"></pre></div>
-<div class="g8-pane"><h4>Observer notebook · hypotheses only</h4><label>Hypothesis <input id="g9-note" maxlength="240" aria-describedby="g9-note-error" placeholder="A falsifiable interpretation…"></label><label>Status <select id="g9-hypothesis"><option>Untested</option><option>Consistent with this experiment</option><option>Contradicted by this experiment</option><option>Inconclusive</option></select></label><button id="g9-save">Save hypothesis</button><span id="g9-note-error" class="field-error"></span><p>Bound to selected pattern and experiment. Status is observer-assigned, never automatically proven. Notebook persists in this browser; export preserves full evidence.</p><pre id="g9-notes"></pre></div>
+<div class="g8-pane"><h4>Observer notebook · hypotheses only</h4><label>Hypothesis <input id="g9-note" maxlength="240" aria-describedby="g9-note-error" placeholder="A falsifiable interpretation…"></label><label>Status <select id="g9-hypothesis"><option>Untested</option><option>Consistent with this experiment</option><option>Contradicted by this experiment</option><option>Inconclusive</option></select></label><button id="g9-save">Save hypothesis</button><button id="g9-recover-notes">Export notebook recovery</button><span id="g9-note-error" class="field-error"></span><p>Bound to selected pattern and experiment. Status is observer-assigned, never automatically proven. Notebook persists in this browser; export preserves full evidence.</p><pre id="g9-notes"></pre></div>
 </div></div>`;
 document.querySelector('.g8')?.insertAdjacentElement('afterend',section);
 const el=(id:string)=>document.getElementById(id)!;
 const input=(id:string)=>(el(id) as HTMLInputElement).value;
 let result:any=null;
-let notes:any[]=[];
-try {const stored=JSON.parse(localStorage.getItem('atunbi.g9.notes')||'[]');if(Array.isArray(stored))notes=stored.filter(n=>typeof n.text==='string'&&typeof n.status==='string').slice(-100);}catch { /* corrupt storage remains isolated from execution */ }
-function renderNotes(){el('g9-notes').textContent=notes.map(n=>`${n.pattern} · ${n.status}: ${n.text}`).join('\n')||'No hypotheses saved.';}
+const notebook=new HypothesisNotebook({getItem:key=>localStorage.getItem(key),setItem:(key,value)=>localStorage.setItem(key,value)});
+if(notebook.loadError)el('g9-status').textContent='Notebook unavailable: '+notebook.loadError+' Export recovery data to preserve the stored content.';
+function renderNotes(){el('g9-notes').textContent=notebook.list().map(n=>`${n.pattern} · ${n.status}: ${n.text}`).join('\n')||'No hypotheses saved.';}
 function pattern(){if(!result)return;const p=result.patterns[Number(input('g9-pattern'))];el('g9-pattern-info').textContent=`${p.id} · ${p.classification}\n${p.occurrences.length} observations · ${p.crossRunCount}/2 arms · ON ${p.population} · components ${p.components}\n`+p.occurrences.slice(0,30).map((o:any)=>`${o.run}/${o.matrix}@${o.tick}`).join(', ');}
 function render(){
   el('g9-results').hidden=false;
@@ -93,9 +94,10 @@ el('g9-replay').addEventListener('click',()=>{if(!result)return;const again=anal
 el('g9-pattern').addEventListener('change',pattern);
 el('g9-note').addEventListener('keydown', event => { if (event.key === 'Enter') { event.preventDefault(); el('g9-save').click(); } });
 el('g9-save').addEventListener('click',()=>{if(!result)return;const text=input('g9-note').trim();if(!text){el('g9-note-error').textContent='Enter a hypothesis before saving.';el('g9-note').setAttribute('aria-invalid','true');el('g9-note').focus();el('g9-status').textContent='Hypothesis not saved. Enter a hypothesis first.';return;}el('g9-note-error').textContent='';el('g9-note').removeAttribute('aria-invalid');
-  const p=result.patterns[Number(input('g9-pattern'))];siteFlow.emit('g9','annotation',{text,status:input('g9-hypothesis')});notes.push({text:text.slice(0,240),status:input('g9-hypothesis'),pattern:p.id,bits:p.bits,source:result.source,config:result.config});notes=notes.slice(-100);
-  try{localStorage.setItem('atunbi.g9.notes',JSON.stringify(notes));el('g9-status').textContent='Hypothesis saved as observer metadata.';}catch{el('g9-status').textContent='Browser storage unavailable; export to preserve this hypothesis.';}renderNotes();});
-el('g9-export').addEventListener('click',()=>{if(result)sendEvidence('g9','atunbi-g9-evidence.json',{...result,observerHypotheses:notes});});
+  try{const p=result.patterns[Number(input('g9-pattern'))];siteFlow.emit('g9','annotation',{text,status:input('g9-hypothesis')});const saved=notebook.add({text:text.slice(0,240),status:input('g9-hypothesis'),pattern:p.id,bits:p.bits,source:result.source,config:result.config});
+  el('g9-status').textContent=saved.persisted?'Hypothesis saved as observer metadata.':'Hypothesis retained in this session only. '+saved.error+' Export evidence or notebook recovery to preserve it.';renderNotes();}catch(error){el('g9-status').textContent='Hypothesis not saved: '+(error as Error).message;}});
+el('g9-export').addEventListener('click',()=>{if(result)sendEvidence('g9','atunbi-g9-evidence.json',{...result,observerHypotheses:notebook.list()});});
+el('g9-recover-notes').addEventListener('click',()=>sendEvidence('g9','atunbi-notebook-recovery.json',notebook.recovery()));
 registerView('g9',render);
 renderNotes();
 

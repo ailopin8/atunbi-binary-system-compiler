@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-20",
+  "command": "npm run verify",
+  "exitCode": 0,
+  "modelTests": 54,
+  "mainBrowserChecks": 19,
+  "integrationSuites": [
+    "architecture",
+    "relationships",
+    "system",
+    "workbench",
+    "notebook"
+  ],
+  "scope": "Observer storage extraction and recovery preservation; full project persistence still pending",
+  "evidence": [
+    "tests/hypotheses.test.mjs",
+    "tests/notebook-browser.mjs"
+  ]
+}

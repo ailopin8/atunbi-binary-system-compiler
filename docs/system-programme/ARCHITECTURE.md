@@ -31,7 +31,7 @@ This is the target boundary map. Command, identity and repository extraction rem
 | Combine algorithms | library engine instance | definitions/config + tick → registers/projections | pure; registry identity/version integration needed |
 | Compare | analyze / runAblationExperiment / compareComposition | frozen state + intervention → matched outputs | domain functions exist; evidence ownership/IDs needed |
 | Observe | source engine owns model; view owns camera/slice | snapshots + selection → projection | projections must not mutate model; common observation context pending |
-| Annotate | hypothesis repository, currently G9 UI notes | claim/status + evidence identity → annotation | local UI ownership to migrate |
+| Annotate | HypothesisNotebook service | validated claim/status + pattern/source/config → detached record | src/services/hypotheses.ts; injected storage, bounded retention, explicit session-only failure and recovery export |
 | Persist | repository service | expected revision + document → stored revision/error | builder injected Store exists; other UI storage to migrate |
 | Share/export | evidence producer + file adapter | identified immutable bundle → portable file | current download path uses flow; schema/identity pending |
 | Website routing | FlowRuntime | configured edges + signal → receipts/queued messages | distinct clock; semantic contracts and consumption receipts pending |
@@ -54,3 +54,7 @@ SG04 remains in progress until the remaining authoring, annotation, orchestratio
 The editor now refers to one G6Workspace for nodes, edges, tick, identifiers and installed custom definitions. Rendering, active selection, drag gestures and playback timing remain view state. Numerical transitions, initial fields, staged updates, reset, export and full validation/restore are in src/engines/g6.ts. No kernel imports Three.js or the document. A snapshot is detached from its source; restore validates a staged network before replacing state.
 
 Baseline fixtures cover all four legacy algorithms, twelve library algorithms and the linked example at ticks 0, 1, 8 and 24. This preserves existing clipped/periodic topology distinctions and numeric-register semantics. Negative tests cover malformed fields and edges, foreign environment ownership, capacity limits, failed-tick atomicity and invalid algorithm creation. Numeric continuation is tested after restore; this is the existing G6 network format, not a universal cross-engine checkpoint claim.
+
+## Observer notebook boundary
+
+HypothesisNotebook owns observer records independently of UI and scientific execution. The page supplies an injected browser storage adapter; the service validates records and returns persistence outcome. Corrupt/unreadable storage is preserved without automatic replacement. A storage-write failure retains the hypothesis in session memory and the UI states that it is not durable. Recovery export includes the original captured data and current session records. Existing valid atunbi.g9.notes records retain their format. This is recovery preservation, not yet the full versioned project/evidence repository required by SG05/23.

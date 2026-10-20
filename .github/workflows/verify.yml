@@ -32,6 +32,9 @@ jobs:
       - run: npm run test:workbench
         env:
           BROWSER_CHANNEL: chromium
+      - run: npm run test:notebook
+        env:
+          BROWSER_CHANNEL: chromium
       - uses: actions/upload-artifact@v4
         if: always()
         with:
